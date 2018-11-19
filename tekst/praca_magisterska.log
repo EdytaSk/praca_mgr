@@ -1,21 +1,22 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  15 NOV 2018 22:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  17 NOV 2018 17:26
 entering extended mode
 **./praca_magisterska.tex
 (praca_magisterska.tex
 LaTeX2e <2018-04-01> patch level 5
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -30,7 +31,12 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
-) (praca_magisterska.aux)
+)
+
+LaTeX Warning: Unused global option(s):
+    [12p].
+
+(praca_magisterska.aux)
 \openout1 = `praca_magisterska.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -56,24 +62,43 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [1
 
-{C:/Users/admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] (pr
-aca_magisterska.aux) ) 
+
+{C:/Users/admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+Chapter 1.
+
+Overfull \hbox (3.12686pt too wide) in paragraph at lines 19--20
+\T1/cmr/m/n/10 danych. W za-le»no±ci od stop-nia poufno±ci in-for-ma-cji, któr¡
+ chcemy za-szyfrowa¢,
+ []
+
+
+Overfull \hbox (1.63757pt too wide) in paragraph at lines 21--22
+\T1/cmr/m/n/10 l-iczy¢ poufno±¢ in-for-ma-cji, uwierzytel-nie-nie u»ytkown-ików
+ i pochodzenia danych,
+ []
+
+[3
+
+] [4] (praca_magisterska.aux) ) 
 Here is how much of TeX's memory you used:
- 449 strings out of 492970
- 4620 string characters out of 3126593
- 60598 words of memory out of 3000000
- 4390 multiletter control sequences out of 15000+200000
- 8262 words of font info for 20 fonts, out of 3000000 for 9000
+ 476 strings out of 492970
+ 4913 string characters out of 3126593
+ 63960 words of memory out of 3000000
+ 4413 multiletter control sequences out of 15000+200000
+ 11358 words of font info for 24 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,4n,18p,151b,115s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\admin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\admin\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\admin\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\admin\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk>
-Output written on praca_magisterska.pdf (3 pages, 22699 bytes).
+ 23i,4n,18p,1025b,119s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\admin\AppData\Local\MiKTeX\2.9\fonts\
+pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\admin\AppData\Local\MiKTeX\
+2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\admin\AppData\Loc
+al\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\admin\A
+ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Use
+rs\admin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.p
+k> <C:\Users\admin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+ecbx2488.pk>
+Output written on praca_magisterska.pdf (4 pages, 63978 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
+ 198 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
