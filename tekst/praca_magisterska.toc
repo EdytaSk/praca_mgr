@@ -1,17 +1,30 @@
-\contentsline {chapter}{\numberline {1}Kryptologia}{3}
-\contentsline {section}{\numberline {1.1}Wprowadzenie}{3}
-\contentsline {subsection}{\numberline {1.1.1}Terminologia kryptologiczna}{4}
-\contentsline {section}{\numberline {1.2}Maszyna Enigma}{4}
-\contentsline {section}{\numberline {1.3}Szyfry blokowe i strumieniowe}{4}
-\contentsline {subsection}{\numberline {1.3.1}Szyfry blokowe}{4}
-\contentsline {subsubsection}{Powszechne ataki}{6}
-\contentsline {section}{\numberline {1.4}Szyfry symetryczne i asymetryczne}{6}
-\contentsline {subsection}{\numberline {1.4.1}Szyfry symetryczne}{6}
-\contentsline {subsubsection}{DES}{6}
-\contentsline {subsubsection}{AES}{6}
-\contentsline {subsubsection}{IDEA}{6}
-\contentsline {subsubsection}{Blowfish}{6}
-\contentsline {subsection}{\numberline {1.4.2}Szyfry asymetryczne}{6}
-\contentsline {subsubsection}{RSA}{6}
-\contentsline {subsubsection}{DSS(DSA)}{6}
-\contentsline {subsubsection}{Diffie-Hellman}{6}
+\contentsline {section}{\numberline {1}Kryptografia}{3}
+\contentsline {subsection}{\numberline {1.1}Wprowadzenie}{3}
+\contentsline {subsection}{\numberline {1.2}Terminologia kryptologiczna}{3}
+\contentsline {subsection}{\numberline {1.3}Powszechne ataki}{3}
+\contentsline {subsection}{\numberline {1.4}Metody ataku na VPN}{4}
+\contentsline {subsection}{\numberline {1.5}Maszyna Enigma}{6}
+\contentsline {subsection}{\numberline {1.6}Szyfry blokowe i strumieniowe}{6}
+\contentsline {subsubsection}{\numberline {1.6.1}Szyfry blokowe}{6}
+\contentsline {paragraph}{Powszechne ataki}{7}
+\contentsline {subsection}{\numberline {1.7}Szyfry symetryczne i asymetryczne}{7}
+\contentsline {subsubsection}{\numberline {1.7.1}Szyfry symetryczne}{7}
+\contentsline {paragraph}{DES}{7}
+\contentsline {paragraph}{AES}{7}
+\contentsline {paragraph}{IDEA}{7}
+\contentsline {paragraph}{Blowfish}{7}
+\contentsline {subsubsection}{\numberline {1.7.2}Szyfry asymetryczne}{7}
+\contentsline {paragraph}{RSA}{7}
+\contentsline {paragraph}{DSS(DSA)}{7}
+\contentsline {paragraph}{Diffie-Hellman}{7}
+\contentsline {subsection}{\numberline {1.8}Protoko\IeC {\l }y}{7}
+\contentsline {subsubsection}{\numberline {1.8.1}VPN with Point-to-Point Tunneling Protocol (PPTP)}{7}
+\contentsline {subsubsection}{\numberline {1.8.2}Secure Shell (SSH)}{8}
+\contentsline {subsubsection}{\numberline {1.8.3}IPsec}{10}
+\contentsline {subsubsection}{\numberline {1.8.4}Secure Socket Tunneling protocol Based on VPN}{12}
+\contentsline {subsubsection}{\numberline {1.8.5}L2TP}{13}
+\contentsline {section}{\numberline {2}Systemy wbudowane}{14}
+\contentsline {section}{\numberline {3}Wydajno\IeC {\'s}\IeC {\'c} algorytm\IeC {\'o}w kryptograficznych na systemach wbudowanych}{15}
+\contentsline {section}{\numberline {4}Podsumowanie}{16}
+\contentsline {section}{Literatura}{18}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{18}
