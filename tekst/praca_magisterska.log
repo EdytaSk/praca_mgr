@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  8 DEC 2018 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  9 DEC 2018 14:12
 entering extended mode
 **./praca_magisterska.tex
 (praca_magisterska.tex
@@ -387,40 +387,40 @@ LaTeX Font Info:    External font `plex10' loaded for size
 
 
 {C:/Users/admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
+Underfull \hbox (badness 10000) in paragraph at lines 15--19
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ []
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 35.
+ ("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
-
-[4]
-<Powtarzajace_ataki.jpg, id=18, 406.51875pt x 250.68657pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 35.
+ [3]
+<Powtarzajace_ataki.jpg, id=15, 406.51875pt x 250.68657pt>
 File: Powtarzajace_ataki.jpg Graphic file (type jpg)
 <use Powtarzajace_ataki.jpg>
-Package pdftex.def Info: Powtarzajace_ataki.jpg  used on input line 44.
+Package pdftex.def Info: Powtarzajace_ataki.jpg  used on input line 43.
 (pdftex.def)             Requested size: 199.16928pt x 122.81836pt.
+ [4]
 <Porwanie_sesji.jpg, id=19, 276.28218pt x 152.06813pt>
 File: Porwanie_sesji.jpg Graphic file (type jpg)
 <use Porwanie_sesji.jpg>
-Package pdftex.def Info: Porwanie_sesji.jpg  used on input line 51.
+Package pdftex.def Info: Porwanie_sesji.jpg  used on input line 50.
 (pdftex.def)             Requested size: 227.62204pt x 125.2837pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<bajt.jpg, id=20, 567.62062pt x 124.21407pt>
+ [5 <./Powtarzajace_ataki.jpg> <./Porwanie_sesji.jpg>]
+<bajt.jpg, id=23, 567.62062pt x 124.21407pt>
 File: bajt.jpg Graphic file (type jpg)
 <use bajt.jpg>
-Package pdftex.def Info: bajt.jpg  used on input line 66.
+Package pdftex.def Info: bajt.jpg  used on input line 65.
 (pdftex.def)             Requested size: 341.43306pt x 74.71854pt.
-[5 <./Powtarzajace_ataki.jpg>] [6 <./Porwanie_sesji.jpg> <./bajt.jpg>]
+ [6 <./bajt.jpg>]
 <komunikacja_PPTP.jpg, id=27, 572.1375pt x 235.63031pt>
 File: komunikacja_PPTP.jpg Graphic file (type jpg)
 <use komunikacja_PPTP.jpg>
-Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 91.
+Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 90.
 (pdftex.def)             Requested size: 341.43306pt x 140.61703pt.
 
 
@@ -431,54 +431,50 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: przekierowywanie_lokalne_SSH.jpg Graphic file (type jpg)
 <use przekierowywanie_lokalne_SSH.jpg>
 Package pdftex.def Info: przekierowywanie_lokalne_SSH.jpg  used on input line 1
-06.
+05.
 (pdftex.def)             Requested size: 341.43306pt x 91.64816pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8 <./komunikacja_PPTP.jpg>] [9 <./przekierowywanie_lokalne_SSH.jpg>]
-<przekierowywanie_zdalne_SSH.jpg, id=39, 572.1375pt x 153.57375pt>
+[8 <./komunikacja_PPTP.jpg>]
+<przekierowywanie_zdalne_SSH.jpg, id=36, 572.1375pt x 153.57375pt>
 File: przekierowywanie_zdalne_SSH.jpg Graphic file (type jpg)
 <use przekierowywanie_zdalne_SSH.jpg>
-Package pdftex.def Info: przekierowywanie_zdalne_SSH.jpg  used on input line 12
-0.
+Package pdftex.def Info: przekierowywanie_zdalne_SSH.jpg  used on input line 11
+9.
 (pdftex.def)             Requested size: 284.52756pt x 76.37425pt.
-<tryb_tunelowy_IPsec.jpg, id=40, 739.26187pt x 231.86626pt>
+<tryb_tunelowy_IPsec.jpg, id=37, 739.26187pt x 231.86626pt>
 File: tryb_tunelowy_IPsec.jpg Graphic file (type jpg)
 <use tryb_tunelowy_IPsec.jpg>
-Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 143.
-(pdftex.def)             Requested size: 341.43306pt x 107.08786pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10 <./przekierowywanie_zdalne_SSH.jpg>] [11 <./tryb_tunelowy_IPsec.jpg>]
-[12] [13] [14] [15] [16] [17] (praca_magisterska.lof)
+Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 142.
+(pdftex.def)             Requested size: 284.52756pt x 89.2387pt.
+ [9 <./przekierowywanie_lokalne_SSH.jpg> <./przekierowywanie_zdalne_SSH.jpg>] [
+10 <./tryb_tunelowy_IPsec.jpg>] [11] [12] [13]
+[14] [15] [16] (praca_magisterska.lof)
 \tf@lof=\write4
 \openout4 = `praca_magisterska.lof'.
 
- [18]
-(praca_magisterska.aux) ) 
+ [17] (praca_magisterska.aux) ) 
 Here is how much of TeX's memory you used:
  2834 strings out of 492970
  41258 string characters out of 3126593
- 114140 words of memory out of 3000000
+ 116140 words of memory out of 3000000
  6643 multiletter control sequences out of 15000+200000
  10353 words of font info for 30 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,25p,1847b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/font
-s/enc/dvips/pl/plit.enc}{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/fonts
-/enc/dvips/pl/plrm.enc}<C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/admin/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/pl/plbx10.pfb><C:/Users/admin/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/admin/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/admin/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb>
-Output written on praca_magisterska.pdf (18 pages, 268678 bytes).
+ 41i,6n,25p,1847b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.
+9/fonts/enc/dvips/pl/plit.enc}{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9
+/fonts/enc/dvips/pl/plrm.enc}<C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/admin/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/pl/plbx10.pfb><C:/Users/admin/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/admin/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/admin/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb>
+Output written on praca_magisterska.pdf (17 pages, 270963 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 86 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
