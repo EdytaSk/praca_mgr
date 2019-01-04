@@ -3,8 +3,6 @@
 \usepackage{amsmath} %dodatkowe komendy, np. \underset
 \usepackage{polski} %polskie litery
 \usepackage{graphicx} 
-\usepackage{amssymb}
-
 \linespread{1.3}
 \usepackage{geometry} 
 \newgeometry{tmargin=3cm, bmargin=3cm, lmargin=4.0cm, rmargin=2.5cm}
@@ -14,12 +12,9 @@
 
 \tableofcontents
 \newpage
-\part{Część teoretyczna}
-\section{Cel i zakres pracy}
 \quad Celem pracy jest przedstawienie algorytmów kryptograficznych oraz możliwych ataków. Następnie implementacja 2 algorytmów na systemie wbudowanym oraz porównanie ich wydajności w zależności od rozmiaru szyfrowanych danych.
-%2. Na początku powinien być rozdział pt. "Cel i zakres pracy", zazwyczaj krótki maksymalnie do dwóch stron, w którym powinien znaleźć się (a) cel pracy - krótko powód podjęcia się tej tematyki, ze wskazaniem na to co pracę wyróżnia na tle prac innych o podobnej tematyce, (b) zakres pracy - czyli coś na zasadzie: praca składa sie z części teoretycznej, będącej wprowadzeniem do ...., części praktycznej w której zaprezentowane własne implementacje. Później też mozna dodać: W rozdziale 1 jest to i to, rozdział 2 poświęcono ...
-%Po przeczytaniu tego rozdzialu powinno być wiadomo mniej więcej jaki jest własny wkład, dlatego tak ważne jest podkreślenie znaczenia części praktycznej. Część ta pełni rolę abstraktu.
-
+\newline
+\newline
 !!!!!!!!!!!!! będzie więcej opisu !!!!!!!!!!!!!!!!
 
 \newpage
@@ -42,18 +37,18 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 \item maskarada
 \newline Ataki maskarady powszechnie znane jako podszywanie się osoby atakującej pod konkretną osobą bądź ukrywanie tożsamości. Podszywanie się pod określoną osobę wykonano poprzez zamianę informacji adresowych IP osoby atakującej na adres IP osoby, za którą chciano być postrzeganą przy pomocy specjalnych narzędzi. Atakujący nie otrzyma wiadomości, którą wysłano w ruchu powrotnym. W celu przechwycenia pakietów z ruchu powrotnego, należało by połączyć maskowanie adresu IP z routingiem w wyniku czego otrzymano by atak DoS, który przesyca sieć danymi. Pakiety danych wysyłane od nadawcy do odbiorcy mogą zostać zmodyfikowane przez osobą atakującą podczas drogi sieciowej, którą wiadomość jest transportowana. W celu wyeliminowania łatwej możliwości zmodyfikowania wysyłanych danych wprowadzono sprawdzenie autentyczności wysyłanych pakietów między dwoma urządzeniami. Sprawdzenie autentyczności pakietów umożliwia funkcja haszująca. Pakiet wysyłany do nadawcy posiada swój hasz, który jest utworzymy z użyciem klucza, który posiada odbiorca i nadawca. W celu sprawdzenia autentyczności wiadomości porównujemy hasz na dwóch urządzeniach danego pakietu. Gdy pakiet został zmodyfikowany przez atakującego hasze nie będą się zgadzały. Najczęściej spotykanymi funkcjami haszowania jest SHA i MD5.
 \item człowiek w środku tzn. man in the middle
-\newline Dwie najczęściej występujące metody wykorzystane do ataku to: "powtórka ataku" oraz ataki typu "porwanie sesji". W przypadku sesji powtarzającej ataki osoba atakująca znajduję się między dwoma urządzeniami w celu przechwycenia pakietów informacji. Celem przechwycenia pakietów danych jest ich późniejsze wysłanie do odbiorcy w zmienionym przez atakującego stanie np. z wirusem. Na rysunku poniżej przedstawiono schemat ataku dla sesji powtarzających ataki. W pierwszej kolejności użytkownik Alice wysyła pakiet do użytkownika Bob. Następnie atakujący przy użyciu dobranej przez niego techniki przechwytuje pakiety danych, modyfikuje ich zawartość i jako złośliwe pakiety zostają przesłane do użytkownika Bob. Na rys.~\ref{Powtarzajace_ataki} przedstawiono schematycznie atak wykorzystujący technikę powtarzania sesji.
+\newline Dwie najczęściej występujące metody wykorzystane do ataku to: "powtórka ataku" oraz ataki typu "porwanie sesji". W przypadku sesji powtarzającej ataki osoba atakująca znajduję się między dwoma urządzeniami w celu przechwycenia pakietów informacji. Celem przechwycenia pakietów danych jest ich późniejsze wysłanie do odbiorcy w zmienionym przez atakującego stanie np. z wirusem. Na rysunku poniżej przedstawiono schemat ataku dla sesji powtarzających ataki. W pierwszej kolejności użytkownik Alice wysyła pakiet do użytkownika Bob. Następnie atakujący przy użyciu dobranej przez niego techniki przechwytuje pakiety danych, modyfikuje ich zawartość i jako złośliwe pakiety zostają przesłane do użytkownika Bob. Na rys. 1.1 przedstawiono schematycznie atak wykorzystujący technikę powtarzania sesji.
 \begin{figure}[h]
 \centering
 \includegraphics[width=7cm]{Powtarzajace_ataki.jpg}
-\caption{Człowiek w środku - powtarzanie sesji}\label{Powtarzajace_ataki}
+\caption{Człowiek w środku - powtarzanie sesji}
 \end{figure}
 
-\quad W atakach typu "porwanie sesji" atakujący dodaje się do połączenia między dwoma użytkownikami w celu przejęcia komunikacji między nimi. Na rysunku poniżej pokazano schematycznie atak typu "porwanie sesji". Użytkownik Alice wysyła wiadomość do użytkownika Bob, jednak na drodze odczytuje ją atakujący, który przez Alice jest traktowany jako użytkownik Bob. Następnie atakujący przesyła wiadomość do prawdziwego Boba i po otrzymaniu jego odpowiedzi przesyła ją do użytkownika Alice po zmodyfikowaniu. Atakujący dołącza się do połączeń w celu znalezienie luk z zabezpieczeniach. Na rys.~\ref{Porwanie_sesji} przedstawiono schemat ataku typu człowiek w środku - porwanie sesji.
+\quad W atakach typu "porwanie sesji" atakujący dodaje się do połączenia między dwoma użytkownikami w celu przejęcia komunikacji między nimi. Na rysunku poniżej pokazano schematycznie atak typu "porwanie sesji". Użytkownik Alice wysyła wiadomość do użytkownika Bob, jednak na drodze odczytuje ją atakujący, który przez Alice jest traktowany jako użytkownik Bob. Następnie atakujący przesyła wiadomość do prawdziwego Boba i po otrzymaniu jego odpowiedzi przesyła ją do użytkownika Alice po zmodyfikowaniu. Atakujący dołącza się do połączeń w celu znalezienie luk z zabezpieczeniach. Na rys. 1.2 przedstawiono schemat ataku typu człowiek w środku - porwanie sesji.
 \begin{figure}[h]
 \centering
 \includegraphics[width=8cm]{Porwanie_sesji.jpg}
-\caption{Człowiek w środku - porwanie sesji}\label{Porwanie_sesji}
+\caption{Człowiek w środku - porwanie sesji}
 \end{figure}
 
 \quad Prywatna wirtualna sieć zapewnia trzy etapy chroniące nas przed niepożądanymi atakami w wystarczający sposób. Pierwszym z nich jest uwierzytelnienie urządzenia, które chroni przed przechwytywaniem pakietów przez zamaskowane urządzenia atakujące. Następnym krokiem jest sprawdzenie integralności pakietów np. przy użyciu funkcji haszujących. Trzecim etapem jest zaszyfrowanie pakietów, co znacznie utrudnia przechwycenie rzeczywistych informacji.
@@ -64,76 +59,24 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 
 \subsection{Szyfry blokowe i strumieniowe}
 \subsubsection{Szyfry blokowe} 
-\quad Szyfry blokowe wykorzystywane są do szyfrowania i deszyfrowania. Danymi wejściowymi do szyfrowania jest blok danych, który przy użyciu klucza szyfrującego jest przekształcany w zaszyfrowany blok danych. Odszyfrowywanie przebiega w odwrotny sposób, zaszyfrowana blokowa wiadomość przy użyciu klucza jest transformowana do odszyfrowanej blokowej wiadomości. Szyfr blokowy jest bezpieczny do momentu kiedy klucz szyfrujący pozostaje tajny. Bez znajomości klucza niemożliwe staje się rozszyfrowanie wiadomości w satysfakcjonującym nas czasie. Im bardziej klucz jest przypadkowy tym ciężej złamać algorytm. Ważnymi parametrami szyfru blokowego jest rozmiar bloku i klucza od których to zależy bezpieczeństwo algorytmu. Powszechnie stosowanymi rozmiarami bloków są 64 i 128 bitowe bloki, zazwyczaj algorytm DES ma 64 bitowy blok danych, zaś AES 128 bitowy blok. W tabeli~\ref{bajt} ukazano, że rozmiar 1 bajta odpowiada rozmiarowi 8 bitów.
-\begin{table}[h]
+\quad Szyfry blokowe wykorzystywane są do szyfrowania i deszyfrowania. Danymi wejściowymi do szyfrowania jest blok danych, który przy użyciu klucza szyfrującego jest przekształcany w zaszyfrowany blok danych. Odszyfrowywanie przebiega w odwrotny sposób, zaszyfrowana blokowa wiadomość przy użyciu klucza jest transformowana do odszyfrowanej blokowej wiadomości. Szyfr blokowy jest bezpieczny do momentu kiedy klucz szyfrujący pozostaje tajny. Bez znajomości klucza niemożliwe staje się rozszyfrowanie wiadomości w satysfakcjonującym nas czasie. Im bardziej klucz jest przypadkowy tym ciężej złamać algorytm. Ważnymi parametrami szyfru blokowego jest rozmiar bloku i klucza od których to zależy bezpieczeństwo algorytmu. Powszechnie stosowanymi rozmiarami bloków są 64 i 128 bitowe bloki, zazwyczaj algorytm DES ma 64 bitowy blok danych, zaś AES 128 bitowy blok. 
+\begin{figure}[h]
 \centering
-\begin{tabular}{|r|r|r|c|c|l|l|l|}
-\hline
-1 bit & 1 bit & 1 bit & 1 bit & 1 bit & 1 bit & 1 bit & 1 bit\\
-\hline
-\multicolumn{8}{|c|}{1 bajt = 8 bitów}\\
-\hline
-\end{tabular}
-\caption{Rozmiar jednego bajta.}\label{bajt}
-\end{table}
+\includegraphics[width=12cm]{bajt.jpg}
+\caption{Tu umieszczasz opis}
+\end{figure}
 
 \quad Długość zaszyfrowanego bloku musi być optymalna, im większe bloki danych tym dłuższy zaszyfrowany tekst oraz użycie pamięci. Przy szyfrowaniu wiadomości która na długość 8 bitową, zaś blok szyfru ma długość 64 bity najpierw 8 bitowa wiadomość zostanie prze konwertowana na 64 bitowy blok. Następnie 64 bitowa wiadomość zostanie zaszyfrowana przy użyciu algorytmu tworząc zaszyfrowany tekst. Do przetworzenia szyfru blokowego o rozmiarze 64 bitów potrzebujemy 64 bitów pamięci w rejestrach procesora. W dzisiejszych czasach procesory z pamięcią 64 bitową nie są kosztowne, lecz im większy chcemy utworzyć blok szyfrowy tym lepszy procesor potrzebujemy, co może mieć znaczny wpływ na wysokie koszty.
 
 \subsubsection{Szyfry strumieniowe}
-\quad Szyfrowanie strumieniowe jest deterministyczne, co oznacza, że przy jednakowych danych wejściowych otrzymujemy taki sam wynik wyjściowy. Dzięki determinizmowi możliwe jest odszyfrowanie zaszyfrowanych strumieni bitów.  Szyfrowanie strumieniowe jest podobne w działaniu do deterministycznego generatora liczb pseudolosowych, z tą różnicą że szyfrowanie strumieniowe oprócz wartości wejściowej pobiera dodatkowo klucz, który zazwyczaj ma 128 lub 256 bitów długości. Strumieniem klucza jest pseudolosowym strumieniem bitów. Szyfrowanie strumieniowe polega na przekształceniu tekstu jawnego bit po bicie na szyfrogram. Elementy tworzące szyfrowanie strumieniowe to generator strumienia bitowy oraz element dodający np. operacja XOR. Operację XOR-owania przedstawiono w tabeli~\ref{xor}.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|r|c|l|}
-\hline
-p & q & p $\veebar$ q \\
-\hline
-0 & 0 & \multicolumn{1}{|c|}{0} \\
-\hline
-0 & 1 & \multicolumn{1}{|c|}{1} \\
-\hline
-1 & 0 & \multicolumn{1}{|c|}{1} \\
-\hline
-1 & 1 & \multicolumn{1}{|c|}{0} \\
-\hline
-\end{tabular}
-\caption{Tablica dla operacji XOR.}\label{xor}
-\end{table}
-Proces XOR-owania przebiega następująco:
-\begin{itemize}
-\item wiadomość jako tekst jawny \newline
-\begin{center}
-01001101
-\end{center}
-\item strumień klucza wytworzony przez generator strumienia klucza \newline
-\begin{center}
-00111000
-\end{center}
-\item XOR-owana wiadomość (szyfrogram) \newline
-\begin{center}
-01110101
-\end{center}
-\end{itemize}
-Szyfrowanie strumieniowe polega na operacji xor tekstu jawnego(P) ze strumieniem klucza(KS) w wyniku czego otrzymano zaszyfrowaną wiadomość(C).\newline
-\begin{center}
-C = P $\oplus$ KS
-\end{center}
-Proces deszyfrowania strumieniowego polega na operacji xor tekstu zaszyfrowanego(C) z strumieniem klucza(KS), w wyniku czego otrzymano tekst jawny(P).~\cite{stream_cipher}\newline
-\begin{center}
-P = C $\oplus$ KS
-\end{center}
 
 \subsection{Szyfry symetryczne i asymetryczne}
 
 \subsubsection{Szyfry symetryczne}
-\quad Do szyfrów symetrycznych zaliczamy zarówno szyfry blokowe jak i strumieniowe.
 \paragraph{DES}
 \paragraph{AES}
 \paragraph{IDEA}
 \paragraph{Blowfish}
-
-
-
 \subsubsection{Szyfry asymetryczne}
 \paragraph{RSA}
 \paragraph{Diffie-Hellman}
@@ -141,11 +84,11 @@ P = C $\oplus$ KS
 
 \subsection{Protokoły}
 \subsubsection{VPN with Point-to-Point Tunneling Protocol (PPTP)}
-\quad Protokół punkt - punt często wykorzystywany na urządzeniach z systemem operacyjnym Windows w celu utworzenia wirtualnej sieci prywatnej. Protokół PPTP został utworzony w czasach sieci wdzwanianej tzn. dial up, jednak bez problemu można z niego korzystać również dla sieci Ethernet, Internet czy cyfrowa sieć usług zintegrowanych(ISDN). Utworzenie sicei VPN w sieci TCP/IP umożliwia bezpieczny transfer danych między zdalnym komputerem, a serwerem. Do implementacji protokołu głównie jest wykorzystywany: klient PPTP, serwer NAS i serwer PPTP. Serwer NAS bezpiecznie przechowuje dane i udostępnia je tylko wybranym użytkownikom. Na rys.~\ref{PPTP} poniżej poglądowo przedstawiono komunikację z użyciem protokołu PPTP. 
+\quad Protokół punkt - punt często wykorzystywany na urządzeniach z systemem operacyjnym Windows w celu utworzenia wirtualnej sieci prywatnej. Protokół PPTP został utworzony w czasach sieci wdzwanianej tzn. dial up, jednak bez problemu można z niego korzystać również dla sieci Ethernet, Internet czy cyfrowa sieć usług zintegrowanych(ISDN). Utworzenie sicei VPN w sieci TCP/IP umożliwia bezpieczny transfer danych między zdalnym komputerem, a serwerem. Do implementacji protokołu głównie jest wykorzystywany: klient PPTP, serwer NAS i serwer PPTP. Serwer NAS bezpiecznie przechowuje dane i udostępnia je tylko wybranym użytkownikom. Na rys. 1.3 poniżej poglądowo przedstawiono komunikację z użyciem protokołu PPTP. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=12cm]{komunikacja_PPTP.jpg}
-\caption{Poglądowa komunikacja z użyciem protokołu PPTP}\label{PPTP}
+\caption{Poglądowa komunikacja z użyciem protokołu PPTP}
 \end{figure}
 
 Połączenie między zdalnym klientem, a siecią przebiega w określonych etapach:
@@ -156,11 +99,11 @@ Połączenie między zdalnym klientem, a siecią przebiega w określonych etapac
 Po ustanowieniu połączenia wysyłane są dwa pakiety danych: pakiet kontrolny, który zarządza tunelem i pakiet danych. Protokół PPTP jest zaaplikowany na drugim poziomie modelu odniesienia łączenia systemów otwartych (OSI), który jest warstwą łącza danych. Jego działanie jest oparte na protokole punkt-punkt (PPP), który umożliwia korzystanie z usług internetowych. Protokół PPTP umożliwia firmom tworzenie prywatnych tuneli w publicznym internecie. Organizacje nie muszą już instalować kosztownych linii do komunikacji, dzięki protokołowi PPTP mogą w bezpieczny sposób korzystać z sieci publicznej w celu przesyłania poufnych danych. Protokół PPTP wspiera szyfrowanie i kompresję danych. Protokół PPTP nie jest wykorzystywany powszechnie ze względu na podatność na ataki.~\cite{PPTP}
 \subsubsection{Secure Shell (SSH)}
 \quad SSH z angielskiego to Secure Shell, co znaczy bezpieczna powłoka. Protokół SSH został wprowadzony w celu ulepszenia istniejących już wcześniej protokołów takich jak telnet, ftp czy BSD r-commands(rlogin, rexec, rsh,rcp). Protokoły telnet, ftp czy rsh były wykorzystywane do transferu plików między hostem lokalnym i zdalnym. Wymienione protokoły nadal są w powszechnym użytku, tylko tam gdzie bezpieczeństwo nie jest istotnym czynnikiem. Istotną wadą usług telnet i ftp jest brak szyfrowania i uwierzytelniania podczas przesyłania pakietów. Dane wysyłane są w sposób jawny, które mogą być w łatwiejszy sposób przechwycone przez atakującego. Atakujący może uzyskać niezaszyfrowane hasło, które następnie może wykorzystać w łatwy sposób. Wszędzie tam gdzie bezpieczeństwo danych jest ważne stosujemy protokół SSH. 
-\quad SSH jest protokołem warstwy transportowej, która używa TCP do przenoszenia swoich pakietów. TCP jest protokołem sterowanie transmisją między dwoma urządzeniami. SSH umożliwia bezpieczne tunelowanie między lokalnym z zdalnym urządzeniem. Na poniższym rysunku przedstawiono komunikacje lokalnego klienta z powłoką serwera przy pomocy przekierowaniu portów. Na rys.~\ref{SSH} ukazano schemat lokalnego przekierowania portu dla protokołu SSH.
+\quad SSH jest protokołem warstwy transportowej, która używa TCP do przenoszenia swoich pakietów. TCP jest protokołem sterowanie transmisją między dwoma urządzeniami. SSH umożliwia bezpieczne tunelowanie między lokalnym z zdalnym urządzeniem. Na poniższym rysunku przedstawiono komunikacje lokalnego klienta z powłoką serwera przy pomocy przekierowaniu portów. Na rys. 1.4 ukazano schemat lokalnego przekierowania portu dla protokołu SSH.
 \begin{figure}[h]
 \centering
 \includegraphics[width=12cm]{przekierowywanie_lokalne_SSH.jpg}
-\caption{SSH lokalne przekierowywanie portu}\label{SSH}
+\caption{SSH lokalne przekierowywanie portu}
 \end{figure}
 
 Host A wykonuje bezpiecznie połączenie do hostu B poprzez port R. Połączenie hostu A z hostem B przebiega w następujący sposób:
@@ -169,12 +112,12 @@ Host A wykonuje bezpiecznie połączenie do hostu B poprzez port R. Połączenie
 \item SSH przekierowuje połączenie poprzez bezpieczny tunel do serwera SSH
 \item serwer SSH łączy się z hostem B poprzez port R
 \end{itemize}
-\newpage Port L na hoście A i port R na hoście B ustawione są w trybie ciągłego nasłuchiwania dla lokalnego połączenia. Na rys.~\ref{SSH_1} przedstawiono zdalne przekierowywanie portu z hosta B do hosta.
+\newpage Port L na hoście A i port R na hoście B ustawione są w trybie ciągłego nasłuchiwania dla lokalnego połączenia. Na rys. 1.5 przedstawiono zdalne przekierowywanie portu z hosta B do hosta.
  
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm]{przekierowywanie_zdalne_SSH.jpg}
-\caption{SSH zdalne przekierowywanie portu}\label{SSH_1}
+\caption{SSH zdalne przekierowywanie portu}
 \end{figure}
 
 Zdalne przekierowanie portu przebiega w następujących krokach:
@@ -193,12 +136,11 @@ Wykorzystując zjawisko tunelowania do prywatnej sieci wirtualnej tworzymy bezpi
 \item  protokół bezpieczeństwa danych ESP - zapewnia te same usługi co protokół AH i dodatkowo zapewnia bezpieczeństwo danych
 \item protokół wymiany klucza internetowego IKE - zapewnia zarządzanie kluczem, umożliwiając bezpiecznie skojarzenie dwóch hostów 
 \end{itemize}
-\quad Protokoły AH i ESP mogą działać w dwóch trybach: transportowym i tunelowym. Tryb transportowy zapewnia bezpieczeństwo dla warstw powyżej datagramu IP. Jest on inicjowany głównie między dwoma stałymi hostami, połączenie nie może być nawiązana między dwoma sieciami lub między siecią i hostem. Zaś tryb tunelowy zapewnia bezpieczeństwo całego datagramu IP. Jest on stosowany do połączenia tunelowego między dwoma sieciami lub między hostem, a siecią. Na rys.~\ref{IPsec} poniżej przedstawiono schematyczny tryb tunelowy dla protokołu IPsec.
-
+\quad Protokoły AH i ESP mogą działać w dwóch trybach: transportowym i tunelowym. Tryb transportowy zapewnia bezpieczeństwo dla warstw powyżej datagramu IP. Jest on inicjowany głównie między dwoma stałymi hostami, połączenie nie może być nawiązana między dwoma sieciami lub między siecią i hostem. Zaś tryb tunelowy zapewnia bezpieczeństwo całego datagramu IP. Jest on stosowany do połączenia tunelowego między dwoma sieciami lub między hostem, a siecią. Na rys. 1.6 poniżej przedstawiono schematyczny tryb tunelowy dla protokołu IPsec.
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm]{tryb_tunelowy_IPsec.jpg}
-\caption{Tryb tunelowy IPsec}\label{IPsec}
+\caption{Tryb tunelowy IPsec}
 \end{figure}
  
 \quad Sieć zdalna jest połączona z siecią domową za pośrednictwem sieci tunelowej, bramki bezpieczeństwa 1 i bramki bezpieczeństwa 2. Funkcją bramek jest szyfrowanie, deszyfrowanie, zapobieganie ponownego odtwarzania wysyłanych pakietów i uwierzytelnianie. Z poziomu hostów bramki bezpieczeństwa i tunelowanie jest niewidoczne. Występują trzy metody uwierzytelnienie danych z udziałem protokołu bezpieczeństwa IPsec: wstępnie uzgodnione klucze, klucze prywatne i publiczne RSA oraz certyfikaty. Nagłówki uwierzytelniające dla trybu transportowego i tunelowego różnią się od siebie. Powszechny pakiet IP wchodzący w wyższą warstwę TCP składa się z: nagłówka IP, nagłówka TCP i danych użytkownika. Dla trybu transportowego nagłówek uwierzytelnienia dla IPsec składa się z: nagłówka IP, nagłówka uwierzytelniającego, nagłówka TCP i danych użytkownika. W tunelowym trybie nagłówek uwierzytelniający kopiuje część wewnętrzną nagłówka IP, która jest używana do utworzenia nowego zewnętrznego nagłówka IP. Nagłówek składa się z: zewnętrznego nagłówka IP, nagłówka uwierzytelniającego, wewnętrznego nagłówka IP, nagłówka TCP i danych użytkownika.
@@ -265,7 +207,6 @@ Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostaw
 \subsubsection{CISC - Complex Instruction Set Computer}
 
 \newpage
-\part{Część praktyczna}
 \section{Aplikacja algorytmów kryptograficznych na systemie wbudowanym}
   ...
 \subsection{Charakterystyka systemu wbudowanego}
@@ -276,7 +217,7 @@ Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostaw
 \newpage
 \section{Wnioski}
 \section{Podsumowanie}
-%3. Później w podsumowaniu warto nawiązać do Celu i zakresu podkreślając co zostało zrobione, a co np. nie z podaniem powodów.
+
 \newpage
 \begin{thebibliography}{99}
 
@@ -298,11 +239,6 @@ Addison-Wesley Professional, 10.2008, chapter 8
 \emph{Cover image for Network Security Principles and Practices
 Network Security Principles and Practices},
 Cisco Press, 10.2002
-
-\bibitem{stream_cipher}O. Santos and J. Stuppi,
-\emph{
-Applied Cryptography: Protocols, Algorithms and Source Code in C, 20th Anniversary Edition},
-John Wiley and Sons, 03.2015, chapter 16
 
 \end{thebibliography}
 \newpage

@@ -1,11 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  9 DEC 2018 14:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.28)  4 JAN 2019 14:53
 entering extended mode
 **./praca_magisterska.tex
 (praca_magisterska.tex
 LaTeX2e <2018-04-01> patch level 5
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
+
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cl
+s"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo
+"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -19,36 +22,39 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) ("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\a4wide\a4wide.st
-y"
+)
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\a4wide\a4wide.s
+ty"
 Package: a4wide 1994/08/30
- ("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ntgclass\a4.sty"
+
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ntgclass\a4.sty
+"
 Package: a4 2004/04/15 v1.2g A4 based page layout
 ))
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
-y"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath
+.sty"
 Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.st
-y"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext
+.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
-"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.
+sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks14
 \ex@=\dimen103
 ))
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
-"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.
+sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen104
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
-"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.
+sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count88
@@ -89,10 +95,13 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\polski.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\polski.s
+ty"
 Package: polski 2017/05/04 v1.3.4 Polish language package
+
    Switching to Polish text encoding and Polish maths fonts.
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot4enc.def"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot4enc.def
+"
 File: ot4enc.def 2017/04/05 v2.0i Standard LaTeX file
 Now handling font encoding OT4 ...
 ... no UTF-8 mapping file for font encoding OT4
@@ -100,7 +109,8 @@ Now handling font encoding OT4 ...
 LaTeX Font Info:    Try loading font information for OT4+cmr on input line 360.
 
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\ot4cmr.fd"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\ot4cmr.f
+d"
 File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
@@ -135,50 +145,63 @@ LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 360.
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
-sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphi
+cx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.st
-y"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval
+.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
-sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphi
+cs.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.s
+ty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graph
-ics.cfg"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\gr
+aphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdfte
-x.def"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pd
+ftex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
-sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssym
+b.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfon
+ts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geomet
+ry.sty"
 Package: geometry 2018/04/16 v5.8 Page Geometry
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
-ty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpd
+f.sty"
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.
-sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifvt
+ex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.
-sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxet
+ex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count100
@@ -194,8 +217,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen121
 \Gm@dimlist=\toks20
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
-cfg"))
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geomet
+ry.cfg"))
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: 
 * paper: <default>
@@ -236,23 +259,23 @@ LaTeX Warning: Unused global option(s):
 (praca_magisterska.aux)
 \openout1 = `praca_magisterska.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
-ii"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf
+.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count103
 \scratchdimen=\dimen122
@@ -266,40 +289,40 @@ ii"
 \makeMPintoPDFobject=\count108
 \everyMPtoPDFconversion=\toks22
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
-base.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstop
+df-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infware
-rr.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infw
+arerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
-y"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext
+.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefin
-ekeys.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvde
+finekeys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds
-.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxc
+mds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )))
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
-.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvopti
+ons.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetke
-ys.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvse
+tkeys.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmd
-s.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etex
+cmds.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluate
-x.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\iflu
+atex.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -308,8 +331,8 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexc
-mds.sty"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdft
+excmds.sty"
 Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -359,122 +382,154 @@ G,.JBIG2,.JB2,.eps]
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (praca_magisterska.toc
-LaTeX Font Info:    Try loading font information for OML+plm on input line 2.
+LaTeX Font Info:    Try loading font information for OML+plm on input line 4.
 
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\omlplm.f
+d"
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 2.
-("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 4.
+
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\omsplsy.
+fd"
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 2.
- ("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\omxplex.fd
-"
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 4.
+
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\omxplex.
+fd"
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 2.
+(Font)              <10> on input line 4.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 2.
+(Font)              <7> on input line 4.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <5> on input line 2.
+(Font)              <5> on input line 4.
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.f
+d"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.f
+d"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+{C:/Users/eskwarsk/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
 \tf@toc=\write3
 \openout3 = `praca_magisterska.toc'.
 
- [1
 
+[2] [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 40.
 
-{C:/Users/admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 15--19
-
- []
-
-[2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 35.
- ("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+("C:\Users\eskwarsk\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 35.
- [3]
-<Powtarzajace_ataki.jpg, id=15, 406.51875pt x 250.68657pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+ [4]
+<Powtarzajace_ataki.jpg, id=18, 406.51875pt x 250.68657pt>
 File: Powtarzajace_ataki.jpg Graphic file (type jpg)
 <use Powtarzajace_ataki.jpg>
-Package pdftex.def Info: Powtarzajace_ataki.jpg  used on input line 43.
+Package pdftex.def Info: Powtarzajace_ataki.jpg  used on input line 48.
 (pdftex.def)             Requested size: 199.16928pt x 122.81836pt.
- [4]
-<Porwanie_sesji.jpg, id=19, 276.28218pt x 152.06813pt>
+ [5]
+<Porwanie_sesji.jpg, id=22, 276.28218pt x 152.06813pt>
 File: Porwanie_sesji.jpg Graphic file (type jpg)
 <use Porwanie_sesji.jpg>
-Package pdftex.def Info: Porwanie_sesji.jpg  used on input line 50.
+Package pdftex.def Info: Porwanie_sesji.jpg  used on input line 55.
 (pdftex.def)             Requested size: 227.62204pt x 125.2837pt.
- [5 <./Powtarzajace_ataki.jpg> <./Porwanie_sesji.jpg>]
-<bajt.jpg, id=23, 567.62062pt x 124.21407pt>
-File: bajt.jpg Graphic file (type jpg)
-<use bajt.jpg>
-Package pdftex.def Info: bajt.jpg  used on input line 65.
-(pdftex.def)             Requested size: 341.43306pt x 74.71854pt.
- [6 <./bajt.jpg>]
-<komunikacja_PPTP.jpg, id=27, 572.1375pt x 235.63031pt>
+ [6 <./Powtarzajace_ataki.jpg> <./Porwanie_sesji.jpg>] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+[8]
+<komunikacja_PPTP.jpg, id=35, 572.1375pt x 235.63031pt>
 File: komunikacja_PPTP.jpg Graphic file (type jpg)
 <use komunikacja_PPTP.jpg>
-Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 90.
+Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 144.
 (pdftex.def)             Requested size: 341.43306pt x 140.61703pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7]
-<przekierowywanie_lokalne_SSH.jpg, id=32, 572.1375pt x 153.57375pt>
+ [9 <./komunikacja_PPTP.jpg>]
+<przekierowywanie_lokalne_SSH.jpg, id=39, 572.1375pt x 153.57375pt>
 File: przekierowywanie_lokalne_SSH.jpg Graphic file (type jpg)
 <use przekierowywanie_lokalne_SSH.jpg>
 Package pdftex.def Info: przekierowywanie_lokalne_SSH.jpg  used on input line 1
-05.
+59.
 (pdftex.def)             Requested size: 341.43306pt x 91.64816pt.
+ [10 <./przekierowywanie_lokalne_SSH.jpg>]
+[11]
+<przekierowywanie_zdalne_SSH.jpg, id=46, 572.1375pt x 153.57375pt>
+File: przekierowywanie_zdalne_SSH.jpg Graphic file (type jpg)
+<use przekierowywanie_zdalne_SSH.jpg>
+Package pdftex.def Info: przekierowywanie_zdalne_SSH.jpg  used on input line 17
+3.
+(pdftex.def)             Requested size: 284.52756pt x 76.37425pt.
+<tryb_tunelowy_IPsec.jpg, id=47, 739.26187pt x 231.86626pt>
+File: tryb_tunelowy_IPsec.jpg Graphic file (type jpg)
+<use tryb_tunelowy_IPsec.jpg>
+Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 197.
+(pdftex.def)             Requested size: 284.52756pt x 89.2387pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8 <./komunikacja_PPTP.jpg>]
-<przekierowywanie_zdalne_SSH.jpg, id=36, 572.1375pt x 153.57375pt>
-File: przekierowywanie_zdalne_SSH.jpg Graphic file (type jpg)
-<use przekierowywanie_zdalne_SSH.jpg>
-Package pdftex.def Info: przekierowywanie_zdalne_SSH.jpg  used on input line 11
-9.
-(pdftex.def)             Requested size: 284.52756pt x 76.37425pt.
-<tryb_tunelowy_IPsec.jpg, id=37, 739.26187pt x 231.86626pt>
-File: tryb_tunelowy_IPsec.jpg Graphic file (type jpg)
-<use tryb_tunelowy_IPsec.jpg>
-Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 142.
-(pdftex.def)             Requested size: 284.52756pt x 89.2387pt.
- [9 <./przekierowywanie_lokalne_SSH.jpg> <./przekierowywanie_zdalne_SSH.jpg>] [
-10 <./tryb_tunelowy_IPsec.jpg>] [11] [12] [13]
-[14] [15] [16] (praca_magisterska.lof)
+[12 <./przekierowywanie_zdalne_SSH.jpg>] [13 <./tryb_tunelowy_IPsec.jpg>]
+[14] [15] [16] [17] [18] [19] (praca_magisterska.lof)
 \tf@lof=\write4
 \openout4 = `praca_magisterska.lof'.
 
- [17] (praca_magisterska.aux) ) 
+ [20]
+(praca_magisterska.aux) ) 
 Here is how much of TeX's memory you used:
- 2834 strings out of 492970
- 41258 string characters out of 3126593
- 116140 words of memory out of 3000000
- 6643 multiletter control sequences out of 15000+200000
- 10353 words of font info for 30 fonts, out of 3000000 for 9000
+ 3124 strings out of 492970
+ 45040 string characters out of 3125261
+ 116697 words of memory out of 3000000
+ 6915 multiletter control sequences out of 15000+200000
+ 12102 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,25p,1847b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.
-9/fonts/enc/dvips/pl/plit.enc}{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9
-/fonts/enc/dvips/pl/plrm.enc}<C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/admin/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/pl/plbx10.pfb><C:/Users/admin/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/admin/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/admin/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb>
-Output written on praca_magisterska.pdf (17 pages, 270963 bytes).
+ 41i,9n,27p,1847b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/eskwarsk/AppData/Local/Programs/MiKTeX 2.9/f
+onts/enc/dvips/pl/plit.enc}{C:/Users/eskwarsk/AppData/Local/Programs/MiKTeX 2.9
+/fonts/enc/dvips/pl/plms.enc}{C:/Users/eskwarsk/AppData/Local/Programs/MiKTeX 2
+.9/fonts/enc/dvips/pl/plrm.enc}<C:/Users/eskwarsk/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/eskwarsk/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/e
+skwarsk/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plbx10.pfb><C:/
+Users/eskwarsk/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plbx12.p
+fb><C:/Users/eskwarsk/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/p
+lr10.pfb><C:/Users/eskwarsk/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/pl/plsy10.pfb><C:/Users/eskwarsk/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/pl/plti10.pfb>
+Output written on praca_magisterska.pdf (20 pages, 265531 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
+ 104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
