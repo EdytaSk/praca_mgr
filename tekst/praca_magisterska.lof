@@ -1,6 +1,8 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Cz\IeC {\l }owiek w \IeC {\'s}rodku - powtarzanie sesji}}{6}
 \contentsline {figure}{\numberline {2}{\ignorespaces Cz\IeC {\l }owiek w \IeC {\'s}rodku - porwanie sesji}}{6}
-\contentsline {figure}{\numberline {3}{\ignorespaces Pogl\IeC {\k a}dowa komunikacja z u\IeC {\.z}yciem protoko\IeC {\l }u PPTP}}{9}
-\contentsline {figure}{\numberline {4}{\ignorespaces SSH lokalne przekierowywanie portu}}{10}
-\contentsline {figure}{\numberline {5}{\ignorespaces SSH zdalne przekierowywanie portu}}{12}
-\contentsline {figure}{\numberline {6}{\ignorespaces Tryb tunelowy IPsec}}{13}
+\contentsline {figure}{\numberline {3}{\ignorespaces Schematyczny proces szyfrowania symetrycznego.}}{9}
+\contentsline {figure}{\numberline {4}{\ignorespaces Schematyczny proces odszyfrowania symetrycznego.}}{9}
+\contentsline {figure}{\numberline {5}{\ignorespaces Pogl\IeC {\k a}dowa komunikacja z u\IeC {\.z}yciem protoko\IeC {\l }u PPTP}}{10}
+\contentsline {figure}{\numberline {6}{\ignorespaces SSH lokalne przekierowywanie portu}}{12}
+\contentsline {figure}{\numberline {7}{\ignorespaces SSH zdalne przekierowywanie portu}}{12}
+\contentsline {figure}{\numberline {8}{\ignorespaces Tryb tunelowy IPsec}}{13}

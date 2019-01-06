@@ -9,17 +9,18 @@
 \contentsline {subsubsection}{\numberline {2.4.2}Szyfry strumieniowe}{7}
 \contentsline {subsection}{\numberline {2.5}Szyfry symetryczne i asymetryczne}{8}
 \contentsline {subsubsection}{\numberline {2.5.1}Szyfry symetryczne}{8}
-\contentsline {paragraph}{DES}{9}
-\contentsline {paragraph}{AES}{9}
-\contentsline {paragraph}{IDEA}{9}
-\contentsline {paragraph}{Blowfish}{9}
-\contentsline {subsubsection}{\numberline {2.5.2}Szyfry asymetryczne}{9}
-\contentsline {paragraph}{RSA}{9}
-\contentsline {paragraph}{Diffie-Hellman}{9}
-\contentsline {paragraph}{Funkcje haszuj\IeC {\k a}ce}{9}
-\contentsline {subsection}{\numberline {2.6}Protoko\IeC {\l }y}{9}
-\contentsline {subsubsection}{\numberline {2.6.1}VPN with Point-to-Point Tunneling Protocol (PPTP)}{9}
-\contentsline {subsubsection}{\numberline {2.6.2}Secure Shell (SSH)}{10}
+\contentsline {paragraph}{szyfr Cezara}{9}
+\contentsline {paragraph}{DES}{10}
+\contentsline {paragraph}{AES}{10}
+\contentsline {paragraph}{IDEA}{10}
+\contentsline {paragraph}{Blowfish}{10}
+\contentsline {subsubsection}{\numberline {2.5.2}Szyfry asymetryczne}{10}
+\contentsline {paragraph}{RSA}{10}
+\contentsline {paragraph}{Diffie-Hellman}{10}
+\contentsline {paragraph}{Funkcje haszuj\IeC {\k a}ce}{10}
+\contentsline {subsection}{\numberline {2.6}Protoko\IeC {\l }y}{10}
+\contentsline {subsubsection}{\numberline {2.6.1}VPN with Point-to-Point Tunneling Protocol (PPTP)}{10}
+\contentsline {subsubsection}{\numberline {2.6.2}Secure Shell (SSH)}{11}
 \contentsline {subsubsection}{\numberline {2.6.3}IPsec}{12}
 \contentsline {subsubsection}{\numberline {2.6.4}Secure Socket Tunneling protocol Based on VPN}{14}
 \contentsline {subsubsection}{\numberline {2.6.5}L2TP}{15}

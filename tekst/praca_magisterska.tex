@@ -4,11 +4,16 @@
 \usepackage{polski} %polskie litery
 \usepackage{graphicx} 
 \usepackage{amssymb}
-
+\usepackage{tikz}
+\usetikzlibrary{fit}
+\usetikzlibrary{arrows}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
 \linespread{1.3}
 \usepackage{geometry} 
 \newgeometry{tmargin=3cm, bmargin=3cm, lmargin=4.0cm, rmargin=2.5cm}
-
+\tikzstyle{prostokat} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
 \begin{document}
 
@@ -126,12 +131,66 @@ P = C $\oplus$ KS
 \subsection{Szyfry symetryczne i asymetryczne}
 
 \subsubsection{Szyfry symetryczne}
-\quad Do szyfrów symetrycznych zaliczamy zarówno szyfry blokowe jak i strumieniowe.
+\quad Do szyfrów symetrycznych zaliczamy zarówno szyfry blokowe jak i strumieniowe. Szyfrowanie symetryczne używa jednego tajnego klucza do szyfrowania i odszyfrowywania wiadomości. W celu zaszyfrowania tekstu jawnego przy użyciu tajnego klucza szyfrujemy wiadomość do postaci tekstu zaszyfrowanego, co przedstawia rys.~\ref{szyfrowanie}.
+\newline
+\begin{figure}[!h]
+\begin{center}
+\begin{tikzpicture}
+\node (start) [prostokat] {szyfrowanie};
+\draw [arrow] (start) -- node[anchor=south] {tekst zaszyfrowany(C)} (6,0);
+\draw [arrow] (-6,0) -- node[anchor=south] {tekst jawny(P)} (start);
+\draw [arrow] (0,2) -- node[anchor=east] {klucz(K)} (start);
+\end{tikzpicture}
+\end{center}
+\caption{Schematyczny proces szyfrowania symetrycznego.}\label{szyfrowanie}
+\end{figure}
+
+Proces odszyfrowywania polega na przekształceniu tekstu zaszyfrowanego przy użyciu klucza w tekst jawny. Klucz jest taki sam dla procesu szyfrowania i odszyfrowywania. Na rys.~\ref{odszyfrowanie} ukazano schematycznie proces odszyfrowywania symetrycznego.
+\newline
+\begin{figure}[!h]
+\begin{center}
+\begin{tikzpicture}
+\node (start) [prostokat] {odszyfrowanie};
+\draw [arrow] (start) -- node[anchor=south] {tekst jawny(P)} (6,0);
+\draw [arrow] (-6,0) -- node[anchor=south] {tekst zaszyfrowany(C)} (start);
+\draw [arrow] (0,2) -- node[anchor=east] {klucz(K)} (start);
+\end{tikzpicture}
+\end{center}
+\caption{Schematyczny proces odszyfrowania symetrycznego.}\label{odszyfrowanie}
+\end{figure}
+
+Przed erą urządzeń obliczających używano szyfry klasyczne, które działały na literach, a nie na bitach. Do szyfrów klasycznych zaliczamy słynny szyfr Cezara.
+\paragraph{szyfr Cezara}
+\quad 
+
+Szyfr Cezara zawdzięcza swoją nazwę Juliuszowi Cezarowi, który to już w czasach starożytnych był wykorzystywany przez Juliusza. Szyfr służył do szyfrowania wiadomości poprzez zastąpienie litery literą o 3 miejsca przesuniętą względem wartości początkowej np. literę A zastąpiono literą C. W tabeli~\ref{cezar} ukazano obrazowo podstawienie z przesunięciem o trzy litery.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
+\hline
+podstawa & A & Ą & B & C & Ć & D & E & Ę & F & G & H & I & J & K & L & Ł & M \\
+\hline 
+\hline
+podstawienie & C & Ć & D & E & Ę & F & G & H & I & J & K & L & Ł & M & N & Ń & O \\
+\hline
+\hline
+podstawa & N & Ń & O & Ó & P & R & S & Ś & T & U & W & X & Y & Z & Ż & Ź & \\
+\hline 
+\hline
+podstawienie & Ó & P & R & S & Ś & T & U & W & X & Y & Z & Ż & Ź & A & Ą & B & \\
+\hline
+\end{tabular}
+\caption{Szyfr Cezara z przesunięciem o trzy litery.}~\label{cezar}
+\end{table}
+
+Szyfr ten nie zapewnia bezpieczeństwa, gdyż bez problemu i w krótkim czasie można przetestować wszystkie możliwe 33 opcje w przypadku języka polskiego. Szyfr ten uniemożliwia natychmiastowe zinterpretowanie wysyłanej wiadomości po jej ujrzeniu.
+
 \paragraph{DES}
+\quad Algorytm zwany standardem szyfrowania danych (ang. Data Encryption Standard DES) został opatentowany przez firmę IBM i rozpowszechniony w latach siedemdziesiątych do ogólnego użytku. 
 \paragraph{AES}
 \paragraph{IDEA}
 \paragraph{Blowfish}
-
 
 
 \subsubsection{Szyfry asymetryczne}
