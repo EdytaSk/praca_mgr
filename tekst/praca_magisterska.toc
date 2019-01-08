@@ -11,45 +11,45 @@
 \contentsline {subsubsection}{\numberline {2.5.1}Szyfry symetryczne}{8}
 \contentsline {paragraph}{szyfr Cezara}{9}
 \contentsline {paragraph}{DES}{10}
-\contentsline {paragraph}{AES}{10}
-\contentsline {paragraph}{IDEA}{10}
-\contentsline {paragraph}{Blowfish}{10}
-\contentsline {subsubsection}{\numberline {2.5.2}Szyfry asymetryczne}{10}
-\contentsline {paragraph}{RSA}{10}
-\contentsline {paragraph}{Diffie-Hellman}{10}
-\contentsline {paragraph}{Funkcje haszuj\IeC {\k a}ce}{10}
-\contentsline {subsection}{\numberline {2.6}Protoko\IeC {\l }y}{10}
-\contentsline {subsubsection}{\numberline {2.6.1}VPN with Point-to-Point Tunneling Protocol (PPTP)}{10}
-\contentsline {subsubsection}{\numberline {2.6.2}Secure Shell (SSH)}{11}
-\contentsline {subsubsection}{\numberline {2.6.3}IPsec}{12}
-\contentsline {subsubsection}{\numberline {2.6.4}Secure Socket Tunneling protocol Based on VPN}{14}
-\contentsline {subsubsection}{\numberline {2.6.5}L2TP}{15}
-\contentsline {section}{\numberline {3}Systemy wbudowane}{16}
-\contentsline {subsection}{\numberline {3.1}Budowa }{16}
-\contentsline {paragraph}{Rejestr}{16}
-\contentsline {paragraph}{Pami\IeC {\k e}\IeC {\'c}}{16}
-\contentsline {paragraph}{Porty wej\IeC {\'s}cia/wyj\IeC {\'s}cia}{16}
-\contentsline {paragraph}{Centralne jednostka obliczeniowa}{16}
-\contentsline {paragraph}{Dekoder instrukcji}{16}
-\contentsline {paragraph}{Jednostka arytmetyczno-logiczna ALU}{16}
-\contentsline {paragraph}{Rejestr SREG}{16}
-\contentsline {paragraph}{Zegar}{16}
-\contentsline {paragraph}{Magistrala}{16}
-\contentsline {paragraph}{Linie danych, adresowe i sterowania}{16}
-\contentsline {subsection}{\numberline {3.2}Architektura system\IeC {\'o}w wbudowanych}{16}
-\contentsline {subsubsection}{\numberline {3.2.1}Architektura harwardzka}{16}
-\contentsline {subsubsection}{\numberline {3.2.2}Zmodyfikowana architektura harwardzka}{16}
-\contentsline {subsubsection}{\numberline {3.2.3}Architektura von-Neumanna}{16}
-\contentsline {subsubsection}{\numberline {3.2.4}RISC - Recuded Instruction Set Computer}{16}
-\contentsline {subsubsection}{\numberline {3.2.5}CISC - Complex Instruction Set Computer}{16}
-\contentsline {part}{II\hspace {1em}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} praktyczna}{17}
-\contentsline {section}{\numberline {4}Aplikacja algorytm\IeC {\'o}w kryptograficznych na systemie wbudowanym}{17}
-\contentsline {subsection}{\numberline {4.1}Charakterystyka systemu wbudowanego}{17}
-\contentsline {subsection}{\numberline {4.2}Implementacja algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{17}
-\contentsline {subsubsection}{\numberline {4.2.1}Implementacja szyfru Cezara}{17}
-\contentsline {subsubsection}{\numberline {4.2.2}Implementacja szyfru AES}{17}
-\contentsline {subsection}{\numberline {4.3}Wyniki implementacji algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{17}
-\contentsline {section}{\numberline {5}Wnioski}{18}
-\contentsline {section}{\numberline {6}Podsumowanie}{18}
-\contentsline {section}{Literatura}{20}
-\contentsline {section}{Spis rysunk\IeC {\'o}w}{20}
+\contentsline {paragraph}{AES}{14}
+\contentsline {paragraph}{IDEA}{14}
+\contentsline {paragraph}{Blowfish}{14}
+\contentsline {subsubsection}{\numberline {2.5.2}Szyfry asymetryczne}{14}
+\contentsline {paragraph}{RSA}{14}
+\contentsline {paragraph}{Diffie-Hellman}{14}
+\contentsline {paragraph}{Funkcje haszuj\IeC {\k a}ce}{15}
+\contentsline {subsection}{\numberline {2.6}Protoko\IeC {\l }y}{15}
+\contentsline {subsubsection}{\numberline {2.6.1}VPN with Point-to-Point Tunneling Protocol (PPTP)}{15}
+\contentsline {subsubsection}{\numberline {2.6.2}Secure Shell (SSH)}{16}
+\contentsline {subsubsection}{\numberline {2.6.3}IPsec}{17}
+\contentsline {subsubsection}{\numberline {2.6.4}Secure Socket Tunneling protocol Based on VPN}{19}
+\contentsline {subsubsection}{\numberline {2.6.5}L2TP}{20}
+\contentsline {section}{\numberline {3}Systemy wbudowane}{21}
+\contentsline {subsection}{\numberline {3.1}Budowa }{21}
+\contentsline {paragraph}{Rejestr}{21}
+\contentsline {paragraph}{Pami\IeC {\k e}\IeC {\'c}}{21}
+\contentsline {paragraph}{Porty wej\IeC {\'s}cia/wyj\IeC {\'s}cia}{21}
+\contentsline {paragraph}{Centralne jednostka obliczeniowa}{21}
+\contentsline {paragraph}{Dekoder instrukcji}{21}
+\contentsline {paragraph}{Jednostka arytmetyczno-logiczna ALU}{21}
+\contentsline {paragraph}{Rejestr SREG}{21}
+\contentsline {paragraph}{Zegar}{21}
+\contentsline {paragraph}{Magistrala}{21}
+\contentsline {paragraph}{Linie danych, adresowe i sterowania}{21}
+\contentsline {subsection}{\numberline {3.2}Architektura system\IeC {\'o}w wbudowanych}{21}
+\contentsline {subsubsection}{\numberline {3.2.1}Architektura harwardzka}{21}
+\contentsline {subsubsection}{\numberline {3.2.2}Zmodyfikowana architektura harwardzka}{21}
+\contentsline {subsubsection}{\numberline {3.2.3}Architektura von-Neumanna}{21}
+\contentsline {subsubsection}{\numberline {3.2.4}RISC - Recuded Instruction Set Computer}{21}
+\contentsline {subsubsection}{\numberline {3.2.5}CISC - Complex Instruction Set Computer}{21}
+\contentsline {part}{II\hspace {1em}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} praktyczna}{22}
+\contentsline {section}{\numberline {4}Aplikacja algorytm\IeC {\'o}w kryptograficznych na systemie wbudowanym}{22}
+\contentsline {subsection}{\numberline {4.1}Charakterystyka systemu wbudowanego}{22}
+\contentsline {subsection}{\numberline {4.2}Implementacja algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{22}
+\contentsline {subsubsection}{\numberline {4.2.1}Implementacja szyfru Cezara}{22}
+\contentsline {subsubsection}{\numberline {4.2.2}Implementacja szyfru AES}{22}
+\contentsline {subsection}{\numberline {4.3}Wyniki implementacji algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{22}
+\contentsline {section}{\numberline {5}Wnioski}{23}
+\contentsline {section}{\numberline {6}Podsumowanie}{23}
+\contentsline {section}{Literatura}{25}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{25}
