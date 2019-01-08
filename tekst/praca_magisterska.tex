@@ -188,6 +188,183 @@ Szyfr ten nie zapewnia bezpieczeństwa, gdyż bez problemu i w krótkim czasie m
 
 \paragraph{DES}
 \quad Algorytm zwany standardem szyfrowania danych (ang. Data Encryption Standard DES) został opatentowany przez firmę IBM i rozpowszechniony w latach siedemdziesiątych do ogólnego użytku. 
+\quad Algorytm zwany standardem szyfrowania danych (ang. Data Encryption Standard DES) został opatentowany przez firmę IBM i rozpowszechniony w latach siedemdziesiątych do ogólnego użytku. Początkowo miał nazwę Lucyfer. We wczesnych latach siedemdziesiątych nie znane były nikomu algorytmy szyfrowania do momentu opatentowania przez firmę IBM algorytmu DES i jego rozpowszechnienie.
+Standard szyfrowania danych jest szyfrem blokowych, co znaczy że dane są dzielone na bloki o długości 64 bitów i następnie szyfrowane. Danymi wejściowymi algorytmu jest blok tekstu jawnego o długości 64 bitów, który po przetworzeniu przez algorytm przedstawiono jako szyfrogram. Długość klucza w 64 bitowym bloku wynosi 56 bitów, gdzie co ósmy bit jest bitem parzystości. Algorytm DES składa się z 16 cykli na
+
+
+W tabeli ~\ref{per_poczatkowa} przedstawiono tablicę dla permutacji początkowej algorytmu DES. Permutacji dokonuje się poprzez .......
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+58 & 50 & 42 & 34 & 26 & 18 & 10 & 2 & 60 & 52 & 44 & 36 & 28 & 20 & 12 & 4\\
+\hline
+62 & 54 & 46 & 38 & 30 & 22 & 14 & 6 & 64 & 56 & 48 & 40 & 32 & 24 & 16 & 8\\
+\hline
+57 & 49 & 41 & 33 & 25 & 17 & 9 & 1 & 59 & 51 & 43 & 35 & 27 & 19 & 11 & 3\\
+\hline
+61 & 53 & 45 & 37 & 29 & 21 & 13 & 5 & 63 & 55 & 47 & 39 & 31 & 23 & 15 & 7\\
+\hline
+\end{tabular}
+\caption{Permutacja początkowa DES.}~\label{per_poczatkowa}
+\end{table}
+ 
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+57 & 49 & 41 & 33 & 25 & 17 & 9 & 1 & 58 & 50 & 42 & 34 & 26 & 18\\
+\hline
+10 & 2 & 59 & 51 & 43 & 35 & 27 & 19 & 11 & 3 & 60 & 52 & 44 & 36\\
+\hline
+63 & 55 & 47 & 39 & 31 & 23 & 15 & 7 & 62 & 54 & 46 & 38 & 30 & 22\\
+\hline
+14 & 6 & 61 & 53 & 45 & 37 & 29 & 21 & 13 & 5 & 28 & 20 & 12 & 4 \\
+\hline
+\end{tabular}
+\caption{Permutacja klucza DES.}~\label{per_klucza}
+\end{table}
+ 
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+14 & 17 & 11 & 24 & 1 & 5 & 3 & 28 & 15 & 6 & 21 & 10\\
+\hline
+23 & 19 & 12 & 4 & 26 & 8 & 16 & 7 & 27 & 20 & 13 & 2\\
+\hline
+41 & 52 & 31 & 37 & 47 & 55 & 30 & 40 & 51 & 45 & 33 & 48\\
+\hline
+44 & 49 & 39 & 56 & 34 & 53 & 46 & 42 & 50 & 36 & 29 & 32\\
+\hline
+\end{tabular}
+\caption{Permutacja kompresji DES.}~\label{per_kompresji}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+32 & 1 & 2 & 3 & 4 & 5 & 4 & 5 & 6 & 7 & 8 & 9\\
+\hline
+8 & 9 & 10 & 11 & 12 & 13 & 12 & 13 & 14 & 15 & 16 & 17\\
+\hline
+16 & 17 & 18 & 19 & 20 & 21 & 20 & 21 & 22 & 23 & 24 & 25\\
+\hline
+24 & 25 & 26 & 27 & 28 & 29 & 28 & 29 & 30 & 31 & 32 & 1\\
+\hline
+\end{tabular}
+\caption{Permutacja rozszerzenia DES.}~\label{per_rozszerzenia}
+\end{table}
+
+
+Hacedimal to binary
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+\hline
+0000 & 0001 & 0010 & 0011 & 0100 & 0101 & 0110 & 0111\\
+\hline
+8 & 9 & A & B & C & D & E & F\\
+\hline
+1000 & 1001 & 1010 & 1011 & 1100 & 1101 & 1110 & 1111\\
+\hline
+\end{tabular}
+\caption{Reprezentacja binarna liczba heksadecymalnych.}~\label{binary}
+\end{table}
+
+Przykład użycia algorytmu DES.
+ 
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+wiadomość & witaj :)\\
+\hline
+wiadomość w postaci heksadecymalnej & 77 69 74 61 6A 20 3A 29\\
+\hline
+klucz & 43 23 66 A3 6B BB 53 C1\\
+\hline
+\end{tabular}
+\caption{Dane wejściowe algorytmu DES.}~\label{binary}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+klucz & 4 & 3 & 2 & 3 & 6 & 6 & A & 3\\
+\hline
+klucz w postaci binarnej & 0100 & 001\textbf{1} & 0010 & 001\textbf{1} & 0110 & 011\textbf{0} & 1010 & 001\textbf{1}\\ 
+\hline
+numer bitu & 0-3 & 4-7 & 8-11 & 12-15 & 16-19 & 20-23 & 24-28 & 29-32\\
+\hline
+\hline
+klucz & 6 & B & B & B & 5 & 3 & C & 1\\
+\hline
+klucz w postaci binarnej & 0110 & 101\textbf{1} & 1011 & 101\textbf{1} & 0101 & 001\textbf{1} & 1100 & 000\textbf{1}\\
+\hline
+numer bitu & 33-36 & 37-40 & 41-44 & 45-48 & 49-52 & 53-56 & 57-60 & 61-64\\
+\hline
+\end{tabular}
+\caption{Klucz w postaci binarnej.}~\label{klucz_to_binary}
+\end{table}
+
+Po przekształceniu heksadecymalnego klucza do postaci binarnej usuwamy bit parzystości z 64 bitowego bloku czyli 8, 16, 24, 32, 40, 48, 56 i 64 bit. W tabeli~\ref{klucz_to_binary} bit parzystości oznaczono pogrubioną kursywą.
+
+Następnie z wykorzystaniem tabeli~\ref{per_klucza} dokonujemy przestawienie bitów klucza, odszukano bit 57 klucza, który wynosi 0 i wpisano do nowo utworzonej tabeli ~\ref{tabela_podstawienia} w lewym górnym rogu. W tak przedstawiony sposób dokonano translacji dla dalszych bitów klucza, a wynik przedstawiono w tabeli~\ref{tabela_podstawienia}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+permutacja klucza & 57 & 49 & 41 & 33 & 25 & 17 & 9 & 1 & 58 & 50 & 42 & 34 & 26 & 18 & &\\
+\hline
+numer bitu & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+klucz w postaci binarnej & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1\\
+\hline
+klucz po permutacji & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 &&\\
+
+\hline
+\hline
+permutacja klucza & 10 & 2 & 59 & 51 & 43 & 35 & 27 & 19 & 11 & 3 & 60 & 52 & 44 & 36 &&\\
+\hline
+numer bitu & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31\\
+\hline
+klucz w postaci binarnej & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1\\
+\hline 
+klucz po permutacji & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 &&\\
+
+\hline
+\hline
+permutacja klucza & 63 & 55 & 47 & 39 & 31 & 23 & 15 & 7 & 62 & 54 & 46 & 38 & 30 & 22 &&\\
+\hline
+numer bitu & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & 45 & 46 & 47 \\
+\hline
+klucz w postaci binarnej & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 \\
+\hline
+klucz po permutacji & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 &&\\
+
+\hline
+\hline
+permutacja klucza & 14 & 6 & 61 & 53 & 45 & 37 & 29 & 21 & 13 & 5 & 28 & 20 & 12 & 4 &&\\
+\hline
+numer bitu & 48 & 49 & 50 & 51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 & 61 & 62 & 63\\
+\hline
+klucz w postaci binarnej & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1\\
+\hline 
+klucz po permutacji & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 &&\\
+\hline
+\end{tabular}
+\caption{Klucz w postaci binarnej.}~\label{tabela_podstawienia}
+\end{table}
+
 \paragraph{AES}
 \paragraph{IDEA}
 \paragraph{Blowfish}
