@@ -5,6 +5,7 @@
 \usepackage{graphicx} 
 \usepackage{amssymb}
 \usepackage{tikz}
+\usepackage{float}
 \usetikzlibrary{fit}
 \usetikzlibrary{arrows}
 \usepackage{tikz}
@@ -48,14 +49,14 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 \newline Ataki maskarady powszechnie znane jako podszywanie się osoby atakującej pod konkretną osobą bądź ukrywanie tożsamości. Podszywanie się pod określoną osobę wykonano poprzez zamianę informacji adresowych IP osoby atakującej na adres IP osoby, za którą chciano być postrzeganą przy pomocy specjalnych narzędzi. Atakujący nie otrzyma wiadomości, którą wysłano w ruchu powrotnym. W celu przechwycenia pakietów z ruchu powrotnego, należało by połączyć maskowanie adresu IP z routingiem w wyniku czego otrzymano by atak DoS, który przesyca sieć danymi. Pakiety danych wysyłane od nadawcy do odbiorcy mogą zostać zmodyfikowane przez osobą atakującą podczas drogi sieciowej, którą wiadomość jest transportowana. W celu wyeliminowania łatwej możliwości zmodyfikowania wysyłanych danych wprowadzono sprawdzenie autentyczności wysyłanych pakietów między dwoma urządzeniami. Sprawdzenie autentyczności pakietów umożliwia funkcja haszująca. Pakiet wysyłany do nadawcy posiada swój hasz, który jest utworzymy z użyciem klucza, który posiada odbiorca i nadawca. W celu sprawdzenia autentyczności wiadomości porównujemy hasz na dwóch urządzeniach danego pakietu. Gdy pakiet został zmodyfikowany przez atakującego hasze nie będą się zgadzały. Najczęściej spotykanymi funkcjami haszowania jest SHA i MD5.
 \item człowiek w środku tzn. man in the middle
 \newline Dwie najczęściej występujące metody wykorzystane do ataku to: "powtórka ataku" oraz ataki typu "porwanie sesji". W przypadku sesji powtarzającej ataki osoba atakująca znajduję się między dwoma urządzeniami w celu przechwycenia pakietów informacji. Celem przechwycenia pakietów danych jest ich późniejsze wysłanie do odbiorcy w zmienionym przez atakującego stanie np. z wirusem. Na rysunku poniżej przedstawiono schemat ataku dla sesji powtarzających ataki. W pierwszej kolejności użytkownik Alice wysyła pakiet do użytkownika Bob. Następnie atakujący przy użyciu dobranej przez niego techniki przechwytuje pakiety danych, modyfikuje ich zawartość i jako złośliwe pakiety zostają przesłane do użytkownika Bob. Na rys.~\ref{Powtarzajace_ataki} przedstawiono schematycznie atak wykorzystujący technikę powtarzania sesji.
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=7cm]{Powtarzajace_ataki.jpg}
 \caption{Człowiek w środku - powtarzanie sesji}\label{Powtarzajace_ataki}
 \end{figure}
 
 \quad W atakach typu "porwanie sesji" atakujący dodaje się do połączenia między dwoma użytkownikami w celu przejęcia komunikacji między nimi. Na rysunku poniżej pokazano schematycznie atak typu "porwanie sesji". Użytkownik Alice wysyła wiadomość do użytkownika Bob, jednak na drodze odczytuje ją atakujący, który przez Alice jest traktowany jako użytkownik Bob. Następnie atakujący przesyła wiadomość do prawdziwego Boba i po otrzymaniu jego odpowiedzi przesyła ją do użytkownika Alice po zmodyfikowaniu. Atakujący dołącza się do połączeń w celu znalezienie luk z zabezpieczeniach. Na rys.~\ref{Porwanie_sesji} przedstawiono schemat ataku typu człowiek w środku - porwanie sesji.
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{Porwanie_sesji.jpg}
 \caption{Człowiek w środku - porwanie sesji}\label{Porwanie_sesji}
@@ -70,7 +71,7 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 \subsection{Szyfry blokowe i strumieniowe}
 \subsubsection{Szyfry blokowe} 
 \quad Szyfry blokowe wykorzystywane są do szyfrowania i deszyfrowania. Danymi wejściowymi do szyfrowania jest blok danych, który przy użyciu klucza szyfrującego jest przekształcany w zaszyfrowany blok danych. Odszyfrowywanie przebiega w odwrotny sposób, zaszyfrowana blokowa wiadomość przy użyciu klucza jest transformowana do odszyfrowanej blokowej wiadomości. Szyfr blokowy jest bezpieczny do momentu kiedy klucz szyfrujący pozostaje tajny. Bez znajomości klucza niemożliwe staje się rozszyfrowanie wiadomości w satysfakcjonującym nas czasie. Im bardziej klucz jest przypadkowy tym ciężej złamać algorytm. Ważnymi parametrami szyfru blokowego jest rozmiar bloku i klucza od których to zależy bezpieczeństwo algorytmu. Powszechnie stosowanymi rozmiarami bloków są 64 i 128 bitowe bloki, zazwyczaj algorytm DES ma 64 bitowy blok danych, zaś AES 128 bitowy blok. W tabeli~\ref{bajt} ukazano, że rozmiar 1 bajta odpowiada rozmiarowi 8 bitów.
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|r|r|r|c|c|l|l|l|}
 \hline
@@ -87,7 +88,7 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 \subsubsection{Szyfry strumieniowe}
 \quad Szyfrowanie strumieniowe jest deterministyczne, co oznacza, że przy jednakowych danych wejściowych otrzymujemy taki sam wynik wyjściowy. Dzięki determinizmowi możliwe jest odszyfrowanie zaszyfrowanych strumieni bitów.  Szyfrowanie strumieniowe jest podobne w działaniu do deterministycznego generatora liczb pseudolosowych, z tą różnicą że szyfrowanie strumieniowe oprócz wartości wejściowej pobiera dodatkowo klucz, który zazwyczaj ma 128 lub 256 bitów długości. Strumieniem klucza jest pseudolosowym strumieniem bitów. Szyfrowanie strumieniowe polega na przekształceniu tekstu jawnego bit po bicie na szyfrogram. Elementy tworzące szyfrowanie strumieniowe to generator strumienia bitowy oraz element dodający np. operacja XOR. Operację XOR-owania przedstawiono w tabeli~\ref{xor}.
 
-\begin{table}[!h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|r|c|l|}
 \hline
@@ -104,6 +105,7 @@ p & q & p $\veebar$ q \\
 \end{tabular}
 \caption{Tablica dla operacji XOR.}\label{xor}
 \end{table}
+
 Proces XOR-owania przebiega następująco:
 \begin{itemize}
 \item wiadomość jako tekst jawny \newline
@@ -133,7 +135,7 @@ P = C $\oplus$ KS
 \subsubsection{Szyfry symetryczne}
 \quad Do szyfrów symetrycznych zaliczamy zarówno szyfry blokowe jak i strumieniowe. Szyfrowanie symetryczne używa jednego tajnego klucza do szyfrowania i odszyfrowywania wiadomości. W celu zaszyfrowania tekstu jawnego przy użyciu tajnego klucza szyfrujemy wiadomość do postaci tekstu zaszyfrowanego, co przedstawia rys.~\ref{szyfrowanie}.
 \newline
-\begin{figure}[!h]
+\begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}
 \node (start) [prostokat] {szyfrowanie};
@@ -147,7 +149,7 @@ P = C $\oplus$ KS
 
 Proces odszyfrowywania polega na przekształceniu tekstu zaszyfrowanego przy użyciu klucza w tekst jawny. Klucz jest taki sam dla procesu szyfrowania i odszyfrowywania. Na rys.~\ref{odszyfrowanie} ukazano schematycznie proces odszyfrowywania symetrycznego.
 \newline
-\begin{figure}[!h]
+\begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}
 \node (start) [prostokat] {odszyfrowanie};
@@ -165,9 +167,9 @@ Przed erą urządzeń obliczających używano szyfry klasyczne, które działał
 
 Szyfr Cezara zawdzięcza swoją nazwę Juliuszowi Cezarowi, który to już w czasach starożytnych był wykorzystywany przez Juliusza. Szyfr służył do szyfrowania wiadomości poprzez zastąpienie litery literą o 3 miejsca przesuniętą względem wartości początkowej np. literę A zastąpiono literą C. W tabeli~\ref{cezar} ukazano obrazowo podstawienie z przesunięciem o trzy litery.
 
-\begin{table}[!h]
+\begin{table}[H]
 \centering
-\begin{tabular}{|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
 podstawa & A & Ą & B & C & Ć & D & E & Ę & F & G & H & I & J & K & L & Ł & M \\
 \hline 
@@ -186,15 +188,40 @@ podstawienie & Ó & P & R & S & Ś & T & U & W & X & Y & Z & Ż & Ź & A & Ą & 
 
 Szyfr ten nie zapewnia bezpieczeństwa, gdyż bez problemu i w krótkim czasie można przetestować wszystkie możliwe 33 opcje w przypadku języka polskiego. Szyfr ten uniemożliwia natychmiastowe zinterpretowanie wysyłanej wiadomości po jej ujrzeniu.
 
-\paragraph{DES}
-\quad Algorytm zwany standardem szyfrowania danych (ang. Data Encryption Standard DES) został opatentowany przez firmę IBM i rozpowszechniony w latach siedemdziesiątych do ogólnego użytku. 
-\quad Algorytm zwany standardem szyfrowania danych (ang. Data Encryption Standard DES) został opatentowany przez firmę IBM i rozpowszechniony w latach siedemdziesiątych do ogólnego użytku. Początkowo miał nazwę Lucyfer. We wczesnych latach siedemdziesiątych nie znane były nikomu algorytmy szyfrowania do momentu opatentowania przez firmę IBM algorytmu DES i jego rozpowszechnienie.
-Standard szyfrowania danych jest szyfrem blokowych, co znaczy że dane są dzielone na bloki o długości 64 bitów i następnie szyfrowane. Danymi wejściowymi algorytmu jest blok tekstu jawnego o długości 64 bitów, który po przetworzeniu przez algorytm przedstawiono jako szyfrogram. Długość klucza w 64 bitowym bloku wynosi 56 bitów, gdzie co ósmy bit jest bitem parzystości. Algorytm DES składa się z 16 cykli na
+\paragraph{DES}\mbox{} \\
 
+Algorytm zwany standardem szyfrowania danych (ang. Data Encryption Standard DES) został opatentowany przez firmę IBM i rozpowszechniony w latach siedemdziesiątych do ogólnego użytku, początkowo miał nazwę Lucyfer. We wczesnych latach siedemdziesiątych nie znane były nikomu algorytmy szyfrowania do momentu opatentowania przez firmę IBM algorytmu DES i jego rozpowszechnienia. Standard szyfrowania danych jest szyfrem blokowych, co znaczy że dane są dzielone na bloki o długości 64 bitów i następnie szyfrowane. Danymi wejściowymi algorytmu jest blok tekstu jawnego o długości 64 bitów, który po przetworzeniu przez algorytm przedstawiono jako szyfrogram. Długość klucza w 64 bitowym bloku wynosi 56 bitów, gdzie co ósmy bit jest bitem parzystości. Algorytm DES składa się z 16 cykli, które są wykonywane jeden po drugim. Na schemacie XXX poglądowo pokazano schemat działania algorytmu DES. Algorytm można podzielić na poszczególne kroki:
 
-W tabeli ~\ref{per_poczatkowa} przedstawiono tablicę dla permutacji początkowej algorytmu DES. Permutacji dokonuje się poprzez .......
+\begin{itemize}
+\item zamiana 64 bitowego klucza decymalnego na postać binarną i usunięcie co ósmego bitu zwanego bitem parzystości w wyniku czego otrzymano 56 bitowy binarny klucz
+\item permutacja 56 bitowego klucza binarnego zgodnie z tabelą~\ref{per_klucza} dla każdego z 16 cykli
+\item podział 56 bitowego klucza na prawą o lewą część o długości 28 bitów i przesunięcie bitowe, które jest zależne od cyklu co ukazuje tabela~\ref{przesuniecie_klucza}
+\item permutacja kompresji klucza DES zgodnie z tabelą~\ref{per_kompresji} kompresująca klucz 56 bitowy do klucza 48 bitowego dla każdego z 16 cykli
+\item zamiana wiadomości tekstowej na wiadomość w postaci heksadecymalnej
+\item wiadomosc
+\end{itemize}
 
-\begin{table}[!h]
+W tabeli~\ref{hex_to_bin} ukazano reprezentację binarną liczą heksadecymalnych w systemie 64 bitowym.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+\hline
+0000 & 0001 & 0010 & 0011 & 0100 & 0101 & 0110 & 0111\\
+\hline
+8 & 9 & A & B & C & D & E & F\\
+\hline
+1000 & 1001 & 1010 & 1011 & 1100 & 1101 & 1110 & 1111\\
+\hline
+\end{tabular}
+\caption{Reprezentacja binarna liczb heksadecymalnych.}~\label{hex_to_bin}
+\end{table}
+
+W tabeli~\ref{per_poczatkowa} przedstawiono tablicę dla permutacji początkowej wiadomości dla algorytmu DES. Permutacji dokonuje się poprzez zamianę miejscami bitów zgodnie z tabelą permutacji otrzymując w wyniku przekształcone dane wejściowe.
+
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -207,10 +234,12 @@ W tabeli ~\ref{per_poczatkowa} przedstawiono tablicę dla permutacji początkowe
 61 & 53 & 45 & 37 & 29 & 21 & 13 & 5 & 63 & 55 & 47 & 39 & 31 & 23 & 15 & 7\\
 \hline
 \end{tabular}
-\caption{Permutacja początkowa DES.}~\label{per_poczatkowa}
+\caption{Permutacja początkowa DES.}\label{per_poczatkowa}
 \end{table}
- 
-\begin{table}[!h]
+
+Tabela~\ref{per_klucza} ukazuje permutacje klucza 56 bitowego, który powstaje z klucza 64 bitowego w wyniku usunięcia co ósmego bitu parzystości.%Czemu usuwamy bit parzystości?
+
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -226,7 +255,21 @@ W tabeli ~\ref{per_poczatkowa} przedstawiono tablicę dla permutacji początkowe
 \caption{Permutacja klucza DES.}~\label{per_klucza}
 \end{table}
  
-\begin{table}[!h]
+Przesunięcia bitowe dwóch kluczy 28 bitowych tworzących wejściowy klucz 56 bitowy dla każdego cyklu zależą od numeru cyklu, co ukazano w tabeli~\ref{przesuniecie_klucza}.
+
+\begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+cykl&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16\\
+\hline
+liczba przesunięć&1&1&2&2&2&2&2&2&1&2&2&2&2&2&2&1\\ \hline
+\end{tabular}
+\caption{Liczba przesunięć klucza w zależności od cyklu.}\label{przesuniecie_klucza}
+\end{table} 
+ 
+Po operacji przesunięcia bitowego klucza 56 bitowego wykonano kompresję klucza do rozmiaru 48 bitów zgodnie z tabelą~\ref{per_kompresji}.
+ 
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -242,8 +285,9 @@ W tabeli ~\ref{per_poczatkowa} przedstawiono tablicę dla permutacji początkowe
 \caption{Permutacja kompresji DES.}~\label{per_kompresji}
 \end{table}
 
+Tabela~\ref{per_rozszerzenia} jest stosowana do operacji rozszerzenia wiadomości. Wiadomość 64 bitowa zostaje podzielona na dwa 32 bitowe bloki, które następnie ulegają rozszerzeniu do dwóch 48 bitowych bloków zgodnie z tabelą~\ref{per_rozszerzenia} permutacji rozszerzenia. Rozszerzone 48 bitowe bloki zawierają powtórzenia bitów, rozszerzenie 32 do 48 bitów powoduję wystąpienie 16 bitów które nie są unikatowe. Oznacza to, że 8 bitów występuje podwójnie w szyfrowanej wiadomości.
 
-\begin{table}[!h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -259,239 +303,9 @@ W tabeli ~\ref{per_poczatkowa} przedstawiono tablicę dla permutacji początkowe
 \caption{Permutacja rozszerzenia DES.}~\label{per_rozszerzenia}
 \end{table}
 
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-\hline
-16 &	7 &	20& 	21& 	29& 	12& 	28& 	17\\ \hline
-1 &	15& 	23& 	26& 	5& 	18& 	31& 	10\\ \hline
-2 &	8 &	24 &	14& 	32& 	27& 	3 &	9\\ \hline
-19 	&13 &	30& 	6& 	22& 	11& 	4& 	25\\ \hline
-\end{tabular}
-\caption{Permutacja bloku P.}~\label{blok_P}
-\end{table}
+Po dokonaniu permutacji rozszerzenia wiadomości dokonano operacji xor otrzymanej wiadomości z obliczonym kluczem dla danego cyklu. Otrzymany wynik podzielono na 8 bloków 6 bitowych, które wykorzystano do dalszych obliczeń z pomocą tabeli~\ref{s_bloki} s bloków. Z każdego bloku 6 bitowego odczytano wartość pierwszego i ostatniego bitu, wartość 00 oznacza wykorzystanie wiersza pierwszego z danego bloku, 01 oznacza wiersz drugi, 10 oznacza wiersz trzeci, natomiast 11 oznacza wiersz czwarty. Wartości od bita drugiego do piątego zamieniamy na postać heksadecymalną i odczytujemy dla niej wartość z danego bloku np. jeśli pierwszy i ostatni bit to 00 to wartość odczytano z wiersza pierwszego, gdy bity między 2-5 pozycją to 1111 oznacza to ostatnią wartość z wiersza pierwszego czyli 7.
 
-Hacedimal to binary
-
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-\hline
-0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
-\hline
-0000 & 0001 & 0010 & 0011 & 0100 & 0101 & 0110 & 0111\\
-\hline
-8 & 9 & A & B & C & D & E & F\\
-\hline
-1000 & 1001 & 1010 & 1011 & 1100 & 1101 & 1110 & 1111\\
-\hline
-\end{tabular}
-\caption{Reprezentacja binarna liczba heksadecymalnych.}~\label{binary}
-\end{table}
-
-
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!  Przykład użycia algorytmu DES.
- 
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-\hline
-wiadomość & witaj :)\\
-\hline
-wiadomość w postaci heksadecymalnej & 77 69 74 61 6A 20 3A 29\\
-\hline
-klucz & 43 23 66 A3 6B BB 53 C1\\
-\hline
-\end{tabular}
-\caption{Dane wejściowe algorytmu DES.}~\label{binary}
-\end{table}
-
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-\hline
-klucz & 4 & 3 & 2 & 3 & 6 & 6 & A & 3\\
-\hline
-klucz w postaci binarnej & 0100 & 001\textbf{1} & 0010 & 001\textbf{1} & 0110 & 011\textbf{0} & 1010 & 001\textbf{1}\\ 
-\hline
-numer bitu & 0-3 & 4-7 & 8-11 & 12-15 & 16-19 & 20-23 & 24-28 & 29-32\\
-\hline
-\hline
-klucz & 6 & B & B & B & 5 & 3 & C & 1\\
-\hline
-klucz w postaci binarnej & 0110 & 101\textbf{1} & 1011 & 101\textbf{1} & 0101 & 001\textbf{1} & 1100 & 000\textbf{1}\\
-\hline
-numer bitu & 33-36 & 37-40 & 41-44 & 45-48 & 49-52 & 53-56 & 57-60 & 61-64\\
-\hline
-\end{tabular}
-\caption{Klucz w postaci binarnej.}~\label{klucz_to_binary}
-\end{table}
-
-Po przekształceniu heksadecymalnego klucza do postaci binarnej usuwamy bit parzystości z 64 bitowego bloku czyli 8, 16, 24, 32, 40, 48, 56 i 64 bit. W tabeli~\ref{klucz_to_binary} bit parzystości oznaczono pogrubioną kursywą.
-
-Następnie z wykorzystaniem tabeli~\ref{per_klucza} dokonujemy przestawienie bitów klucza, odszukano bit 57 klucza, który wynosi 0 i wpisano do nowo utworzonej tabeli ~\ref{tabela_podstawienia} w lewym górnym rogu. W tak przedstawiony sposób dokonano translacji dla dalszych bitów klucza, a wynik przedstawiono w tabeli~\ref{tabela_podstawienia}.
-
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-permutacja klucza & 57 & 49 & 41 & 33 & 25 & 17 & 9 & 1 & 58 & 50 & 42 & 34 & 26 & 18 & &\\
-\hline
-numer bitu & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
-\hline
-klucz binarny & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1\\
-\hline
-klucz po permutacji & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 &&\\
-
-\hline
-\hline
-permutacja klucza & 10 & 2 & 59 & 51 & 43 & 35 & 27 & 19 & 11 & 3 & 60 & 52 & 44 & 36 &&\\
-\hline
-numer bitu & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31\\
-\hline
-klucz binarny & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1\\
-\hline 
-klucz po permutacji & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 &&\\
-
-\hline
-\hline
-permutacja klucza & 63 & 55 & 47 & 39 & 31 & 23 & 15 & 7 & 62 & 54 & 46 & 38 & 30 & 22 &&\\
-\hline
-numer bitu & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & 45 & 46 & 47 \\
-\hline
-klucz binarny & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 \\
-\hline
-klucz po permutacji & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 &&\\
-
-\hline
-\hline
-permutacja klucza & 14 & 6 & 61 & 53 & 45 & 37 & 29 & 21 & 13 & 5 & 28 & 20 & 12 & 4 &&\\
-\hline
-numer bitu & 48 & 49 & 50 & 51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 & 61 & 62 & 63\\
-\hline
-klucz binarny & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1\\
-\hline 
-klucz po permutacji & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 &&\\
-\hline
-\end{tabular}
-\caption{Klucz w postaci binarnej.}~\label{tabela_podstawienia}
-\end{table}
-
-
-Klucz po permutacji z postawi 64 bitowej redukuje się do postaci 56 bitowej i dzieli na dwie części: prawą i lewą. 
-
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|}
-\hline
-1101 0100 0011 1110 0110 0000 0011\\
-\hline
-1111 1011 0111 1111 0000 0100 0000\\
-\hline
-\end{tabular}
-\caption{Obliczony klucz w postaci 56 bitowej.}
-\end{table}
-
-* przesunięcie bitowe klucza o 1 w lewo
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|}
-\hline
-1010 1000 0111 1100 1100 0000 0111\\
-\hline
-1111 0110 1111 1110 0000 1000 0001\\
-\hline
-\end{tabular}
-\caption{Obliczony klucz w postaci 56 bitowej.}
-\end{table}
-
-* Permutacja kompresji klucza DES (transpozycja tabeli~\ref{per_kompresji} kompresji klucza z 56 bitami przesuniętego klucza.
-
-\begin{table}[!h]
-\centering
-\begin{tabular}{ | p{3cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} |}
-\hline
-permutacja kompresji DES & 14 17 11 24  & 1 5 3 28 &  15 6 21 10 & 23  19 12 4 & 26 8 16 7 & 27 20 13 2\\ \hline
-bitowy klucz 56bitowy po permutacji & 1110 & 1111 & 0001 & 0000 & 1000 & 1010 \\ \hline
-heksadecymalny klucz 56bitowy po permutacji & E & F & 1 & 0 & 8 & A\\
-\hline \hline
-permutacja kompresji DES & 41 52 31 37 & 47 55 30 40 & 51 45 33 48 & 44 49 39 56 & 34 53 46 42 & 50 36 29 32\\ \hline
-bitowy klucz 56bitowy po permutacji & 0010 & 0011 & 0000 & 0111 & 1001 & 0011\\ \hline
-heksadecymalny klucz 56bitowy po permutacji & 2 & 3 & 0 & 7 & 9 & 3\\ 
-\hline
-\end{tabular}
-\caption{Obliczony klucz w postaci 56 bitowej.}
-\end{table}
-
-* Obliczony klucz w pierwszym etapie to EF108A230793.
-
-!!!!!!!!!! Obliczenie permutacji początkowej 
-
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-\hline
-wiadomość heksadecymalna & 7 & 7 & 6 & 9 & 7 & 4 & 6 & 1\\ \hline
-wiadomość binarna & 0111 & 0111 & 0110 & 1001 & 0111 & 0100 & 0110 & 0001\\ \hline
-numer bitu & 1-4 & 5-8 & 9-12 & 13-16 & 17-20 & 21-24 & 25-28 & 29-32\\ \hline
-wiadomość heksadecymalna & 6 & A & 2 & 0 & 3 & A & 2 & 9\\ \hline
-wiadomość binarna & 0110 & 1010 & 0010 & 0000 & 0011 & 1010 & 0010 & 1001\\ \hline
-numer bitu & 33-36 & 37-40 & 41-44 & 44-48 & 49-52 & 53-56 & 57-60 & 61-64\\ \hline
-\end{tabular}
-\caption{Wiadomość przedstawiona w postaci binarnej i heksadecymalnej.}
-\end{table}
-
-
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-\hline
-wiadomość binarna po permutacji & 0001 & 1111 & 0100 & 0101 & 0000 & 0101 & 1000 & 1011\\ \hline
-wiadomość heksadecymalna po permutacji & 1 & F & 4 & 5 & 0 & 5 & 8 & B\\ \hline
-wiadomość binarna po permutacji & 0000 & 0000 & 1111 & 1111 & 1101 & 0010 & 0101 & 0001\\ \hline
-wiadomość heksadecymalna po permutacji & 0 & 0 & F & F & D & 2 & 5 & 1\\ \hline
-
-\end{tabular}
-\caption{Transpozycja wiadomości w postaci binarnej z tabelą permutacji początkowej.}
-\end{table}
-
-
-
-Lewa strona wiadomości to L = 1F45058B, prawa strona P = 00FFD251. 
-Dla rundy pierwszej algorytmu lewą stroną wiadomości zostaje prawa część wiadomości, natomiast prawą część wiadomości obliczamy następująco:
-*  prawa część wiadomości podlega transpozycji zgodnie z tabelą permutacji rozszerzenia 
-* operacja XOR wiadomości otrzymanej w wyniku transpozycji z obliczonym kluczem EF108A230793.
-
-
-
-* prawa część wiadomości podlega transpozycji zgodnie z tabelą permutacji rozszerzenia dając wynik w tabeli poniżej.
-\begin{table}[!h]
-\begin{tabular}{|c|c|}
-\hline
-prawa część wiadomości & 00FFD251\\ \hline
-& 0000 0000 1111 1111 1101 0010 0101 0001\\ \hline
-permutacja rozszerzenia & 100000 000001 011111 111111 111010 100100 001010 100010\\ \hline
-\end{tabular}
-\end{table}
-
-
-\begin{table}[!h]
-\begin{tabular}{|c|c|}
-\hline
-wiadomość & 100000 000001 011111 111111 111010 100100 001010 100010\\ \hline
-klucz & 111011 110001 000010 001010 001000 110000 011110 010011\\ \hline
-XOR & 011011 110000 011101 110101 110010 010100 010100 110001\\ 
-\hline
-\end{tabular}
-\caption{XOR wiadomości po permutacji rozszerzenia z kluczem.}\label{xor}
-\end{table}
-
-!!!!!!!! Podstawienie w S-blokach
-
-W tabeli
-\begin{table}[!h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -540,43 +354,38 @@ W tabeli
 \caption{Struktury S bloków.}\label{s_bloki}
 \end{table}
 
-Wynik operacji XOR z tabeli ~\ref{xor} podzielono na S1 = 011011, S2 = 110000, S3 = 011101, S4 = 110101, S5 = 110010, S6 = 010100, S7 = 010100 i S8 = 110001. Wartości S bloków odczytano z użyciem tabeli~\ref{s_bloki}. Pierwszy w ostatni bit bloku oznacza rząd z tabeli~\ref{s_bloki} S-bloków, wartości 00 oznaczają wiersz 0, 01 oznaczają wiersz 1, 10 oznaczają wiersz 2, zaś 11 oznaczają wiersz 3. Dla wartości S1 pierwszy i ostatni bit bloku S1 = 01, co znaczy korzystanie z wiersza 1 S bloku 1. Następnie cztery bity między 1-5 bitem zmieniono na wartość decymalną. Dla S1 postać binarna 1101 wynosi 13 w postaci decymalnej, z tabeli~\ref{s_bloki} odczytujemy z wiersza 1, kolumny 13 wartość  5, więc S1 = 9. W sposób analogiczny odczytano pozostałe wartości S-bloków, które przedstawiono poniżej:
- 
-S1 = 5, S2 = 12, S3 = 15, S4 = 5, S5 = 9, S6 = 3, S7 = 9,S8 = 15.
 
-\begin{table}[!h]
+
+\begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|} 
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
-decymalnie &5 &12& 15& 5& 9& 3& 9& 15\\ \hline
-binarnie & 0101& 1100& 1111& 0101& 1001& 0011& 1001& 1111\\ \hline
-numer bitu &1-4 &5-8& 9-12& 13-16& 17-20& 21-24& 25-28& 29-32\\ \hline
+16 &	7 &	20& 	21& 	29& 	12& 	28& 	17\\ \hline
+1 &	15& 	23& 	26& 	5& 	18& 	31& 	10\\ \hline
+2 &	8 &	24 &	14& 	32& 	27& 	3 &	9\\ \hline
+19 	&13 &	30& 	6& 	22& 	11& 	4& 	25\\ \hline
 \end{tabular}
+\caption{Permutacja bloku P.}~\label{blok_P}
 \end{table}
 
 
 
-Dokonujemy transpozycji wyjścia S bloku z tabelą permutacji P-bloku~\ref{blok_P} w wyniku czego otrzymano: 1010 1111 0010 1011 1011 1001 0011 0111. Otrzymaną wartość poddano operacji XOR z lewą połową wiadomości (1F45058B), co przedstawiono jako (1010 1111 0010 1011 1011 1001 0011 0111) $/oplus$ (0001 1111 0100 0101 0000 0101 1000 1011) = 1011 0000 0110 1110 1011 1100 1011 1100, co w postaci heksadecymalnej daje wartość B06EBCB3.
-
-#######
-
-Wartość prawej strony rundy pierwszej wynosi B06EBCB3. 
 
 
-\paragraph{AES}
-\paragraph{IDEA}
-\paragraph{Blowfish}
+\paragraph{AES} \mbox{} \\
+\paragraph{IDEA} \mbox{} \\
+\paragraph{Blowfish} \mbox{} \\
 
 
 \subsubsection{Szyfry asymetryczne}
-\paragraph{RSA}
-\paragraph{Diffie-Hellman}
-\paragraph{Funkcje haszujące}
+\paragraph{RSA} \mbox{} \\
+\paragraph{Diffie-Hellman} \mbox{} \\
+\paragraph{Funkcje haszujące} \mbox{} \\
 
 \subsection{Protokoły}
 \subsubsection{VPN with Point-to-Point Tunneling Protocol (PPTP)}
 \quad Protokół punkt - punt często wykorzystywany na urządzeniach z systemem operacyjnym Windows w celu utworzenia wirtualnej sieci prywatnej. Protokół PPTP został utworzony w czasach sieci wdzwanianej tzn. dial up, jednak bez problemu można z niego korzystać również dla sieci Ethernet, Internet czy cyfrowa sieć usług zintegrowanych(ISDN). Utworzenie sicei VPN w sieci TCP/IP umożliwia bezpieczny transfer danych między zdalnym komputerem, a serwerem. Do implementacji protokołu głównie jest wykorzystywany: klient PPTP, serwer NAS i serwer PPTP. Serwer NAS bezpiecznie przechowuje dane i udostępnia je tylko wybranym użytkownikom. Na rys.~\ref{PPTP} poniżej poglądowo przedstawiono komunikację z użyciem protokołu PPTP. 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{komunikacja_PPTP.jpg}
 \caption{Poglądowa komunikacja z użyciem protokołu PPTP}\label{PPTP}
@@ -591,7 +400,7 @@ Po ustanowieniu połączenia wysyłane są dwa pakiety danych: pakiet kontrolny,
 \subsubsection{Secure Shell (SSH)}
 \quad SSH z angielskiego to Secure Shell, co znaczy bezpieczna powłoka. Protokół SSH został wprowadzony w celu ulepszenia istniejących już wcześniej protokołów takich jak telnet, ftp czy BSD r-commands(rlogin, rexec, rsh,rcp). Protokoły telnet, ftp czy rsh były wykorzystywane do transferu plików między hostem lokalnym i zdalnym. Wymienione protokoły nadal są w powszechnym użytku, tylko tam gdzie bezpieczeństwo nie jest istotnym czynnikiem. Istotną wadą usług telnet i ftp jest brak szyfrowania i uwierzytelniania podczas przesyłania pakietów. Dane wysyłane są w sposób jawny, które mogą być w łatwiejszy sposób przechwycone przez atakującego. Atakujący może uzyskać niezaszyfrowane hasło, które następnie może wykorzystać w łatwy sposób. Wszędzie tam gdzie bezpieczeństwo danych jest ważne stosujemy protokół SSH. 
 \quad SSH jest protokołem warstwy transportowej, która używa TCP do przenoszenia swoich pakietów. TCP jest protokołem sterowanie transmisją między dwoma urządzeniami. SSH umożliwia bezpieczne tunelowanie między lokalnym z zdalnym urządzeniem. Na poniższym rysunku przedstawiono komunikacje lokalnego klienta z powłoką serwera przy pomocy przekierowaniu portów. Na rys.~\ref{SSH} ukazano schemat lokalnego przekierowania portu dla protokołu SSH.
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{przekierowywanie_lokalne_SSH.jpg}
 \caption{SSH lokalne przekierowywanie portu}\label{SSH}
@@ -605,7 +414,7 @@ Host A wykonuje bezpiecznie połączenie do hostu B poprzez port R. Połączenie
 \end{itemize}
 \newpage Port L na hoście A i port R na hoście B ustawione są w trybie ciągłego nasłuchiwania dla lokalnego połączenia. Na rys.~\ref{SSH_1} przedstawiono zdalne przekierowywanie portu z hosta B do hosta.
  
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=10cm]{przekierowywanie_zdalne_SSH.jpg}
 \caption{SSH zdalne przekierowywanie portu}\label{SSH_1}
@@ -629,7 +438,7 @@ Wykorzystując zjawisko tunelowania do prywatnej sieci wirtualnej tworzymy bezpi
 \end{itemize}
 \quad Protokoły AH i ESP mogą działać w dwóch trybach: transportowym i tunelowym. Tryb transportowy zapewnia bezpieczeństwo dla warstw powyżej datagramu IP. Jest on inicjowany głównie między dwoma stałymi hostami, połączenie nie może być nawiązana między dwoma sieciami lub między siecią i hostem. Zaś tryb tunelowy zapewnia bezpieczeństwo całego datagramu IP. Jest on stosowany do połączenia tunelowego między dwoma sieciami lub między hostem, a siecią. Na rys.~\ref{IPsec} poniżej przedstawiono schematyczny tryb tunelowy dla protokołu IPsec.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=10cm]{tryb_tunelowy_IPsec.jpg}
 \caption{Tryb tunelowy IPsec}\label{IPsec}
@@ -640,7 +449,7 @@ Wykorzystując zjawisko tunelowania do prywatnej sieci wirtualnej tworzymy bezpi
 IPsec korzysta z protokołu Internet Key Exchange (IKE) w celu nawiązania i ustanowienie bezpiecznego połączenia między dwoma hostami lub zdalnego dostępu tunelowania VPN. Protokół IKE występuje w dwóch wersjach IKEv1 i IKEv2. Protokół IKEv1 można podzielić na dwie fazy, pierwsza w nich odpowiada za następujące funkcjonalności: algorytmy szyfrowania, algorytmy haszowania, protokół Diffiego-Hellmana oraz metodę uwierzytelniania.  Faza druga IKEv1 jest głównie używana do szyfrowania w protokole IPsec. Do szyfrowania wykorzystujemy algorytmy Data Encryption Standard (DES),  Triple DESo długości 168 bitów czy Advanced Encryption Standard (AES) o długości 128-256 bitów. Spośród wymienionych powyżej algorytmów DES zapewnia najniższe bezpieczeństwo danych, zaś AES o długości klucza 256 bitów największe bezpieczeństwo. Algorytmy haszujące zastosowane w protokole IPsec to: Secure Hash Algorithm (SHA) oraz Message Digest 5 (MD5). Protokół MD5 jest mniej bezpieczny niż algorytm SHA.
 Kiedy używamy IPsec wraz z VPN przesyłane dane będą zabezpieczone podczas przesyłania, w celu uniemożliwienia atakującemu zdobycie jawnych danych.  Proces szyfrowania, który zapewnia poufność przesyłanych danych nie daje możliwości łatwej modyfikacji wrażliwych danych atakującemu.
 
- Do stworzenia protokołu IPsec zrzeszenia bezpieczeństwa(Security Association AS) używanych jest kilka komponentów, które służą do przetwarzania ruchu tekstu jawnego, który jest chroniony i następnie przekształcany w tekst zaszyfrowany. Te same komponenty są używane do odszyfrowania danych. Protokół IPsec korzysta z trzech baz danych: 
+Do stworzenia protokołu IPsec zrzeszenia bezpieczeństwa(Security Association AS) używanych jest kilka komponentów, które służą do przetwarzania ruchu tekstu jawnego, który jest chroniony i następnie przekształcany w tekst zaszyfrowany. Te same komponenty są używane do odszyfrowania danych. Protokół IPsec korzysta z trzech baz danych: 
 \begin{itemize}
 \item Baza danych zasad zabezpieczeń - Security Policy Database (SPD) określa jaki ruch ma być chroniony
 \item Baza danych stowarzyszenia zabezpieczeń - Security Association Database (SAD) określa w jaki sposób ruch jest chroniony
@@ -679,16 +488,16 @@ Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostaw
 \newpage
 \section{Systemy wbudowane}
 \subsection{Budowa }
-\paragraph{Rejestr} % rejestr i rejsster specjalny
-\paragraph{Pamięć} % nieulotne i ulotne
-\paragraph{Porty wejścia/wyjścia}
-\paragraph{Centralne jednostka obliczeniowa}
-\paragraph{Dekoder instrukcji}
-\paragraph{Jednostka arytmetyczno-logiczna ALU}
-\paragraph{Rejestr SREG}
-\paragraph{Zegar}
-\paragraph{Magistrala}
-\paragraph{Linie danych, adresowe i sterowania}
+\paragraph{Rejestr} \mbox{} \\ % rejestr i rejsster specjalny
+\paragraph{Pamięć} \mbox{} \\% nieulotne i ulotne
+\paragraph{Porty wejścia/wyjścia} \mbox{} \\
+\paragraph{Centralne jednostka obliczeniowa} \mbox{} \\
+\paragraph{Dekoder instrukcji} \mbox{} \\
+\paragraph{Jednostka arytmetyczno-logiczna ALU} \mbox{} \\
+\paragraph{Rejestr SREG} \mbox{} \\
+\paragraph{Zegar} \mbox{} \\
+\paragraph{Magistrala} \mbox{} \\
+\paragraph{Linie danych, adresowe i sterowania} \mbox{} \\
 
 \subsection{Architektura systemów wbudowanych}
 \quad Architekturę systemów wbudowanych możemy podzielić na architekturę zależną od struktury pamięci i zależną od typu instrukcji. Struktura pamięci : harwardzka, zmodyfikowana harwardzka i von-Neumanna. Typu instrukcji RISC i CISC.
@@ -703,9 +512,234 @@ Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostaw
 \section{Aplikacja algorytmów kryptograficznych na systemie wbudowanym}
   ...
 \subsection{Charakterystyka systemu wbudowanego}
+\subsection{Szyfrowanie przy użyciu algorytmu DES}
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!  Przykład użycia algorytmu DES.
+ 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+wiadomość & witaj :)\\
+\hline
+wiadomość w postaci heksadecymalnej & 77 69 74 61 6A 20 3A 29\\
+\hline
+klucz & 43 23 66 A3 6B BB 53 C1\\
+\hline
+\end{tabular}
+\caption{Dane wejściowe algorytmu DES.}~\label{binary}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+klucz & 4 & 3 & 2 & 3 & 6 & 6 & A & 3\\
+\hline
+klucz w postaci binarnej & 0100 & 001\textbf{1} & 0010 & 001\textbf{1} & 0110 & 011\textbf{0} & 1010 & 001\textbf{1}\\ 
+\hline
+numer bitu & 0-3 & 4-7 & 8-11 & 12-15 & 16-19 & 20-23 & 24-28 & 29-32\\
+\hline
+\hline
+klucz & 6 & B & B & B & 5 & 3 & C & 1\\
+\hline
+klucz w postaci binarnej & 0110 & 101\textbf{1} & 1011 & 101\textbf{1} & 0101 & 001\textbf{1} & 1100 & 000\textbf{1}\\
+\hline
+numer bitu & 33-36 & 37-40 & 41-44 & 45-48 & 49-52 & 53-56 & 57-60 & 61-64\\
+\hline
+\end{tabular}
+\caption{Klucz w postaci binarnej.}~\label{klucz_to_binary}
+\end{table}
+
+Po przekształceniu heksadecymalnego klucza do postaci binarnej usuwamy bit parzystości z 64 bitowego bloku czyli 8, 16, 24, 32, 40, 48, 56 i 64 bit. W tabeli~\ref{klucz_to_binary} bit parzystości oznaczono pogrubioną kursywą.
+
+Następnie z wykorzystaniem tabeli~\ref{per_klucza} dokonujemy przestawienie bitów klucza, odszukano bit 57 klucza, który wynosi 0 i wpisano do nowo utworzonej tabeli ~\ref{tabela_podstawienia} w lewym górnym rogu. W tak przedstawiony sposób dokonano translacji dla dalszych bitów klucza, a wynik przedstawiono w tabeli~\ref{tabela_podstawienia}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+permutacja klucza & 57 & 49 & 41 & 33 & 25 & 17 & 9 & 1 & 58 & 50 & 42 & 34 & 26 & 18 & &\\
+\hline
+numer bitu & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+klucz binarny & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1\\
+\hline
+klucz po permutacji & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 &&\\
+
+\hline
+\hline
+permutacja klucza & 10 & 2 & 59 & 51 & 43 & 35 & 27 & 19 & 11 & 3 & 60 & 52 & 44 & 36 &&\\
+\hline
+numer bitu & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31\\
+\hline
+klucz binarny & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1\\
+\hline 
+klucz po permutacji & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 &&\\
+
+\hline
+\hline
+permutacja klucza & 63 & 55 & 47 & 39 & 31 & 23 & 15 & 7 & 62 & 54 & 46 & 38 & 30 & 22 &&\\
+\hline
+numer bitu & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & 45 & 46 & 47 \\
+\hline
+klucz binarny & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 \\
+\hline
+klucz po permutacji & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 &&\\
+
+\hline
+\hline
+permutacja klucza & 14 & 6 & 61 & 53 & 45 & 37 & 29 & 21 & 13 & 5 & 28 & 20 & 12 & 4 &&\\
+\hline
+numer bitu & 48 & 49 & 50 & 51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 & 61 & 62 & 63\\
+\hline
+klucz binarny & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1\\
+\hline 
+klucz po permutacji & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 &&\\
+\hline
+\end{tabular}
+\caption{Klucz w postaci binarnej.}~\label{tabela_podstawienia}
+\end{table}
+
+
+Klucz po permutacji z postawi 64 bitowej redukuje się do postaci 56 bitowej i dzieli na dwie części: prawą i lewą. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|}
+\hline
+1101 0100 0011 1110 0110 0000 0011\\
+\hline
+1111 1011 0111 1111 0000 0100 0000\\
+\hline
+\end{tabular}
+\caption{Obliczony klucz w postaci 56 bitowej.}
+\end{table}
+
+* przesunięcie bitowe klucza o 1 w lewo
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|}
+\hline
+1010 1000 0111 1100 1100 0000 0111\\
+\hline
+1111 0110 1111 1110 0000 1000 0001\\
+\hline
+\end{tabular}
+\caption{Obliczony klucz w postaci 56 bitowej.}
+\end{table}
+
+* Permutacja kompresji klucza DES (transpozycja tabeli~\ref{per_kompresji} kompresji klucza z 56 bitami przesuniętego klucza.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ | p{3cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} |}
+\hline
+permutacja kompresji DES & 14 17 11 24  & 1 5 3 28 &  15 6 21 10 & 23  19 12 4 & 26 8 16 7 & 27 20 13 2\\ \hline
+bitowy klucz 56bitowy po permutacji & 1110 & 1111 & 0001 & 0000 & 1000 & 1010 \\ \hline
+heksadecymalny klucz 56bitowy po permutacji & E & F & 1 & 0 & 8 & A\\
+\hline \hline
+permutacja kompresji DES & 41 52 31 37 & 47 55 30 40 & 51 45 33 48 & 44 49 39 56 & 34 53 46 42 & 50 36 29 32\\ \hline
+bitowy klucz 56bitowy po permutacji & 0010 & 0011 & 0000 & 0111 & 1001 & 0011\\ \hline
+heksadecymalny klucz 56bitowy po permutacji & 2 & 3 & 0 & 7 & 9 & 3\\ 
+\hline
+\end{tabular}
+\caption{Obliczony klucz w postaci 56 bitowej.}
+\end{table}
+
+* Obliczony klucz w pierwszym etapie to EF108A230793.
+
+!!!!!!!!!! Obliczenie permutacji początkowej 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+wiadomość heksadecymalna & 7 & 7 & 6 & 9 & 7 & 4 & 6 & 1\\ \hline
+wiadomość binarna & 0111 & 0111 & 0110 & 1001 & 0111 & 0100 & 0110 & 0001\\ \hline
+numer bitu & 1-4 & 5-8 & 9-12 & 13-16 & 17-20 & 21-24 & 25-28 & 29-32\\ \hline
+wiadomość heksadecymalna & 6 & A & 2 & 0 & 3 & A & 2 & 9\\ \hline
+wiadomość binarna & 0110 & 1010 & 0010 & 0000 & 0011 & 1010 & 0010 & 1001\\ \hline
+numer bitu & 33-36 & 37-40 & 41-44 & 44-48 & 49-52 & 53-56 & 57-60 & 61-64\\ \hline
+\end{tabular}
+\caption{Wiadomość przedstawiona w postaci binarnej i heksadecymalnej.}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+wiadomość binarna po permutacji & 0001 & 1111 & 0100 & 0101 & 0000 & 0101 & 1000 & 1011\\ \hline
+wiadomość heksadecymalna po permutacji & 1 & F & 4 & 5 & 0 & 5 & 8 & B\\ \hline
+wiadomość binarna po permutacji & 0000 & 0000 & 1111 & 1111 & 1101 & 0010 & 0101 & 0001\\ \hline
+wiadomość heksadecymalna po permutacji & 0 & 0 & F & F & D & 2 & 5 & 1\\ \hline
+
+\end{tabular}
+\caption{Transpozycja wiadomości w postaci binarnej z tabelą permutacji początkowej.}
+\end{table}
+
+
+
+Lewa strona wiadomości to L = 1F45058B, prawa strona P = 00FFD251. 
+Dla rundy pierwszej algorytmu lewą stroną wiadomości zostaje prawa część wiadomości, natomiast prawą część wiadomości obliczamy następująco:
+*  prawa część wiadomości podlega transpozycji zgodnie z tabelą permutacji rozszerzenia 
+* operacja XOR wiadomości otrzymanej w wyniku transpozycji z obliczonym kluczem EF108A230793.
+
+
+
+* prawa część wiadomości podlega transpozycji zgodnie z tabelą permutacji rozszerzenia dając wynik w tabeli poniżej.
+\begin{table}[H]
+\begin{tabular}{|c|c|}
+\hline
+prawa część wiadomości & 00FFD251\\ \hline
+& 0000 0000 1111 1111 1101 0010 0101 0001\\ \hline
+permutacja rozszerzenia & 100000 000001 011111 111111 111010 100100 001010 100010\\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\begin{tabular}{|c|c|}
+\hline
+wiadomość & 100000 000001 011111 111111 111010 100100 001010 100010\\ \hline
+klucz & 111011 110001 000010 001010 001000 110000 011110 010011\\ \hline
+XOR & 011011 110000 011101 110101 110010 010100 010100 110001\\ 
+\hline
+\end{tabular}
+\caption{XOR wiadomości po permutacji rozszerzenia z kluczem.}\label{xor}
+\end{table}
+
+!!!!!!!! Podstawienie w S-blokach
+
+W tabeli
+
+Wynik operacji XOR z tabeli ~\ref{xor} podzielono na S1 = 011011, S2 = 110000, S3 = 011101, S4 = 110101, S5 = 110010, S6 = 010100, S7 = 010100 i S8 = 110001. Wartości S bloków odczytano z użyciem tabeli~\ref{s_bloki}. Pierwszy w ostatni bit bloku oznacza rząd z tabeli~\ref{s_bloki} S-bloków, wartości 00 oznaczają wiersz 0, 01 oznaczają wiersz 1, 10 oznaczają wiersz 2, zaś 11 oznaczają wiersz 3. Dla wartości S1 pierwszy i ostatni bit bloku S1 = 01, co znaczy korzystanie z wiersza 1 S bloku 1. Następnie cztery bity między 1-5 bitem zmieniono na wartość decymalną. Dla S1 postać binarna 1101 wynosi 13 w postaci decymalnej, z tabeli~\ref{s_bloki} odczytujemy z wiersza 1, kolumny 13 wartość  5, więc S1 = 9. W sposób analogiczny odczytano pozostałe wartości S-bloków, które przedstawiono poniżej:
+ 
+S1 = 5, S2 = 12, S3 = 15, S4 = 5, S5 = 9, S6 = 3, S7 = 9,S8 = 15.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} 
+\hline
+decymalnie &5 &12& 15& 5& 9& 3& 9& 15\\ \hline
+binarnie & 0101& 1100& 1111& 0101& 1001& 0011& 1001& 1111\\ \hline
+numer bitu &1-4 &5-8& 9-12& 13-16& 17-20& 21-24& 25-28& 29-32\\ \hline
+\end{tabular}
+\end{table}
+
+
+
+Dokonujemy transpozycji wyjścia S bloku z tabelą permutacji P-bloku~\ref{blok_P} w wyniku czego otrzymano: 1010 1111 0010 1011 1011 1001 0011 0111. Otrzymaną wartość poddano operacji XOR z lewą połową wiadomości (1F45058B), co przedstawiono jako (1010 1111 0010 1011 1011 1001 0011 0111) $/oplus$ (0001 1111 0100 0101 0000 0101 1000 1011) = 1011 0000 0110 1110 1011 1100 1011 1100, co w postaci heksadecymalnej daje wartość B06EBCB3.
+
+
+
+Wartość prawej strony rundy pierwszej wynosi B06EBCB3. 
+
 \subsection{Implementacja algorytmów szyfrujących}
 \subsubsection{Implementacja szyfru Cezara}
-\subsubsection{Implementacja szyfru AES}
+\subsubsection{Implementacja szyfru DES}
 \subsection{Wyniki implementacji algorytmów szyfrujących} 
 \newpage
 \section{Wnioski}
@@ -733,10 +767,13 @@ Addison-Wesley Professional, 10.2008, chapter 8
 Network Security Principles and Practices},
 Cisco Press, 10.2002
 
-\bibitem{stream_cipher}O. Santos and J. Stuppi,
-\emph{
-Applied Cryptography: Protocols, Algorithms and Source Code in C, 20th Anniversary Edition},
-John Wiley and Sons, 03.2015, chapter 16
+
+
+% NIE PODAWAC TEJ LITERATURY ----
+%\bibitem{stream_cipher}O. Santos and J. Stuppi,
+%\emph{
+%Applied Cryptography: Protocols, Algorithms and Source Code in C, 20th Anniversary Edition},
+%John Wiley and Sons, 03.2015, chapter 16
 
 \end{thebibliography}
 \newpage
