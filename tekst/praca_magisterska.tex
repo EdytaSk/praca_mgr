@@ -196,10 +196,25 @@ Algorytm zwany standardem szyfrowania danych (ang. Data Encryption Standard DES)
 \item zamiana 64 bitowego klucza decymalnego na postać binarną i usunięcie co ósmego bitu zwanego bitem parzystości w wyniku czego otrzymano 56 bitowy binarny klucz
 \item permutacja 56 bitowego klucza binarnego zgodnie z tabelą~\ref{per_klucza} dla każdego z 16 cykli
 \item podział 56 bitowego klucza na prawą o lewą część o długości 28 bitów i przesunięcie bitowe, które jest zależne od cyklu co ukazuje tabela~\ref{przesuniecie_klucza}
-\item permutacja kompresji klucza DES zgodnie z tabelą~\ref{per_kompresji} kompresująca klucz 56 bitowy do klucza 48 bitowego dla każdego z 16 cykli
-\item zamiana wiadomości tekstowej na wiadomość w postaci heksadecymalnej
-\item wiadomosc
+\item permutacja kompresji klucza DES zgodnie z tabelą~\ref{per_kompresji} kompresująca klucz 56 bitowy do klucza 48 bitowego dla każdego z 16 cykli ukazanego na rysunku~\ref{des} jako  K{i}
+\item zamiana wiadomości tekstowej na wiadomość w postaci heksadecymalnej i binarną
+\item transpozycja wiadomości binarnej z tabelą permutacji początkowej
+\item podział wiadomości 64 bitowej na dwie części 32 bitowe: strona prawa oznaczona literą P na rysunku~\ref{des} i strona lewa oznaczona literą L na rysunku~\ref{des}
+\item prawa cześć wiadomości ulega rozszerzeniu zgodnie z tabelą~\ref{per_rozszerzenia} permutacji rozszerzenia w wyniku czego otrzymano 48 bitową wiadomość
+\item operacja XOR obliczonego klucza dla danej rundy z 48 bitową wiadomością otrzymaną w wyniku permutacji rozszerzenia
+\item transpozycją wyniku operacji XOR z tablicą S bloków na rysunku~\ref{des} oznaczono S-boxes
+\item wyjście S bloku ulega transpozycji z tabelą permutacji bloku P na rysunku~\ref{des} oznaczono jako P box
+\item wiadomość po permutacji bloku P poddano operacji XOR z lewą częścią wiadomości w wyniku czego otrzymano 32 bitową część prawą wiadomości
+\item lewą częścią 32 bitowej wiadomości jest prawa część 32 bitowej wiadomości bez żadnych zmian
 \end{itemize}
+Dane wyjściowe wiadomości z rundy pierwszej są danymi wejściowymi dla rundy drugiej algorytmu. Kroki przedstawione powyżej należy wykonać 16 razy w calu zaszyfrowania wiadomości, która jest podzielona na bloki 64 bitowe. Na obrazku~\ref{des} zobrazowano pojedynczą rundę algorytmu DES.
+
+\begin{figure}[H]
+\centering
+\includegraphics{des}
+\caption{Pojedyncza runda algorytmu DES.~\cite{DES}
+}\label{des}
+\end{figure}
 
 W tabeli~\ref{hex_to_bin} ukazano reprezentację binarną liczą heksadecymalnych w systemie 64 bitowym.
 
@@ -368,11 +383,13 @@ Po dokonaniu permutacji rozszerzenia wiadomości dokonano operacji xor otrzymane
 \caption{Permutacja bloku P.}~\label{blok_P}
 \end{table}
 
-
-
+Algorytm DES nie jest obecnie uznawany za bezpieczny przez Amerykańskie Standardy Federalne. W roku 2015 przy użyciu wysokiej wydajności FPGA możliwe było złamanie szyfru w stosunkowo krótkim czasie(4-5 dni). Dla atakujących przestała być odstraszająca cena platformy FPGA w porównaniu do zysków jakie może dać im atak. W celu przesłania klucza do drugiej osoby, z którą tworzymy bezpieczne połączenie wymaga znalezienie bezpiecznej metody przesyłu klucza. Zaletami algorytmu DES jest jego odporność na błędy, dzięki jego prostocie aplikacji. W obecnych czasach jest on nadal popularny w użytku, dzięki swojej szybkości.
+~\cite{DES}
 
 
 \paragraph{AES} \mbox{} \\
+
+
 \paragraph{IDEA} \mbox{} \\
 \paragraph{Blowfish} \mbox{} \\
 
@@ -767,7 +784,9 @@ Addison-Wesley Professional, 10.2008, chapter 8
 Network Security Principles and Practices},
 Cisco Press, 10.2002
 
-
+\bibitem{DES} J. Wiley,
+\emph{Information Security: Principles and Practice,2nd Edition},
+M. Stamp, 05.2011, chapter 3
 
 % NIE PODAWAC TEJ LITERATURY ----
 %\bibitem{stream_cipher}O. Santos and J. Stuppi,
