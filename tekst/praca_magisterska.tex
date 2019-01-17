@@ -437,8 +437,26 @@ Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożeni
 
 
 \subsubsection{Szyfry asymetryczne}
+
+\quad Szyfry asymetryczne charakteryzują się tym, że posiadają osobny klucz do szyfrowania i osobny deszyfrowania. W celu wyjaśnienia zasady działania szyfru asymetrycznego przedstawiono powszechnie znany sposób wysyłania wiadomości od Alicji do Boba. Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować.  
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+\node (ss) [prostokat] {szyfrowanie};
+\draw [arrow] (ss)[prostokat] -- node[anchor=south] {tekst zaszyfrowany(C)} (7.5,0);
+\node [prostokat,xshift=9cm] (a) {a};
+\draw [arrow] ([yshift=5cm]a) -- (ss);
+
+\end{tikzpicture}
+\end{center}
+\caption{Schematyczny proces szyfrowania symetrycznego.}\label{szyfrowanie}
+\end{figure}
+
 \paragraph{RSA} \mbox{} \\
 
+Algorytm RSA jest jednym z powszechniejszym algorytmów. Algorytm RSA zawdzięcza swoją nazwę trzem osobom, przez które został on opatentowany przez Rona Rivest, Adi Shamir i Leonard Adleman w 1977 roku. Nazwa algorytmu RSA pochodzi od pierwszych liter nazwisk wynalazców.
+ 
 \paragraph{Diffie-Hellman} \mbox{} \\
 \paragraph{Funkcje haszujące} \mbox{} \\
 

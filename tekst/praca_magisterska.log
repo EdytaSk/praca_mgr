@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  17 JAN 2019 20:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  17 JAN 2019 22:53
 entering extended mode
 **./praca_magisterska.tex
 (praca_magisterska.tex
@@ -639,6 +639,9 @@ LaTeX Warning: Unused global option(s):
 
 (praca_magisterska.aux
 
+LaTeX Warning: Label `szyfrowanie' multiply defined.
+
+
 LaTeX Warning: Label `xor' multiply defined.
 
 )
@@ -906,143 +909,143 @@ Underfull \hbox (badness 10000) in paragraph at lines 436--437
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 440--441
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--443
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
 
  []
 
-<komunikacja_PPTP.jpg, id=64, 572.1375pt x 235.63031pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+<komunikacja_PPTP.jpg, id=69, 572.1375pt x 235.63031pt>
 File: komunikacja_PPTP.jpg Graphic file (type jpg)
 <use komunikacja_PPTP.jpg>
-Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 449.
+Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 468.
 (pdftex.def)             Requested size: 341.43306pt x 140.61703pt.
-[17]
-<przekierowywanie_lokalne_SSH.jpg, id=70, 572.1375pt x 153.57375pt>
+[18]
+<przekierowywanie_lokalne_SSH.jpg, id=73, 572.1375pt x 153.57375pt>
 File: przekierowywanie_lokalne_SSH.jpg Graphic file (type jpg)
 <use przekierowywanie_lokalne_SSH.jpg>
 Package pdftex.def Info: przekierowywanie_lokalne_SSH.jpg  used on input line 4
-64.
+83.
 (pdftex.def)             Requested size: 341.43306pt x 91.64816pt.
- [18 <./komunikacja_PPTP.jpg>] [19 <./przekierowywanie_lokalne_SSH.jpg>]
-<przekierowywanie_zdalne_SSH.jpg, id=78, 572.1375pt x 153.57375pt>
+ [19 <./komunikacja_PPTP.jpg>] [20 <./przekierowywanie_lokalne_SSH.jpg>]
+<przekierowywanie_zdalne_SSH.jpg, id=81, 572.1375pt x 153.57375pt>
 File: przekierowywanie_zdalne_SSH.jpg Graphic file (type jpg)
 <use przekierowywanie_zdalne_SSH.jpg>
-Package pdftex.def Info: przekierowywanie_zdalne_SSH.jpg  used on input line 47
-8.
+Package pdftex.def Info: przekierowywanie_zdalne_SSH.jpg  used on input line 49
+7.
 (pdftex.def)             Requested size: 284.52756pt x 76.37425pt.
-<tryb_tunelowy_IPsec.jpg, id=79, 739.26187pt x 231.86626pt>
+<tryb_tunelowy_IPsec.jpg, id=82, 739.26187pt x 231.86626pt>
 File: tryb_tunelowy_IPsec.jpg Graphic file (type jpg)
 <use tryb_tunelowy_IPsec.jpg>
-Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 502.
+Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 521.
 (pdftex.def)             Requested size: 284.52756pt x 89.2387pt.
 
-[20 <./przekierowywanie_zdalne_SSH.jpg>] [21 <./tryb_tunelowy_IPsec.jpg>]
-[22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 550--551
+[21 <./przekierowywanie_zdalne_SSH.jpg>] [22 <./tryb_tunelowy_IPsec.jpg>]
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 569--570
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--552
+Underfull \hbox (badness 10000) in paragraph at lines 570--571
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
+Underfull \hbox (badness 10000) in paragraph at lines 571--572
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 553--554
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--555
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 555--556
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 556--557
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 558--559
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
 
  []
 
-[24] [25]
-Overfull \hbox (0.86946pt too wide) in paragraph at lines 571--571
+[25] [26]
+Overfull \hbox (0.86946pt too wide) in paragraph at lines 590--590
 []\OT4/lmr/bx/n/14.4 Aplikacja al-go-ryt-mów kryp-to-gra-ficz-nych na sys-te-mi
 e wbu-
  []
 
 
-Overfull \hbox (21.62001pt too wide) in paragraph at lines 620--661
- [][] 
- []
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 698--698
-[]\OT1/lmr/m/n/10 permutacja kom-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 700--700
-[]\OT1/lmr/m/n/10 heksadecymalny
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 702--702
-[]\OT1/lmr/m/n/10 permutacja kom-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
-[]\OT1/lmr/m/n/10 heksadecymalny
- []
-
-
-Overfull \hbox (30.22366pt too wide) in paragraph at lines 696--707
+Overfull \hbox (21.62001pt too wide) in paragraph at lines 639--680
  [][] 
  []
 
 [27]
-Overfull \hbox (24.34154pt too wide) in paragraph at lines 731--739
+Underfull \hbox (badness 10000) in paragraph at lines 717--717
+[]\OT1/lmr/m/n/10 permutacja kom-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 719--719
+[]\OT1/lmr/m/n/10 heksadecymalny
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 721--721
+[]\OT1/lmr/m/n/10 permutacja kom-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--723
+[]\OT1/lmr/m/n/10 heksadecymalny
+ []
+
+
+Overfull \hbox (30.22366pt too wide) in paragraph at lines 715--726
  [][] 
  []
 
-[28] [29] [30] [31] [32] (praca_magisterska.lof)
+[28]
+Overfull \hbox (24.34154pt too wide) in paragraph at lines 750--758
+ [][] 
+ []
+
+[29] [30] [31] [32] [33] (praca_magisterska.lof)
 \tf@lof=\write5
 \openout5 = `praca_magisterska.lof'.
 
- [33] (praca_magisterska.aux)
+ [34] (praca_magisterska.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1051,13 +1054,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14465 strings out of 492970
- 294704 string characters out of 3126593
- 367058 words of memory out of 3000000
- 18008 multiletter control sequences out of 15000+200000
+ 14483 strings out of 492970
+ 294987 string characters out of 3126593
+ 367060 words of memory out of 3000000
+ 18026 multiletter control sequences out of 15000+200000
  38289 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,10n,56p,1847b,799s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,10n,56p,1847b,802s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
 c}{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
 t.enc}{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
@@ -1070,9 +1073,9 @@ s/type1/public/lm/lmr7.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/public/lm/lmri10.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/admin/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on praca_magisterska.pdf (33 pages, 462571 bytes).
+Output written on praca_magisterska.pdf (34 pages, 465572 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
+ 157 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
