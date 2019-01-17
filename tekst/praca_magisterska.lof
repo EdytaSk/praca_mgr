@@ -3,7 +3,8 @@
 \contentsline {figure}{\numberline {3}{\ignorespaces Schematyczny proces szyfrowania symetrycznego.}}{9}
 \contentsline {figure}{\numberline {4}{\ignorespaces Schematyczny proces odszyfrowania symetrycznego.}}{9}
 \contentsline {figure}{\numberline {5}{\ignorespaces Pojedyncza runda algorytmu DES.\nobreakspace {}\cite {DES} }}{11}
-\contentsline {figure}{\numberline {6}{\ignorespaces Pogl\IeC {\k a}dowa komunikacja z u\IeC {\.z}yciem protoko\IeC {\l }u PPTP}}{16}
-\contentsline {figure}{\numberline {7}{\ignorespaces SSH lokalne przekierowywanie portu}}{17}
-\contentsline {figure}{\numberline {8}{\ignorespaces SSH zdalne przekierowywanie portu}}{18}
-\contentsline {figure}{\numberline {9}{\ignorespaces Tryb tunelowy IPsec}}{19}
+\contentsline {figure}{\numberline {6}{\ignorespaces Pojedyncza runda algorytmu IDEA.\nobreakspace {}\cite {IDEA}}}{16}
+\contentsline {figure}{\numberline {7}{\ignorespaces Pogl\IeC {\k a}dowa komunikacja z u\IeC {\.z}yciem protoko\IeC {\l }u PPTP}}{18}
+\contentsline {figure}{\numberline {8}{\ignorespaces SSH lokalne przekierowywanie portu}}{19}
+\contentsline {figure}{\numberline {9}{\ignorespaces SSH zdalne przekierowywanie portu}}{20}
+\contentsline {figure}{\numberline {10}{\ignorespaces Tryb tunelowy IPsec}}{21}
