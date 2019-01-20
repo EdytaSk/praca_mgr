@@ -8,6 +8,8 @@
 \usepackage{float}
 \usepackage{lmodern}
 \usepackage{amsmath}
+\usepackage{array}
+\usepackage{makecell}
 \usetikzlibrary{fit}
 \usetikzlibrary{arrows}
 \usepackage{tikz}
@@ -411,7 +413,37 @@ Klucz o długości 128 bitów jest dzielony na osiem 16 bitowych podkluczy. Dla 
 \item klucz jest dalej analogicznie przesuwany i dzielony, aż do momentu uzyskania 52 podkluczy
 \end{itemize}
 
-Proces deszyfrowania wiadomości również korzysta z schematu przedstawionego na rysunku~\ref{idea} pojedynczej rundy algorytmu, składa się on również z 8 rund. Proces tworzenia podkluczy z klucza odbywa się na podstawie podkluczy wykorzystanych do zaszyfrowania wiadomości. Proces tworzenia podkluczy wykorzystanych do deszyfrowania ukazano w tabeli~\ref{podklucze_deszyfrowania_idea}.
+Proces deszyfrowania wiadomości również korzysta z schematu przedstawionego na rysunku~\ref{idea} pojedynczej rundy algorytmu, składa się on również z 8 rund. Proces tworzenia podkluczy z klucza odbywa się na podstawie podkluczy wykorzystanych do zaszyfrowania wiadomości. Przy utworzeniu klucza pomocna jest tabela multiplikatywnej odwrotności 4 bitowej liczby binarnej przedstawionej w tabeli~\ref{nibel}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\thead{wartość \\ binarna[decymalna]} & \thead{multiplikatywna \\  odwrotność[decymalna]} & \thead{addytywna \\ odwrotność[decymalna]}\\ \hline
+0000 [0]&0000 [0]&0000 [0] \\ \hline
+ 0001 [1]&1111 [15]&0001 [1]\\ \hline
+ 0010 [2]&1110 [14]&1001 [9]\\ \hline
+ 0011 [3]&1101 [13]&0110 [6]\\ \hline
+ 0100 [4]&1100 [12]&1101 [13]\\ \hline
+ 0101 [5]&1011 [11]&0111 [7]\\ \hline
+ 0110 [6]&1010 [10]&0011 [3]\\ \hline
+ 0111 [7]&1001 [9]&0101 [5]\\ \hline
+ 1000 [8]&1000 [8]&1111 [15]\\ \hline
+ 1001 [9]&0111 [7]&0010 [2]\\ \hline
+ 1010 [10]&0110 [6]&1100 [12]\\ \hline
+ 1011 [11]&0101 [5]&1110 [14]\\ \hline
+ 1100 [12]&0100 [4]&1010 [10]\\ \hline
+ 1101 [13]&0011 [3]&0100 [4]\\ \hline
+ 1110 [14]&0010 [2]&1011 [11]\\ \hline
+ 1111 [15]&0001 [1]&1000 [8]\\ \hline
+ \end{tabular}
+\caption{Obliczenia multiplikatywnej i addytywnej odwrotności.}\label{nibel}
+\end{table}
+
+Multiplikatywną odwrotność dla a wyliczono według zależności x mod n, gdzie a $\in$ $Z_{n}$ oraz n jest rozmiarem grupy. Do obliczenia odwrotności addytywnej wykorzystano rozszerzony algorytm Euklidesa, który oblicza liczby całkowite x i y wykorzystując zależność ax + ny = 1, gdzie a $\in$ $Z_{n}$.
+% opisac addytywna odwrotnosc i dlaczego 0
+
+Proces tworzenia podkluczy wykorzystanych do deszyfrowania ukazano w tabeli~\ref{podklucze_deszyfrowania_idea}. Potęga oznaczona literą a określa multiplikatywną odwrotność danej liczby, potęga oznaczona jako m określa addytywną odwrotność podanej liczby.
 
 
 \begin{table}[H]
@@ -419,15 +451,15 @@ Proces deszyfrowania wiadomości również korzysta z schematu przedstawionego n
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
 cykl & \multicolumn{6}{|c|}{podklucze szyfrujące}  & \multicolumn{6}{|c|}{podklucze deszyfrujące} \\ \hline
-1&$x_{1}$&$x_{2}$&$x_{3}$&$x_{4}$&$x_{5}$&$x_{6}$&$x_{}$&$-x_{50}$&$-x_{51}$&$x_{}$&$x_{47}$&$x_{48}$\\ \hline
-2&$x_{7}$&$x_{8}$&$x_{9}$&$x_{10}$&$x_{11}$& $x_{12}$&$x_{}$&$-x_{45}$&$-x_{44}$&$x_{}$&$x_{41}$&$x_{42}$\\ \hline
-3&$x_{13}$&$x_{14}$&$x_{15}$&$x_{16}$&$x_{17}$&$x_{18}$&$x_{}$&$-x_{39}$&$-x_{38}$&$x_{}$&$x_{35}$&$x_{36}$\\ \hline
-4&$x_{19}$&$x_{20}$&$x_{21}$&$x_{22}$&$x_{23}$&$x_{24}$&$x_{}$&$-x_{33}$&$-x_{32}$&$x_{}$&$x_{29}$&$x_{30}$\\ \hline
-5&$x_{25}$&$x_{26}$&$x_{27}$&$x_{28}$&$x_{29}$&$x_{30}$&$x_{}$&$-x_{27}$&$-x_{26}$&$x_{}$&$x_{23}$&$x_{24}$\\ \hline
-6&$x_{31}$&$x_{32}$&$x_{33}$&$x_{34}$&$x_{35}$&$x_{36}$&$x_{}$&$-x_{21}$&$-x_{20}$&$x_{}$&$x_{17}$&$x_{18}$\\ \hline
-7&$x_{37}$&$x_{38}$&$x_{39}$&$x_{40}$&$x_{41}$&$x_{42}$&$x_{}$&$-x_{15}$&$-x_{14}$&$x_{}$&$x_{11}$&$x_{12}$\\ \hline
-8&$x_{43}$&$x_{44}$&$x_{45}$&$x_{46}$&$x_{47}$&$x_{48}$&$x_{}$&$-x_{9}$&$-x_{8}$&$x_{}$&$x_{5}$&$x_{6}$\\ \hline
-dodatkowe 4 podklucze&$x_{49}$&$x_{50}$&$x_{51}$&$x_{52}$&&&$x_{}$&$-x_{2}$&$-x_{3}$&$x_{}$&&\\ \hline
+1&$x_{1}$&$x_{2}$&$x_{3}$&$x_{4}$&$x_{5}$&$x_{6}$&$x_{49}^{a}$&$x_{50}^{m}$&$x_{51}^{m}$&$x_{52}^{a}$&$x_{47}$&$x_{48}$\\ \hline
+2&$x_{7}$&$x_{8}$&$x_{9}$&$x_{10}$&$x_{11}$& $x_{12}$&$x_{43}^{a}$&$x_{45}^{m}$&$x_{44}^{m}$&$x_{46}^{a}$&$x_{41}$&$x_{42}$\\ \hline
+3&$x_{13}$&$x_{14}$&$x_{15}$&$x_{16}$&$x_{17}$&$x_{18}$&$x_{37}^{a}$&$x_{39}^{m}$&$x_{38}^{m}$&$x_{40}^{a}$&$x_{35}$&$x_{36}$\\ \hline
+4&$x_{19}$&$x_{20}$&$x_{21}$&$x_{22}$&$x_{23}$&$x_{24}$&$x_{31}^{a}$&$x_{33}^{m}$&$x_{32}^{m}$&$x_{34}^{a}$&$x_{29}$&$x_{30}$\\ \hline
+5&$x_{25}$&$x_{26}$&$x_{27}$&$x_{28}$&$x_{29}$&$x_{30}$&$x_{25}^{a}$&$x_{27}^{m}$&$x_{26}^{m}$&$x_{28}^{a}$&$x_{23}$&$x_{24}$\\ \hline
+6&$x_{31}$&$x_{32}$&$x_{33}$&$x_{34}$&$x_{35}$&$x_{36}$&$x_{19}^{a}$&$x_{21}^{m}$&$x_{20}^{m}$&$x_{22}^{a}$&$x_{17}$&$x_{18}$\\ \hline
+7&$x_{37}$&$x_{38}$&$x_{39}$&$x_{40}$&$x_{41}$&$x_{42}$&$x_{13}^{a}$&$x_{15}^{m}$&$x_{14}^{m}$&$x_{16}^{a}$&$x_{11}$&$x_{12}$\\ \hline
+8&$x_{43}$&$x_{44}$&$x_{45}$&$x_{46}$&$x_{47}$&$x_{48}$&$x_{7}^{a}$&$x_{9}^{m}$&$x_{8}^{m}$&$x_{10}^{a}$&$x_{5}$&$x_{6}$\\ \hline
+dodatkowe 4 podklucze&$x_{49}$&$x_{50}$&$x_{51}$&$x_{52}$&&&$x_{1}^{a}$&$x_{2}^{m}$&$x_{3}^{m}$&$x_{4}^{a}$&&\\ \hline
 \end{tabular}
 \caption{Podklucze szyfrujące i deszyfrujące IDEA.}\label{podklucze_deszyfrowania_idea}
 \end{table}
