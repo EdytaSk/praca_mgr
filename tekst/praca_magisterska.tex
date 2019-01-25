@@ -26,6 +26,8 @@
 \newpage
 \part{Część teoretyczna}
 \section{Cel i zakres pracy}
+
+
 \quad Celem pracy jest przedstawienie algorytmów kryptograficznych oraz możliwych ataków. Następnie implementacja 2 algorytmów na systemie wbudowanym oraz porównanie ich wydajności w zależności od rozmiaru szyfrowanych danych.
 %2. Na początku powinien być rozdział pt. "Cel i zakres pracy", zazwyczaj krótki maksymalnie do dwóch stron, w którym powinien znaleźć się (a) cel pracy - krótko powód podjęcia się tej tematyki, ze wskazaniem na to co pracę wyróżnia na tle prac innych o podobnej tematyce, (b) zakres pracy - czyli coś na zasadzie: praca składa sie z części teoretycznej, będącej wprowadzeniem do ...., części praktycznej w której zaprezentowane własne implementacje. Później też mozna dodać: W rozdziale 1 jest to i to, rozdział 2 poświęcono ...
 %Po przeczytaniu tego rozdzialu powinno być wiadomo mniej więcej jaki jest własny wkład, dlatego tak ważne jest podkreślenie znaczenia części praktycznej. Część ta pełni rolę abstraktu.
@@ -437,13 +439,11 @@ Proces deszyfrowania wiadomości również korzysta z schematu przedstawionego n
  1110 [14]&0010 [2]&1011 [11]\\ \hline
  1111 [15]&0001 [1]&1000 [8]\\ \hline
  \end{tabular}
-\caption{Obliczenia multiplikatywnej i addytywnej odwrotności.}\label{nibel}
+\caption{Obliczenia multiplikatywnej i addytywnej odwrotności.~\cite{IDEAA}}\label{nibel}
 \end{table}
 
-Multiplikatywną odwrotność dla a wyliczono według zależności x mod n, gdzie a $\in$ $Z_{n}$ oraz n jest rozmiarem grupy. Do obliczenia odwrotności addytywnej wykorzystano rozszerzony algorytm Euklidesa, który oblicza liczby całkowite x i y wykorzystując zależność ax + ny = 1, gdzie a $\in$ $Z_{n}$.
+Multiplikatywną odwrotność dla a wyliczono według zależności x mod n, gdzie a $\in$ $Z_{n}$ oraz n jest rozmiarem grupy. Do obliczenia odwrotności addytywnej wykorzystano rozszerzony algorytm Euklidesa, który oblicza liczby całkowite x i y wykorzystując zależność ax + ny = 1, gdzie a $\in$ $Z_{n}$. Proces tworzenia podkluczy wykorzystanych do deszyfrowania ukazano w tabeli~\ref{podklucze_deszyfrowania_idea}. Potęga oznaczona literą a określa multiplikatywną odwrotność danej liczby, potęga oznaczona jako m określa addytywną odwrotność podanej liczby.
 % opisac addytywna odwrotnosc i dlaczego 0
-
-Proces tworzenia podkluczy wykorzystanych do deszyfrowania ukazano w tabeli~\ref{podklucze_deszyfrowania_idea}. Potęga oznaczona literą a określa multiplikatywną odwrotność danej liczby, potęga oznaczona jako m określa addytywną odwrotność podanej liczby.
 
 
 \begin{table}[H]
@@ -472,6 +472,12 @@ Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożeni
 
 \quad Szyfry asymetryczne charakteryzują się tym, że posiadają osobny klucz do szyfrowania i osobny deszyfrowania. W celu wyjaśnienia zasady działania szyfru asymetrycznego przedstawiono powszechnie znany sposób wysyłania wiadomości od Alicji do Boba. Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować.  
 
+
+
+
+
+
+
 \begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}
@@ -482,14 +488,72 @@ Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożeni
 
 \end{tikzpicture}
 \end{center}
-\caption{Schematyczny proces szyfrowania symetrycznego.}\label{szyfrowanie}
+\caption{Schematyczny proces szyfrowania asymetrycznego.}\label{szyfrowanie}
 \end{figure}
 
 \paragraph{RSA} \mbox{} \\
 
-Algorytm RSA jest jednym z powszechniejszym algorytmów. Algorytm RSA zawdzięcza swoją nazwę trzem osobom, przez które został on opatentowany przez Rona Rivest, Adi Shamir i Leonard Adleman w 1977 roku. Nazwa algorytmu RSA pochodzi od pierwszych liter nazwisk wynalazców.
+Algorytm RSA jest jednym z powszechniejszym algorytmów. Algorytm RSA zawdzięcza swoją nazwę trzem osobom, przez które został on opatentowany przez Rona Rivest, Adi Shamir i Leonard Adleman w 1977 roku. Nazwa algorytmu RSA pochodzi od pierwszych liter nazwisk wynalazców. Algorytm RSA bazuje na liczbach pierwszych oraz faktoryzacji dużych liczb. Proces tworzenia pary kluczy: prywatnego i publicznego przebiega w następujących krokach:
+\begin{itemize}
+\item wybór dwóch odpowiednio dużych licz pierwszych, które po przemnożeniu dadzą klucz o pożądanym rozmiarze np. 2048 bitów
+\begin{center}
+n = p * q 
+\end{center}
+,gdzie n = wynik mnożenia liczb pierwszych, p i q liczby pierwsze.
+\item obliczenie funkcji Eulera według zależności
+\begin{center}
+m = (p-1)(q-1)
+\end{center}
+\item określenie liczby e względnie pierwszej z m oraz spełnia zależność 1<e<m
+\item obliczenie liczby d według zależności
+\begin{center}
+d*e mod(m) = 1
+\end{center}
+\item obliczone liczby e i d są publiczne, natomiast liczba d jest trzymana w tajemnicy
+\item zaszyfrowanie wiadomości c z wykorzystaniem wartości publicznych
+\begin{center}
+c = $m^{e}$mod(n)
+\end{center}
+\item do odszyfrowania wiadomości wykorzystano liczbę prywatną d według zależności
+\begin{center}
+p = $c^{d}$mod(n)
+\end{center}
+\end{itemize}
+ 
+ 
  
 \paragraph{Diffie-Hellman} \mbox{} \\
+
+Algorytm Diffie-Hellman został opatentowany w 1976 roku przez Whitfield Diffie i Martin Hellman. Dzięki temu algorytmowi możliwe jest przesyłanie klucza przez niezabezpieczone łącze w bezpieczny sposób. Obecnie jest on stosowany do wymiany klucza symetrycznego. Algorytm można opisać w następujących krokach: 
+\begin{itemize}
+\item Alicja generuje prywatną liczbę całkowitą a
+\item Bob generuje prywatną liczbę całkowitą b
+\item wybór liczby pierwszej p
+\item obliczenie publicznej wartości z wykorzystaniem liczby piwerszej p, wartości g oraz prywatnej liczby a (dla Alicji) i b (dla Boba) według zależności
+\begin{center}
+$g^{a}$mod(p) i $g^{b}$mod(p)
+\end{center}
+\item wymiana publicznej wartości między Alicją i Bobem
+\item Alicja oblicza
+\begin{center}
+$g^{ab}$ = $(g^{b})^{a}$mod(p)
+\end{center}
+\item Bob oblicza
+\begin{center}
+$g^{ba}$ = $(g^{a})^{b}$mod(p)
+\end{center}
+\item Alicja i Bob posiadają wspólny tajny klucz k, gdyż
+\begin{center}
+$g^{ab}$ = $g^{ba}$
+\end{center}
+\end{itemize}
+
+Algorytm Diffie-Hellmana przestanie być bezpieczny w momencie, gdy zostanie rozwiązany problem logarytmu dyskretnego. Wartościami publicznymi powiązanymi poniższą relacją są g, p, a i b.
+\begin{center}
+$g^{a}$ $\equiv$ a mod(p) oraz $g^{b}$ $\equiv$ b mod(p)
+\end{center}
+Obecnie nie istnieje żaden algorytm umożliwiający rozwiązanie problemu logarytmu dyskretnego.~\cite{DH}
+
 \paragraph{Funkcje haszujące} \mbox{} \\
 
 \subsection{Protokoły}
@@ -881,12 +945,19 @@ Cisco Press, 10.2002
 \emph{Information Security: Principles and Practice,2nd Edition},
 M. Stamp, 05.2011, chapter 3
 
+\bibitem{IDEAA} N. Hoffman,
+\emph{Article in Cryptologia: A simplified IDEA algorithm},
+Department of Mathematics, Northern Kentucky University, March 2007, str 143-151
+
 \bibitem{IDEA} Tingting CuiHuaifeng ChenLong WenMeiqin Wang,
 \emph{Cryptography and Communications: Statistical integral attack on CAST-256 and IDEA}, January 2018, Volume 10
 
+\bibitem{RSA}
+\emph{Information Security: Principles and Practice, 2nd Edition},
 
-
-
+\bibitem{DH} C. Chebbi
+\emph{Advanced Infrastructure Penetration Testing},
+Packt Publishing, 02.2018
 
 % NIE PODAWAC TEJ LITERATURY ----
 %\bibitem{stream_cipher}O. Santos and J. Stuppi,
