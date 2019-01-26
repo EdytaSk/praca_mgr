@@ -26,31 +26,39 @@
 \contentsline {subsubsection}{\numberline {2.6.5}L2TP}{26}
 \contentsline {section}{\numberline {3}Systemy wbudowane}{27}
 \contentsline {subsection}{\numberline {3.1}Budowa }{27}
-\contentsline {paragraph}{Rejestr}{27}
-\contentsline {paragraph}{Pami\IeC {\k e}\IeC {\'c}}{27}
-\contentsline {paragraph}{Porty wej\IeC {\'s}cia/wyj\IeC {\'s}cia}{27}
-\contentsline {paragraph}{Centralne jednostka obliczeniowa}{27}
-\contentsline {paragraph}{Dekoder instrukcji}{27}
-\contentsline {paragraph}{Jednostka arytmetyczno-logiczna ALU}{27}
-\contentsline {paragraph}{Rejestr SREG}{27}
-\contentsline {paragraph}{Zegar}{27}
-\contentsline {paragraph}{Magistrala}{27}
-\contentsline {paragraph}{Linie danych, adresowe i sterowania}{27}
-\contentsline {subsection}{\numberline {3.2}Architektura system\IeC {\'o}w wbudowanych}{27}
-\contentsline {subsubsection}{\numberline {3.2.1}Architektura harwardzka}{28}
-\contentsline {subsubsection}{\numberline {3.2.2}Zmodyfikowana architektura harwardzka}{28}
-\contentsline {subsubsection}{\numberline {3.2.3}Architektura von-Neumanna}{28}
-\contentsline {subsubsection}{\numberline {3.2.4}RISC - Recuded Instruction Set Computer}{28}
-\contentsline {subsubsection}{\numberline {3.2.5}CISC - Complex Instruction Set Computer}{28}
-\contentsline {part}{II\hspace {1em}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} praktyczna}{29}
-\contentsline {section}{\numberline {4}Aplikacja algorytm\IeC {\'o}w kryptograficznych na systemie wbudowanym}{29}
-\contentsline {subsection}{\numberline {4.1}Charakterystyka systemu wbudowanego}{29}
-\contentsline {subsection}{\numberline {4.2}Szyfrowanie przy u\IeC {\.z}yciu algorytmu DES}{29}
-\contentsline {subsection}{\numberline {4.3}Implementacja algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{33}
-\contentsline {subsubsection}{\numberline {4.3.1}Implementacja szyfru Cezara}{33}
-\contentsline {subsubsection}{\numberline {4.3.2}Implementacja szyfru DES}{33}
-\contentsline {subsection}{\numberline {4.4}Wyniki implementacji algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{33}
-\contentsline {section}{\numberline {5}Wnioski}{34}
-\contentsline {section}{\numberline {6}Podsumowanie}{34}
-\contentsline {section}{Literatura}{36}
-\contentsline {section}{Spis rysunk\IeC {\'o}w}{36}
+\contentsline {paragraph}{Modulator szeroko\IeC {\'s}ci impulsu PWM}{28}
+\contentsline {paragraph}{Wej\IeC {\'s}cia/wyj\IeC {\'s}cia}{29}
+\contentsline {subparagraph}{Wej\IeC {\'s}cie analogowe ADC}{29}
+\contentsline {subparagraph}{Wyj\IeC {\'s}cie analogowe DAC}{29}
+\contentsline {subparagraph}{Wej\IeC {\'s}cia/Wyj\IeC {\'s}cia og\IeC {\'o}lnego przeznaczenia GPIO}{29}
+\contentsline {paragraph}{Uniwersalny odbiornik i nadajnik asynchroniczny UART}{29}
+\contentsline {paragraph}{Magistrala}{30}
+\contentsline {subparagraph}{Szeregowy interfejs urz\IeC {\k a}dze\IeC {\'n} peryferyjnych SPI}{30}
+\contentsline {subparagraph}{$I^{2}$C}{30}
+\contentsline {subparagraph}{USB,PHY}{31}
+\contentsline {paragraph}{zegar kontrolera}{31}
+\contentsline {paragraph}{centralna jednostka obliczeniowa - procesor}{31}
+\contentsline {paragraph}{JTAG}{31}
+\contentsline {paragraph}{Pami\IeC {\k e}\IeC {\'c}}{31}
+\contentsline {subparagraph}{SRAM}{31}
+\contentsline {subparagraph}{Cache}{31}
+\contentsline {subparagraph}{Flash Memory}{31}
+\contentsline {paragraph}{Linie danych, adresowe i sterowania}{31}
+\contentsline {subsection}{\numberline {3.2}Architektura system\IeC {\'o}w wbudowanych}{31}
+\contentsline {subsubsection}{\numberline {3.2.1}Architektura harwardzka}{32}
+\contentsline {subsubsection}{\numberline {3.2.2}Zmodyfikowana architektura harwardzka}{32}
+\contentsline {subsubsection}{\numberline {3.2.3}Architektura von-Neumanna}{32}
+\contentsline {subsubsection}{\numberline {3.2.4}RISC - Recuded Instruction Set Computer}{32}
+\contentsline {subsubsection}{\numberline {3.2.5}CISC - Complex Instruction Set Computer}{32}
+\contentsline {part}{II\hspace {1em}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} praktyczna}{33}
+\contentsline {section}{\numberline {4}Aplikacja algorytm\IeC {\'o}w kryptograficznych na systemie wbudowanym}{33}
+\contentsline {subsection}{\numberline {4.1}Charakterystyka systemu wbudowanego}{33}
+\contentsline {subsection}{\numberline {4.2}Szyfrowanie przy u\IeC {\.z}yciu algorytmu DES}{33}
+\contentsline {subsection}{\numberline {4.3}Implementacja algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{37}
+\contentsline {subsubsection}{\numberline {4.3.1}Implementacja szyfru Cezara}{37}
+\contentsline {subsubsection}{\numberline {4.3.2}Implementacja szyfru DES}{37}
+\contentsline {subsection}{\numberline {4.4}Wyniki implementacji algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{37}
+\contentsline {section}{\numberline {5}Wnioski}{38}
+\contentsline {section}{\numberline {6}Podsumowanie}{38}
+\contentsline {section}{Literatura}{40}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{40}

@@ -31,7 +31,6 @@
 \quad Celem pracy jest przedstawienie algorytmów kryptograficznych oraz możliwych ataków. Następnie implementacja 2 algorytmów na systemie wbudowanym oraz porównanie ich wydajności w zależności od rozmiaru szyfrowanych danych.
 %2. Na początku powinien być rozdział pt. "Cel i zakres pracy", zazwyczaj krótki maksymalnie do dwóch stron, w którym powinien znaleźć się (a) cel pracy - krótko powód podjęcia się tej tematyki, ze wskazaniem na to co pracę wyróżnia na tle prac innych o podobnej tematyce, (b) zakres pracy - czyli coś na zasadzie: praca składa sie z części teoretycznej, będącej wprowadzeniem do ...., części praktycznej w której zaprezentowane własne implementacje. Później też mozna dodać: W rozdziale 1 jest to i to, rozdział 2 poświęcono ...
 %Po przeczytaniu tego rozdzialu powinno być wiadomo mniej więcej jaki jest własny wkład, dlatego tak ważne jest podkreślenie znaczenia części praktycznej. Część ta pełni rolę abstraktu.
-
 !!!!!!!!!!!!! będzie więcej opisu !!!!!!!!!!!!!!!!
 
 \newpage
@@ -662,15 +661,77 @@ Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostaw
 \newpage
 \section{Systemy wbudowane}
 \subsection{Budowa }
-\paragraph{Rejestr} \mbox{} \\ % rejestr i rejsster specjalny
-\paragraph{Pamięć} \mbox{} \\% nieulotne i ulotne
-\paragraph{Porty wejścia/wyjścia} \mbox{} \\
-\paragraph{Centralne jednostka obliczeniowa} \mbox{} \\
-\paragraph{Dekoder instrukcji} \mbox{} \\
-\paragraph{Jednostka arytmetyczno-logiczna ALU} \mbox{} \\
-\paragraph{Rejestr SREG} \mbox{} \\
-\paragraph{Zegar} \mbox{} \\
+\quad W obecnych czasach wbudowane systemy zyskają coraz większą popularność poprzez stosowanie ich w przedmiotach codziennego użytku między innymi: odkurzacz automatyczny, elektryczna hulajnoga, maszyny sprzedające, systemy alarmowe, telefony komórkowe czy drukarki. W przypadku niektórych zastosowań systemów wbudowanych np.telefony komórkowe czy systemy alarmowe niezbędne jest szyfrowanie wiadomości na nich występujących. W przypadku braku bloku kryptograficznego na systemie wbudowanym jest on podatny na atak np. w przypadku włamania do mieszkania z alarmem może on być wyłączony przez hakera w zdecydowanie krótszym czasie niż w przypadku takiego systemu alarmowego, na którym dane są całkowicie szyfrowane. Systemy wbudowane nie posiadają ściśle określonych architektur, projektowane są w zależności od zapotrzebowania bądź uniwersalne. Głównym argumentem przemawiającym za systemami wbudowanymi jest ich niski koszt produkcji oraz niski pobór mocy. Na rysunku~\ref{es} przedstawiono ogólny schemat blokowy komponentów zawartych wewnątrz mikrokontrolera.
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{es.png}
+\caption{Schemat blokowy komponentów wewnątrz ogólnego mikrokontrolera.~\cite{es}}\label{es}
+\end{figure}
+
+Na rysunku~\ref{es} zawarte jest kilka głównych komponentów, które zostaną opisane poniżej.
+\paragraph{Modulator szerokości impulsu PWM} \mbox{} \\
+
+Modulator szerokości impulsów jest wykorzystywany do regulowania sygnału napięciowego lub prądowego przy stałej amplitudzie i częstotliwości. PWM jest wykorzystywany do kontrolowanie mocy dostarczonej do urządzeń elektronicznych sterowanych przy pomocy mikrokontrolera. Wejściowy pulsujący sygnał jest generowany na sekwencyjne sygnały impulsowe w postaci fali o kształcie prostokątnym. Fala o charakterze prostokątnym posiada dwa stany: wysoki i niski, które są osiągalne poprzez przełączanie tranzystorów bądź tyrystorów w stan przewodzenia bądź zaporowy. Stan wysoki sygnały wyjściowego oznacza stan przewodzenia tranzystora, zaś stan niski oznacza stan zaporowy. Amplituda w sygnale prostokątnym jest to różnica między stanem wysoki, a stanem niskim napięcia w przypadku PWM sterowanego sygnałem napięciowym. Okres fali wyjściowej to czas trwania jego jednego cyklu, zaś częstotliwością fali jest odwrotność trwania okresu. Istotnym parametrem określającym wyjściową falę prostokątną jest również cykl roboczy, który jest stosunkiem procentowym czasu wysokiego stanu do okresu oznaczanego literą T.
+
+\paragraph{Wejścia/wyjścia}
+\subparagraph{Wejście analogowe ADC} \mbox{} \\
+
+Wejście analogowe zwane również jako przewrotnik sygnału analogowo-cyfrowego ADC. Przetwornik jest układem elektronicznym, który analogowy sygnał wejściowy konwertuje proporcjonalnie do cyfrowego sygnału wyjściowego. Proces ten polega na pomiarze wejściowego napięcia i jego zamiany na binarny numer wyjściowy. Jego zastosowanie można ujrzeć np. podczas mierzenia temperatury czy ważenia przedmiotów lub ludzi, gdzie sygnał analogowy jest zamieniany na cyfrowy i jego wartość jest interpretowana odpowiednio przez system wbudowany. 
+
+\subparagraph{Wyjście analogowe DAC} \mbox{} \\
+
+Wyjście analogowe zwane jako przetwornik sygnały cyfrowo-analogowego. Przetwornik DAC jest układem elektronicznym, który konwertuje wejściowe dane binarne na analogowe dane wyjściowe. Jego zastosowanie można wykorzystać np. do sterowania silnika krokowego wyjściowym sygnałem napięciowym bądź wyświetlania godziny na zegarku analogowym.
+
+\subparagraph{Wejścia/Wyjścia ogólnego przeznaczenia GPIO} \mbox{} \\
+
+Wejścia- wyjścia ogólnego przeznaczenia są prostym protokołem służącym do sterowania urządzeniami korzystając z sygnałów cyfrowych. GIPO wykorzystywane jest do komunikacji między urządzeniami systemu wbudowanego. W celu skorzystania GIPO musi zostać odpowiednio skonfigurowane dla danego urządzenia.
+
+\paragraph{Uniwersalny odbiornik i nadajnik asynchroniczny UART} \mbox{} \\
+
+Uniwersalny odbiornik i nadajnik asynchroniczny zwany jako UART służy do komunikowania się z systemem wbudowanym. Jest on jednym z powszechnie stosowanych protokołów komunikacyjnych. UART konwersuje równoległe dane na szeregowy strumień bitów danych. Komponent ten nie posiada zegara. Ramka wiadomości wykorzystywana do komunikacji z wykorzystaniem UART składa się z:
+\begin{itemize}
+\item bit początkowy sygnalizujący początek komunikacji
+\item bity danych
+\item bit parzystości, który jest wykorzystywany do wykrywania błędów występujących podczas komunikacji
+\item bit stopu, który informuje nas o końcu komunikacji
+\end{itemize} 
+
+Na rysunku~\ref{es} symbolem TX(z ang. transmitted data) oznaczone są dane wyjściowe, natomiast symbolem RX(z ang. received data) oznaczono dane wejściowe. Komponent ten jest wykorzystywany np. do czytnika linii papilarnych, gdzie po zeskanowaniu odcisku dane są przesyłane poprzez komponent UART w celu dalszego ich przetworzenia.
+
 \paragraph{Magistrala} \mbox{} \\
+
+Magistrale są wykorzystywane do przesyłania danych między urządzeniami występującymi w danym systemie wbudowanym. W zależności od sposobu przesyłania danych magistrale można podzielić na jednokierunkowe, gdzie przesył danych jest odbywa się tylko w jednym kierunku i dwukierunkowe, gdzie przesył danych odbywa się w dwóch kierunkach. Magistrale dwukierunkowe(ang.duplex) można podzielić na full duplex, gdzie przesyłanie danych odbywa się jednocześnie między urządzeniami oraz na half duplex, gdzie przesył danych między urządzeniami może odbywać się tylko w jednym kierunku w określonym czasie.
+
+\subparagraph{Szeregowy interfejs urządzeń peryferyjnych SPI} \mbox{} \\
+
+SPI służy do komunikowania się urządzeń peryferyjnych tj. klawiatura, mysz, monitor, skaner, drukarka, mikrofon, głośnik czy kamera internetowa z centralną jednostką obliczeniową. Dzięki protokołowi pełnego dupleksu umożliwia on jednoczesne wysyłanie i odbieranie danych. SPI jest szybszy od protokołu I2C, lecz wynaga większej ilości połączeń w porównaniu z I2C. Urządzenia komunikujące się między sobą określono jako master i slave. W SPI występuje jedno urządzenie, które ma charakter master i do kilkunastu urządzeń określanych jako slave. Urządzenie master jest w hierarchii wyżej od urządzenia slave, które jest jemu podporządkowane. Do przesyłania danych między urządzeniem  podlegającym(slavem), a głównym(master) wykorzystana jest linia MOSI(z ang. master out, slave in). Dane przesyłane między urządzeniem głównym, a podlegającym odbywają się na linii MISO(z ang. master in, slave out). Przesyłanie danych z urządzenia głównego do podlegającego i z urządzenia podlegającego do urządzenia głównego odbywa się w tym samym czasie, zgodnie z taktem zegara systemowego(SCK). Większość urządzeń SPI obsługuje przesył tylko 8 bitowych danych.
+
+\subparagraph{$I^{2}$C} \mbox{} \\
+
+Magistrala $I^{2}$ komunikuje się między urządzeniami w sposób szeregowy i dwukierunkowy. $I^{2}$C oprócz pinów służących do uziemienia i zasilania korzysta tylko z dwóch dodatkowych pinów. Dwie dodatkowe linie oznaczono jako SDA i SCL. Linie do przesyłania danych oznaczono SDA, zaś linie zegara oznaczono SCL.
+
+\subparagraph{USB,PHY} \mbox{} \\
+
+USB jest magistralą komunikującą się w sposób szeregowy. Służy ona do przesyłania danych między urządzeniami bądź zasilania podłączonego urządzenia. Została ona zaprojektowania w celu standaryzacji magistrali przesyłających lub zasilających urządzenia peryferyjnych tj. klawiatura, urządzenia wskazujące czy monitor. USB posiada cztery piny: zasilający, dwa piny danych(D- i D+) oraz uziemiający. PHY jest to warstwa fizyczna modelu odniesienia łączenia systemów otwartych(OSI). PHY jest odpowiedzialne za połączenie warstwy łącza do kabla miedzianego lub światłowodu.
+
+
+\paragraph{zegar kontrolera} \mbox{} \\
+
+\paragraph{centralna jednostka obliczeniowa - procesor} \mbox{} \\
+
+\paragraph{JTAG} \mbox{} \\
+%DBG interface
+\paragraph{Pamięć} \mbox{} \\
+
+\subparagraph{SRAM} \mbox{} \\
+
+\subparagraph{Cache} \mbox{} \\
+
+\subparagraph{Flash Memory} \mbox{} \\
+
+%\paragraph{Rejestr} \mbox{} \\ % rejestr i rejsster specjalny
+%\paragraph{Dekoder instrukcji} \mbox{} \\
+%\paragraph{Rejestr SREG} \mbox{} \\
 \paragraph{Linie danych, adresowe i sterowania} \mbox{} \\
 
 \subsection{Architektura systemów wbudowanych}
@@ -959,6 +1020,9 @@ Department of Mathematics, Northern Kentucky University, March 2007, str 143-151
 \emph{Advanced Infrastructure Penetration Testing},
 Packt Publishing, 02.2018
 
+\bibitem{es}D.Lacamera
+\emph{Embedded Systems Architecture},
+Packt Publishing, 05.2018
 % NIE PODAWAC TEJ LITERATURY ----
 %\bibitem{stream_cipher}O. Santos and J. Stuppi,
 %\emph{
