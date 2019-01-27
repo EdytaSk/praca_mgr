@@ -28,7 +28,15 @@
 \section{Cel i zakres pracy}
 
 
-\quad Celem pracy jest przedstawienie algorytmów kryptograficznych oraz możliwych ataków. Następnie implementacja 2 algorytmów na systemie wbudowanym oraz porównanie ich wydajności w zależności od rozmiaru szyfrowanych danych.
+\quad Celem pracy jest przedstawienie algorytmów kryptograficznych, budowy systemów wbudowanych oraz implementacja algorytmu DES na systemie wbudowanym wraz ze zmierzeniem jego wydajności w zależności od rozmiaru szyfrowanych danych. Praca składa się z części teoretycznej, będącej wprowadzeniem do zagadnień kryptograficznych oraz budowy systemów wbudowanych i części praktycznej, w której przedstawiono charakterystykę wybranego systemu wbudowanego oraz implementację algorytmu DES wraz z przedstawieniem jego wydajności.
+
+\quad Praca została podzielona na dwie części:
+\begin{itemize}
+\item s
+\begin{itemize}
+\item ggg
+\end{itemize}
+\end{itemize}  
 %2. Na początku powinien być rozdział pt. "Cel i zakres pracy", zazwyczaj krótki maksymalnie do dwóch stron, w którym powinien znaleźć się (a) cel pracy - krótko powód podjęcia się tej tematyki, ze wskazaniem na to co pracę wyróżnia na tle prac innych o podobnej tematyce, (b) zakres pracy - czyli coś na zasadzie: praca składa sie z części teoretycznej, będącej wprowadzeniem do ...., części praktycznej w której zaprezentowane własne implementacje. Później też mozna dodać: W rozdziale 1 jest to i to, rozdział 2 poświęcono ...
 %Po przeczytaniu tego rozdzialu powinno być wiadomo mniej więcej jaki jest własny wkład, dlatego tak ważne jest podkreślenie znaczenia części praktycznej. Część ta pełni rolę abstraktu.
 !!!!!!!!!!!!! będzie więcej opisu !!!!!!!!!!!!!!!!
@@ -71,7 +79,7 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 \end{itemize}
 
 
-\subsection{Maszyna Enigma}
+%\subsection{Maszyna Enigma}
 
 \subsection{Szyfry blokowe i strumieniowe}
 \subsubsection{Szyfry blokowe} 
@@ -392,7 +400,7 @@ Algorytm DES nie jest obecnie uznawany za bezpieczny przez Amerykańskie Standar
 
 %%% cos o deszyfracji dodac
 
-\paragraph{AES} \mbox{} \\
+%\paragraph{AES} \mbox{} \\
 
 
 \paragraph{IDEA} \mbox{} \\ 
@@ -464,16 +472,13 @@ dodatkowe 4 podklucze&$x_{49}$&$x_{50}$&$x_{51}$&$x_{52}$&&&$x_{1}^{a}$&$x_{2}^{
 \end{table}
 
 Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożenie i dodawanie modulo oraz xorowanie. Do szyfrowania i deszyfrowania wiadomości wykorzystuje ten sam proces, natomiast podklucze są różne dla szyfrowania i odszyfrowywania. Algorytm IDEA wolniej szyfruje dane niż algorytm DES, jednak dzięki temu, że jego klucz jest dwa razy dłuższy niż w DES ataki brutalne są mniej skuteczne.~\cite{IDEA}
-\paragraph{Blowfish} \mbox{} \\
+
+%\paragraph{Blowfish} \mbox{} \\
 
 
 \subsubsection{Szyfry asymetryczne}
 
 \quad Szyfry asymetryczne charakteryzują się tym, że posiadają osobny klucz do szyfrowania i osobny deszyfrowania. W celu wyjaśnienia zasady działania szyfru asymetrycznego przedstawiono powszechnie znany sposób wysyłania wiadomości od Alicji do Boba. Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować.  
-
-
-
-
 
 
 
@@ -553,7 +558,7 @@ $g^{a}$ $\equiv$ a mod(p) oraz $g^{b}$ $\equiv$ b mod(p)
 \end{center}
 Obecnie nie istnieje żaden algorytm umożliwiający rozwiązanie problemu logarytmu dyskretnego.~\cite{DH}
 
-\paragraph{Funkcje haszujące} \mbox{} \\
+%\paragraph{Funkcje haszujące} \mbox{} \\
 
 \subsection{Protokoły}
 \subsubsection{VPN with Point-to-Point Tunneling Protocol (PPTP)}
@@ -715,24 +720,61 @@ Magistrala $I^{2}$ komunikuje się między urządzeniami w sposób szeregowy i d
 USB jest magistralą komunikującą się w sposób szeregowy. Służy ona do przesyłania danych między urządzeniami bądź zasilania podłączonego urządzenia. Została ona zaprojektowania w celu standaryzacji magistrali przesyłających lub zasilających urządzenia peryferyjnych tj. klawiatura, urządzenia wskazujące czy monitor. USB posiada cztery piny: zasilający, dwa piny danych(D- i D+) oraz uziemiający. PHY jest to warstwa fizyczna modelu odniesienia łączenia systemów otwartych(OSI). PHY jest odpowiedzialne za połączenie warstwy łącza do kabla miedzianego lub światłowodu.
 
 
-\paragraph{zegar kontrolera} \mbox{} \\
+\paragraph{Zegar czasu rzeczywistego RTC} \mbox{} \\
 
-\paragraph{centralna jednostka obliczeniowa - procesor} \mbox{} \\
+Zegar czasu rzeczywistego służy do śledzenia aktualnego czasu i daty, które są wykorzystywane jako znacznik przypisujący danym plikom ich czas utworzenia czy ostatniej modyfikacji. Zegar jest zasilany własną niezależną baterią, co znaczy że działa on również gdy zasilanie nie jest doprowadzone go układu. Bateria zasilająca zegar posiada żywotność ponad 10 lat. Ważnym parametrem zegara jest jego częstotliwość. Częstotliwość zegara jest to ilość instrukcji wykonana w czasie jednej sekundy, więc im większa częstotliwość zegara, tym więcej instrukcji jest wykonanych w tej samej jednostce czasu.
+
+
+\paragraph{Centralna jednostka obliczeniowa - procesor} \mbox{} \\
+
+Głównym komponentem składowym centralnej jednostki obliczeniowej zwanej procesorem są tranzystory, które działają w oparciu o sygnały prądowe lub napięciowe. Tranzystory są ze sobą połączone w celu utworzenia bramek logicznych tj. AND, OR, NOT, NAND, NOR, EX-OR i EX-NOR. Bramka logiczna NOT posiada jedno wejście i jedno wyjście, gdy bitem wejściowym jest 0 to na wyjściu otrzymujemy 1, natomiast gdy bitem wyjściowym jest 1 na wyjściu otrzymano wartość 0. Natomiast pozostałe bramki logiczne posiadają dwa bity wejściowe oznaczone jako A i B oraz jeden bit wyjściowy oznaczony C. Ich zależności logiczne zostały przedstawione w poniższej tabeli~\ref{bramki_logiczne}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|} 
+\hline
+A& B& C[AND] & C[NAND] & C[OR] & C[NOR] & C[EX-OR] & c[EX-NOR]\\ \hline
+0 & 0& 0& 1& 0& 1& 0& 1\\ \hline
+0 & 1& 0& 1& 1& 0& 1& 0\\ \hline
+1 & 0& 0& 1& 1& 0& 1& 0\\ \hline
+1 & 1& 1& 0& 1& 0& 0& 1\\ \hline
+\end{tabular}
+\caption{Bramki logiczne.}\label{bramki_logiczne}
+\end{table}
+
+Procesor jest stworzony w biliona takich bramek logicznych, więc im więcej tranzystorów posiada procesor tym wyższa jest jego wydajność i moc obliczeniowa. Wydajność procesora jest również zależna częstotliwości jego zegara, więc im większa częstotliwość zegara tym wyższa wydajność procesora. Liczba operacji procesora jest proporcjonalna do częstotliwości zegara. Obecnie powszechne są procesory wielordzeniowe, czyli wiele procesorów będących na jednym chipie. Pozwala to na równoległe wykonywanie instrukcji procesora przez co zwiększona jest jego wydajność. W skład głównych komponentów procesora wychodzą jednostka arytmetyczno-obliczeniowa zwana ALU, jednostka sterująca, pamięć podręczna, pamięć główna, pamięć dyskowa oraz urządzenia wejścia i wyjścia. Procesory można podzielić za względu na architektura na 32 i 64 bitowe. Procesory jedno rdzeniowe z architekturą 32 bitową wykonują operację czytania lub pisania 32 bitów w jednej jednostce czasowej, natomiast procesory z architekturą 64 bity w jednej jednostce czasowej.  
+
+
+
 
 \paragraph{JTAG} \mbox{} \\
 %DBG interface
+
+JTAG jest standardem IEEE 1149.1 do testowania połączeń oraz debugowania płytek drukowanych. Interfejs JTAG korzysta z pięciu linii sygnałowych: wejścia danych(TDI), wyjścia danych(TDO), wejścia sygnału zegarowego(TCK), wyboru trybu pracy(TMS) i zerowania(TRST). JTAG jest powszechnym interfejsem, który umożliwia komunikację zewnętrznego komputera z komponentami znajdującymi się na systemie wbudowanym.
+
 \paragraph{Pamięć} \mbox{} \\
+
+Głównym zadaniem pamięci jest przechowywanie danych w postaci binarnej. Systemy wbudowane działają na dwóch stanach, gdzie stan wysoki odpowiada dodatniemu napięciowi, zaś stan niski jest reprezentowany przez napięcie zerowe. Stan wysoki oznaczamy jako 1 w notacji binarnej, zaś stan niski jako 0 w notacji binarnej. Rozmiar pamięci wyrażamy w bitach [b], bajtach [B], kilobajt [KB], megabajt [MB], gigabajt [GB] i tarabajtach [TB]. Jednostka kilobajt jest równa 1024 bajt, 1 megabajt równa się 1024 kilobajtów, 1 gigabajt równy jest 1024 megabajtów, zaś 1 terabajt równy jest 1024 gigabajtów. 
 
 \subparagraph{SRAM} \mbox{} \\
 
-\subparagraph{Cache} \mbox{} \\
+SRAM jest to pamięć statyczna o swobodnym dostępie. Jest to pamięć statyczne, gdyż dane zawarte na niej są tak długo jak długo jest zasilany układ. Pamięć SRAM jest pamięcią ulotną. Magistrale danych i adresów łączą bezpośrednio procesor z pamięcią SRAM. Pamięć SRAM jest szybsza od pamięci DRAM w operacjach odczytu i zapisu danych, co jest następstwem jej większej ceny. Pamięć SRAM często jest wykorzystywana jako pamięć podręczna lub pamięć wewnętrzna procesora ze względu na swoją szybkość. Jedną z wad pamięci SRAM jest to, że wymaga ona więcej mocy do działania przez co wytwarza więcej ciepła i wymaga lepszego chłodzenia w porównaniu w pamięcią DRAM. %Kontroler SRAM umożliwia wykonywanie kilku operacji między procesorem, a SRAM za jego pośrednictwem. Operacje wykonywane przez kontroler SRAM to: strobowanie adresu procesora, operacja odczytu i zapisu,    Jest to zezwolenie na wyjściu (OE) i zezwolenie na zapis (WE) do pamięci SRAM oraz potwierdzenie (ACK) do procesora, które musi pochodzić z wyjść strobowania adresu procesora (AS) i odczytu / zapisu (R / W). To jest zadanie kontrolera SRAM.
 
-\subparagraph{Flash Memory} \mbox{} \\
+\subparagraph{Pamięć podręczna procesora Cache} \mbox{} \\
+
+Procesor systemu wbudowanego nieustanie czyta i zapisuje informacje z jego pamięci podręcznej. Głównymi cechami pamięci podręcznej jest mały rozmiar, tymczasowość i ich szybkość. Pamięć podręczną dzielimy na dwa poziomy. Pamięć podręczna pierwszego poziomu oznaczona L1 znajduje się na procesorze i jest mniejsza od pamięci poziomu drugiego. Pamięć podręczna poziomu drugiego oznaczona L2 znajduję się między procesorem, a pamięcią główną i jest większa od pamięci L1. W niektórych przypadkach pamięć pierwszego L1 i drugiego poziomu L2 jest umieszczona razem w pamięci procesora oraz jest dodawany poziom trzeci L3 pamięci podręcznej. Poziomy pamięci podręcznej opisuje zależność L1$<$L2$<$L3. 
+
+\subparagraph{Pamięć flash} \mbox{} \\
+
+Pamięć flash jest pamięcią nieulotną, co znaczy, że po odłączeniu zasilania znajdujące się na niej dane nie zostaną utracone. Pamięci flash są powszechnie stosowane w kartach pamięci, pamięciach USB czy dyskach SSD.
 
 %\paragraph{Rejestr} \mbox{} \\ % rejestr i rejsster specjalny
 %\paragraph{Dekoder instrukcji} \mbox{} \\
 %\paragraph{Rejestr SREG} \mbox{} \\
-\paragraph{Linie danych, adresowe i sterowania} \mbox{} \\
+\paragraph{Szyny danych, adresowe i sterowania} \mbox{} \\
+
+Wszystkie wewnętrzne komponenty znajdujące się na systemie wbudowanym  do komunikacji używają trzech szyn. Szyna danych jest odpowiedzialna za przesyłanie danych między nimi, szyna adresowa odpowiedzialna jest za wysyłanie adresów, natomiast szyna sterowania jest odpowiedzialna za wysyłanie instrukcji między komponentami~\cite{es}.
+
 
 \subsection{Architektura systemów wbudowanych}
 \quad Architekturę systemów wbudowanych możemy podzielić na architekturę zależną od struktury pamięci i zależną od typu instrukcji. Struktura pamięci : harwardzka, zmodyfikowana harwardzka i von-Neumanna. Typu instrukcji RISC i CISC.
@@ -1023,6 +1065,7 @@ Packt Publishing, 02.2018
 \bibitem{es}D.Lacamera
 \emph{Embedded Systems Architecture},
 Packt Publishing, 05.2018
+
 % NIE PODAWAC TEJ LITERATURY ----
 %\bibitem{stream_cipher}O. Santos and J. Stuppi,
 %\emph{

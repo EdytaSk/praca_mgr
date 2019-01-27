@@ -3,27 +3,23 @@
 \contentsline {section}{\numberline {2}Kryptografia}{4}
 \contentsline {subsection}{\numberline {2.1}Wprowadzenie}{4}
 \contentsline {subsection}{\numberline {2.2}Powszechne ataki}{4}
-\contentsline {subsection}{\numberline {2.3}Maszyna Enigma}{7}
-\contentsline {subsection}{\numberline {2.4}Szyfry blokowe i strumieniowe}{7}
-\contentsline {subsubsection}{\numberline {2.4.1}Szyfry blokowe}{7}
-\contentsline {subsubsection}{\numberline {2.4.2}Szyfry strumieniowe}{7}
-\contentsline {subsection}{\numberline {2.5}Szyfry symetryczne i asymetryczne}{8}
-\contentsline {subsubsection}{\numberline {2.5.1}Szyfry symetryczne}{8}
+\contentsline {subsection}{\numberline {2.3}Szyfry blokowe i strumieniowe}{7}
+\contentsline {subsubsection}{\numberline {2.3.1}Szyfry blokowe}{7}
+\contentsline {subsubsection}{\numberline {2.3.2}Szyfry strumieniowe}{7}
+\contentsline {subsection}{\numberline {2.4}Szyfry symetryczne i asymetryczne}{8}
+\contentsline {subsubsection}{\numberline {2.4.1}Szyfry symetryczne}{8}
 \contentsline {paragraph}{szyfr Cezara}{9}
 \contentsline {paragraph}{DES}{10}
-\contentsline {paragraph}{AES}{15}
 \contentsline {paragraph}{IDEA}{15}
-\contentsline {paragraph}{Blowfish}{18}
-\contentsline {subsubsection}{\numberline {2.5.2}Szyfry asymetryczne}{18}
+\contentsline {subsubsection}{\numberline {2.4.2}Szyfry asymetryczne}{18}
 \contentsline {paragraph}{RSA}{19}
 \contentsline {paragraph}{Diffie-Hellman}{20}
-\contentsline {paragraph}{Funkcje haszuj\IeC {\k a}ce}{20}
-\contentsline {subsection}{\numberline {2.6}Protoko\IeC {\l }y}{21}
-\contentsline {subsubsection}{\numberline {2.6.1}VPN with Point-to-Point Tunneling Protocol (PPTP)}{21}
-\contentsline {subsubsection}{\numberline {2.6.2}Secure Shell (SSH)}{22}
-\contentsline {subsubsection}{\numberline {2.6.3}IPsec}{23}
-\contentsline {subsubsection}{\numberline {2.6.4}Secure Socket Tunneling protocol Based on VPN}{25}
-\contentsline {subsubsection}{\numberline {2.6.5}L2TP}{26}
+\contentsline {subsection}{\numberline {2.5}Protoko\IeC {\l }y}{20}
+\contentsline {subsubsection}{\numberline {2.5.1}VPN with Point-to-Point Tunneling Protocol (PPTP)}{20}
+\contentsline {subsubsection}{\numberline {2.5.2}Secure Shell (SSH)}{21}
+\contentsline {subsubsection}{\numberline {2.5.3}IPsec}{23}
+\contentsline {subsubsection}{\numberline {2.5.4}Secure Socket Tunneling protocol Based on VPN}{25}
+\contentsline {subsubsection}{\numberline {2.5.5}L2TP}{26}
 \contentsline {section}{\numberline {3}Systemy wbudowane}{27}
 \contentsline {subsection}{\numberline {3.1}Budowa }{27}
 \contentsline {paragraph}{Modulator szeroko\IeC {\'s}ci impulsu PWM}{28}
@@ -36,29 +32,29 @@
 \contentsline {subparagraph}{Szeregowy interfejs urz\IeC {\k a}dze\IeC {\'n} peryferyjnych SPI}{30}
 \contentsline {subparagraph}{$I^{2}$C}{30}
 \contentsline {subparagraph}{USB,PHY}{31}
-\contentsline {paragraph}{zegar kontrolera}{31}
-\contentsline {paragraph}{centralna jednostka obliczeniowa - procesor}{31}
-\contentsline {paragraph}{JTAG}{31}
-\contentsline {paragraph}{Pami\IeC {\k e}\IeC {\'c}}{31}
-\contentsline {subparagraph}{SRAM}{31}
-\contentsline {subparagraph}{Cache}{31}
-\contentsline {subparagraph}{Flash Memory}{31}
-\contentsline {paragraph}{Linie danych, adresowe i sterowania}{31}
-\contentsline {subsection}{\numberline {3.2}Architektura system\IeC {\'o}w wbudowanych}{31}
-\contentsline {subsubsection}{\numberline {3.2.1}Architektura harwardzka}{32}
-\contentsline {subsubsection}{\numberline {3.2.2}Zmodyfikowana architektura harwardzka}{32}
-\contentsline {subsubsection}{\numberline {3.2.3}Architektura von-Neumanna}{32}
-\contentsline {subsubsection}{\numberline {3.2.4}RISC - Recuded Instruction Set Computer}{32}
-\contentsline {subsubsection}{\numberline {3.2.5}CISC - Complex Instruction Set Computer}{32}
-\contentsline {part}{II\hspace {1em}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} praktyczna}{33}
-\contentsline {section}{\numberline {4}Aplikacja algorytm\IeC {\'o}w kryptograficznych na systemie wbudowanym}{33}
-\contentsline {subsection}{\numberline {4.1}Charakterystyka systemu wbudowanego}{33}
-\contentsline {subsection}{\numberline {4.2}Szyfrowanie przy u\IeC {\.z}yciu algorytmu DES}{33}
-\contentsline {subsection}{\numberline {4.3}Implementacja algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{37}
-\contentsline {subsubsection}{\numberline {4.3.1}Implementacja szyfru Cezara}{37}
-\contentsline {subsubsection}{\numberline {4.3.2}Implementacja szyfru DES}{37}
-\contentsline {subsection}{\numberline {4.4}Wyniki implementacji algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{37}
-\contentsline {section}{\numberline {5}Wnioski}{38}
-\contentsline {section}{\numberline {6}Podsumowanie}{38}
-\contentsline {section}{Literatura}{40}
-\contentsline {section}{Spis rysunk\IeC {\'o}w}{40}
+\contentsline {paragraph}{Zegar czasu rzeczywistego RTC}{31}
+\contentsline {paragraph}{Centralna jednostka obliczeniowa - procesor}{31}
+\contentsline {paragraph}{JTAG}{32}
+\contentsline {paragraph}{Pami\IeC {\k e}\IeC {\'c}}{32}
+\contentsline {subparagraph}{SRAM}{32}
+\contentsline {subparagraph}{Pami\IeC {\k e}\IeC {\'c} podr\IeC {\k e}czna procesora Cache}{32}
+\contentsline {subparagraph}{Pami\IeC {\k e}\IeC {\'c} flash}{33}
+\contentsline {paragraph}{Szyny danych, adresowe i sterowania}{33}
+\contentsline {subsection}{\numberline {3.2}Architektura system\IeC {\'o}w wbudowanych}{33}
+\contentsline {subsubsection}{\numberline {3.2.1}Architektura harwardzka}{33}
+\contentsline {subsubsection}{\numberline {3.2.2}Zmodyfikowana architektura harwardzka}{33}
+\contentsline {subsubsection}{\numberline {3.2.3}Architektura von-Neumanna}{33}
+\contentsline {subsubsection}{\numberline {3.2.4}RISC - Recuded Instruction Set Computer}{33}
+\contentsline {subsubsection}{\numberline {3.2.5}CISC - Complex Instruction Set Computer}{33}
+\contentsline {part}{II\hspace {1em}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} praktyczna}{34}
+\contentsline {section}{\numberline {4}Aplikacja algorytm\IeC {\'o}w kryptograficznych na systemie wbudowanym}{34}
+\contentsline {subsection}{\numberline {4.1}Charakterystyka systemu wbudowanego}{34}
+\contentsline {subsection}{\numberline {4.2}Szyfrowanie przy u\IeC {\.z}yciu algorytmu DES}{34}
+\contentsline {subsection}{\numberline {4.3}Implementacja algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{38}
+\contentsline {subsubsection}{\numberline {4.3.1}Implementacja szyfru Cezara}{38}
+\contentsline {subsubsection}{\numberline {4.3.2}Implementacja szyfru DES}{38}
+\contentsline {subsection}{\numberline {4.4}Wyniki implementacji algorytm\IeC {\'o}w szyfruj\IeC {\k a}cych}{38}
+\contentsline {section}{\numberline {5}Wnioski}{39}
+\contentsline {section}{\numberline {6}Podsumowanie}{39}
+\contentsline {section}{Literatura}{41}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{41}
