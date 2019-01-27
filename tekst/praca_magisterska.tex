@@ -28,18 +28,19 @@
 \section{Cel i zakres pracy}
 
 
-\quad Celem pracy jest przedstawienie algorytmów kryptograficznych, budowy systemów wbudowanych oraz implementacja algorytmu DES na systemie wbudowanym wraz ze zmierzeniem jego wydajności w zależności od rozmiaru szyfrowanych danych. Praca składa się z części teoretycznej, będącej wprowadzeniem do zagadnień kryptograficznych oraz budowy systemów wbudowanych i części praktycznej, w której przedstawiono charakterystykę wybranego systemu wbudowanego oraz implementację algorytmu DES wraz z przedstawieniem jego wydajności.
+\quad Celem pracy jest przedstawienie algorytmów kryptograficznych, budowy systemów wbudowanych oraz implementacja algorytmu DES na systemie wbudowanym wraz ze zmierzeniem jego wydajności w zależności od rozmiaru szyfrowanych danych. Praca składa się z części teoretycznej, będącej wprowadzeniem do zagadnień kryptograficznych oraz budowy systemów wbudowanych i części praktycznej, w której przedstawiono charakterystykę wybranego systemu wbudowanego oraz implementację algorytmu DES wraz z przedstawieniem jego wydajności. Praca została podzielono na na dwie części: część teoretyczną, która składa się z dwóch rozdziałów i część praktyczną, która zawiera również dwa rozdziały. 
 
-\quad Praca została podzielona na dwie części:
-\begin{itemize}
-\item s
-\begin{itemize}
-\item ggg
-\end{itemize}
-\end{itemize}  
+W pierwszej części teoretycznej w rodziale 2 opisano powszechna ataki na algorytmy kryptograficzne oraz przedstawiono sposób działania szyfrów blokowych i strumieniowych. Następnie objaśniono działanie szyfrów symetrycznych, do których należy szyfr Cezara, algorytm DES oraz IDEA. W dalszej części objaśniono działanie szyfrów asymetrycznych, do których należą dwa słynne algorytmy kryptograficzne RSA i Diffiego-Helmanna. Na zakończenie rozdziału   omówiono protokoły wykorzystywane do komunikacji między dwoma urządzeniami elektronicznymi. W rodziale 3 opisane budowę systemów wbudowanych poprzez opis ich składowych komponentów tj. modulator szerokości impulsów PWM, przetwornik analogowo-cyfrowy, przetwornik cyfrowo-analogowy, wejścia/wyjścia ogólnego przeznaczenia, uniwersalny odbiornik i nadajnik asynchroniczny UART, magistrale, zegar czasu rzeczywistego, centralna jednostka obliczeniowa, JTAG, pamięci oraz szyny danych, adresowe i sterowania. 
+
+W drugiej części praktycznej w rozdziale 4 przedstawiono charakterystykę użytego systemu wbudowanego ESP8266. Następnie przedstawiono ręczne szyfrowanie krok po kroku wiadomości z wykorzystaniem algorytmu DES. W następnym podrozdziale ukazano wyniki szyfrowania dla 16 rund programu implementującego algorytm DES i porównano ich zgodność z ręcznym obliczeniem dla rundy pierwszej. 
+ 
+ ..................... 
+ 
+ 
+
 %2. Na początku powinien być rozdział pt. "Cel i zakres pracy", zazwyczaj krótki maksymalnie do dwóch stron, w którym powinien znaleźć się (a) cel pracy - krótko powód podjęcia się tej tematyki, ze wskazaniem na to co pracę wyróżnia na tle prac innych o podobnej tematyce, (b) zakres pracy - czyli coś na zasadzie: praca składa sie z części teoretycznej, będącej wprowadzeniem do ...., części praktycznej w której zaprezentowane własne implementacje. Później też mozna dodać: W rozdziale 1 jest to i to, rozdział 2 poświęcono ...
 %Po przeczytaniu tego rozdzialu powinno być wiadomo mniej więcej jaki jest własny wkład, dlatego tak ważne jest podkreślenie znaczenia części praktycznej. Część ta pełni rolę abstraktu.
-!!!!!!!!!!!!! będzie więcej opisu !!!!!!!!!!!!!!!!
+!!!!!!!!!!!!! będzie jeszcze opis czesci praktycznej i podsumowanie !!!!!!!!!!!!!!!!
 
 \newpage
 \section{Kryptografia}
@@ -669,11 +670,10 @@ Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostaw
 \quad W obecnych czasach wbudowane systemy zyskają coraz większą popularność poprzez stosowanie ich w przedmiotach codziennego użytku między innymi: odkurzacz automatyczny, elektryczna hulajnoga, maszyny sprzedające, systemy alarmowe, telefony komórkowe czy drukarki. W przypadku niektórych zastosowań systemów wbudowanych np.telefony komórkowe czy systemy alarmowe niezbędne jest szyfrowanie wiadomości na nich występujących. W przypadku braku bloku kryptograficznego na systemie wbudowanym jest on podatny na atak np. w przypadku włamania do mieszkania z alarmem może on być wyłączony przez hakera w zdecydowanie krótszym czasie niż w przypadku takiego systemu alarmowego, na którym dane są całkowicie szyfrowane. Systemy wbudowane nie posiadają ściśle określonych architektur, projektowane są w zależności od zapotrzebowania bądź uniwersalne. Głównym argumentem przemawiającym za systemami wbudowanymi jest ich niski koszt produkcji oraz niski pobór mocy. Na rysunku~\ref{es} przedstawiono ogólny schemat blokowy komponentów zawartych wewnątrz mikrokontrolera.
 \begin{figure}[H]
 \centering
-\includegraphics[width=15cm]{es.png}
+\includegraphics[width=12cm]{es.png}
 \caption{Schemat blokowy komponentów wewnątrz ogólnego mikrokontrolera.~\cite{es}}\label{es}
 \end{figure}
 
-Na rysunku~\ref{es} zawarte jest kilka głównych komponentów, które zostaną opisane poniżej.
 \paragraph{Modulator szerokości impulsu PWM} \mbox{} \\
 
 Modulator szerokości impulsów jest wykorzystywany do regulowania sygnału napięciowego lub prądowego przy stałej amplitudzie i częstotliwości. PWM jest wykorzystywany do kontrolowanie mocy dostarczonej do urządzeń elektronicznych sterowanych przy pomocy mikrokontrolera. Wejściowy pulsujący sygnał jest generowany na sekwencyjne sygnały impulsowe w postaci fali o kształcie prostokątnym. Fala o charakterze prostokątnym posiada dwa stany: wysoki i niski, które są osiągalne poprzez przełączanie tranzystorów bądź tyrystorów w stan przewodzenia bądź zaporowy. Stan wysoki sygnały wyjściowego oznacza stan przewodzenia tranzystora, zaś stan niski oznacza stan zaporowy. Amplituda w sygnale prostokątnym jest to różnica między stanem wysoki, a stanem niskim napięcia w przypadku PWM sterowanego sygnałem napięciowym. Okres fali wyjściowej to czas trwania jego jednego cyklu, zaś częstotliwością fali jest odwrotność trwania okresu. Istotnym parametrem określającym wyjściową falę prostokątną jest również cykl roboczy, który jest stosunkiem procentowym czasu wysokiego stanu do okresu oznaczanego literą T.
@@ -776,23 +776,24 @@ Pamięć flash jest pamięcią nieulotną, co znaczy, że po odłączeniu zasila
 Wszystkie wewnętrzne komponenty znajdujące się na systemie wbudowanym  do komunikacji używają trzech szyn. Szyna danych jest odpowiedzialna za przesyłanie danych między nimi, szyna adresowa odpowiedzialna jest za wysyłanie adresów, natomiast szyna sterowania jest odpowiedzialna za wysyłanie instrukcji między komponentami~\cite{es}.
 
 
-\subsection{Architektura systemów wbudowanych}
-\quad Architekturę systemów wbudowanych możemy podzielić na architekturę zależną od struktury pamięci i zależną od typu instrukcji. Struktura pamięci : harwardzka, zmodyfikowana harwardzka i von-Neumanna. Typu instrukcji RISC i CISC.
-\subsubsection{Architektura harwardzka}
-\subsubsection{Zmodyfikowana architektura harwardzka}
-\subsubsection{Architektura von-Neumanna}
-\subsubsection{RISC - Recuded Instruction Set Computer}
-\subsubsection{CISC - Complex Instruction Set Computer}
+%\subsection{Architektura systemów wbudowanych}
+%\quad Architekturę systemów wbudowanych możemy podzielić na architekturę zależną od struktury pamięci i zależną od typu instrukcji. Struktura pamięci : harwardzka, zmodyfikowana harwardzka i von-Neumanna. Typu instrukcji RISC i CISC.
+%\subsubsection{Architektura harwardzka}
+%\subsubsection{Zmodyfikowana architektura harwardzka}
+%\subsubsection{Architektura von-Neumanna}
+%\subsubsection{RISC - Recuded Instruction Set Computer}
+%\subsubsection{CISC - Complex Instruction Set Computer}
 
 \newpage
 \part{Część praktyczna}
 \section{Aplikacja algorytmów kryptograficznych na systemie wbudowanym}
-  ...
-\subsection{Charakterystyka systemu wbudowanego}
-\subsection{Szyfrowanie przy użyciu algorytmu DES}
+\subsection{Charakterystyka ESP8266}
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!  Przykład użycia algorytmu DES.
+....................
+
+\subsection{Manualna implementacja algorytmu DES}
+
+\quad W podrozdziale 2.4.1 zostały opisane teoretyczne kroki działania algorytmu DES, które zostały poniżej zobrazowane dla rundy pierwszej. W tabeli~\ref{binary} ukazano wiadomość w postaci decymalnej i heksadecymalnej oraz heksadecymalny klucz, które zostały użyte do przedstawienie działania algorytmu DES. 
  
 \begin{table}[H]
 \centering
@@ -807,6 +808,9 @@ klucz & 43 23 66 A3 6B BB 53 C1\\
 \end{tabular}
 \caption{Dane wejściowe algorytmu DES.}~\label{binary}
 \end{table}
+
+Jednym z pierwszych kroków jest zamiana klucza heksadecymalnego do postaci binarnej co zostało ukazane w tabeli~\ref{klucz_to_binary}.
+
 
 \begin{table}[H]
 \centering
@@ -829,9 +833,7 @@ numer bitu & 33-36 & 37-40 & 41-44 & 45-48 & 49-52 & 53-56 & 57-60 & 61-64\\
 \caption{Klucz w postaci binarnej.}~\label{klucz_to_binary}
 \end{table}
 
-Po przekształceniu heksadecymalnego klucza do postaci binarnej usuwamy bit parzystości z 64 bitowego bloku czyli 8, 16, 24, 32, 40, 48, 56 i 64 bit. W tabeli~\ref{klucz_to_binary} bit parzystości oznaczono pogrubioną kursywą.
-
-Następnie z wykorzystaniem tabeli~\ref{per_klucza} dokonujemy przestawienie bitów klucza, odszukano bit 57 klucza, który wynosi 0 i wpisano do nowo utworzonej tabeli ~\ref{tabela_podstawienia} w lewym górnym rogu. W tak przedstawiony sposób dokonano translacji dla dalszych bitów klucza, a wynik przedstawiono w tabeli~\ref{tabela_podstawienia}.
+Po przekształceniu heksadecymalnego klucza do postaci binarnej usuwamy bit parzystości z 64 bitowego bloku czyli 8, 16, 24, 32, 40, 48, 56 i 64 bit. W tabeli~\ref{klucz_to_binary} bit parzystości oznaczono pogrubioną kursywą. Następnie z wykorzystaniem tabeli~\ref{per_klucza} dokonujemy przestawienie bitów klucza, odszukano bit 57 klucza, który wynosi 0 i wpisano do nowo utworzonej tabeli ~\ref{tabela_podstawienia} w lewym górnym rogu. W tak przedstawiony sposób dokonano translacji dla dalszych bitów klucza, a wynik przedstawiono w tabeli~\ref{tabela_podstawienia}.
 
 \begin{table}[H]
 \centering
@@ -880,7 +882,7 @@ klucz po permutacji & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 &&\\
 \end{table}
 
 
-Klucz po permutacji z postawi 64 bitowej redukuje się do postaci 56 bitowej i dzieli na dwie części: prawą i lewą. 
+Klucz po permutacji z postaci 64 bitowej redukuje się do postaci 56 bitowej poprzez usunięcie bitów parzystości i dzieli na dwie części: prawą i lewą. W tabeli~\ref{LP} w górnym wierszy ukazane jest pierwsze 28 bitów klucza tzn. lewa część L oraz w dolnym wierszu przedstawiono następne 28 bitów klucza, które zwane są prawą częścią klucza P.
 
 \begin{table}[H]
 \centering
@@ -891,10 +893,11 @@ Klucz po permutacji z postawi 64 bitowej redukuje się do postaci 56 bitowej i d
 1111 1011 0111 1111 0000 0100 0000\\
 \hline
 \end{tabular}
-\caption{Obliczony klucz w postaci 56 bitowej.}
+\caption{Obliczony klucz w postaci 56 bitowej.}\label{LP}
 \end{table}
 
-* przesunięcie bitowe klucza o 1 w lewo
+Klucz został podzielony na dwie osobne części, gdyż każda z nich podlega osobnym dalszym operacjom. W tabeli~\ref{shift} ukazano przesuniecie bitowe o 1 klucza w lewo wykonane na lewej i prawej części klucza.
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|}
@@ -904,10 +907,10 @@ Klucz po permutacji z postawi 64 bitowej redukuje się do postaci 56 bitowej i d
 1111 0110 1111 1110 0000 1000 0001\\
 \hline
 \end{tabular}
-\caption{Obliczony klucz w postaci 56 bitowej.}
+\caption{Obliczony klucz w postaci 56 bitowej.}\label{shift}
 \end{table}
 
-* Permutacja kompresji klucza DES (transpozycja tabeli~\ref{per_kompresji} kompresji klucza z 56 bitami przesuniętego klucza.
+Ostatnim etapem obliczania klucza dla rundy pierwszej jest permutacja kompresji klucza DES zgodnie z tabelą~\ref{per_kompresji} kompresji klucza oraz przedstawienie wyniku w postaci heksadecymalnej co ukazano w tabeli~\ref{56}.
 
 \begin{table}[H]
 \centering
@@ -922,12 +925,13 @@ bitowy klucz 56bitowy po permutacji & 0010 & 0011 & 0000 & 0111 & 1001 & 0011\\ 
 heksadecymalny klucz 56bitowy po permutacji & 2 & 3 & 0 & 7 & 9 & 3\\ 
 \hline
 \end{tabular}
-\caption{Obliczony klucz w postaci 56 bitowej.}
+\caption{Obliczony klucz w postaci 56 bitowej.}\label{56}
 \end{table}
 
-* Obliczony klucz w pierwszym etapie to EF108A230793.
+Kluczem obliczonym dla pierwszej rundy to EF108A230793.\\
 
-!!!!!!!!!! Obliczenie permutacji początkowej 
+
+Następnym krokiem algorytmu jest przetworzenie w odpowiedni sposób jawnej wiadomości, którą przedstawiono w postaci heksadecymalnej i decymalnej w tabeli~\ref{wiadomosc}.
 
 \begin{table}[H]
 \centering
@@ -940,9 +944,10 @@ wiadomość heksadecymalna & 6 & A & 2 & 0 & 3 & A & 2 & 9\\ \hline
 wiadomość binarna & 0110 & 1010 & 0010 & 0000 & 0011 & 1010 & 0010 & 1001\\ \hline
 numer bitu & 33-36 & 37-40 & 41-44 & 44-48 & 49-52 & 53-56 & 57-60 & 61-64\\ \hline
 \end{tabular}
-\caption{Wiadomość przedstawiona w postaci binarnej i heksadecymalnej.}
+\caption{Wiadomość przedstawiona w postaci binarnej i heksadecymalnej.}\label{wiadomosc}
 \end{table}
 
+Następnym krokiem było dokonanie obliczenia permutacji początkowej wiadomości zgodnie z tabelą~\ref{per_poczatkowa} co ukazano w tabeli~\ref{per}.
 
 \begin{table}[H]
 \centering
@@ -954,30 +959,34 @@ wiadomość binarna po permutacji & 0000 & 0000 & 1111 & 1111 & 1101 & 0010 & 01
 wiadomość heksadecymalna po permutacji & 0 & 0 & F & F & D & 2 & 5 & 1\\ \hline
 
 \end{tabular}
-\caption{Transpozycja wiadomości w postaci binarnej z tabelą permutacji początkowej.}
+\caption{Transpozycja wiadomości w postaci binarnej z tabelą permutacji początkowej.}\label{per}
 \end{table}
 
 
 
 Lewa strona wiadomości to L = 1F45058B, prawa strona P = 00FFD251. 
 Dla rundy pierwszej algorytmu lewą stroną wiadomości zostaje prawa część wiadomości, natomiast prawą część wiadomości obliczamy następująco:
-*  prawa część wiadomości podlega transpozycji zgodnie z tabelą permutacji rozszerzenia 
-* operacja XOR wiadomości otrzymanej w wyniku transpozycji z obliczonym kluczem EF108A230793.
+\begin{itemize}
+\item prawa część wiadomości podlega transpozycji zgodnie z tabelą~\ref{per_rozszerzenia} permutacji rozszerzenia,
+\item operacja XOR wiadomości otrzymanej w wyniku transpozycji z obliczonym kluczem to EF108A230793,
+\item prawa część wiadomości podlega transpozycji zgodnie z tabelą~\ref{per_rozszerzenia} permutacji rozszerzenia dając wynik przedstawiony w tabeli~\ref{per_rozszerzenia_wiadomosci}.
+\end{itemize}
 
-
-
-* prawa część wiadomości podlega transpozycji zgodnie z tabelą permutacji rozszerzenia dając wynik w tabeli poniżej.
 \begin{table}[H]
+\centering
 \begin{tabular}{|c|c|}
 \hline
 prawa część wiadomości & 00FFD251\\ \hline
 & 0000 0000 1111 1111 1101 0010 0101 0001\\ \hline
 permutacja rozszerzenia & 100000 000001 011111 111111 111010 100100 001010 100010\\ \hline
 \end{tabular}
+\caption{Permutacja rozszerzenia prawej części wiadomości.}\label{per_rozszerzenia_wiadomosci}
 \end{table}
 
+W tabeli~\ref{xor} przestawiono wynik operacji xor zmodyfikowanej wiadomości z kluczem.
 
 \begin{table}[H]
+\centering
 \begin{tabular}{|c|c|}
 \hline
 wiadomość & 100000 000001 011111 111111 111010 100100 001010 100010\\ \hline
@@ -988,14 +997,8 @@ XOR & 011011 110000 011101 110101 110010 010100 010100 110001\\
 \caption{XOR wiadomości po permutacji rozszerzenia z kluczem.}\label{xor}
 \end{table}
 
-!!!!!!!! Podstawienie w S-blokach
-
-W tabeli
-
-Wynik operacji XOR z tabeli ~\ref{xor} podzielono na S1 = 011011, S2 = 110000, S3 = 011101, S4 = 110101, S5 = 110010, S6 = 010100, S7 = 010100 i S8 = 110001. Wartości S bloków odczytano z użyciem tabeli~\ref{s_bloki}. Pierwszy w ostatni bit bloku oznacza rząd z tabeli~\ref{s_bloki} S-bloków, wartości 00 oznaczają wiersz 0, 01 oznaczają wiersz 1, 10 oznaczają wiersz 2, zaś 11 oznaczają wiersz 3. Dla wartości S1 pierwszy i ostatni bit bloku S1 = 01, co znaczy korzystanie z wiersza 1 S bloku 1. Następnie cztery bity między 1-5 bitem zmieniono na wartość decymalną. Dla S1 postać binarna 1101 wynosi 13 w postaci decymalnej, z tabeli~\ref{s_bloki} odczytujemy z wiersza 1, kolumny 13 wartość  5, więc S1 = 9. W sposób analogiczny odczytano pozostałe wartości S-bloków, które przedstawiono poniżej:
+Następnym krokiem szyfrowania wiadomości było dokonanie podstawienia w S-blokach zgodnie z tabelą~\ref{s_bloki} s bloków. Wynik operacji XOR z tabeli ~\ref{xor} podzielono na S1 = 011011, S2 = 110000, S3 = 011101, S4 = 110101, S5 = 110010, S6 = 010100, S7 = 010100 i S8 = 110001. Wartości S bloków odczytano z użyciem tabeli~\ref{s_bloki}. Pierwszy w ostatni bit bloku oznacza rząd z tabeli~\ref{s_bloki} S-bloków, wartości 00 oznaczają wiersz 0, 01 oznaczają wiersz 1, 10 oznaczają wiersz 2, zaś 11 oznaczają wiersz 3. Dla wartości S1 pierwszy i ostatni bit bloku S1 = 01, co znaczy korzystanie z wiersza 1 S bloku 1. Następnie cztery bity między 1-5 bitem zmieniono na wartość decymalną. Dla S1 postać binarna 1101 wynosi 13 w postaci decymalnej, z tabeli~\ref{s_bloki} odczytujemy z wiersza 1, kolumny 13 wartość  5, więc S1 = 9. W sposób analogiczny odczytano pozostałe wartości S-bloków, które przedstawiono w tabeli~\ref{sbok_wynik}.
  
-S1 = 5, S2 = 12, S3 = 15, S4 = 5, S5 = 9, S6 = 3, S7 = 9,S8 = 15.
-
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|} 
@@ -1004,24 +1007,24 @@ decymalnie &5 &12& 15& 5& 9& 3& 9& 15\\ \hline
 binarnie & 0101& 1100& 1111& 0101& 1001& 0011& 1001& 1111\\ \hline
 numer bitu &1-4 &5-8& 9-12& 13-16& 17-20& 21-24& 25-28& 29-32\\ \hline
 \end{tabular}
+\caption{Wiadomość po operacji na S blokach.}\label{sbok_wynik}
 \end{table}
 
+Jednym w ostatnich kroków szyfrowania wiadomości jest dokonanie transpozycji wyjścia S bloku z tabelą permutacji P-bloku~\ref{blok_P} w wyniku czego otrzymano: 1010 1111 0010 1011 1011 1001 0011 0111. Otrzymaną wartość poddano operacji XOR z lewą połową wiadomości (1F45058B), co przedstawiono jako (1010 1111 0010 1011 1011 1001 0011 0111) $\oplus$ (0001 1111 0100 0101 0000 0101 1000 1011) = 1011 0000 0110 1110 1011 1100 1011 1100, co w postaci heksadecymalnej daje wartość B06EBCB3. Wartość prawej strony wiadomości dla rundy pierwszej wynosi B06EBCB3. 
+
+\subsubsection{Implementacja algorytmu DES na ESP8266}
 
 
-Dokonujemy transpozycji wyjścia S bloku z tabelą permutacji P-bloku~\ref{blok_P} w wyniku czego otrzymano: 1010 1111 0010 1011 1011 1001 0011 0111. Otrzymaną wartość poddano operacji XOR z lewą połową wiadomości (1F45058B), co przedstawiono jako (1010 1111 0010 1011 1011 1001 0011 0111) $/oplus$ (0001 1111 0100 0101 0000 0101 1000 1011) = 1011 0000 0110 1110 1011 1100 1011 1100, co w postaci heksadecymalnej daje wartość B06EBCB3.
+
+\paragraph{Wyniki algorytmu DES}\mbox{} \\
 
 
-
-Wartość prawej strony rundy pierwszej wynosi B06EBCB3. 
-
-\subsection{Implementacja algorytmów szyfrujących}
-\subsubsection{Implementacja szyfru Cezara}
-\subsubsection{Implementacja szyfru DES}
-\subsection{Wyniki implementacji algorytmów szyfrujących} 
+\subsection{Wydajność algorytmu DES na ESP8266} 
 \newpage
 \section{Wnioski}
-\section{Podsumowanie}
 %3. Później w podsumowaniu warto nawiązać do Celu i zakresu podkreślając co zostało zrobione, a co np. nie z podaniem powodów.
+
+
 \newpage
 \begin{thebibliography}{99}
 

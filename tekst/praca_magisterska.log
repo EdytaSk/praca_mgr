@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  27 JAN 2019 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  27 JAN 2019 16:25
 entering extended mode
 **./praca_magisterska.tex
 (praca_magisterska.tex
@@ -824,154 +824,154 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 ("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-
-{C:/Users/admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
+))
 \tf@toc=\write4
 \openout4 = `praca_magisterska.toc'.
 
+ [1
 
+
+{C:/Users/admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 [2]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 35.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 60.
  ("C:\Users\admin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 35.
-[3] [4]
-<Powtarzajace_ataki.jpg, id=21, 406.51875pt x 250.68657pt>
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 60.
+[3]
+<Powtarzajace_ataki.jpg, id=18, 406.51875pt x 250.68657pt>
 File: Powtarzajace_ataki.jpg Graphic file (type jpg)
 <use Powtarzajace_ataki.jpg>
-Package pdftex.def Info: Powtarzajace_ataki.jpg  used on input line 67.
+Package pdftex.def Info: Powtarzajace_ataki.jpg  used on input line 68.
 (pdftex.def)             Requested size: 199.16928pt x 122.81836pt.
- [5]
-<Porwanie_sesji.jpg, id=25, 276.28218pt x 152.06813pt>
+ [4]
+<Porwanie_sesji.jpg, id=22, 276.28218pt x 152.06813pt>
 File: Porwanie_sesji.jpg Graphic file (type jpg)
 <use Porwanie_sesji.jpg>
-Package pdftex.def Info: Porwanie_sesji.jpg  used on input line 74.
+Package pdftex.def Info: Porwanie_sesji.jpg  used on input line 75.
 (pdftex.def)             Requested size: 227.62204pt x 125.2837pt.
- [6 <./Powtarzajace_ataki.jpg> <./Porwanie_sesji.jpg>] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+ [5 <./Powtarzajace_ataki.jpg> <./Porwanie_sesji.jpg>] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
 
-LaTeX Warning: Citation `stream_cipher' on page 8 undefined on input line 141.
+LaTeX Warning: Citation `stream_cipher' on page 7 undefined on input line 142.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--161
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 163--175
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 150--162
 
  []
 
-[9] [10]
-<des.jpg, id=43, 239.39438pt x 218.8175pt>
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 164--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+[8] [9]
+<des.jpg, id=40, 239.39438pt x 218.8175pt>
 File: des.jpg Graphic file (type jpg)
 <use des.jpg>
-Package pdftex.def Info: des.jpg  used on input line 227.
+Package pdftex.def Info: des.jpg  used on input line 228.
 (pdftex.def)             Requested size: 239.39378pt x 218.81696pt.
- [11 <./des.jpg>] [12] [13]
+ [10 <./des.jpg>] [11] [12]
 Overfull \vbox (35.98032pt too high) has occurred while \output is active []
 
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
 
  []
 
-<IDEA.jpg, id=57, 213.79875pt x 222.8325pt>
+<IDEA.jpg, id=54, 213.79875pt x 222.8325pt>
 File: IDEA.jpg Graphic file (type jpg)
 <use IDEA.jpg>
-Package pdftex.def Info: IDEA.jpg  used on input line 412.
+Package pdftex.def Info: IDEA.jpg  used on input line 413.
 (pdftex.def)             Requested size: 213.79822pt x 222.83195pt.
-[15] [16 <./IDEA.jpg>]
+[14] [15 <./IDEA.jpg>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 431.
+(Font)              <8> on input line 432.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 431.
+(Font)              <6> on input line 432.
 
-Overfull \hbox (4.16177pt too wide) in paragraph at lines 458--471
+Overfull \hbox (4.16177pt too wide) in paragraph at lines 459--472
  [][] 
  []
 
-[17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 498--499
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
 
  []
 
-[19]
-<komunikacja_PPTP.jpg, id=78, 572.1375pt x 235.63031pt>
+[18]
+<komunikacja_PPTP.jpg, id=74, 572.1375pt x 235.63031pt>
 File: komunikacja_PPTP.jpg Graphic file (type jpg)
 <use komunikacja_PPTP.jpg>
-Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 568.
+Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 569.
 (pdftex.def)             Requested size: 341.43306pt x 140.61703pt.
- [20]
-<przekierowywanie_lokalne_SSH.jpg, id=82, 572.1375pt x 153.57375pt>
+ [19]
+<przekierowywanie_lokalne_SSH.jpg, id=79, 572.1375pt x 153.57375pt>
 File: przekierowywanie_lokalne_SSH.jpg Graphic file (type jpg)
 <use przekierowywanie_lokalne_SSH.jpg>
 Package pdftex.def Info: przekierowywanie_lokalne_SSH.jpg  used on input line 5
-83.
+84.
 (pdftex.def)             Requested size: 341.43306pt x 91.64816pt.
- [21 <./komunikacja_PPTP.jpg>] [22 <./przekierowywanie_lokalne_SSH.jpg>]
-<przekierowywanie_zdalne_SSH.jpg, id=89, 572.1375pt x 153.57375pt>
+ [20 <./komunikacja_PPTP.jpg>] [21 <./przekierowywanie_lokalne_SSH.jpg>]
+<przekierowywanie_zdalne_SSH.jpg, id=86, 572.1375pt x 153.57375pt>
 File: przekierowywanie_zdalne_SSH.jpg Graphic file (type jpg)
 <use przekierowywanie_zdalne_SSH.jpg>
 Package pdftex.def Info: przekierowywanie_zdalne_SSH.jpg  used on input line 59
-7.
+8.
 (pdftex.def)             Requested size: 284.52756pt x 76.37425pt.
-<tryb_tunelowy_IPsec.jpg, id=90, 739.26187pt x 231.86626pt>
+<tryb_tunelowy_IPsec.jpg, id=87, 739.26187pt x 231.86626pt>
 File: tryb_tunelowy_IPsec.jpg Graphic file (type jpg)
 <use tryb_tunelowy_IPsec.jpg>
-Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 621.
+Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 622.
 (pdftex.def)             Requested size: 284.52756pt x 89.2387pt.
- [23 <./przekierowywanie_zdalne_SSH.jpg>] [24 <./tryb_tunelowy_IPsec.jpg>]
-[25] [26]
-<es.png, id=104, 673.01437pt x 646.66594pt>
+ [22 <./przekierowywanie_zdalne_SSH.jpg>] [23 <./tryb_tunelowy_IPsec.jpg>]
+[24] [25]
+<es.png, id=101, 673.01437pt x 646.66594pt>
 File: es.png Graphic file (type png)
 <use es.png>
-Package pdftex.def Info: es.png  used on input line 672.
-(pdftex.def)             Requested size: 426.79134pt x 410.0856pt.
- [27]
+Package pdftex.def Info: es.png  used on input line 673.
+(pdftex.def)             Requested size: 341.43306pt x 328.06848pt.
+
 Underfull \hbox (badness 10000) in paragraph at lines 677--678
 
  []
 
-[28 <./es.png>]
+[26 <./es.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 682--683
 
  []
@@ -991,7 +991,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 694--695
 
  []
 
-[29]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
@@ -1001,7 +1001,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 710--711
 
  []
 
-
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 714--715
 
  []
@@ -1011,7 +1011,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 718--719
 
  []
 
-[30]
+
 Underfull \hbox (badness 10000) in paragraph at lines 723--724
 
  []
@@ -1021,7 +1021,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 728--729
 
  []
 
-[31]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 750--752
 
  []
@@ -1036,12 +1036,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 759--760
 
  []
 
-
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 763--764
 
  []
 
-[32]
+
 Underfull \hbox (badness 10000) in paragraph at lines 767--768
 
  []
@@ -1051,52 +1051,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 774--775
 
  []
 
-[33]
+[31]
 Overfull \hbox (0.86946pt too wide) in paragraph at lines 789--789
 []\OT4/lmr/bx/n/14.4 Aplikacja al-go-ryt-mów kryp-to-gra-ficz-nych na sys-te-mi
 e wbu-
  []
 
 
-Overfull \hbox (28.8199pt too wide) in paragraph at lines 838--879
+Overfull \hbox (28.8199pt too wide) in paragraph at lines 840--881
+ [][] 
+ []
+
+[32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 919--919
+[]|\OT1/lmr/m/n/10 permutacja kom-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 921--921
+[]|\OT1/lmr/m/n/10 heksadecymalny
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 923--923
+[]|\OT1/lmr/m/n/10 permutacja kom-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 925--925
+[]|\OT1/lmr/m/n/10 heksadecymalny
+ []
+
+
+Overfull \hbox (33.42361pt too wide) in paragraph at lines 917--928
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 931--932
+
+ []
+
+
+Overfull \hbox (28.34148pt too wide) in paragraph at lines 954--962
  [][] 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 916--916
-[]|\OT1/lmr/m/n/10 permutacja kom-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 918--918
-[]|\OT1/lmr/m/n/10 heksadecymalny
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 920--920
-[]|\OT1/lmr/m/n/10 permutacja kom-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 922--922
-[]|\OT1/lmr/m/n/10 heksadecymalny
- []
-
-
-Overfull \hbox (33.42361pt too wide) in paragraph at lines 914--925
- [][] 
+Overfull \hbox (36.25758pt too wide) in paragraph at lines 971--972
+[]\OT1/lmr/m/n/10 operacja XOR wia-do-mo-±ci otrzy-ma-nej w wy-ni-ku trans-po-z
+y-cji z ob-li-czo-nym klu-czem to EF108A230793, 
  []
 
 [35]
-Overfull \hbox (28.34148pt too wide) in paragraph at lines 949--957
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 1019--1020
+
  []
 
-[36] [37] [38] [39] [40] (praca_magisterska.lof)
+[36] [37] [38] (praca_magisterska.lof)
 \tf@lof=\write5
 \openout5 = `praca_magisterska.lof'.
 
- [41] (praca_magisterska.aux)
+ [39] (praca_magisterska.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1105,10 +1121,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14717 strings out of 492970
- 297642 string characters out of 3126593
- 358731 words of memory out of 3000000
- 18246 multiletter control sequences out of 15000+200000
+ 14724 strings out of 492970
+ 297714 string characters out of 3126593
+ 358801 words of memory out of 3000000
+ 18253 multiletter control sequences out of 15000+200000
  46308 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,16n,56p,1847b,803s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1126,9 +1142,9 @@ onts/type1/public/lm/lmr7.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9
 .9/fonts/type1/public/lm/lmri10.pfb><C:/Users/admin/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/admin/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on praca_magisterska.pdf (41 pages, 534261 bytes).
+Output written on praca_magisterska.pdf (39 pages, 533357 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
+ 185 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
