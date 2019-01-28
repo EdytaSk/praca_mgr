@@ -5,6 +5,7 @@
 \usepackage{graphicx} 
 \usepackage{amssymb}
 \usepackage{tikz}
+\usepackage{adjustbox}
 \usepackage{float}
 \usepackage{lmodern}
 \usepackage{amsmath}
@@ -336,6 +337,7 @@ Po dokonaniu permutacji rozszerzenia wiadomości dokonano operacji xor otrzymane
 
 \begin{table}[H]
 \centering
+\begin{adjustbox}{width=0.8\textwidth}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{16}{|c|}{S blok 1}\\ 
@@ -380,6 +382,7 @@ Po dokonaniu permutacji rozszerzenia wiadomości dokonano operacji xor otrzymane
 7& 	11& 	4& 	1& 	9& 	12& 	14& 	2& 	0& 	6& 	10& 	13& 	15& 	3& 	5& 	8\\ \hline
 2& 	1& 	14& 	7& 	4& 	10& 	8& 	13& 	15& 	12& 	9& 	0& 	3& 	5& 	6& 	11 \\ \hline
 \end{tabular}
+\end{adjustbox}
 \caption{Struktury S bloków.}\label{s_bloki}
 \end{table}
 
@@ -479,21 +482,13 @@ Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożeni
 
 \subsubsection{Szyfry asymetryczne}
 
-\quad Szyfry asymetryczne charakteryzują się tym, że posiadają osobny klucz do szyfrowania i osobny deszyfrowania. W celu wyjaśnienia zasady działania szyfru asymetrycznego przedstawiono powszechnie znany sposób wysyłania wiadomości od Alicji do Boba. Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować.  
-
+\quad Szyfry asymetryczne charakteryzują się tym, że posiadają osobny klucz do szyfrowania i osobny deszyfrowania. W celu wyjaśnienia zasady działania szyfru asymetrycznego przedstawiono powszechnie znany sposób wysyłania wiadomości od Alicji do Boba. Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Na rysunku~\ref{rsa} zobrazowano szyfrowanie i deszyfrowanie z użyciem klucza publicznego i prywatnego. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować.  
 
 
 \begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}
-\node (ss) [prostokat] {szyfrowanie};
-\draw [arrow] (ss)[prostokat] -- node[anchor=south] {tekst zaszyfrowany(C)} (7.5,0);
-\node [prostokat,xshift=9cm] (a) {a};
-\draw [arrow] ([yshift=5cm]a) -- (ss);
-
-\end{tikzpicture}
-\end{center}
-\caption{Schematyczny proces szyfrowania asymetrycznego.}\label{szyfrowanie}
+\centering
+\includegraphics[width=15cm]{rsa.png}
+\caption{Schematyczne szyfrowanie asymetryczne.}\label{rsa}
 \end{figure}
 
 \paragraph{RSA} \mbox{} \\
@@ -1012,7 +1007,7 @@ numer bitu &1-4 &5-8& 9-12& 13-16& 17-20& 21-24& 25-28& 29-32\\ \hline
 
 Jednym w ostatnich kroków szyfrowania wiadomości jest dokonanie transpozycji wyjścia S bloku z tabelą permutacji P-bloku~\ref{blok_P} w wyniku czego otrzymano: 1010 1111 0010 1011 1011 1001 0011 0111. Otrzymaną wartość poddano operacji XOR z lewą połową wiadomości (1F45058B), co przedstawiono jako (1010 1111 0010 1011 1011 1001 0011 0111) $\oplus$ (0001 1111 0100 0101 0000 0101 1000 1011) = 1011 0000 0110 1110 1011 1100 1011 1100, co w postaci heksadecymalnej daje wartość B06EBCB3. Wartość prawej strony wiadomości dla rundy pierwszej wynosi B06EBCB3. 
 
-\subsubsection{Implementacja algorytmu DES na ESP8266}
+\subsection{Implementacja algorytmu DES na ESP8266}
 
 
 

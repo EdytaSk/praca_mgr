@@ -44,9 +44,9 @@
 \contentsline {section}{\numberline {4}Aplikacja algorytm\IeC {\'o}w kryptograficznych na systemie wbudowanym}{32}
 \contentsline {subsection}{\numberline {4.1}Charakterystyka ESP8266}{32}
 \contentsline {subsection}{\numberline {4.2}Manualna implementacja algorytmu DES}{32}
-\contentsline {subsubsection}{\numberline {4.2.1}Implementacja algorytmu DES na ESP8266}{36}
+\contentsline {subsection}{\numberline {4.3}Implementacja algorytmu DES na ESP8266}{36}
 \contentsline {paragraph}{Wyniki algorytmu DES}{36}
-\contentsline {subsection}{\numberline {4.3}Wydajno\IeC {\'s}\IeC {\'c} algorytmu DES na ESP8266}{36}
+\contentsline {subsection}{\numberline {4.4}Wydajno\IeC {\'s}\IeC {\'c} algorytmu DES na ESP8266}{36}
 \contentsline {section}{\numberline {5}Wnioski}{37}
 \contentsline {section}{Literatura}{39}
 \contentsline {section}{Spis rysunk\IeC {\'o}w}{39}
