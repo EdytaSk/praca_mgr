@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  28 JAN 2019 19:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  30 JAN 2019 17:18
 entering extended mode
 **./praca_magisterska.tex
 (praca_magisterska.tex
@@ -1130,16 +1130,6 @@ Overfull \hbox (28.8199pt too wide) in paragraph at lines 835--876
  []
 
 [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 914--914
-[]|\OT1/lmr/m/n/10 permutacja kom-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 916--916
-[]|\OT1/lmr/m/n/10 heksadecymalny
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 918--918
 []|\OT1/lmr/m/n/10 permutacja kom-
  []
@@ -1150,28 +1140,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 920--920
  []
 
 
-Overfull \hbox (33.42361pt too wide) in paragraph at lines 912--923
+Underfull \hbox (badness 10000) in paragraph at lines 922--922
+[]|\OT1/lmr/m/n/10 permutacja kom-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--924
+[]|\OT1/lmr/m/n/10 heksadecymalny
+ []
+
+
+Overfull \hbox (33.42361pt too wide) in paragraph at lines 916--927
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 926--927
+Underfull \hbox (badness 10000) in paragraph at lines 930--931
 
  []
 
 
-Overfull \hbox (28.34148pt too wide) in paragraph at lines 949--957
+Overfull \hbox (28.34148pt too wide) in paragraph at lines 953--961
  [][] 
  []
 
 [34]
-Overfull \hbox (36.25758pt too wide) in paragraph at lines 966--967
+Overfull \hbox (36.25758pt too wide) in paragraph at lines 970--971
 []\OT1/lmr/m/n/10 operacja XOR wia-do-mo-±ci otrzy-ma-nej w wy-ni-ku trans-po-z
 y-cji z ob-li-czo-nym klu-czem to EF108A230793, 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1014--1015
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1023
 
  []
 
@@ -1209,7 +1209,7 @@ onts/type1/public/lm/lmr7.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9
 .9/fonts/type1/public/lm/lmri10.pfb><C:/Users/admin/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/admin/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on praca_magisterska.pdf (39 pages, 550488 bytes).
+Output written on praca_magisterska.pdf (39 pages, 551282 bytes).
 PDF statistics:
  188 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

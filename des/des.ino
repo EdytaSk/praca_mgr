@@ -5,8 +5,11 @@
  */
 #include <stdint.h>
 #include <string.h>
+#include <time.h>
 
-const uint8_t sbox[256]  = {
+//permutacja poczatkowa des
+//dwie pierwsze wartości określaja ilość bajtów wejściowych i ilość bajtów wyjściowych
+const uint8_t s_bloki[256]  = {
   /* S-box 1 */
   0xE4, 0xD1, 0x2F, 0xB8, 0x3A, 0x6C, 0x59, 0x07,
   0x0F, 0x74, 0xE2, 0xD1, 0xA6, 0xCB, 0x95, 0x38,
@@ -49,7 +52,8 @@ const uint8_t sbox[256]  = {
   0x21, 0xE7, 0x4A, 0x8D, 0xFC, 0x90, 0x35, 0x6B
 };
 
-const uint8_t e_permtab[] ={
+//permutacja rozszerzenia wiadomości
+const uint8_t permutacja_rozszerzenia[] ={
    4,  6,           /* 4 bytes in 6 bytes out*/
   32,  1,  2,  3,  4,  5,
    4,  5,  6,  7,  8,  9,
@@ -62,7 +66,7 @@ const uint8_t e_permtab[] ={
 };
 
 //permutacja bloku P
-const uint8_t p_permtab[] ={
+const uint8_t permutacja_bloku_P[] ={
    4,  4,           /* 32 bit -> 32 bit */
   16,  7, 20, 21,
   29, 12, 28, 17,
@@ -75,7 +79,7 @@ const uint8_t p_permtab[] ={
 };
 
 //permutacja poczatkowa des
-const uint8_t ip_permtab[] ={
+const uint8_t permutacja_poczatkowa[] ={
    8,  8,           /* 64 bit -> 64 bit */
   58, 50, 42, 34, 26, 18, 10, 2,
   60, 52, 44, 36, 28, 20, 12, 4,
@@ -100,7 +104,7 @@ const uint8_t inv_ip_permtab[] ={
 };
 
 //permutacja klucza DES
-const uint8_t pc1_permtab[] ={
+const uint8_t permutacja_klucza[] ={
    8,  7,           /* 64 bit -> 56 bit*/
   57, 49, 41, 33, 25, 17,  9,
    1, 58, 50, 42, 34, 26, 18,
@@ -113,7 +117,7 @@ const uint8_t pc1_permtab[] ={
 };
 
 //permutacja kompresji DES
-const uint8_t pc2_permtab[] ={
+const uint8_t permutacja_kompresji[] ={
    7,  6,           /* 56 bit -> 48 bit */
   14, 17, 11, 24,  1,  5,
    3, 28, 15,  6, 21, 10,
@@ -138,7 +142,7 @@ const uint8_t splitin6bitword_permtab[] = {
   64, 64, 43, 48, 44, 45, 46, 47 
 };
 
-const uint8_t shiftkey_permtab[] = {
+const uint8_t tabela_przesuniecia_bitowego_klucza_permtab[] = {
    7,  7,           /* 56 bit -> 56 bit */
    2,  3,  4,  5,  6,  7,  8,  9,
   10, 11, 12, 13, 14, 15, 16, 17,
@@ -160,8 +164,8 @@ const uint8_t shiftkey_permtab[] = {
 */
 #define ROTTABLE      0x7EFC 
 byte crypt [8];
-byte plaintext [] = { 0x77,0x69,0x74,0x61,0x6A,0x20,0x3A,0x29};
-byte keyword [] = { 0x43,0x23,0x66,0xA3,0x6B,0xBB,0x53,0xC1};
+byte tekst_jawny [] = { 0x77,0x69,0x74,0x61,0x6A,0x20,0x3A,0x29};
+byte klucz [] = { 0x43,0x23,0x66,0xA3,0x6B,0xBB,0x53,0xC1};
 byte test[8];
 boolean DEBUG = true;
 int i,m;
@@ -172,45 +176,64 @@ uint8_t data[8];
 /******************************************************************************/
 void setup(){
 
-Serial.begin(9600);
+Serial.begin(19200);
+Serial.println("");
 Serial.println("Start");
-Serial.print ("Keyword       = ");
+Serial.println("Tekst jawny = 77 69 74 61 6A 20 3A 29");
+Serial.println("Klucz = 43 23 66 A3 6B BB 53 C1 ");
+
+//for (int j=0;j<8;j++){
+//if (klucz[j]<0x10) Serial.print("0"); 
+//Serial.print(klucz[j],HEX);Serial.print(" ");
+//}
+//Serial.println();
+//Serial.print("Tekst jawny = ");
+//for (int j=0;j<8;j++){
+//if (tekst_jawny[j]<0x10) Serial.print("0"); 
+//Serial.print(tekst_jawny[j],HEX);Serial.print(" ");
+//}
+Serial.println();
+Serial.println("");
+Serial.println("Rozpoczęcie procesu szyfrowania");
+Serial.println("");
+
+unsigned long start = micros();
+//void szyfrowanie(void* out, const void* in, const void* key);
+szyfrowanie(crypt, tekst_jawny, klucz);
+unsigned long end = micros();
+unsigned long delta = end - start;
+Serial.print("Czas szyfrowania[milisekundy]:");Serial.println(delta);
+
+//Serial.println("Encrypted key  = ");
+//for (int j=0;j<8;j++){
+//if (crypt[j]<0x10) Serial.print("0"); 
+//Serial.print(crypt[j],HEX);Serial.print(" ");
+//}
+
+Serial.println();
+Serial.println("");
+Serial.println("Rozpoczęcie procesu deszyfrowania");
+Serial.println("");
+unsigned long start1 = micros();
+void des_dec(void* out, const void* in, const void* key);
+//des_dec( tekst_jawny, crypt, klucz);
+Serial.print("Odszyfrowana wiadomość  = ");
+unsigned long end1 = micros();
+unsigned long delta1 = end1 - start1;
+Serial.print("Czas deszyfrowania[milisekundy]:");Serial.println(delta1);
+
 for (int j=0;j<8;j++){
-if (keyword[j]<0x10) Serial.print("0"); 
-Serial.print(keyword[j],HEX);Serial.print(" ");
+if (tekst_jawny[j]<0x10) Serial.print("0"); 
+Serial.print(tekst_jawny[j],HEX);Serial.print(" ");
 }
 Serial.println();
-Serial.print ("Plaintext     = ");
-for (int j=0;j<8;j++){
-if (plaintext[j]<0x10) Serial.print("0"); 
-Serial.print(plaintext[j],HEX);Serial.print(" ");
-}
-Serial.println();
-Serial.println("Encrypting");
-//void des_enc(void* out, const void* in, const void* key);
-des_enc( crypt, plaintext, keyword);
-Serial.print("Encrypted key  = ");
-for (int j=0;j<8;j++){
-if (crypt[j]<0x10) Serial.print("0"); 
-Serial.print(crypt[j],HEX);Serial.print(" ");
-}
-Serial.println();
-Serial.println("Decrypting");
-//void des_dec(void* out, const void* in, const void* key);
-des_dec( plaintext, crypt, keyword);
-Serial.print("Decrypted message  = ");
-for (int j=0;j<8;j++){
-if (plaintext[j]<0x10) Serial.print("0"); 
-Serial.print(plaintext[j],HEX);Serial.print(" ");
-}
-Serial.println();
-Serial.println("Done");
+Serial.println("Koniec");
 }
 
 void loop(){
 }
 
-void permute(const uint8_t *ptable, const uint8_t *in, uint8_t *out){
+void permutacja(const uint8_t *ptable, const uint8_t *in, uint8_t *out){
   uint8_t ob; /* in-bytes and out-bytes */
   uint8_t byte, bit; /* counter for bit and byte */
   ob = ptable[1];
@@ -243,12 +266,13 @@ box=((*a & 0x000000FF) << 24)|
 
 /******************************************************************************/
 extern inline
-void shiftkey(uint8_t *key){
+void przesuniecie_bitowe_klucza(uint8_t *key){
   uint8_t k[7];
   memcpy(k, key, 7);
-  permute((uint8_t*)shiftkey_permtab, k, key);
+  permutacja((uint8_t*)tabela_przesuniecia_bitowego_klucza_permtab, k, key);
         if (DEBUG == true) {
-        Serial.print ("CD[");Serial.print(m);Serial.print ("]  56 xits = ");
+         //Krok 4: Przesunięcie bitowe klucza[");Serial.print(m);Serial.print ("]  56 xits = 
+        Serial.print ("Krok 4: ");
         yield();
         for (int j=0;j<7;j++){
         if (test[j]<0x10) Serial.print("0"); 
@@ -266,7 +290,7 @@ extern inline
 uint64_t splitin6bitwords(uint64_t a){
   uint64_t ret=0;
   a &= 0x0000ffffffffffffLL;
-  permute((uint8_t*)splitin6bitword_permtab, (uint8_t*)&a, (uint8_t*)&ret); 
+  permutacja((uint8_t*)splitin6bitword_permtab, (uint8_t*)&a, (uint8_t*)&ret); 
   return ret;
 }
 
@@ -287,12 +311,14 @@ uint32_t des_f(uint32_t r, uint8_t* kr){
   uint8_t i;
   uint32_t ret;
   uint64_t data;
-  uint8_t *sbp; /* sboxpointer */ 
-  permute((uint8_t*)e_permtab, (uint8_t*)&r, (uint8_t*)&data);
-        showprint ="E      48 bits = ";printout1(0,6);
+  uint8_t *sbp; /* s_blokipointer */ 
+  permutacja((uint8_t*)permutacja_rozszerzenia, (uint8_t*)&r, (uint8_t*)&data);
+        //Krok 6: Permutacja rozszerzenia prawej części wiadomości      48 bits = 
+        showprint ="Krok 6: ";printout1(0,6);
   for(i=0; i<7; ++i) {((uint8_t*)&data)[i] ^= kr[i];}
         if (DEBUG == true) {
-        Serial.print ("ExorKS 48 bits = ");
+          //Krok7 : XOR klucza i prawej części wiadomości 48 bits = 
+        Serial.print ("Krok 7: ");
         for (int j=0;j<6;j++){
         if (((uint8_t*)&data)[j]<0x10) Serial.print("0"); 
         Serial.print(((uint8_t*)&data)[j],HEX);Serial.print(" ");
@@ -301,9 +327,9 @@ uint32_t des_f(uint32_t r, uint8_t* kr){
         Serial.println();
         } 
 
-  /* Sbox substitution */
+  /* s_bloki substitution */
   data = splitin6bitwords(data);
-  sbp=(uint8_t*)sbox;
+  sbp=(uint8_t*)s_bloki;
   for(i=0; i<8; ++i){
     uint8_t x;
     x = substitute(((uint8_t*)&data)[i], sbp);
@@ -313,7 +339,8 @@ uint32_t des_f(uint32_t r, uint8_t* kr){
   }
   changeendian32(&t);
         if (DEBUG == true) { 
-        Serial.print ("Sbox   32 bits = ");
+          //Krok 8: Operacja na s blokach   32 bits = 
+        Serial.print ("Krok 8: ");
 
         if (box/0x1000000<0x10) Serial.print("0"); 
         Serial.print(box/0x1000000,HEX);Serial.print(" ");
@@ -332,44 +359,55 @@ uint32_t des_f(uint32_t r, uint8_t* kr){
         print_binary(box&0xFF,8);        
         Serial.println();
         }
-  permute((uint8_t*)p_permtab,(uint8_t*)&t, (uint8_t*)&ret);
-        showprint = "P      32 bits = "; printout1(0,4); 
+  permutacja((uint8_t*)permutacja_bloku_P,(uint8_t*)&t, (uint8_t*)&ret);
+        // krok 9 : Operacja na P bloku      32 bits = 
+        showprint = "Krok 9: "; printout1(0,4); 
   return ret;
 }
 
 /******************************************************************************/
 
-void des_enc(void* out, const void* in, const void* key){
+void szyfrowanie(void* out, const void* in, const void* key){
 #define R *((uint32_t*)&(data[4]))
 #define L *((uint32_t*)&(data[0]))
   uint8_t kr[6],k[7];
-  permute((uint8_t*)ip_permtab, (uint8_t*)in, data); 
-        showprint = "L[0]   32 bits = "; printout1(0,4);
-        showprint = "R[0]   32 bits = "; printout1(4,8);
-  permute((uint8_t*)pc1_permtab, (const uint8_t*)key, k);
-        showprint = "CD[0]  56 bits = "; printout1(0,7);
+  permutacja((uint8_t*)permutacja_poczatkowa, (uint8_t*)in, data); 
+        //L
+        //Krok 1: Permutacja początkowa prawej części wiadomości[0]   32 bits =
+        showprint = "Krok 1: "; printout1(0,4);
+        //Krok 2: Permutacja początkowa lewej części wiadomości[0]    32 bits = 
+        showprint = "Krok 2: "; printout1(4,8);
+  permutacja((uint8_t*)permutacja_klucza, (const uint8_t*)key, k);
+        //Krok 3: Klucz po permutacji[0]  56 bits = 
+        showprint = "Krok 3: "; printout1(0,7);
         yield();
   for(i=0; i<8; i++){
                 
                 Dx=i*2+1;
-                if (DEBUG == true) { Serial.print("Round ");Serial.println(Dx); }
-    shiftkey(k);
-    if(ROTTABLE&((1<<((i<<1)+0))) ) shiftkey(k);
-    permute((uint8_t*)pc2_permtab, k, kr);     
-                showprint = "KS     48 bits = "; printout1(0,6);
+                if (DEBUG == true) { Serial.print("Runda ");Serial.println(Dx); }
+    przesuniecie_bitowe_klucza(k);
+    if(ROTTABLE&((1<<((i<<1)+0))) ) przesuniecie_bitowe_klucza(k);
+    permutacja((uint8_t*)permutacja_kompresji, k, kr); 
+                //Krok 5: Permutacja kompresji klucza per_klucza_kompresji 1  48 bits =    
+                showprint = "Krok 5: "; printout1(0,6);
     L ^= des_f(R, kr);
-                showprint = "L[i]   32 bits = "; printout2(0,4);
-                showprint = "R[i]   32 bits = "; printout2(4,8);
+              // krok 10: Permutacja początkowa prawej części wiadomości   32 bits = 
+                showprint = "Krok 10: "; printout2(0,4);
+                //krok 11: Permutacja początkowa lewej części wiadomości   32 bits = 
+                showprint = "Krok 11: "; printout2(4,8);
                 yield();
                 Dx=i*2+2;
-                if (DEBUG == true) { Serial.print("Round ");Serial.println(Dx); }              
-    shiftkey(k);
-    if(ROTTABLE&((1<<((i<<1)+1))) ) shiftkey(k);
-    permute((uint8_t*)pc2_permtab, k, kr);
-                showprint = "KS     48 bits = "; printout1(0,6);
+                if (DEBUG == true) { Serial.print("Runda ");Serial.println(Dx); }              
+    przesuniecie_bitowe_klucza(k);
+    if(ROTTABLE&((1<<((i<<1)+1))) ) przesuniecie_bitowe_klucza(k);
+    permutacja((uint8_t*)permutacja_kompresji, k, kr);
+                //Krok 5: Permutacja kompresji klucza     48 bits = 
+                showprint = "Krok 5: "; printout1(0,6);
     R ^= des_f(L, kr);
-                showprint = "L[i]   32 bits = "; printout2(0,4);
-                showprint = "R[i]   32 bits = "; printout2(4,8);
+                // krok 10: L[i]   32 bits = 
+                showprint = "Krok 10: "; printout2(0,4);
+                //Krok 11: R[i]   32 bits = 
+                showprint = "Krok 11: "; printout2(4,8);
                 yield();
   }
   /* L <-> R*/
@@ -377,7 +415,7 @@ void des_enc(void* out, const void* in, const void* key){
   L ^= R;
   R ^= L;
         showprint = "LR[16] 64 bits = "; printout2(0,8);
-  permute((uint8_t*)inv_ip_permtab, data, (uint8_t*)out);
+  permutacja((uint8_t*)inv_ip_permtab, data, (uint8_t*)out);
         showprint = "Crypt  64 bits = "; printout1(0,8);
 }
 
@@ -401,36 +439,36 @@ void des_dec(void* out, const void* in, const uint8_t* key){
         print_binary(key[j],8);Serial.print(" ");
         }
         Serial.println();        
-  permute((uint8_t*)ip_permtab, (uint8_t*)in, data);
+  permutacja((uint8_t*)permutacja_poczatkowa, (uint8_t*)in, data);
         showprint = "L[0]   32 bits = "; printout1(0,4);
         showprint = "R[0]   32 bits = "; printout1(4,8);
-  permute((uint8_t*)pc1_permtab, (const uint8_t*)key, k);
+  permutacja((uint8_t*)permutacja_klucza, (const uint8_t*)key, k);
         showprint = "CD[0]  56 bits = "; printout1(0,7);
         yield();
   for(i=7; i>=0; i--){
   
                 Dx=i*2+2;
-                if (DEBUG == true) { Serial.print("Round ");Serial.println(Dx); }
-                permute((uint8_t*)pc1_permtab, (const uint8_t*)key, k);
+                if (DEBUG == true) { Serial.print("Runda ");Serial.println(Dx); }
+                permutacja((uint8_t*)permutacja_klucza, (const uint8_t*)key, k);
                 for (m=1;m<Dx+1;m++){ 
-                shiftkey(k);
+                przesuniecie_bitowe_klucza(k);
                 yield();
-                if(ROTTABLE&(1<<(m-1))) shiftkey(k);
+                if(ROTTABLE&(1<<(m-1))) przesuniecie_bitowe_klucza(k);
                 }              
-    permute((uint8_t*)pc2_permtab, k, kr);
+    permutacja((uint8_t*)permutacja_kompresji, k, kr);
                 showprint = "KS     48 bits = "; printout1(0,6);
     L ^= des_f(R, kr);
                 showprint = "L[i]   32 bits = "; printout2(0,4);
                 showprint = "R[i]   32 bits = "; printout2(4,8);
                 yield();
                 Dx=i*2+1;
-                if (DEBUG == true) { Serial.print("Round ");Serial.println(Dx); } 
-                permute((uint8_t*)pc1_permtab, (const uint8_t*)key, k);
+                if (DEBUG == true) { Serial.print("Runda ");Serial.println(Dx); } 
+                permutacja((uint8_t*)permutacja_klucza, (const uint8_t*)key, k);
                 for (m=1;m<Dx+1;m++){  
-    shiftkey(k);
-                if(ROTTABLE&(1<<(m-1))) shiftkey(k); 
+    przesuniecie_bitowe_klucza(k);
+                if(ROTTABLE&(1<<(m-1))) przesuniecie_bitowe_klucza(k); 
                 }              
-    permute((uint8_t*)pc2_permtab, k, kr);
+    permutacja((uint8_t*)permutacja_kompresji, k, kr);
                 showprint = "KS     48 bits = "; printout1(0,6);
     R ^= des_f(L, kr);
                 showprint = "L[i]   32 bits = "; printout2(0,4);
@@ -442,7 +480,7 @@ void des_dec(void* out, const void* in, const uint8_t* key){
   L ^= R;
   R ^= L;
         showprint = "LR[16] 64 bits = "; printout2(0,8);
-  permute((uint8_t*)inv_ip_permtab, data, (uint8_t*)out);
+  permutacja((uint8_t*)inv_ip_permtab, data, (uint8_t*)out);
         showprint = "Plain  64 bits = "; printout1(0,8);
 }
 void print_binary(uint64_t v, int num_places)
