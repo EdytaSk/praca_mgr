@@ -784,7 +784,85 @@ Wszystkie wewnętrzne komponenty znajdujące się na systemie wbudowanym  do kom
 \section{Aplikacja algorytmów kryptograficznych na systemie wbudowanym}
 \subsection{Charakterystyka ESP8266}
 
-....................
+\quad Mikrokontroler składa się z płytki NodeMCU v2 oraz układ ESP8266. Układ ESP8266 z wbudowanym 32 bitowym układem RISC(zredukowany zestaw instrukcji) z takowanym zegarem 80MHz połączono 22 pinami do płytki. Głównymi komponentami moduł WiFi ESP8266 NodeMCU v2 są :
+\begin{itemize}
+\item moduł Wi-Fi ESP8266MOD, 2,4GHz, 802.11b/g/n
+\item stabilizator napięcia AMS1117 3.3 DN711
+\item konwerter USB-UART umożliwiający programowanie poprzez USB przy wykorzystaniu środowiska Arduino
+\item pamięć Flash 4MB
+\item 10 portów GIPO, które mogą obsługiwać magistrale PWN, I2C i l-wire
+\item wbudowane 10-bitowe ADC 
+\item 10-bitowy przetwornik analogowo-cyfrowy
+\item antena PCB
+\item dwa przełączniki stanowe 
+\item wejście mikro USB
+\item kondensator tantalu, dioda niebieska
+\end{itemize} 
+
+
+Do projektu wykorzystano płytkę NodeMCU v2 ESP8266, której przód przedstawiono na rysunku~\ref{esp}, zaś tył na rysunku~\ref{esp_1}. Numery na rysunku~\ref{esp} oznaczają:\\ 
+1. moduł Wi-Fi ESP8266MOD 2,4GHz, 802.11b/g/n\\
+2. stabilizator napięcia AMS1117 3.3 DN711\\
+3. most USB-UART\\
+4. przełącznik stanowy Flash\\
+5. przełącznik stanowy RST\\
+6. wejście mikro USB\\
+7. kondensator tantalu 106C 516C1\\
+8. dioda niebieska 0603\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{esp.png}
+\caption{Przód mikrokontrolera NodeMCU v2 ESP8266.}\label{esp}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{esp8266_1.jpg}
+\caption{Przód mikrokontrolera NodeMCU v2 ESP8266.}\label{esp_1}
+\end{figure}
+
+\subsection{Połączenie ESP8266 z Arduino}
+Założenia projektowe:
+\begin{itemize}
+\item wykorzystanie mikrokontrolera ESP8266 NodeMCU v2
+\item wybrano język programowania C
+\item środowisko programistyczne Arduino uruchomione na systemie operacyjnym windows 10
+\item implementacja algorytmu DES na mikrokontrolerze
+\item pomiar czasu potrzebnego na szyfrowanie algorytmem DES
+\item pomiar czasu potrzebnego na deszyfrowanie algorytmem DES
+\item implementacja algorytmu RSA na mikrokontrolerze
+\item pomiar czasu potrzebnego na szyfrowanie algorytmem RSA
+\item pomiar czasu potrzebnego na deszyfrowanie algorytmem RSA
+\item porównanie wydajności algorytmu RSA i DES
+\end{itemize}
+
+
+Podłączenie mikrokontrolera do środowiska programistycznego Arduino przebiegło w następujących krokach:
+\begin{itemize}
+\item pobranie i instalacja środowiska Arduino 1.8.7 IDE
+\item konfiguracja środowiska Arduino do obsługi ESP 8266 przez otwarcie okna dialogowego plik $\rightarrow$ preferencje i w miejscu "Dodatkowe adresy URL do menedżera płytek" umieszczenie adresu $http://arduino.esp8266.com/stable/package_esp8266com_index.json$ jak ukazano na rysunku~\ref{konf_arduino} znajdującym się poniżej
+\item instalacja paczki dla płytki ESP8266 poprzez otwarcie okna dialogowego narzędzia $\rightarrow$ Płytka $\rightarrow$ Menadżer płytek ... $\rightarrow$ wpisanie esp8266 w polu wyszukiwania i instalacja paczki
+\item konfiguracja płytki ESP826
+\begin{itemize}
+\item Narzędzia $\rightarrow$ Płytka $\rightarrow$ NodeMCU 1.0 (ESP-12E Module)
+\item Narzędzia $\rightarrow$ Flash Size $\rightarrow$ 4M (3M SPIFFS)
+\item Narzędzia $\rightarrow$ CPU Frequency $\rightarrow$ 80 Mhz
+\item Narzędzia $\rightarrow$ Upload Speed $\rightarrow$ 921600
+\item Narzędzia $\rightarrow$ Port $\rightarrow$ COM3
+\end{itemize} 
+\end{itemize}
+
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{ustawienie_esp8266.jpg}
+\caption{Konfiguracja środowiska Arduino dla płytki ESP8266.}\label{konf_arduino}
+\end{figure}
+
+
 
 \subsection{Manualna implementacja algorytmu DES}
 
@@ -1017,7 +1095,67 @@ Jednym w ostatnich kroków szyfrowania wiadomości jest dokonanie transpozycji w
 
 \subsection{Implementacja algorytmu DES na ESP8266}
 
+\quad Algorytm DES zaimplementowano zgodnie z krokami przedstawionymi w manualnym obliczaniu szyfrowania algorytmem DES. W celu poprawienia czytelności wyniku wypisywanego na monitor portu szeregowego uniknięto rozległych opisów. Na rysunku~\ref{runda_1} ukazano poszczególne kroki wyliczane z wykorzystaniem algorytmu DES. Tekst jawny oraz klucz wykorzystano taki sam jak w przykładzie manualnej implementacji DES. Poszczególne kroki oznaczają:
+\begin{itemize}
+\item Krok 1: Permutacja początkowa prawej części 32 bitowej wiadomości.
+\item Krok 2: Permutacja początkowa lewej części 32 bitowej wiadomości.
+\item Krok 3: Klucz po operacji permutacji klucza.
+\item Krok 4: Przesunięcie bitowe klucza 56 bitowego.
+\item Krok 5: Permutacja kompresji klucza 48 bitowego.
+\item Krok 6: Permutacja rozszerzenia prawej części 32 bitowej wiadomości w wyniku, której otrzymano 48 bitową wiadomość.
+\item Krok 7: Operacja XOR klucza danej rundy i prawej części 48 bitowej wiadomości.
+\item Krok 8: Operacje na S blokach.
+\item Krok 9: Operacja na P bloku.
+\item Krok 10: Permutacja początkowa prawej części 32 bitowej wiadomości.
+\item Krok 11: Permutacja początkowa lewej części 32 bitowej wiadomości.
+\end{itemize}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{runda_1.jpg}
+\caption{Wynik szyfrowania algorytmem DES dla rundy 1.}\label{runda_1}
+\end{figure}
+
+Porównując wynik implementacji programu w środowisku Arduino na płytce NodeMCU v2 ESP8266 wraz z manualnym odliczeniem stwierdzono zgodność wyników dla rundy pierwszej algorytmu DES, co oznacza poprawną implementację algorytmu na mikrokontrolerze. Następnie dokonano pomiaru czasu szyfrowania i deszyfrowania wiadomości dla trzech prędkości szybkości transmisji danych, która jest określana w bitach na sekundę. Pomiarów dokonano dla szybkości transmisji: 9600, 19200 i 115200 bitów na sekundę. Szybkość transmisji określono poleceniem "Serial.begin(9600);", zaś w celu odczytania wyników na monitorze portu szeregowego ustawiono 9600. Pomiaru czasu szyfrowania i deszyfrowania wykonano z wykorzystaniem funkcji micros(), która zwraca czas wyrażony w mikrosekundach wykonywania programu. W celu obliczenia czasu szyfrowania i deszyfrowania obliczono różnicę czasu jako:\\
+\begin{center}
+unsigned long poczatek = micros();\\
+szyfrowanie(tekst\_jawny, klucz);\\
+unsigned long koniec = micros();\\
+unsigned long czas\_szyfrowania = koniec - poczatek;\\
+\end{center}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{szy_desz_9600_print.jpg}
+\caption{.}\label{esp_1}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{szy_desz_19200_print.jpg}
+\caption{.}\label{esp_1}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{szy_desz_115200_print.jpg}
+\caption{.}\label{esp_1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{szy_desz_9600.jpg}
+\caption{.}\label{esp_1}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{szy_desz_19200.jpg}
+\caption{.}\label{esp_1}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{szy_desz_115200.jpg}
+\caption{.}\label{esp_1}
+\end{figure}
 
 \paragraph{Wyniki algorytmu DES}\mbox{} \\
 

@@ -43,10 +43,11 @@
 \contentsline {part}{II\hspace {1em}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} praktyczna}{32}
 \contentsline {section}{\numberline {4}Aplikacja algorytm\IeC {\'o}w kryptograficznych na systemie wbudowanym}{32}
 \contentsline {subsection}{\numberline {4.1}Charakterystyka ESP8266}{32}
-\contentsline {subsection}{\numberline {4.2}Manualna implementacja algorytmu DES}{32}
-\contentsline {subsection}{\numberline {4.3}Implementacja algorytmu DES na ESP8266}{36}
-\contentsline {paragraph}{Wyniki algorytmu DES}{36}
-\contentsline {subsection}{\numberline {4.4}Wydajno\IeC {\'s}\IeC {\'c} algorytmu DES na ESP8266}{36}
-\contentsline {section}{\numberline {5}Wnioski}{37}
-\contentsline {section}{Literatura}{39}
-\contentsline {section}{Spis rysunk\IeC {\'o}w}{39}
+\contentsline {subsection}{\numberline {4.2}Po\IeC {\l }\IeC {\k a}czenie ESP8266 z Arduino}{33}
+\contentsline {subsection}{\numberline {4.3}Manualna implementacja algorytmu DES}{35}
+\contentsline {subsection}{\numberline {4.4}Implementacja algorytmu DES na ESP8266}{39}
+\contentsline {paragraph}{Wyniki algorytmu DES}{43}
+\contentsline {subsection}{\numberline {4.5}Wydajno\IeC {\'s}\IeC {\'c} algorytmu DES na ESP8266}{43}
+\contentsline {section}{\numberline {5}Wnioski}{44}
+\contentsline {section}{Literatura}{46}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{46}

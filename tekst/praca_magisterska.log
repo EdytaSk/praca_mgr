@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  30 JAN 2019 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  31 JAN 2019 20:27
 entering extended mode
 **./praca_magisterska.tex
 (praca_magisterska.tex
@@ -722,6 +722,24 @@ LaTeX Warning: Unused global option(s):
 
 LaTeX Warning: Label `xor' multiply defined.
 
+
+LaTeX Warning: Label `esp_1' multiply defined.
+
+
+LaTeX Warning: Label `esp_1' multiply defined.
+
+
+LaTeX Warning: Label `esp_1' multiply defined.
+
+
+LaTeX Warning: Label `esp_1' multiply defined.
+
+
+LaTeX Warning: Label `esp_1' multiply defined.
+
+
+LaTeX Warning: Label `esp_1' multiply defined.
+
 )
 \openout1 = `praca_magisterska.aux'.
 
@@ -1125,61 +1143,127 @@ e wbu-
  []
 
 
-Overfull \hbox (28.8199pt too wide) in paragraph at lines 835--876
+Underfull \hbox (badness 10000) in paragraph at lines 803--812
+
+ []
+
+<esp.png, id=125, 475.7775pt x 248.42813pt>
+File: esp.png Graphic file (type png)
+<use esp.png>
+Package pdftex.def Info: esp.png  used on input line 815.
+(pdftex.def)             Requested size: 341.43306pt x 178.28813pt.
+[32]
+<esp8266_1.jpg, id=129, 2589.675pt x 1536.74126pt>
+File: esp8266_1.jpg Graphic file (type jpg)
+<use esp8266_1.jpg>
+Package pdftex.def Info: esp8266_1.jpg  used on input line 821.
+(pdftex.def)             Requested size: 341.43306pt x 202.59723pt.
+ [33 <./esp.png> <./esp8266_1.jpg>]
+<ustawienie_esp8266.jpg, id=134, 580.41844pt x 454.69875pt>
+File: ustawienie_esp8266.jpg Graphic file (type jpg)
+<use ustawienie_esp8266.jpg>
+Package pdftex.def Info: ustawienie_esp8266.jpg  used on input line 861.
+(pdftex.def)             Requested size: 341.43306pt x 267.47899pt.
+ [34] [35 <./ustawienie_esp8266.jpg>]
+Overfull \hbox (28.8199pt too wide) in paragraph at lines 913--954
  [][] 
  []
 
-[32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 918--918
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 996--996
 []|\OT1/lmr/m/n/10 permutacja kom-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 920--920
+Underfull \hbox (badness 10000) in paragraph at lines 998--998
 []|\OT1/lmr/m/n/10 heksadecymalny
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 922--922
+Underfull \hbox (badness 10000) in paragraph at lines 1000--1000
 []|\OT1/lmr/m/n/10 permutacja kom-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 924--924
+Underfull \hbox (badness 10000) in paragraph at lines 1002--1002
 []|\OT1/lmr/m/n/10 heksadecymalny
  []
 
 
-Overfull \hbox (33.42361pt too wide) in paragraph at lines 916--927
+Overfull \hbox (33.42361pt too wide) in paragraph at lines 994--1005
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 930--931
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
-
-Overfull \hbox (28.34148pt too wide) in paragraph at lines 953--961
+[37]
+Overfull \hbox (28.34148pt too wide) in paragraph at lines 1031--1039
  [][] 
  []
 
-[34]
-Overfull \hbox (36.25758pt too wide) in paragraph at lines 970--971
+
+Overfull \hbox (36.25758pt too wide) in paragraph at lines 1048--1049
 []\OT1/lmr/m/n/10 operacja XOR wia-do-mo-±ci otrzy-ma-nej w wy-ni-ku trans-po-z
 y-cji z ob-li-czo-nym klu-czem to EF108A230793, 
  []
 
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1023
+[38] [39]
+<runda_1.jpg, id=154, 496.85625pt x 243.15843pt>
+File: runda_1.jpg Graphic file (type jpg)
+<use runda_1.jpg>
+Package pdftex.def Info: runda_1.jpg  used on input line 1115.
+(pdftex.def)             Requested size: 341.43306pt x 167.0968pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1120
 
  []
 
-[36] [37] [38] (praca_magisterska.lof)
+<szy_desz_9600_print.jpg, id=155, 508.90125pt x 248.42813pt>
+File: szy_desz_9600_print.jpg Graphic file (type jpg)
+<use szy_desz_9600_print.jpg>
+Package pdftex.def Info: szy_desz_9600_print.jpg  used on input line 1130.
+(pdftex.def)             Requested size: 341.43306pt x 166.681pt.
+<szy_desz_19200_print.jpg, id=156, 508.90125pt x 248.42813pt>
+File: szy_desz_19200_print.jpg Graphic file (type jpg)
+<use szy_desz_19200_print.jpg>
+Package pdftex.def Info: szy_desz_19200_print.jpg  used on input line 1135.
+(pdftex.def)             Requested size: 341.43306pt x 166.681pt.
+[40 <./runda_1.jpg>]
+<szy_desz_115200_print.jpg, id=160, 507.39563pt x 249.18094pt>
+File: szy_desz_115200_print.jpg Graphic file (type jpg)
+<use szy_desz_115200_print.jpg>
+Package pdftex.def Info: szy_desz_115200_print.jpg  used on input line 1140.
+(pdftex.def)             Requested size: 341.43306pt x 167.68036pt.
+ [41 <./szy_desz_9600_print.jpg> <./szy_desz_19200_print.jpg>]
+<szy_desz_9600.jpg, id=164, 523.20468pt x 255.20343pt>
+File: szy_desz_9600.jpg Graphic file (type jpg)
+<use szy_desz_9600.jpg>
+Package pdftex.def Info: szy_desz_9600.jpg  used on input line 1146.
+(pdftex.def)             Requested size: 341.43306pt x 166.54225pt.
+<szy_desz_19200.jpg, id=165, 522.45187pt x 255.95625pt>
+File: szy_desz_19200.jpg Graphic file (type jpg)
+<use szy_desz_19200.jpg>
+Package pdftex.def Info: szy_desz_19200.jpg  used on input line 1151.
+(pdftex.def)             Requested size: 341.43306pt x 167.27567pt.
+<szy_desz_115200.jpg, id=166, 523.20468pt x 249.18094pt>
+File: szy_desz_115200.jpg Graphic file (type jpg)
+<use szy_desz_115200.jpg>
+Package pdftex.def Info: szy_desz_115200.jpg  used on input line 1156.
+(pdftex.def)             Requested size: 341.43306pt x 162.61205pt.
+ [42 <./szy_desz_115200_print.jpg> <./szy_desz_9600.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 1160--1161
+
+ []
+
+[43 <./szy_desz_19200.jpg> <./szy_desz_115200.jpg>] [44] [45]
+(praca_magisterska.lof)
 \tf@lof=\write5
 \openout5 = `praca_magisterska.lof'.
 
- [39] (praca_magisterska.aux)
+ [46] (praca_magisterska.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1188,10 +1272,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15703 strings out of 492970
- 314617 string characters out of 3126593
- 418670 words of memory out of 3000000
- 19197 multiletter control sequences out of 15000+200000
+ 15758 strings out of 492970
+ 315755 string characters out of 3126593
+ 418710 words of memory out of 3000000
+ 19242 multiletter control sequences out of 15000+200000
  46308 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,16n,56p,1847b,800s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1209,9 +1293,9 @@ onts/type1/public/lm/lmr7.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9
 .9/fonts/type1/public/lm/lmri10.pfb><C:/Users/admin/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/admin/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on praca_magisterska.pdf (39 pages, 551282 bytes).
+Output written on praca_magisterska.pdf (46 pages, 1983065 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
+ 221 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

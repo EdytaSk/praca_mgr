@@ -176,7 +176,7 @@ uint8_t data[8];
 /******************************************************************************/
 void setup(){
 
-Serial.begin(19200);
+Serial.begin(9600);
 Serial.println("");
 Serial.println("Start");
 Serial.println("Tekst jawny = 77 69 74 61 6A 20 3A 29");
@@ -196,13 +196,17 @@ Serial.println();
 Serial.println("");
 Serial.println("Rozpoczęcie procesu szyfrowania");
 Serial.println("");
+Serial.println("Tekst jawny = 77 69 74 61 6A 20 3A 29");
+Serial.println("Klucz = 43 23 66 A3 6B BB 53 C1 ");
+//Serial.println("");
 
 unsigned long start = micros();
-//void szyfrowanie(void* out, const void* in, const void* key);
-szyfrowanie(crypt, tekst_jawny, klucz);
+void szyfrowanie(void* out, const void* in, const void* key);
+//szyfrowanie(crypt, tekst_jawny, klucz);
 unsigned long end = micros();
 unsigned long delta = end - start;
-Serial.print("Czas szyfrowania[milisekundy]:");Serial.println(delta);
+//Serial.println("");
+//Serial.print("Czas szyfrowania[milisekundy]:");Serial.println(delta);
 
 //Serial.println("Encrypted key  = ");
 //for (int j=0;j<8;j++){
@@ -210,22 +214,33 @@ Serial.print("Czas szyfrowania[milisekundy]:");Serial.println(delta);
 //Serial.print(crypt[j],HEX);Serial.print(" ");
 //}
 
-Serial.println();
+//Serial.println();
 Serial.println("");
 Serial.println("Rozpoczęcie procesu deszyfrowania");
-Serial.println("");
+//Serial.println("");
 unsigned long start1 = micros();
 void des_dec(void* out, const void* in, const void* key);
 //des_dec( tekst_jawny, crypt, klucz);
+//Serial.println("");
+//Serial.println("");
+//Serial.println("");
+//Serial.println("");
+//Serial.println("");
+//Serial.println("");
+//Serial.println("");
+Serial.println("");
 Serial.print("Odszyfrowana wiadomość  = ");
-unsigned long end1 = micros();
-unsigned long delta1 = end1 - start1;
-Serial.print("Czas deszyfrowania[milisekundy]:");Serial.println(delta1);
-
 for (int j=0;j<8;j++){
 if (tekst_jawny[j]<0x10) Serial.print("0"); 
 Serial.print(tekst_jawny[j],HEX);Serial.print(" ");
 }
+unsigned long end1 = micros();
+unsigned long delta1 = end1 - start1;
+Serial.println("");
+Serial.println("");
+Serial.print("Czas szyfrowania[milisekundy]:");Serial.println(delta);
+Serial.println("");
+Serial.print("Czas deszyfrowania[milisekundy]:");Serial.println(delta1);
 Serial.println();
 Serial.println("Koniec");
 }

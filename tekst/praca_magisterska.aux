@@ -110,33 +110,54 @@
 \@writefile{toc}{\contentsline {part}{II\hspace  {1em}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} praktyczna}{32}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Aplikacja algorytm\IeC {\'o}w kryptograficznych na systemie wbudowanym}{32}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Charakterystyka ESP8266}{32}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Manualna implementacja algorytmu DES}{32}}
-\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Dane wej\IeC {\'s}ciowe algorytmu DES.}}{32}}
-\newlabel{binary}{{15}{32}}
-\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Klucz w postaci binarnej.}}{32}}
-\newlabel{klucz_to_binary}{{16}{32}}
-\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Klucz w postaci binarnej.}}{33}}
-\newlabel{tabela_podstawienia}{{17}{33}}
-\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces Obliczony klucz w postaci 56 bitowej.}}{33}}
-\newlabel{LP}{{18}{33}}
-\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces Przesuni\IeC {\k e}cie bitowe obliczonego klucza w postaci 56 bitowej.}}{34}}
-\newlabel{shift}{{19}{34}}
-\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces Permutacja klucza 56 bitowego.}}{34}}
-\newlabel{56}{{20}{34}}
-\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces Wiadomo\IeC {\'s}\IeC {\'c} przedstawiona w postaci binarnej i heksadecymalnej.}}{34}}
-\newlabel{wiadomosc}{{21}{34}}
-\@writefile{lot}{\contentsline {table}{\numberline {22}{\ignorespaces Transpozycja wiadomo\IeC {\'s}ci w postaci binarnej z tabel\IeC {\k a} permutacji pocz\IeC {\k a}tkowej.}}{35}}
-\newlabel{per}{{22}{35}}
-\@writefile{lot}{\contentsline {table}{\numberline {23}{\ignorespaces Permutacja rozszerzenia prawej cz\IeC {\k e}\IeC {\'s}ci wiadomo\IeC {\'s}ci.}}{35}}
-\newlabel{per_rozszerzenia_wiadomosci}{{23}{35}}
-\@writefile{lot}{\contentsline {table}{\numberline {24}{\ignorespaces XOR wiadomo\IeC {\'s}ci po permutacji rozszerzenia z kluczem.}}{35}}
-\newlabel{xor}{{24}{35}}
-\@writefile{lot}{\contentsline {table}{\numberline {25}{\ignorespaces Wiadomo\IeC {\'s}\IeC {\'c} po operacji na S blokach.}}{36}}
-\newlabel{sbok_wynik}{{25}{36}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Implementacja algorytmu DES na ESP8266}{36}}
-\@writefile{toc}{\contentsline {paragraph}{Wyniki algorytmu DES}{36}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Wydajno\IeC {\'s}\IeC {\'c} algorytmu DES na ESP8266}{36}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Wnioski}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Prz\IeC {\'o}d mikrokontrolera NodeMCU v2 ESP8266.}}{33}}
+\newlabel{esp}{{13}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Prz\IeC {\'o}d mikrokontrolera NodeMCU v2 ESP8266.}}{33}}
+\newlabel{esp_1}{{14}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Po\IeC {\l }\IeC {\k a}czenie ESP8266 z Arduino}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Konfiguracja \IeC {\'s}rodowiska Arduino dla p\IeC {\l }ytki ESP8266.}}{35}}
+\newlabel{konf_arduino}{{15}{35}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Manualna implementacja algorytmu DES}{35}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Dane wej\IeC {\'s}ciowe algorytmu DES.}}{35}}
+\newlabel{binary}{{15}{35}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Klucz w postaci binarnej.}}{36}}
+\newlabel{klucz_to_binary}{{16}{36}}
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Klucz w postaci binarnej.}}{36}}
+\newlabel{tabela_podstawienia}{{17}{36}}
+\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces Obliczony klucz w postaci 56 bitowej.}}{37}}
+\newlabel{LP}{{18}{37}}
+\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces Przesuni\IeC {\k e}cie bitowe obliczonego klucza w postaci 56 bitowej.}}{37}}
+\newlabel{shift}{{19}{37}}
+\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces Permutacja klucza 56 bitowego.}}{37}}
+\newlabel{56}{{20}{37}}
+\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces Wiadomo\IeC {\'s}\IeC {\'c} przedstawiona w postaci binarnej i heksadecymalnej.}}{38}}
+\newlabel{wiadomosc}{{21}{38}}
+\@writefile{lot}{\contentsline {table}{\numberline {22}{\ignorespaces Transpozycja wiadomo\IeC {\'s}ci w postaci binarnej z tabel\IeC {\k a} permutacji pocz\IeC {\k a}tkowej.}}{38}}
+\newlabel{per}{{22}{38}}
+\@writefile{lot}{\contentsline {table}{\numberline {23}{\ignorespaces Permutacja rozszerzenia prawej cz\IeC {\k e}\IeC {\'s}ci wiadomo\IeC {\'s}ci.}}{38}}
+\newlabel{per_rozszerzenia_wiadomosci}{{23}{38}}
+\@writefile{lot}{\contentsline {table}{\numberline {24}{\ignorespaces XOR wiadomo\IeC {\'s}ci po permutacji rozszerzenia z kluczem.}}{38}}
+\newlabel{xor}{{24}{38}}
+\@writefile{lot}{\contentsline {table}{\numberline {25}{\ignorespaces Wiadomo\IeC {\'s}\IeC {\'c} po operacji na S blokach.}}{39}}
+\newlabel{sbok_wynik}{{25}{39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Implementacja algorytmu DES na ESP8266}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Wynik szyfrowania algorytmem DES dla rundy 1.}}{40}}
+\newlabel{runda_1}{{16}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces .}}{41}}
+\newlabel{esp_1}{{17}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces .}}{41}}
+\newlabel{esp_1}{{18}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces .}}{42}}
+\newlabel{esp_1}{{19}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces .}}{42}}
+\newlabel{esp_1}{{20}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces .}}{43}}
+\newlabel{esp_1}{{21}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces .}}{43}}
+\newlabel{esp_1}{{22}{43}}
+\@writefile{toc}{\contentsline {paragraph}{Wyniki algorytmu DES}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Wydajno\IeC {\'s}\IeC {\'c} algorytmu DES na ESP8266}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Wnioski}{44}}
 \bibcite{PPTP}{1}
 \bibcite{SSH}{2}
 \bibcite{SSTP}{3}
@@ -150,5 +171,5 @@
 \citation{DES}
 \citation{IDEA}
 \citation{es}
-\@writefile{toc}{\contentsline {section}{Literatura}{39}}
-\@writefile{toc}{\contentsline {section}{Spis rysunk\IeC {\'o}w}{39}}
+\@writefile{toc}{\contentsline {section}{Literatura}{46}}
+\@writefile{toc}{\contentsline {section}{Spis rysunk\IeC {\'o}w}{46}}
