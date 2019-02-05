@@ -1168,49 +1168,50 @@ Na rysunku~\ref{19200} przedstawiono obliczone czas potrzebny do szyfrowania i d
 \end{figure}
 
 Na rysunku~\ref{115200} przedstawiono obliczone czas potrzebny do szyfrowania i deszyfrowania algorytmem DES dla prędkości transmisji danych 115200 bitów na sekundę.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{szy_desz_115200.jpg}
 \caption{Czas szyfrowania i deszyfrowania dla prędkości transmisji danych 115200.}\label{115200}
 \end{figure}
 
-
+W tabeli~\ref{czas_przesylu} zobrazowano czas szyfrowania i deszyfrowania wiadomości 64 bitowej wyrażony w mikro sekundach. Szyfrowanie i deszyfrowanie wiadomości z wypisywaniem poszczególnych kroków na konsole konsumuje znacznie więcej czasu potrzebnego na poszczególne operacje. Możliwość podglądu poszczególnych kroków podczas procesu szyfrowania i deszyfrowania może być przydatna w celu wykrycia błędu występującego podczas wykonywania programu poprzez analizę otrzymanych wyników. Gdy zależy nam na wydajności oprogramowania szyfrującego należy unikać zbędnego wypisywania danych na konsolę, gdyż konsumuje to dużo czasu przez co wydajność oprogramowania maleje.  
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
-prędkość transmisji &9600&19200&115200\\ \hline
-szyfrowanie z wypisywaniem na konsole&113370054&5667851&944191\\ \hline
-deszyfrowanie z wypisywaniem na konsole&32066426&16031289&2670599\\ \hline
-szyfrowanie&5&5&5\\ \hline
-deszyfrowanie&56248&28120&4684\\ \hline
+prędkość transmisji [bit/s] &9600 &19200 &115200\\ \hline
+szyfrowanie z wypisywaniem na konsole [$\mu$s]&11337054 &5667851 &944191\\ \hline
+deszyfrowanie z wypisywaniem na konsole [$\mu$s]&32066426&16031289 &2670599\\ \hline
+szyfrowanie [$\mu$s]&5&5&5\\ \hline
+deszyfrowanie [$\mu$s]&56248&28120&4684\\ \hline
 \end{tabular}
+\caption{Prędkość przesyłu danych przy wykorzystaniu algorytmu DES.}\label{czas_przesylu}
 \end{table}
 
+Na rysunku~\ref{czas_przesylu_procent} przedstawiono procentowy czas potrzebny do zaszyfrowania i odszyfrowania wiadomości 64 bitowej wykorzystując klucz 64 bitowy. 
 
-
-
-
-\begin{figure}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
-            symbolic x coords={9600, 19200, 115200},
-            xtick=data
-          ]
-            \addplot[ybar,fill=blue] coordinates {
-                (9600,   8.33)%100% -> 56248
-                (19200,  49.99)%49,99 -> 28120
-                (115200,   100)%8,33 -> 4684 
-            };
-            
-        \end{axis}
+    %ybar,
+    enlargelimits=0.15,
+    legend style={at={(1,1)},anchor=north east},
+%    anchor=north,legend columns=-1},
+    ylabel={udział \% czasu [$\mu$s]},
+    xlabel={prędkość transmisji[bit/s]},
+    symbolic x coords={9600,19200,115200},
+    xtick=data,
+    ]
+\addplot coordinates {(9600,0.01) (19200,0.01) (115200,0.01)};
+\addplot coordinates {(9600,100) (19200,49.9) (115200,8.33)};
+\legend{szyfrowanie,deszyfrowanie}
+\end{axis}
 \end{tikzpicture}
-\caption{dddd}
+\caption{Procentowa prędkość przesyłu danych w zależności od prędkości transmisji.}\label{czas_przesylu_procent}
 \end{figure}
-
-
-
 
 
 

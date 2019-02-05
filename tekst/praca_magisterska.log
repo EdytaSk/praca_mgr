@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  2 FEB 2019 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  2 FEB 2019 23:29
 entering extended mode
 **./praca_magisterska.tex
 (praca_magisterska.tex
@@ -1367,15 +1367,14 @@ Package pdftex.def Info: szy_desz_19200.jpg  used on input line 1166.
 <szy_desz_115200.jpg, id=169, 523.20468pt x 249.18094pt>
 File: szy_desz_115200.jpg Graphic file (type jpg)
 <use szy_desz_115200.jpg>
-Package pdftex.def Info: szy_desz_115200.jpg  used on input line 1173.
+Package pdftex.def Info: szy_desz_115200.jpg  used on input line 1174.
 (pdftex.def)             Requested size: 341.43306pt x 162.61205pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1218--1219
+ [43 <./szy_desz_19200.jpg> <./szy_desz_115200.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 1219--1220
 
  []
 
-[43 <./szy_desz_19200.jpg> <./szy_desz_115200.jpg>] [44] [45] [46]
-(praca_magisterska.lof)
+[44] [45] [46] (praca_magisterska.lof)
 \tf@lof=\write5
 \openout5 = `praca_magisterska.lof'.
 
@@ -1388,13 +1387,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25948 strings out of 492970
- 660816 string characters out of 3126593
- 858986 words of memory out of 3000000
- 29295 multiletter control sequences out of 15000+200000
+ 25978 strings out of 492970
+ 661475 string characters out of 3126593
+ 859067 words of memory out of 3000000
+ 29325 multiletter control sequences out of 15000+200000
  46308 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,16n,96p,1847b,2011s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,19n,103p,1847b,2315s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
 c}{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
 t.enc}{C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
@@ -1409,7 +1408,7 @@ onts/type1/public/lm/lmr7.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9
 .9/fonts/type1/public/lm/lmri10.pfb><C:/Users/admin/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/admin/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on praca_magisterska.pdf (47 pages, 1986780 bytes).
+Output written on praca_magisterska.pdf (47 pages, 1989097 bytes).
 PDF statistics:
  224 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
