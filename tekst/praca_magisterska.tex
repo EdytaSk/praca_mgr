@@ -13,7 +13,7 @@
 \usepackage{array}
 \usepackage{makecell}
 \usepackage{pgfplots}
-
+\usepackage{seqsplit}
 \usetikzlibrary{fit}
 \usetikzlibrary{arrows}
 \usepackage{tikz}
@@ -30,7 +30,6 @@
 \newpage
 \part{Część teoretyczna}
 \section{Cel i zakres pracy}
-
 
 \quad Celem pracy jest przedstawienie algorytmów kryptograficznych, budowy systemów wbudowanych oraz implementacja algorytmu DES na systemie wbudowanym wraz ze zmierzeniem jego wydajności w zależności od rozmiaru szyfrowanych danych. Praca składa się z części teoretycznej, będącej wprowadzeniem do zagadnień kryptograficznych oraz budowy systemów wbudowanych i części praktycznej, w której przedstawiono charakterystykę wybranego systemu wbudowanego oraz implementację algorytmu DES wraz z przedstawieniem jego wydajności. Praca została podzielono na na dwie części: część teoretyczną, która składa się z dwóch rozdziałów i część praktyczną, która zawiera również dwa rozdziały. 
 
@@ -62,7 +61,7 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 \item podsłuch
 \newline Najpowszechniejszą metodą ataku jest podsłuchiwanie przesyłanych wiadomości przez osobę trzecią podczas wysyłania wiadomości między dwoma osobami. Niektóre protokoły i aplikację takie jak POP,FTP, TFTP, HTTP czy TELNET są narażone na ataki metodą podsłuchu. Prywatne dane takie jak nazwa użytkownika i hasło są przesyłane w postaci tekstu między dwoma urządzeniami przy użyciu wymienionych powyżej protokołów, narażając prywatne dane na łatwe ich przechwycenie poprzez niepożądaną osobę. Głównym założeniem stworzenia protokołów POP, SMTP czy Telnet było umożliwienie komunikacji poprzez Internet  z minimalnym uwierzytelnieniem użytkownika w celu zweryfikowania jego tożsamości. Głównym narzędziem do analizowania wysyłanych danych jest analizator protokołów. Pakiety wysyłane między urządzaniem źródłowym, a docelowym atakujący może przechwycić, gdy będzie miał dostęp do połączenia, które się odbywa między nimi. W celu lepszego zabezpieczenia pakietów przesyłanych przy użyciu protokołów z minimalnym uwierzytelnieniem dodano drugie uwierzytelnienie, które minimalizuje możliwości ataków przy użyciu analizatora protokołów. Przykładem z podwójnym uwierzytelnieniem będą operacje bankowe, które po podaniu loginu i hasło przy wykonywaniu danej operacji wymagają podania jednorazowego hasła, które zostało wysłane do nas elektronicznie lub drogą pocztową. Innym stosowanym rozwiązaniem jest połączenie protokołu  HTTP i SSL czy VPN i szyfrowania. Najrzetelniejszym rozwiązaniem chroniącym przed podsłuchiwaniem będzie VPN połączone z szyfrowaniem, które uniemożliwi odczytanie wysyłanej wiadomości poprzez wirtualną prywatną sieć przez osoby atakujące w przypadku przechwycenia wiadomości.
 \item maskarada
-\newline Ataki maskarady powszechnie znane jako podszywanie się osoby atakującej pod konkretną osobą bądź ukrywanie tożsamości. Podszywanie się pod określoną osobę wykonano poprzez zamianę informacji adresowych IP osoby atakującej na adres IP osoby, za którą chciano być postrzeganą przy pomocy specjalnych narzędzi. Atakujący nie otrzyma wiadomości, którą wysłano w ruchu powrotnym. W celu przechwycenia pakietów z ruchu powrotnego, należało by połączyć maskowanie adresu IP z routingiem w wyniku czego otrzymano by atak DoS, który przesyca sieć danymi. Pakiety danych wysyłane od nadawcy do odbiorcy mogą zostać zmodyfikowane przez osobą atakującą podczas drogi sieciowej, którą wiadomość jest transportowana. W celu wyeliminowania łatwej możliwości zmodyfikowania wysyłanych danych wprowadzono sprawdzenie autentyczności wysyłanych pakietów między dwoma urządzeniami. Sprawdzenie autentyczności pakietów umożliwia funkcja haszująca. Pakiet wysyłany do nadawcy posiada swój hasz, który jest utworzymy z użyciem klucza, który posiada odbiorca i nadawca. W celu sprawdzenia autentyczności wiadomości porównujemy hasz na dwóch urządzeniach danego pakietu. Gdy pakiet został zmodyfikowany przez atakującego hasze nie będą się zgadzały. Najczęściej spotykanymi funkcjami haszowania jest SHA i MD5.
+\newline Ataki maskarady powszechnie znane jako podszywanie się osoby atakującej pod konkretną osobą bądź ukrywanie tożsamości. Podszywanie się pod określoną osobę wykonano poprzez zamianę informacji adresowych IP osoby atakującej na adres IP osoby, za którą chciano być postrzeganą przy pomocy specjalnych narzędzi. Atakujący nie otrzyma wiadomości, którą wysłano w ruchu powrotnym. W celu przechwycenia pakietów z ruchu powrotnego, należało by połączyć maskowanie adresu IP z routingiem w wyniku czego otrzymano by atak DoS, który przesyca sieć danymi. Pakiety danych wysyłane od nadawcy do odbiorcy mogą zostać zmodyfikowane przez osobą atakującą podczas drogi sieciowej, którą wiadomość jest transportowana. W celu wyeliminowania łatwej możliwości zmodyfikowania wysyłanych danych wprowadzono sprawdzenie autentyczności wysyłanych pakietów między dwoma urządzeniami. Sprawdzenie autentyczności pakietów umożliwia funkcja haszująca. Pakiet wysyłany do nadawcy posiada swój hasz, który jest utworzymy z użyciem klucza, który posiada odbiorca i nadawca. W celu sprawdzenia autentyczności wiadomości porównujemy hasz na dwóch urządzeniach danego pakietu. Gdy pakiet został zmodyfikowany przez atakującego hasze nie będą się zgadzały. Najczęściej spotykanymi funkcjami haszowania jest SHA i MD5 ~\cite{maskaraka}.
 \item człowiek w środku tzn. man in the middle
 \newline Dwie najczęściej występujące metody wykorzystane do ataku to: "powtórka ataku" oraz ataki typu "porwanie sesji". W przypadku sesji powtarzającej ataki osoba atakująca znajduję się między dwoma urządzeniami w celu przechwycenia pakietów informacji. Celem przechwycenia pakietów danych jest ich późniejsze wysłanie do odbiorcy w zmienionym przez atakującego stanie np. z wirusem. Na rysunku poniżej przedstawiono schemat ataku dla sesji powtarzających ataki. W pierwszej kolejności użytkownik Alice wysyła pakiet do użytkownika Bob. Następnie atakujący przy użyciu dobranej przez niego techniki przechwytuje pakiety danych, modyfikuje ich zawartość i jako złośliwe pakiety zostają przesłane do użytkownika Bob. Na rys.~\ref{Powtarzajace_ataki} przedstawiono schematycznie atak wykorzystujący technikę powtarzania sesji.
 \begin{figure}[H]
@@ -78,7 +77,7 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 \caption{Człowiek w środku - porwanie sesji}\label{Porwanie_sesji}
 \end{figure}
 
-\quad Prywatna wirtualna sieć zapewnia trzy etapy chroniące nas przed niepożądanymi atakami w wystarczający sposób. Pierwszym z nich jest uwierzytelnienie urządzenia, które chroni przed przechwytywaniem pakietów przez zamaskowane urządzenia atakujące. Następnym krokiem jest sprawdzenie integralności pakietów np. przy użyciu funkcji haszujących. Trzecim etapem jest zaszyfrowanie pakietów, co znacznie utrudnia przechwycenie rzeczywistych informacji.
+\quad Prywatna wirtualna sieć zapewnia trzy etapy chroniące nas przed niepożądanymi atakami w wystarczający sposób. Pierwszym z nich jest uwierzytelnienie urządzenia, które chroni przed przechwytywaniem pakietów przez zamaskowane urządzenia atakujące. Następnym krokiem jest sprawdzenie integralności pakietów np. przy użyciu funkcji haszujących. Trzecim etapem jest zaszyfrowanie pakietów, co znacznie utrudnia przechwycenie rzeczywistych informacji ~\cite{man_in_the_middle}.
 \end{itemize}
 
 
@@ -99,7 +98,7 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 \caption{Rozmiar jednego bajta.}\label{bajt}
 \end{table}
 
-\quad Długość zaszyfrowanego bloku musi być optymalna, im większe bloki danych tym dłuższy zaszyfrowany tekst oraz użycie pamięci. Przy szyfrowaniu wiadomości która na długość 8 bitową, zaś blok szyfru ma długość 64 bity najpierw 8 bitowa wiadomość zostanie prze konwertowana na 64 bitowy blok. Następnie 64 bitowa wiadomość zostanie zaszyfrowana przy użyciu algorytmu tworząc zaszyfrowany tekst. Do przetworzenia szyfru blokowego o rozmiarze 64 bitów potrzebujemy 64 bitów pamięci w rejestrach procesora. W dzisiejszych czasach procesory z pamięcią 64 bitową nie są kosztowne, lecz im większy chcemy utworzyć blok szyfrowy tym lepszy procesor potrzebujemy, co może mieć znaczny wpływ na wysokie koszty.
+\quad Długość zaszyfrowanego bloku musi być optymalna, im większe bloki danych tym dłuższy zaszyfrowany tekst oraz użycie pamięci. Przy szyfrowaniu wiadomości która na długość 8 bitową, zaś blok szyfru ma długość 64 bity najpierw 8 bitowa wiadomość zostanie prze konwertowana na 64 bitowy blok. Następnie 64 bitowa wiadomość zostanie zaszyfrowana przy użyciu algorytmu tworząc zaszyfrowany tekst. Do przetworzenia szyfru blokowego o rozmiarze 64 bitów potrzebujemy 64 bitów pamięci w rejestrach procesora. W dzisiejszych czasach procesory z pamięcią 64 bitową nie są kosztowne, lecz im większy chcemy utworzyć blok szyfrowy tym lepszy procesor potrzebujemy, co może mieć znaczny wpływ na wysokie koszty ~\cite{blok_cipher}.
 
 \subsubsection{Szyfry strumieniowe}
 \quad Szyfrowanie strumieniowe jest deterministyczne, co oznacza, że przy jednakowych danych wejściowych otrzymujemy taki sam wynik wyjściowy. Dzięki determinizmowi możliwe jest odszyfrowanie zaszyfrowanych strumieni bitów.  Szyfrowanie strumieniowe jest podobne w działaniu do deterministycznego generatora liczb pseudolosowych, z tą różnicą że szyfrowanie strumieniowe oprócz wartości wejściowej pobiera dodatkowo klucz, który zazwyczaj ma 128 lub 256 bitów długości. Strumieniem klucza jest pseudolosowym strumieniem bitów. Szyfrowanie strumieniowe polega na przekształceniu tekstu jawnego bit po bicie na szyfrogram. Elementy tworzące szyfrowanie strumieniowe to generator strumienia bitowy oraz element dodający np. operacja XOR. Operację XOR-owania przedstawiono w tabeli~\ref{xor}.
@@ -141,7 +140,7 @@ Szyfrowanie strumieniowe polega na operacji xor tekstu jawnego(P) ze strumieniem
 \begin{center}
 C = P $\oplus$ KS
 \end{center}
-Proces deszyfrowania strumieniowego polega na operacji xor tekstu zaszyfrowanego(C) z strumieniem klucza(KS), w wyniku czego otrzymano tekst jawny(P).~\cite{stream_cipher}\newline
+Proces deszyfrowania strumieniowego polega na operacji xor tekstu zaszyfrowanego(C) z strumieniem klucza(KS), w wyniku czego otrzymano tekst jawny(P) ~\cite{stream_cipher}.\newline
 \begin{center}
 P = C $\oplus$ KS
 \end{center}
@@ -228,7 +227,7 @@ Dane wyjściowe wiadomości z rundy pierwszej są danymi wejściowymi dla rundy 
 \begin{figure}[H]
 \centering
 \includegraphics{des}
-\caption{Pojedyncza runda algorytmu DES.~\cite{DES}
+\caption{Pojedyncza runda algorytmu DES ~\cite{DES}.
 }\label{des}
 \end{figure}
 
@@ -401,7 +400,7 @@ Po dokonaniu permutacji rozszerzenia wiadomości dokonano operacji xor otrzymane
 \caption{Permutacja bloku P.}~\label{blok_P}
 \end{table}
 
-Algorytm DES nie jest obecnie uznawany za bezpieczny przez Amerykańskie Standardy Federalne. W roku 2015 przy użyciu wysokiej wydajności FPGA możliwe było złamanie szyfru w stosunkowo krótkim czasie(4-5 dni). Dla atakujących przestała być odstraszająca cena platformy FPGA w porównaniu do zysków jakie może dać im atak. W celu przesłania klucza do drugiej osoby, z którą tworzymy bezpieczne połączenie wymaga znalezienie bezpiecznej metody przesyłu klucza. Zaletami algorytmu DES jest jego odporność na błędy, dzięki jego prostocie aplikacji. W obecnych czasach jest on nadal popularny w użytku, dzięki swojej szybkości.~\cite{DES}
+Algorytm DES nie jest obecnie uznawany za bezpieczny przez Amerykańskie Standardy Federalne. W roku 2015 przy użyciu wysokiej wydajności FPGA możliwe było złamanie szyfru w stosunkowo krótkim czasie(4-5 dni). Dla atakujących przestała być odstraszająca cena platformy FPGA w porównaniu do zysków jakie może dać im atak. W celu przesłania klucza do drugiej osoby, z którą tworzymy bezpieczne połączenie wymaga znalezienie bezpiecznej metody przesyłu klucza. Zaletami algorytmu DES jest jego odporność na błędy, dzięki jego prostocie aplikacji. W obecnych czasach jest on nadal popularny w użytku, dzięki swojej szybkości ~\cite{DES}.
 
 %%% cos o deszyfracji dodac
 
@@ -415,7 +414,7 @@ IDEA to Międzynarodowy Algorytm Szyfrowania Danych(z ang. International Data En
 \begin{figure}[H]
 \centering
 \includegraphics{IDEA.jpg}
-\caption{Pojedyncza runda algorytmu IDEA.~\cite{IDEA}}\label{idea}
+\caption{Pojedyncza runda algorytmu IDEA ~\cite{IDEA}.}\label{idea}
 \end{figure}
 
 
@@ -451,7 +450,7 @@ Proces deszyfrowania wiadomości również korzysta z schematu przedstawionego n
  1110 [14]&0010 [2]&1011 [11]\\ \hline
  1111 [15]&0001 [1]&1000 [8]\\ \hline
  \end{tabular}
-\caption{Obliczenia multiplikatywnej i addytywnej odwrotności.~\cite{IDEAA}}\label{nibel}
+\caption{Obliczenia multiplikatywnej i addytywnej odwrotności ~\cite{IDEAA}.}\label{nibel}
 \end{table}
 
 Multiplikatywną odwrotność dla a wyliczono według zależności x mod n, gdzie a $\in$ $Z_{n}$ oraz n jest rozmiarem grupy. Do obliczenia odwrotności addytywnej wykorzystano rozszerzony algorytm Euklidesa, który oblicza liczby całkowite x i y wykorzystując zależność ax + ny = 1, gdzie a $\in$ $Z_{n}$. Proces tworzenia podkluczy wykorzystanych do deszyfrowania ukazano w tabeli~\ref{podklucze_deszyfrowania_idea}. Potęga oznaczona literą a określa multiplikatywną odwrotność danej liczby, potęga oznaczona jako m określa addytywną odwrotność podanej liczby.
@@ -476,7 +475,7 @@ dodatkowe 4 podklucze&$x_{49}$&$x_{50}$&$x_{51}$&$x_{52}$&&&$x_{1}^{a}$&$x_{2}^{
 \caption{Podklucze szyfrujące i deszyfrujące IDEA.}\label{podklucze_deszyfrowania_idea}
 \end{table}
 
-Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożenie i dodawanie modulo oraz xorowanie. Do szyfrowania i deszyfrowania wiadomości wykorzystuje ten sam proces, natomiast podklucze są różne dla szyfrowania i odszyfrowywania. Algorytm IDEA wolniej szyfruje dane niż algorytm DES, jednak dzięki temu, że jego klucz jest dwa razy dłuższy niż w DES ataki brutalne są mniej skuteczne.~\cite{IDEA}
+Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożenie i dodawanie modulo oraz xorowanie. Do szyfrowania i deszyfrowania wiadomości wykorzystuje ten sam proces, natomiast podklucze są różne dla szyfrowania i odszyfrowywania. Algorytm IDEA wolniej szyfruje dane niż algorytm DES, jednak dzięki temu, że jego klucz jest dwa razy dłuższy niż w DES ataki brutalne są mniej skuteczne ~\cite{IDEA}.
 
 %\paragraph{Blowfish} \mbox{} \\
 
@@ -491,8 +490,7 @@ Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożeni
 \caption{Schematyczne szyfrowanie asymetryczne.}\label{rsa}
 \end{figure}
 
-Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Na rysunku~\ref{rsa} zobrazowano szyfrowanie i deszyfrowanie z użyciem klucza publicznego i prywatnego. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować.  
-
+Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Na rysunku~\ref{rsa} zobrazowano szyfrowanie i deszyfrowanie z użyciem klucza publicznego i prywatnego. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować ~\cite{asymetric}.  
 
 
 
@@ -557,7 +555,7 @@ Algorytm Diffie-Hellmana przestanie być bezpieczny w momencie, gdy zostanie roz
 \begin{center}
 $g^{a}$ $\equiv$ a mod(p) oraz $g^{b}$ $\equiv$ b mod(p)
 \end{center}
-Obecnie nie istnieje żaden algorytm umożliwiający rozwiązanie problemu logarytmu dyskretnego.~\cite{DH}
+Obecnie nie istnieje żaden algorytm umożliwiający rozwiązanie problemu logarytmu dyskretnego ~\cite{DH}.
 
 %\paragraph{Funkcje haszujące} \mbox{} \\
 
@@ -575,7 +573,7 @@ Połączenie między zdalnym klientem, a siecią przebiega w określonych etapac
 \item nawiązanie połączenia z użyciem protokołu komunikacyjnego point-to-point (PPP) między dwoma węzłami sieci w sposób telefoniczny bądź przewodowy z Internetem
 \item połączenie PPP z serwerem PPTP, co tworzy połączenie VPN między zdalnym klientem, a serwerem
 \end{itemize}
-Po ustanowieniu połączenia wysyłane są dwa pakiety danych: pakiet kontrolny, który zarządza tunelem i pakiet danych. Protokół PPTP jest zaaplikowany na drugim poziomie modelu odniesienia łączenia systemów otwartych (OSI), który jest warstwą łącza danych. Jego działanie jest oparte na protokole punkt-punkt (PPP), który umożliwia korzystanie z usług internetowych. Protokół PPTP umożliwia firmom tworzenie prywatnych tuneli w publicznym internecie. Organizacje nie muszą już instalować kosztownych linii do komunikacji, dzięki protokołowi PPTP mogą w bezpieczny sposób korzystać z sieci publicznej w celu przesyłania poufnych danych. Protokół PPTP wspiera szyfrowanie i kompresję danych. Protokół PPTP nie jest wykorzystywany powszechnie ze względu na podatność na ataki.~\cite{PPTP}
+Po ustanowieniu połączenia wysyłane są dwa pakiety danych: pakiet kontrolny, który zarządza tunelem i pakiet danych. Protokół PPTP jest zaaplikowany na drugim poziomie modelu odniesienia łączenia systemów otwartych (OSI), który jest warstwą łącza danych. Jego działanie jest oparte na protokole punkt-punkt (PPP), który umożliwia korzystanie z usług internetowych. Protokół PPTP umożliwia firmom tworzenie prywatnych tuneli w publicznym internecie. Organizacje nie muszą już instalować kosztownych linii do komunikacji, dzięki protokołowi PPTP mogą w bezpieczny sposób korzystać z sieci publicznej w celu przesyłania poufnych danych. Protokół PPTP wspiera szyfrowanie i kompresję danych. Protokół PPTP nie jest wykorzystywany powszechnie ze względu na podatność na ataki ~\cite{PPTP}.
 \subsubsection{Secure Shell (SSH)}
 \quad SSH z angielskiego to Secure Shell, co znaczy bezpieczna powłoka. Protokół SSH został wprowadzony w celu ulepszenia istniejących już wcześniej protokołów takich jak telnet, ftp czy BSD r-commands(rlogin, rexec, rsh,rcp). Protokoły telnet, ftp czy rsh były wykorzystywane do transferu plików między hostem lokalnym i zdalnym. Wymienione protokoły nadal są w powszechnym użytku, tylko tam gdzie bezpieczeństwo nie jest istotnym czynnikiem. Istotną wadą usług telnet i ftp jest brak szyfrowania i uwierzytelniania podczas przesyłania pakietów. Dane wysyłane są w sposób jawny, które mogą być w łatwiejszy sposób przechwycone przez atakującego. Atakujący może uzyskać niezaszyfrowane hasło, które następnie może wykorzystać w łatwy sposób. Wszędzie tam gdzie bezpieczeństwo danych jest ważne stosujemy protokół SSH. 
 \quad SSH jest protokołem warstwy transportowej, która używa TCP do przenoszenia swoich pakietów. TCP jest protokołem sterowanie transmisją między dwoma urządzeniami. SSH umożliwia bezpieczne tunelowanie między lokalnym z zdalnym urządzeniem. Na poniższym rysunku przedstawiono komunikacje lokalnego klienta z powłoką serwera przy pomocy przekierowaniu portów. Na rys.~\ref{SSH} ukazano schemat lokalnego przekierowania portu dla protokołu SSH.
@@ -606,7 +604,7 @@ Zdalne przekierowanie portu przebiega w następujących krokach:
 \item klient SSH łączy się do hosta A poprzez nasłuchujący port L po jego stronie
 \end{itemize}
 \quad 
-Wykorzystując zjawisko tunelowania do prywatnej sieci wirtualnej tworzymy bezpieczne połączenie poprzez tunel między dwoma sieciami. ~\cite{SSH}
+Wykorzystując zjawisko tunelowania do prywatnej sieci wirtualnej tworzymy bezpieczne połączenie poprzez tunel między dwoma sieciami ~\cite{SSH}.
 
 \subsubsection{IPsec}
 \quad Protokół IPsec zawiera trzy główne protokoły:
@@ -662,7 +660,7 @@ Protokół L2TP, który jest wykorzystywany do włączenie sieci VPN w Interneci
 \item punkty końcowe tunelu (LAC i LNS) przed wysłaniem danych poprzez tunel uwierzytelniają się wzajemnie
 \item po utworzeniu tunelu VPN korzystającego z protokołu L2TP połączenie między użytkownikiem, a siecią korporacyjną zostaje nawiązane 
 \end{itemize}
-Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostawców internetowych do utworzenia wirtualnej sieci prywatnej między dwoma urządzeniami.~\cite{L2TP}
+Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostawców internetowych do utworzenia wirtualnej sieci prywatnej między dwoma urządzeniami ~\cite{L2TP}.
 
 \newpage
 \section{Systemy wbudowane}
@@ -671,7 +669,7 @@ Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostaw
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{es.png}
-\caption{Schemat blokowy komponentów wewnątrz ogólnego mikrokontrolera.~\cite{es}}\label{es}
+\caption{Schemat blokowy komponentów wewnątrz ogólnego mikrokontrolera ~\cite{es}}.\label{es}
 \end{figure}
 
 \paragraph{Modulator szerokości impulsu PWM} \mbox{} \\
@@ -773,7 +771,7 @@ Pamięć flash jest pamięcią nieulotną, co znaczy, że po odłączeniu zasila
 %\paragraph{Rejestr SREG} \mbox{} \\
 \paragraph{Szyny danych, adresowe i sterowania} \mbox{} \\
 
-Wszystkie wewnętrzne komponenty znajdujące się na systemie wbudowanym  do komunikacji używają trzech szyn. Szyna danych jest odpowiedzialna za przesyłanie danych między nimi, szyna adresowa odpowiedzialna jest za wysyłanie adresów, natomiast szyna sterowania jest odpowiedzialna za wysyłanie instrukcji między komponentami~\cite{es}.
+Wszystkie wewnętrzne komponenty znajdujące się na systemie wbudowanym  do komunikacji używają trzech szyn. Szyna danych jest odpowiedzialna za przesyłanie danych między nimi, szyna adresowa odpowiedzialna jest za wysyłanie adresów, natomiast szyna sterowania jest odpowiedzialna za wysyłanie instrukcji między komponentami ~\cite{es}.
 
 
 %\subsection{Architektura systemów wbudowanych}
@@ -801,7 +799,7 @@ Wszystkie wewnętrzne komponenty znajdujące się na systemie wbudowanym  do kom
 \item antena PCB
 \item dwa przełączniki stanowe 
 \item wejście mikro USB
-\item kondensator tantalu, dioda niebieska
+\item kondensator tantalu, dioda niebieska~\cite{esp8266}
 \end{itemize} 
 
 
@@ -1303,47 +1301,77 @@ Analizując rysunek~\ref{czas_9600},~\ref{czas_19200} i ~\ref{czas_115200} spost
 
 \newpage
 \begin{thebibliography}{99}
+%1
+\bibitem{maskaraka} J. Forshaw,
+\emph{
+Attacking Network Protocols},
+08.2017, chapter 4
+%2
+\bibitem{man_in_the_middle}, E. Cole,
+\emph{Hackers Beware},
+08.2001, chapter Man-in-the-Middle Attack Against Key Exchange
+%3
+\bibitem{blok_cipher}, Y. Li, Yu Sasaki, K. Sakiyama,
+\emph{Security of Block Ciphers},
+Wiley-IEEE Press, 04.2016, \mbox{chapter 1}
+%4
+\bibitem{stream_cipher},  S. Bose, A. Kumar,
+\emph{Cryptography and Network Security}
+Pearson Education India, 03.2016, chapter 5
+%5
+\bibitem{DES} J. Wiley,
+\emph{Information Security: Principles and Practice,2nd Edition},
+M. Stamp, 05.2011, \mbox{chapter 3}
+%6
+\bibitem{IDEA} Tingting CuiHuaifeng ChenLong WenMeiqin Wang,
+\emph{Cryptography and Communications: \mbox{Statistical} integral attack on CAST-256 and IDEA}, January 2018, Volume 10
+%7
+\bibitem{asymetric}W. Mao,
+\emph{Modern Cryptography: Theory and Practice}
+Prentice Hall, 07.2003, chapter 8. Encryption — Asymmetric Techniques
+%8 
 
+\bibitem{IDEAA} N. Hoffman,
+\emph{Article in Cryptologia: A simplified IDEA algorithm},
+Department of Mathematics, Northern Kentucky University, March 2007, str 143-151
+%9
+
+\bibitem{RSA} F.M. Groom, K. Groom and S.S. Jones
+\emph{Network and Data Security for Non-Engineers},
+\mbox{Auerbach} Publications, 08.2016, chapter 8
+%10
+
+\bibitem{DH} C. Chebbi
+\emph{Advanced Infrastructure Penetration Testing},
+Packt Publishing, 02.2018
+%11
 \bibitem{PPTP} D. Stoddard i T.M. Thomas,
 \emph{
 Cover image for Network Security First-Step, Second Edition
 Network Security First-Step, Second Edition},
 Cisco Press, 12.2011, chapter 6
-
+%12
 \bibitem{SSH} A. Lockhart,
 \emph{Network Security Hacks},
 O'Reilly Media Inc., 04.2004, chapter 6
-
+%13
 \bibitem{SSTP} J. Savill,
 \emph{The Complete Guide to Windows Server 2008},
 Addison-Wesley Professional, 10.2008, chapter 8
-
+%14
 \bibitem{L2TP} S. Malik,
 \emph{Cover image for Network Security Principles and Practices
-Network Security Principles and Practices},
+Network Security \mbox{Principles} and Practices},
 Cisco Press, 10.2002
 
-\bibitem{DES} J. Wiley,
-\emph{Information Security: Principles and Practice,2nd Edition},
-M. Stamp, 05.2011, chapter 3
-
-\bibitem{IDEAA} N. Hoffman,
-\emph{Article in Cryptologia: A simplified IDEA algorithm},
-Department of Mathematics, Northern Kentucky University, March 2007, str 143-151
-
-\bibitem{IDEA} Tingting CuiHuaifeng ChenLong WenMeiqin Wang,
-\emph{Cryptography and Communications: Statistical integral attack on CAST-256 and IDEA}, January 2018, Volume 10
-
-\bibitem{RSA}
-\emph{Information Security: Principles and Practice, 2nd Edition},
-
-\bibitem{DH} C. Chebbi
-\emph{Advanced Infrastructure Penetration Testing},
-Packt Publishing, 02.2018
-
-\bibitem{es}D.Lacamera
+%15
+\bibitem{es}D. Lacamera
 \emph{Embedded Systems Architecture},
 Packt Publishing, 05.2018
+%16
+\bibitem{esp8266}Espressif Systems,
+\emph{ESP8266-DevKitC Getting Started Guide}
+Espressif Systems, 2018
 
 % NIE PODAWAC TEJ LITERATURY ----
 %\bibitem{stream_cipher}O. Santos and J. Stuppi,

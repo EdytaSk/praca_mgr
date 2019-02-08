@@ -2,14 +2,14 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces Cz\IeC {\l }owiek w \IeC {\'s}rodku - porwanie sesji}}{5}
 \contentsline {figure}{\numberline {3}{\ignorespaces Schematyczny proces szyfrowania symetrycznego.}}{8}
 \contentsline {figure}{\numberline {4}{\ignorespaces Schematyczny proces odszyfrowania symetrycznego.}}{8}
-\contentsline {figure}{\numberline {5}{\ignorespaces Pojedyncza runda algorytmu DES.\nobreakspace {}\cite {DES} }}{10}
-\contentsline {figure}{\numberline {6}{\ignorespaces Pojedyncza runda algorytmu IDEA.\nobreakspace {}\cite {IDEA}}}{15}
+\contentsline {figure}{\numberline {5}{\ignorespaces Pojedyncza runda algorytmu DES \nobreakspace {}\cite {DES}. }}{10}
+\contentsline {figure}{\numberline {6}{\ignorespaces Pojedyncza runda algorytmu IDEA \nobreakspace {}\cite {IDEA}.}}{15}
 \contentsline {figure}{\numberline {7}{\ignorespaces Schematyczne szyfrowanie asymetryczne.}}{17}
 \contentsline {figure}{\numberline {8}{\ignorespaces Pogl\IeC {\k a}dowa komunikacja z u\IeC {\.z}yciem protoko\IeC {\l }u PPTP}}{20}
 \contentsline {figure}{\numberline {9}{\ignorespaces SSH lokalne przekierowywanie portu}}{21}
 \contentsline {figure}{\numberline {10}{\ignorespaces SSH zdalne przekierowywanie portu}}{22}
 \contentsline {figure}{\numberline {11}{\ignorespaces Tryb tunelowy IPsec}}{23}
-\contentsline {figure}{\numberline {12}{\ignorespaces Schemat blokowy komponent\IeC {\'o}w wewn\IeC {\k a}trz og\IeC {\'o}lnego mikrokontrolera.\nobreakspace {}\cite {es}}}{26}
+\contentsline {figure}{\numberline {12}{\ignorespaces Schemat blokowy komponent\IeC {\'o}w wewn\IeC {\k a}trz og\IeC {\'o}lnego mikrokontrolera \nobreakspace {}\cite {es}}}{26}
 \contentsline {figure}{\numberline {13}{\ignorespaces Prz\IeC {\'o}d mikrokontrolera NodeMCU v2 ESP8266.}}{33}
 \contentsline {figure}{\numberline {14}{\ignorespaces Prz\IeC {\'o}d mikrokontrolera NodeMCU v2 ESP8266.}}{33}
 \contentsline {figure}{\numberline {15}{\ignorespaces Konfiguracja \IeC {\'s}rodowiska Arduino dla p\IeC {\l }ytki ESP8266.}}{35}
