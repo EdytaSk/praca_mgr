@@ -46,8 +46,6 @@
 \contentsline {subsection}{\numberline {4.2}Po\IeC {\l }\IeC {\k a}czenie ESP8266 z Arduino}{33}
 \contentsline {subsection}{\numberline {4.3}Manualna implementacja algorytmu DES}{35}
 \contentsline {subsection}{\numberline {4.4}Implementacja algorytmu DES na ESP8266}{39}
-\contentsline {paragraph}{Wyniki algorytmu DES}{44}
-\contentsline {subsection}{\numberline {4.5}Wydajno\IeC {\'s}\IeC {\'c} algorytmu DES na ESP8266}{44}
-\contentsline {section}{\numberline {5}Wnioski}{45}
-\contentsline {section}{Literatura}{47}
-\contentsline {section}{Spis rysunk\IeC {\'o}w}{47}
+\contentsline {section}{\numberline {5}Wnioski}{47}
+\contentsline {section}{Literatura}{49}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{49}

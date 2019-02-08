@@ -4,7 +4,7 @@
 \contentsline {figure}{\numberline {4}{\ignorespaces Schematyczny proces odszyfrowania symetrycznego.}}{8}
 \contentsline {figure}{\numberline {5}{\ignorespaces Pojedyncza runda algorytmu DES.\nobreakspace {}\cite {DES} }}{10}
 \contentsline {figure}{\numberline {6}{\ignorespaces Pojedyncza runda algorytmu IDEA.\nobreakspace {}\cite {IDEA}}}{15}
-\contentsline {figure}{\numberline {7}{\ignorespaces Schematyczne szyfrowanie asymetryczne.}}{18}
+\contentsline {figure}{\numberline {7}{\ignorespaces Schematyczne szyfrowanie asymetryczne.}}{17}
 \contentsline {figure}{\numberline {8}{\ignorespaces Pogl\IeC {\k a}dowa komunikacja z u\IeC {\.z}yciem protoko\IeC {\l }u PPTP}}{20}
 \contentsline {figure}{\numberline {9}{\ignorespaces SSH lokalne przekierowywanie portu}}{21}
 \contentsline {figure}{\numberline {10}{\ignorespaces SSH zdalne przekierowywanie portu}}{22}
@@ -16,8 +16,11 @@
 \contentsline {figure}{\numberline {16}{\ignorespaces Wynik szyfrowania algorytmem DES dla rundy 1.}}{40}
 \contentsline {figure}{\numberline {17}{\ignorespaces Czas szyfrowania i deszyfrowania dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji danych 9600.}}{41}
 \contentsline {figure}{\numberline {18}{\ignorespaces Czas szyfrowania i deszyfrowania dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji danych 19200.}}{41}
-\contentsline {figure}{\numberline {19}{\ignorespaces Czas szyfrowania i deszyfrowania dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji danych 115200.}}{42}
+\contentsline {figure}{\numberline {19}{\ignorespaces Czas szyfrowania i deszyfrowania dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji danych 115200.}}{41}
 \contentsline {figure}{\numberline {20}{\ignorespaces Czas szyfrowania i deszyfrowania dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji danych 9600.}}{42}
-\contentsline {figure}{\numberline {21}{\ignorespaces Czas szyfrowania i deszyfrowania dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji danych 19200.}}{43}
+\contentsline {figure}{\numberline {21}{\ignorespaces Czas szyfrowania i deszyfrowania dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji danych 19200.}}{42}
 \contentsline {figure}{\numberline {22}{\ignorespaces Czas szyfrowania i deszyfrowania dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji danych 115200.}}{43}
 \contentsline {figure}{\numberline {23}{\ignorespaces Procentowa pr\IeC {\k e}dko\IeC {\'s}\IeC {\'c} przesy\IeC {\l }u danych w zale\IeC {\.z}no\IeC {\'s}ci od pr\IeC {\k e}dko\IeC {\'s}ci transmisji.}}{44}
+\contentsline {figure}{\numberline {24}{\ignorespaces Czas szyfrowania i deszyfrowania w zale\IeC {\.z}no\IeC {\'s}ci od rozmiaru danych dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji 9600.}}{45}
+\contentsline {figure}{\numberline {25}{\ignorespaces Czas szyfrowania i deszyfrowania w zale\IeC {\.z}no\IeC {\'s}ci od rozmiaru danych dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji 19200.}}{45}
+\contentsline {figure}{\numberline {26}{\ignorespaces Czas szyfrowania i deszyfrowania w zale\IeC {\.z}no\IeC {\'s}ci od rozmiaru danych dla pr\IeC {\k e}dko\IeC {\'s}ci transmisji 115200.}}{46}

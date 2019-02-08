@@ -36,15 +36,13 @@
 
 W pierwszej części teoretycznej w rodziale 2 opisano powszechna ataki na algorytmy kryptograficzne oraz przedstawiono sposób działania szyfrów blokowych i strumieniowych. Następnie objaśniono działanie szyfrów symetrycznych, do których należy szyfr Cezara, algorytm DES oraz IDEA. W dalszej części objaśniono działanie szyfrów asymetrycznych, do których należą dwa słynne algorytmy kryptograficzne RSA i Diffiego-Helmanna. Na zakończenie rozdziału   omówiono protokoły wykorzystywane do komunikacji między dwoma urządzeniami elektronicznymi. W rodziale 3 opisane budowę systemów wbudowanych poprzez opis ich składowych komponentów tj. modulator szerokości impulsów PWM, przetwornik analogowo-cyfrowy, przetwornik cyfrowo-analogowy, wejścia/wyjścia ogólnego przeznaczenia, uniwersalny odbiornik i nadajnik asynchroniczny UART, magistrale, zegar czasu rzeczywistego, centralna jednostka obliczeniowa, JTAG, pamięci oraz szyny danych, adresowe i sterowania. 
 
-W drugiej części praktycznej w rozdziale 4 przedstawiono charakterystykę użytego systemu wbudowanego ESP8266. Następnie przedstawiono ręczne szyfrowanie krok po kroku wiadomości z wykorzystaniem algorytmu DES. W następnym podrozdziale ukazano wyniki szyfrowania dla 16 rund programu implementującego algorytm DES i porównano ich zgodność z ręcznym obliczeniem dla rundy pierwszej. 
+W drugiej części w rozdziale 4 przedstawiono część praktyczną pracy, która została podzielona na cztery podrozdziały. W podrozdziale 4.1 ukazano charakterystykę użytego systemu wbudowanego ESP8266. Następnie w podrozdziale 4.2 opisano założenia projektowe oraz sposób podłączenia ESP8266 z środowiskiem programistycznym Arduino. W dalszej części 4.3 przedstawiono ręczne szyfrowanie krok po kroku wiadomości z wykorzystaniem algorytmu DES. Na samym końcu w podrozdziale 4.3 przedstawiono wyniki szyfrowania dla 16 rund programu implementującego algorytm DES i porównano ich zgodność z ręcznym obliczeniem dla rundy pierwszej. Pomiarów czasu szyfrowania i deszyfrowania dokonano dla trzech rozmiarów danych o wielkości 1Kb, 8Kb i 16Kb oraz przeprowadzono ich analizę. 
  
- ..................... 
  
  
 
 %2. Na początku powinien być rozdział pt. "Cel i zakres pracy", zazwyczaj krótki maksymalnie do dwóch stron, w którym powinien znaleźć się (a) cel pracy - krótko powód podjęcia się tej tematyki, ze wskazaniem na to co pracę wyróżnia na tle prac innych o podobnej tematyce, (b) zakres pracy - czyli coś na zasadzie: praca składa sie z części teoretycznej, będącej wprowadzeniem do ...., części praktycznej w której zaprezentowane własne implementacje. Później też mozna dodać: W rozdziale 1 jest to i to, rozdział 2 poświęcono ...
 %Po przeczytaniu tego rozdzialu powinno być wiadomo mniej więcej jaki jest własny wkład, dlatego tak ważne jest podkreślenie znaczenia części praktycznej. Część ta pełni rolę abstraktu.
-!!!!!!!!!!!!! będzie jeszcze opis czesci praktycznej i podsumowanie !!!!!!!!!!!!!!!!
 
 \newpage
 \section{Kryptografia}
@@ -336,7 +334,7 @@ Tabela~\ref{per_rozszerzenia} jest stosowana do operacji rozszerzenia wiadomośc
 \caption{Permutacja rozszerzenia DES.}~\label{per_rozszerzenia}
 \end{table}
 
-Po dokonaniu permutacji rozszerzenia wiadomości dokonano operacji xor otrzymanej wiadomości z obliczonym kluczem dla danego cyklu. Otrzymany wynik podzielono na 8 bloków 6 bitowych, które wykorzystano do dalszych obliczeń z pomocą tabeli~\ref{s_bloki} s bloków. Z każdego bloku 6 bitowego odczytano wartość pierwszego i ostatniego bitu, wartość 00 oznacza wykorzystanie wiersza pierwszego z danego bloku, 01 oznacza wiersz drugi, 10 oznacza wiersz trzeci, natomiast 11 oznacza wiersz czwarty. Wartości od bita drugiego do piątego zamieniamy na postać heksadecymalną i odczytujemy dla niej wartość z danego bloku np. jeśli pierwszy i ostatni bit to 00 to wartość odczytano z wiersza pierwszego, gdy bity między 2-5 pozycją to 1111 oznacza to ostatnią wartość z wiersza pierwszego czyli 7.
+Po dokonaniu permutacji rozszerzenia wiadomości dokonano operacji xor otrzymanej wiadomości z obliczonym kluczem dla danego cyklu. Otrzymany wynik podzielono na 8 bloków 6 bitowych, które wykorzystano do dalszych obliczeń z pomocą tabeli~\ref{s_bloki} struktury S bloków. Z każdego bloku 6 bitowego odczytano wartość pierwszego i ostatniego bitu, wartość 00 oznacza wykorzystanie wiersza pierwszego z danego bloku, 01 oznacza wiersz drugi, 10 oznacza wiersz trzeci, natomiast 11 oznacza wiersz czwarty. Wartości od bita drugiego do piątego zamieniamy na postać heksadecymalną i odczytujemy dla niej wartość z danego bloku np. jeśli pierwszy i ostatni bit to 00 to wartość odczytano z wiersza pierwszego, gdy bity między 2-5 pozycją to 1111 oznacza to ostatnią wartość z wiersza pierwszego czyli 7.
 
 \begin{table}[H]
 \centering
@@ -485,14 +483,18 @@ Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożeni
 
 \subsubsection{Szyfry asymetryczne}
 
-\quad Szyfry asymetryczne charakteryzują się tym, że posiadają osobny klucz do szyfrowania i osobny deszyfrowania. W celu wyjaśnienia zasady działania szyfru asymetrycznego przedstawiono powszechnie znany sposób wysyłania wiadomości od Alicji do Boba. Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Na rysunku~\ref{rsa} zobrazowano szyfrowanie i deszyfrowanie z użyciem klucza publicznego i prywatnego. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować.  
-
+\quad Szyfry asymetryczne charakteryzują się tym, że posiadają osobny klucz do szyfrowania i osobny deszyfrowania. W celu wyjaśnienia zasady działania szyfru asymetrycznego przedstawiono powszechnie znany sposób wysyłania wiadomości od Alicji do Boba przedstawiony schematycznie na rysunku~\ref{rsa}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{rsa.png}
 \caption{Schematyczne szyfrowanie asymetryczne.}\label{rsa}
 \end{figure}
+
+Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Na rysunku~\ref{rsa} zobrazowano szyfrowanie i deszyfrowanie z użyciem klucza publicznego i prywatnego. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować.  
+
+
+
 
 \paragraph{RSA} \mbox{} \\
 
@@ -834,10 +836,6 @@ Założenia projektowe:
 \item implementacja algorytmu DES na mikrokontrolerze
 \item pomiar czasu potrzebnego na szyfrowanie algorytmem DES
 \item pomiar czasu potrzebnego na deszyfrowanie algorytmem DES
-\item implementacja algorytmu RSA na mikrokontrolerze
-\item pomiar czasu potrzebnego na szyfrowanie algorytmem RSA
-\item pomiar czasu potrzebnego na deszyfrowanie algorytmem RSA
-\item porównanie wydajności algorytmu RSA i DES
 \end{itemize}
 
 
@@ -1182,12 +1180,12 @@ W tabeli~\ref{czas_przesylu} zobrazowano czas szyfrowania i deszyfrowania wiadom
 \begin{tabular}{|c|c|c|c|}
 \hline
 prędkość transmisji [bit/s] &9600 &19200 &115200\\ \hline
-szyfrowanie z wypisywaniem na konsole [$\mu$s]&11337054 &5667851 &944191\\ \hline
-deszyfrowanie z wypisywaniem na konsole [$\mu$s]&32066426&16031289 &2670599\\ \hline
-szyfrowanie [$\mu$s]&5&5&5\\ \hline
-deszyfrowanie [$\mu$s]&56248&28120&4684\\ \hline
+szyfrowanie z wypisywaniem na konsole [$\mu$s]&11337054 &5667847 &944187\\ \hline
+deszyfrowanie z wypisywaniem na konsole [$\mu$s]&31995607&15995886 &2664708\\ \hline
+szyfrowanie [$\mu$s]&4&4&4\\ \hline
+deszyfrowanie [$\mu$s]&1&1&0\\ \hline
 \end{tabular}
-\caption{Prędkość przesyłu danych przy wykorzystaniu algorytmu DES.}\label{czas_przesylu}
+\caption{Czas przesyłu danych przy wykorzystaniu algorytmu DES.}\label{czas_przesylu}
 \end{table}
 
 Na rysunku~\ref{czas_przesylu_procent} przedstawiono procentowy czas potrzebny do zaszyfrowania i odszyfrowania wiadomości 64 bitowej wykorzystując klucz 64 bitowy. 
@@ -1196,32 +1194,110 @@ Na rysunku~\ref{czas_przesylu_procent} przedstawiono procentowy czas potrzebny d
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    %ybar,
     enlargelimits=0.15,
-    legend style={at={(1,1)},anchor=north east},
-%    anchor=north,legend columns=-1},
+    legend style={at={(0.03,0.5)},anchor=west},
     ylabel={udział \% czasu [$\mu$s]},
     xlabel={prędkość transmisji[bit/s]},
     symbolic x coords={9600,19200,115200},
     xtick=data,
     ]
-\addplot coordinates {(9600,0.01) (19200,0.01) (115200,0.01)};
-\addplot coordinates {(9600,100) (19200,49.9) (115200,8.33)};
+\addplot coordinates {(9600,100) (19200,100) (115200,100)};
+\addplot coordinates {(9600,25) (19200,25) (115200,25)};
 \legend{szyfrowanie,deszyfrowanie}
 \end{axis}
 \end{tikzpicture}
 \caption{Procentowa prędkość przesyłu danych w zależności od prędkości transmisji.}\label{czas_przesylu_procent}
 \end{figure}
 
+Bit jest najmniejszą jednostką pamięci komputera oznaczoną literą b. Rozmiary pamięci komputera przedstawiono jako wielokrotności bitów i bajtów. Wielokrotność bita przedstawiono jako: 1Kb(kilobit) = 1024 bitów, 1Mb = 1048576 bitów, 1Gb = 1073741824 bitów itd. Wielokrotność bajta zaprezentowano jako 1KB(kilobajt) = 8192 bitów, 1MB = 8388608 bitów, 1GB = 8589934592 bitów itd. Dokonano pomiarów czasu szyfrowania i deszyfrowania danych o rozmiarach 1Kb, 8Kb i 16Kb dla trzech prędkości transmisji danych 9600, 19200 i 115200 bitów/s, które przedstawiono w tabeli~\ref{czas_przesylu_1K,8K}. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+prędkość transmisji [bit/s] &9600 &19200 &115200\\ \hline
+szyfrowanie 1Kb[$\mu$s]&169&188&116\\ \hline
+deszyfrowanie 1Kb[$\mu$s]&1718&113&101\\ \hline
+szyfrowanie 8Kb[$\mu$s]&896&888&816\\ \hline
+deszyfrowanie 8Kb[$\mu$s]&2417&813&801\\ \hline
+szyfrowanie 16Kb[$\mu$s]&1697&1688&1616\\ \hline
+deszyfrowanie 16Kb[$\mu$s]&3376&1613&1600\\ \hline
+\end{tabular}
+\caption{Czas przesyłu danych o rozmiarze 1Kb, 8Kb i 16Kb.}\label{czas_przesylu_1K,8K}
+\end{table}
+
+Na rysunku~\ref{czas_9600} przedstawiono czas szyfrowania i deszyfrowania wiadomości o rozmiarze 1Kb, 8Kb i 16Kb dla prędkości transmisji danych 9600bitów/s.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    enlargelimits=0.15,
+    legend style={at={(0.03,0.87)},anchor=west},
+    ylabel={udział \% czasu [$\mu$s]},
+    xlabel={rozmiar przesłanych danych [Kb]},
+    symbolic x coords={1Kb,8Kb,16Kb},
+    xtick=data,
+    ]
+\addplot coordinates {(1Kb,9.96) (8Kb,52.8) (16Kb,100)};
+\addplot coordinates {(1Kb,50.89) (8Kb,71.6) (16Kb,100)};
+\legend{szyfrowanie,deszyfrowanie}
+\end{axis}
+\end{tikzpicture}
+\caption{Czas szyfrowania i deszyfrowania w zależności od rozmiaru danych dla prędkości transmisji 9600.}\label{czas_9600}
+\end{figure}
+
+Na rysunku~\ref{czas_19200} przedstawiono czas szyfrowania i deszyfrowania wiadomości o rozmiarze 1Kb, 8Kb i 16Kb dla prędkości transmisji danych 9600bitów/s.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    enlargelimits=0.15,
+    legend style={at={(0.03,0.87)},anchor=west},
+    ylabel={udział \% czasu [$\mu$s]},
+    xlabel={rozmiar przesłanych danych [Kb]},
+    symbolic x coords={1Kb,8Kb,16Kb},
+    xtick=data,
+    ]
+\addplot coordinates {(1Kb,11) (8Kb,53) (16Kb,100)};
+\addplot coordinates {(1Kb,7) (8Kb,50) (16Kb,100)};
+\legend{szyfrowanie,deszyfrowanie}
+\end{axis}
+\end{tikzpicture}
+\caption{Czas szyfrowania i deszyfrowania w zależności od rozmiaru danych dla prędkości transmisji 19200.}\label{czas_19200}
+\end{figure}
 
 
+Na rysunku~\ref{czas_115200} przedstawiono czas szyfrowania i deszyfrowania wiadomości o rozmiarze 1Kb, 8Kb i 16Kb dla prędkości transmisji danych 9600bitów/s.
 
-\paragraph{Wyniki algorytmu DES}\mbox{} \\
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    enlargelimits=0.15,
+    legend style={at={(0.03,0.87)},anchor=west},
+    ylabel={udział \% czasu [$\mu$s]},
+    xlabel={rozmiar przesłanych danych [Kb]},
+    symbolic x coords={1Kb,8Kb,16Kb},
+    xtick=data,
+    ]
+\addplot coordinates {(1Kb,7) (8Kb,50.5) (16Kb,100)};
+\addplot coordinates {(1Kb,6.3) (8Kb,50.06) (16Kb,100)};
+\legend{szyfrowanie,deszyfrowanie}
+\end{axis}
+\end{tikzpicture}
+\caption{Czas szyfrowania i deszyfrowania w zależności od rozmiaru danych dla prędkości transmisji 115200.}\label{czas_115200}
+\end{figure}
+
+Analizując rysunek~\ref{czas_9600},~\ref{czas_19200} i ~\ref{czas_115200} spostrzeżono, że im większe prędkość transmisji danych tym bardziej czas szyfrowania jest zbliżony do czasu deszyfrowania danych. Dla najmniejszej prędkości przesyłu danych dostępnej w oprogramowaniu Arduino czas deszyfrowania wiadomości dla 1Kb i 8Kb jest większy niż czas potrzebny do zaszyfrowania tej wiadomości. Szyfrowanie DES wykorzystuje taki sam algorytm do deszyfrowania, w związku z czym czas szyfrowania i deszyfrowania  powinien być zbliżony. Jak widać na rysunku~\ref{czas_19200} i ~\ref{czas_115200} czas dla szyfrowania i deszyfrowania jest zbliżony, co świadczy o poprawnej implementacji algorytmu DES. Wydajność algorytmu można polepszyć poprzez wyeliminowanie z kodu zbędnych operacji. 
 
 
-\subsection{Wydajność algorytmu DES na ESP8266} 
 \newpage
 \section{Wnioski}
+\quad Celem pracy był opis algorytmów kryptograficznych, budowy systemów wbudowanych, implementacja algorytmu DES na module ESP8266 oraz pomiar czasu szyfrowania i deszyfrowania z zależności od rozmiary danych. W prezentowanej przeze mnie pracy magisterskiej jako element wprowadzający do kryptografii opisano działanie szyfrów strumieniowych, blokowych, symetrycznych i asymetrycznych. W części praktycznej niniejszej pracy dokonano implementacji algorytmu DES, który jest szyfrem symetrycznym, co oznacza, że istnieje jeden klucz do szyfrowania i odszyfrowywania przesyłanej wiadomości. Mikrokontrolerem wykorzystany do implementacji algorytmu była płytka ESP8266 NodeMCU v2, na którą wgrano oprogramowanie za pośrednictwem kabla mikro USB i środowiska programistycznego Arduino. Pierwszym etapem było ukazanie ręcznej implementacji algorytmu DES dla pierwszej rundy w celu weryfikacji otrzymanych danych dla implementacji algorytmu na mikrokontrolerze. Stwierdzono poprawność implementacji algorytmu DES na ESP8266 po analizie wyników poszczególnych kroków rundy pierwszej wypisanych na monitorze portu szeregowego wraz z ręcznymi obliczeniami. Otrzymane wyniki obliczeń manualnych są takie same jak obliczenia wykonane przy wykorzystaniu algorytmu na mikrokontrolerze ESP8266, co potwierdza poprawność implementacji.
+ 
+\quad Drugim etapem części praktycznej pracy był pomiar i porównanie czasów szyfrowania i deszyfrowania wiadomości w zależności od rozmiaru przesyłanych danych oraz prędkości transmisji programu. Pomiarów czas szyfrowania i deszyfrowania wiadomości dokonano dla danych o rozmiarze 1 kilobit, 8 kilobitów i 16 kilobitów oraz dla trzech prędkości transmisji: 9600, 19200 i 115200 bitów/s. Otrzymane dane pozwalają stwierdzić, że dla większej prędkości transmisji danych czas szyfrowania i deszyfrowania danych jest niższy, co prowadzi do lepszej wydajności algorytmu. Dla wyższej prędkości transmisji czas szyfrowania i deszyfrowania jest zbliżony, co jest pożądanym zjawiskiem gdyż proces deszyfrowania przebiega przy wykorzystaniu takich samych operacji jak proces szyfrowania, lecz w odwrotnej kolejności. Proces szyfrowania i deszyfrowania również zwiększa się wprost proporcjonalnie do rozmiaru szyfrowanych danych. Obliczając ilość potrzebnego czasu do zaszyfrowania danych o rozmiarze 1Gb według 1000000000*116/1000=160000000[$\mu$s],co daje 1min. 56sek. W celu zaszyfrowania pliku o rozmiarze 1Gb potrzebujemy ok 2min., co jest czasem zadowalającym dla użytkowników domowych. Implementację algorytmu DES na ESP8266 oraz pomiar wydajności szyfrowania danych zrealizowano zgodnie z celem przedstawionym na początku pracy. 
 %3. Później w podsumowaniu warto nawiązać do Celu i zakresu podkreślając co zostało zrobione, a co np. nie z podaniem powodów.
 
 
