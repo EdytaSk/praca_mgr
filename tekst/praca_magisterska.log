@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  8 FEB 2019 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.15)  9 FEB 2019 11:25
 entering extended mode
 **./praca_magisterska.tex
 (praca_magisterska.tex
@@ -1127,12 +1127,12 @@ File: rsa.png Graphic file (type png)
 Package pdftex.def Info: rsa.png  used on input line 489.
 (pdftex.def)             Requested size: 426.79134pt x 151.93008pt.
  [17 <./rsa.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 498--499
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
 
  []
 
@@ -1140,189 +1140,189 @@ Underfull \hbox (badness 10000) in paragraph at lines 529--530
 <komunikacja_PPTP.jpg, id=77, 572.1375pt x 235.63031pt>
 File: komunikacja_PPTP.jpg Graphic file (type jpg)
 <use komunikacja_PPTP.jpg>
-Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 568.
+Package pdftex.def Info: komunikacja_PPTP.jpg  used on input line 567.
 (pdftex.def)             Requested size: 341.43306pt x 140.61703pt.
  [19]
 <przekierowywanie_lokalne_SSH.jpg, id=82, 572.1375pt x 153.57375pt>
 File: przekierowywanie_lokalne_SSH.jpg Graphic file (type jpg)
 <use przekierowywanie_lokalne_SSH.jpg>
 Package pdftex.def Info: przekierowywanie_lokalne_SSH.jpg  used on input line 5
-83.
+82.
 (pdftex.def)             Requested size: 341.43306pt x 91.64816pt.
  [20 <./komunikacja_PPTP.jpg>] [21 <./przekierowywanie_lokalne_SSH.jpg>]
 <przekierowywanie_zdalne_SSH.jpg, id=89, 572.1375pt x 153.57375pt>
 File: przekierowywanie_zdalne_SSH.jpg Graphic file (type jpg)
 <use przekierowywanie_zdalne_SSH.jpg>
 Package pdftex.def Info: przekierowywanie_zdalne_SSH.jpg  used on input line 59
-7.
+6.
 (pdftex.def)             Requested size: 284.52756pt x 76.37425pt.
 <tryb_tunelowy_IPsec.jpg, id=90, 739.26187pt x 231.86626pt>
 File: tryb_tunelowy_IPsec.jpg Graphic file (type jpg)
 <use tryb_tunelowy_IPsec.jpg>
-Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 621.
+Package pdftex.def Info: tryb_tunelowy_IPsec.jpg  used on input line 620.
 (pdftex.def)             Requested size: 284.52756pt x 89.2387pt.
  [22 <./przekierowywanie_zdalne_SSH.jpg>] [23 <./tryb_tunelowy_IPsec.jpg>]
 [24] [25]
 <es.png, id=104, 673.01437pt x 646.66594pt>
 File: es.png Graphic file (type png)
 <use es.png>
-Package pdftex.def Info: es.png  used on input line 672.
+Package pdftex.def Info: es.png  used on input line 671.
 (pdftex.def)             Requested size: 341.43306pt x 328.06848pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
 
  []
 
 [26 <./es.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 681--682
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 685--686
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 689--690
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 693--694
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 709--710
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 713--714
+Underfull \hbox (badness 10000) in paragraph at lines 712--713
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 717--718
+Underfull \hbox (badness 10000) in paragraph at lines 716--717
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
+Underfull \hbox (badness 10000) in paragraph at lines 721--722
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--728
+Underfull \hbox (badness 10000) in paragraph at lines 726--727
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 749--751
+Underfull \hbox (badness 10000) in paragraph at lines 748--750
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 754--755
+Underfull \hbox (badness 10000) in paragraph at lines 753--754
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 758--759
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 762--763
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 766--767
+Underfull \hbox (badness 10000) in paragraph at lines 765--766
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 773--774
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
 
  []
 
 [31]
-Overfull \hbox (0.86946pt too wide) in paragraph at lines 788--788
+Overfull \hbox (0.86946pt too wide) in paragraph at lines 787--787
 []\OT4/lmr/bx/n/14.4 Aplikacja al-go-ryt-mów kryp-to-gra-ficz-nych na sys-te-mi
 e wbu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 807--816
+Underfull \hbox (badness 10000) in paragraph at lines 806--815
 
  []
 
 <esp.png, id=125, 475.7775pt x 248.42813pt>
 File: esp.png Graphic file (type png)
 <use esp.png>
-Package pdftex.def Info: esp.png  used on input line 819.
+Package pdftex.def Info: esp.png  used on input line 818.
 (pdftex.def)             Requested size: 341.43306pt x 178.28813pt.
 [32]
 <esp8266_1.jpg, id=129, 2589.675pt x 1536.74126pt>
 File: esp8266_1.jpg Graphic file (type jpg)
 <use esp8266_1.jpg>
-Package pdftex.def Info: esp8266_1.jpg  used on input line 825.
+Package pdftex.def Info: esp8266_1.jpg  used on input line 824.
 (pdftex.def)             Requested size: 341.43306pt x 202.59723pt.
  [33 <./esp.png> <./esp8266_1.jpg>]
 <ustawienie_esp8266.jpg, id=134, 580.41844pt x 454.69875pt>
 File: ustawienie_esp8266.jpg Graphic file (type jpg)
 <use ustawienie_esp8266.jpg>
-Package pdftex.def Info: ustawienie_esp8266.jpg  used on input line 861.
+Package pdftex.def Info: ustawienie_esp8266.jpg  used on input line 860.
 (pdftex.def)             Requested size: 341.43306pt x 267.47899pt.
  [34] [35 <./ustawienie_esp8266.jpg>]
-Overfull \hbox (28.8199pt too wide) in paragraph at lines 913--954
+Overfull \hbox (28.8199pt too wide) in paragraph at lines 912--953
  [][] 
  []
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 996--996
+Underfull \hbox (badness 10000) in paragraph at lines 995--995
 []|\OT1/lmr/m/n/10 permutacja kom-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--998
+Underfull \hbox (badness 10000) in paragraph at lines 997--997
 []|\OT1/lmr/m/n/10 heksadecymalny
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1000--1000
+Underfull \hbox (badness 10000) in paragraph at lines 999--999
 []|\OT1/lmr/m/n/10 permutacja kom-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1002--1002
+Underfull \hbox (badness 10000) in paragraph at lines 1001--1001
 []|\OT1/lmr/m/n/10 heksadecymalny
  []
 
 
-Overfull \hbox (33.42361pt too wide) in paragraph at lines 994--1005
+Overfull \hbox (33.42361pt too wide) in paragraph at lines 993--1004
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1008
 
  []
 
 [37]
-Overfull \hbox (28.34148pt too wide) in paragraph at lines 1031--1039
+Overfull \hbox (28.34148pt too wide) in paragraph at lines 1030--1038
  [][] 
  []
 
 
-Overfull \hbox (36.25758pt too wide) in paragraph at lines 1048--1049
+Overfull \hbox (36.25758pt too wide) in paragraph at lines 1047--1048
 []\OT1/lmr/m/n/10 operacja XOR wia-do-mo-±ci otrzy-ma-nej w wy-ni-ku trans-po-z
 y-cji z ob-li-czo-nym klu-czem to EF108A230793, 
  []
@@ -1331,10 +1331,10 @@ y-cji z ob-li-czo-nym klu-czem to EF108A230793,
 <runda_1.jpg, id=154, 496.85625pt x 243.15843pt>
 File: runda_1.jpg Graphic file (type jpg)
 <use runda_1.jpg>
-Package pdftex.def Info: runda_1.jpg  used on input line 1115.
+Package pdftex.def Info: runda_1.jpg  used on input line 1114.
 (pdftex.def)             Requested size: 341.43306pt x 167.0968pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1119--1120
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1119
 
  []
 
@@ -1342,34 +1342,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 1119--1120
 <szy_desz_9600_print.jpg, id=158, 523.20468pt x 247.67531pt>
 File: szy_desz_9600_print.jpg Graphic file (type jpg)
 <use szy_desz_9600_print.jpg>
-Package pdftex.def Info: szy_desz_9600_print.jpg  used on input line 1131.
+Package pdftex.def Info: szy_desz_9600_print.jpg  used on input line 1130.
 (pdftex.def)             Requested size: 341.43306pt x 161.6295pt.
 <szy_desz_19200_print.jpg, id=159, 523.9575pt x 112.92188pt>
 File: szy_desz_19200_print.jpg Graphic file (type jpg)
 <use szy_desz_19200_print.jpg>
-Package pdftex.def Info: szy_desz_19200_print.jpg  used on input line 1139.
+Package pdftex.def Info: szy_desz_19200_print.jpg  used on input line 1138.
 (pdftex.def)             Requested size: 341.43306pt x 73.58615pt.
 <szy_desz_115200_print.jpg, id=160, 523.9575pt x 112.16907pt>
 File: szy_desz_115200_print.jpg Graphic file (type jpg)
 <use szy_desz_115200_print.jpg>
-Package pdftex.def Info: szy_desz_115200_print.jpg  used on input line 1147.
+Package pdftex.def Info: szy_desz_115200_print.jpg  used on input line 1146.
 (pdftex.def)             Requested size: 341.43306pt x 73.09557pt.
  [41 <./szy_desz_9600_print.jpg> <./szy_desz_19200_print.jpg> <./szy_desz_11520
 0_print.jpg>]
 <szy_desz_9600.jpg, id=164, 523.9575pt x 277.035pt>
 File: szy_desz_9600.jpg Graphic file (type jpg)
 <use szy_desz_9600.jpg>
-Package pdftex.def Info: szy_desz_9600.jpg  used on input line 1155.
+Package pdftex.def Info: szy_desz_9600.jpg  used on input line 1154.
 (pdftex.def)             Requested size: 341.43306pt x 180.53137pt.
 <szy_desz_19200.jpg, id=165, 523.9575pt x 101.62968pt>
 File: szy_desz_19200.jpg Graphic file (type jpg)
 <use szy_desz_19200.jpg>
-Package pdftex.def Info: szy_desz_19200.jpg  used on input line 1163.
+Package pdftex.def Info: szy_desz_19200.jpg  used on input line 1162.
 (pdftex.def)             Requested size: 341.43306pt x 66.22752pt.
 <szy_desz_115200.jpg, id=166, 523.20468pt x 141.52875pt>
 File: szy_desz_115200.jpg Graphic file (type jpg)
 <use szy_desz_115200.jpg>
-Package pdftex.def Info: szy_desz_115200.jpg  used on input line 1171.
+Package pdftex.def Info: szy_desz_115200.jpg  used on input line 1170.
 (pdftex.def)             Requested size: 341.43306pt x 92.35971pt.
  [42 <./szy_desz_9600.jpg> <./szy_desz_19200.jpg>] [43 <./szy_desz_115200.jpg>]
  [44] [45] [46] [47] [48]
@@ -1404,7 +1404,7 @@ onts/type1/public/lm/lmr7.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX 2.9
 .9/fonts/type1/public/lm/lmri10.pfb><C:/Users/admin/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/admin/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on praca_magisterska.pdf (49 pages, 1950516 bytes).
+Output written on praca_magisterska.pdf (49 pages, 1950575 bytes).
 PDF statistics:
  231 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
