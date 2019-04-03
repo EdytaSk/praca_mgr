@@ -15,27 +15,44 @@
 \usepackage{pgfplots}
 \usepackage{seqsplit}
 \usetikzlibrary{fit}
+\usepackage{lipsum}
+\thispagestyle{empty}
 \usetikzlibrary{arrows}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
 \linespread{1.3}
 \usepackage{geometry} 
-\newgeometry{tmargin=3cm, bmargin=3cm, lmargin=4.0cm, rmargin=2.5cm}
+\newgeometry{tmargin=3.5cm, bmargin=3.5cm, lmargin=4.5cm, rmargin=2.5cm}
 \tikzstyle{prostokat} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
 \begin{document}
 
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{flushright}
+Składam serdeczne podziękowania\\
+Panu prof. Rafałowi Długoszowi\\
+za cenne porady, poświęcony czas,\\
+cierpliwość oraz pomoc w trakcie\\
+powstawania pracy dyplomowej.
+\end{flushright}
+%Składam serdeczne podziękowania
+%Pani dr Małgorzacie Obarowskiej
+%za cenne porady, poświęcony czas,
+%cierpliwość oraz pomoc w trakcie
+%powstawania pracy dyplomowej.
+\newpage
 \tableofcontents
 \newpage
-\part{Część teoretyczna}
+
+
 \section{Cel i zakres pracy}
+\quad Celem pracy jest przedstawienie algorytmów kryptograficznych, budowy systemów wbudowanych oraz implementacja algorytmu DES na systemie wbudowanym wraz ze zmierzeniem jego wydajności w zależności od rozmiaru szyfrowanych danych. Praca składa się z części teoretycznej, będącej wprowadzeniem do zagadnień kryptograficznych oraz budowy systemów wbudowanych i części praktycznej, w której przedstawiono charakterystykę wybranego systemu wbudowanego oraz implementację algorytmu DES wraz z przedstawieniem jego wydajności. Praca została podzielona na na dwie części: część teoretyczną, która składa się z dwóch rozdziałów i część praktyczną, która zawiera również dwa rozdziały. 
 
-\quad Celem pracy jest przedstawienie algorytmów kryptograficznych, budowy systemów wbudowanych oraz implementacja algorytmu DES na systemie wbudowanym wraz ze zmierzeniem jego wydajności w zależności od rozmiaru szyfrowanych danych. Praca składa się z części teoretycznej, będącej wprowadzeniem do zagadnień kryptograficznych oraz budowy systemów wbudowanych i części praktycznej, w której przedstawiono charakterystykę wybranego systemu wbudowanego oraz implementację algorytmu DES wraz z przedstawieniem jego wydajności. Praca została podzielono na na dwie części: część teoretyczną, która składa się z dwóch rozdziałów i część praktyczną, która zawiera również dwa rozdziały. 
+W pierwszej części teoretycznej w rozdziale 2 opisano najczęstsze ataki na algorytmy kryptograficzne oraz przedstawiono sposób działania szyfrów blokowych i strumieniowych. Następnie objaśniono działanie szyfrów symetrycznych, do których należy szyfr Cezara, algorytm DES oraz IDEA. W dalszej części objaśniono działanie szyfrów asymetrycznych, do których należą dwa słynne algorytmy kryptograficzne RSA i Diffiego-Helmanna. Na zakończenie rozdziału omówiono protokoły wykorzystywane do komunikacji między dwoma urządzeniami elektronicznymi. W rozdziale 3 opisano budowę systemów wbudowanych poprzez opis ich składowych komponentów tj. modulator szerokości impulsów PWM, przetwornik analogowo-cyfrowy, przetwornik cyfrowo-analogowy, wejścia/wyjścia ogólnego przeznaczenia, uniwersalny odbiornik i nadajnik asynchroniczny UART, magistrale, zegar czasu rzeczywistego, centralna jednostka obliczeniowa, JTAG, pamięci oraz szyny danych, adresowe i sterowania. 
 
-W pierwszej części teoretycznej w rodziale 2 opisano powszechna ataki na algorytmy kryptograficzne oraz przedstawiono sposób działania szyfrów blokowych i strumieniowych. Następnie objaśniono działanie szyfrów symetrycznych, do których należy szyfr Cezara, algorytm DES oraz IDEA. W dalszej części objaśniono działanie szyfrów asymetrycznych, do których należą dwa słynne algorytmy kryptograficzne RSA i Diffiego-Helmanna. Na zakończenie rozdziału   omówiono protokoły wykorzystywane do komunikacji między dwoma urządzeniami elektronicznymi. W rodziale 3 opisane budowę systemów wbudowanych poprzez opis ich składowych komponentów tj. modulator szerokości impulsów PWM, przetwornik analogowo-cyfrowy, przetwornik cyfrowo-analogowy, wejścia/wyjścia ogólnego przeznaczenia, uniwersalny odbiornik i nadajnik asynchroniczny UART, magistrale, zegar czasu rzeczywistego, centralna jednostka obliczeniowa, JTAG, pamięci oraz szyny danych, adresowe i sterowania. 
-
-W drugiej części w rozdziale 4 przedstawiono część praktyczną pracy, która została podzielona na cztery podrozdziały. W podrozdziale 4.1 ukazano charakterystykę użytego systemu wbudowanego ESP8266. Następnie w podrozdziale 4.2 opisano założenia projektowe oraz sposób połączenia ESP8266 z środowiskiem programistycznym Arduino. W dalszej części 4.3 przedstawiono manualna implementację szyfrowania krok po kroku wiadomości z wykorzystaniem algorytmu DES. Na samym końcu w podrozdziale 4.3 przedstawiono wyniki szyfrowania dla 16 rund programu implementującego algorytm DES i porównano ich zgodność z manualnym obliczeniem dla rundy pierwszej. Pomiarów czasu szyfrowania i deszyfrowania dokonano dla trzech rozmiarów danych o wielkości 1Kb, 8Kb i 16Kb oraz przeprowadzono ich analizę. 
+W drugiej części w rozdziale 4 przedstawiono część praktyczną pracy, która została podzielona na pięć podrozdziałów. W podrozdziale 4.1 ukazano charakterystykę użytego systemu wbudowanego ESP8266. Następnie w podrozdziale 4.2 opisano założenia projektowe oraz sposób połączenia ESP8266 z środowiskiem programistycznym Arduino. W dalszej części 4.3 przedstawiono manualną implementację szyfrowania krok po kroku wiadomości z wykorzystaniem algorytmu DES. W następnym podrozdziale 4.4 przedstawiono wyniki szyfrowania przy wykorzystaniu łącza przewodowego USB dla 16 rund programu implementującego algorytm DES i porównano ich zgodność z manualnym obliczeniem dla rundy pierwszej. Pomiarów czasu szyfrowania i deszyfrowania dokonano dla trzech rozmiarów danych o wielkości 1Kb, 8Kb i 16Kb. Następnie przeprowadzono ich analizę. W ostatniej części omawianego rozdziału w podrozdziale 4.5 przedstawiono wyniki szyfrowania i deszyfrowania przy wykorzystaniu transmisji bezprzewodowej Wi-Fi. Dokonano analizy szyfrowania i deszyfrowania przy wykorzystaniu łącza przewodowego i bezprzewodowego.
  
  
  
@@ -44,26 +61,32 @@ W drugiej części w rozdziale 4 przedstawiono część praktyczną pracy, któr
 %Po przeczytaniu tego rozdzialu powinno być wiadomo mniej więcej jaki jest własny wkład, dlatego tak ważne jest podkreślenie znaczenia części praktycznej. Część ta pełni rolę abstraktu.
 
 \newpage
+
 \section{Kryptografia}
 %-----------------------------------
 %	Rozdział 1
 %-----------------------------------
 \subsection{Wprowadzenie}
 
-\quad W obecnych czasach dużym zainteresowaniem cieszy się bezpieczeństwo cybernetyczne, którego szczególną częścią jest kryptografia. Szczególnie ważne zastosowanie znajduje w branży informatycznych, militarnej, urzędach, grupach developerskich czy bankowości. Kryptografia pojawiła się znaczniej wcześniej niż platformy obliczeniowe, zainteresowali się nią już ludzie z czasów starożytnych, pojawiła się wraz z umiejętnością pisania. Powodem istnienia kryptografii jest bezpieczne i prywatne dostarczanie wiadomości. Znajduje szczególne zastosowanie w przypadku danych przesyłanych drogą internetową, dzięki kryptografii możliwe jest zapewnienie bezpieczeństwa cybernetycznego przesyłanych danych. W zależności od stopnia poufności informacji, którą chcemy zaszyfrować, aby niepożądane osoby jej nie odczytały można zastosować odmiennych algorytmów szyfrowania. 
+\quad W obecnych czasach dużym zainteresowaniem cieszy się bezpieczeństwo cybernetyczne, którego szczególną częścią jest kryptografia. Szczególnie ważne zastosowanie znajduje ona w branży informatycznej, militarnej, w urzędach, w grupach developerskich czy bankowości. Kryptografia pojawiła się znaczniej wcześniej niż platformy obliczeniowe. Zainteresowali się nią już ludzie z czasów starożytnych, pojawiła się wraz z umiejętnością pisania. Powodem istnienia kryptografii jest bezpieczne i prywatne dostarczanie wiadomości. Znajduje szczególne zastosowanie w przypadku danych przesyłanych drogą internetową  zapewniając bezpieczeństwo cybernetyczne przesyłanych danych. W zależności od stopnia poufności informacji, którą chcemy zaszyfrować, aby niepożądane osoby jej nie odczytały, można zastosować różnego rodzaju algorytmy szyfrowania. 
 
-\quad Kryptologia to połączenie kryptografii i kryptoanalizy. W języku greckim 'kryptos' oznacza ukryty, zaś 'logos' tłumaczone jest jako słowo. Kryptologia jest dziedziną zajmującą się ukrywaniem tekstu jawnego. Kryptografia jest dziedziną węższą od kryptologii, jest badaniem technik matematycznych związanych z bezpieczeństwem informacji. Do bezpieczeństwa danych można zaliczyć poufność informacji, uwierzytelnienie użytkowników i pochodzenia danych, a także integralność danych. Słowo kryptologia składa się z dwóch greckich słów: 'kryptos' znaczący ukryty i 'graph' oznaczający pisanie, jest to nauka o zabezpieczaniu danych. Za pomocą technik kryptograficznych możliwe jest zaszyfrowanie jawnego tekstu, w taki sposób aby niepożądana osoba nie mogła ich odczytać. Drugą gałęzią kryptologii jest kryptoanaliza, która zajmuje się analizą i możliwymi sposobami odszyfrowania kodu kryptograficznego.
+\quad Kryptologia to połączenie kryptografii i kryptoanalizy. W języku greckim `kryptos` oznacza ukryty, zaś `logos` tłumaczone jest jako słowo. Kryptologia jest dziedziną zajmującą się ukrywaniem tekstu jawnego. Kryptografia jest dziedziną węższą od kryptologii. Jest badaniem technik matematycznych związanych z bezpieczeństwem informacji. Do bezpieczeństwa danych można zaliczyć poufność informacji, uwierzytelnienie użytkowników i pochodzenia danych, a także integralność danych. Słowo kryptologia składa się z dwóch greckich słów: `kryptos` znaczący ukryty i `graph` oznaczający pisanie, jest to nauka o zabezpieczaniu danych. Za pomocą technik kryptograficznych możliwe jest zaszyfrowanie jawnego tekstu, w taki sposób aby niepożądana osoba nie mogła go odczytać. Drugą gałęzią kryptologii jest kryptoanaliza, która zajmuje się analizą i możliwymi sposobami odszyfrowania kodu kryptograficznego.
 
 \subsection{Powszechne ataki}
 \quad W większości metod tunelowania wykorzystano szyfrowanie, które można podzielić na symetryczne i asymetryczne. Proces szyfrowania polega na przekształceniu tekstu jawnego w tekst zaszyfrowany. Szyfrowanie asymetryczne odbywa się przy użyciu dwóch kluczy: publicznego i prywatnego. Klucz publiczny jest wykorzystywany do szyfrowania danych, zaś klucz prywatny do ich odszyfrowywania. W przypadku szyfrowania symetrycznego wykorzystywany jest jeden klucz, co prowadzi do mniejszego bezpieczeństwa szyfrowania kosztem szybszego procesu szyfrowania i odszyfrowywania danych. 
-Długość klucza określana jest w bitach. Dla klucza o mniejszej długości proces szyfrowania i odszyfrowywania przebiega szybciej. Wadą jest mniejsze bezpieczeństwo przesyłanych danych. Powszechnie w przypadku szyfrowania asymetrycznego nie stosuje się kluczy krótszych niż 4096 bitów. VPN umożliwia uwierzytelnienie urządzenia, sprawdzenie integralności pakietów i szyfrowanie, dzięki czemu ataki są bardziej czasochłonne i trudniejsze dla atakującego. Aby przed atakami się odpowiednio chronić warto poznać najpowszechniejsze typy ataków. Wyróżniono trzy główne metody atakowania prywatnych sieci wirtualnych :
-\begin{itemize}
-\item podsłuch
-\newline Najpowszechniejszą metodą ataku jest podsłuchiwanie przesyłanych wiadomości przez osobę trzecią podczas wysyłania wiadomości między dwoma osobami. Niektóre protokoły i aplikację takie jak POP,FTP, TFTP, HTTP czy TELNET są narażone na ataki metodą podsłuchu. Prywatne dane takie jak nazwa użytkownika i hasło są przesyłane w postaci tekstu między dwoma urządzeniami przy użyciu wymienionych powyżej protokołów, narażając prywatne dane na łatwe ich przechwycenie poprzez niepożądaną osobę. Głównym założeniem stworzenia protokołów POP, SMTP czy Telnet było umożliwienie komunikacji poprzez Internet  z minimalnym uwierzytelnieniem użytkownika w celu zweryfikowania jego tożsamości. Głównym narzędziem do analizowania wysyłanych danych jest analizator protokołów. Pakiety wysyłane między urządzaniem źródłowym, a docelowym atakujący może przechwycić, gdy będzie miał dostęp do połączenia, które się odbywa między nimi. W celu lepszego zabezpieczenia pakietów przesyłanych przy użyciu protokołów z minimalnym uwierzytelnieniem dodano drugie uwierzytelnienie, które minimalizuje możliwości ataków przy użyciu analizatora protokołów. Przykładem z podwójnym uwierzytelnieniem będą operacje bankowe, które po podaniu loginu i hasło przy wykonywaniu danej operacji wymagają podania jednorazowego hasła, które zostało wysłane do nas elektronicznie lub drogą pocztową. Innym stosowanym rozwiązaniem jest połączenie protokołu  HTTP i SSL czy VPN i szyfrowania. Najrzetelniejszym rozwiązaniem chroniącym przed podsłuchiwaniem będzie VPN połączone z szyfrowaniem, które uniemożliwi odczytanie wysyłanej wiadomości poprzez wirtualną prywatną sieć przez osoby atakujące w przypadku przechwycenia wiadomości.
-\item maskarada
-\newline Ataki maskarady powszechnie znane jako podszywanie się osoby atakującej pod konkretną osobą bądź ukrywanie tożsamości. Podszywanie się pod określoną osobę wykonano poprzez zamianę informacji adresowych IP osoby atakującej na adres IP osoby, za którą chciano być postrzeganą przy pomocy specjalnych narzędzi. Atakujący nie otrzyma wiadomości, którą wysłano w ruchu powrotnym. W celu przechwycenia pakietów z ruchu powrotnego, należało by połączyć maskowanie adresu IP z routingiem w wyniku czego otrzymano by atak DoS, który przesyca sieć danymi. Pakiety danych wysyłane od nadawcy do odbiorcy mogą zostać zmodyfikowane przez osobą atakującą podczas drogi sieciowej, którą wiadomość jest transportowana. W celu wyeliminowania łatwej możliwości zmodyfikowania wysyłanych danych wprowadzono sprawdzenie autentyczności wysyłanych pakietów między dwoma urządzeniami. Sprawdzenie autentyczności pakietów umożliwia funkcja haszująca. Pakiet wysyłany do nadawcy posiada swój hasz, który jest utworzymy z użyciem klucza, który posiada odbiorca i nadawca. W celu sprawdzenia autentyczności wiadomości porównujemy hasz na dwóch urządzeniach danego pakietu. Gdy pakiet został zmodyfikowany przez atakującego hasze nie będą się zgadzały. Najczęściej spotykanymi funkcjami haszowania jest SHA i MD5 ~\cite{maskaraka}.
-\item człowiek w środku tzn. man in the middle
-\newline Dwie najczęściej występujące metody wykorzystane do ataku to: "powtórka ataku" oraz ataki typu "porwanie sesji". W przypadku sesji powtarzającej ataki osoba atakująca znajduję się między dwoma urządzeniami w celu przechwycenia pakietów informacji. Celem przechwycenia pakietów danych jest ich późniejsze wysłanie do odbiorcy w zmienionym przez atakującego stanie np. z wirusem. Na rysunku poniżej przedstawiono schemat ataku dla sesji powtarzających ataki. W pierwszej kolejności użytkownik Alice wysyła pakiet do użytkownika Bob. Następnie atakujący przy użyciu dobranej przez niego techniki przechwytuje pakiety danych, modyfikuje ich zawartość i jako złośliwe pakiety zostają przesłane do użytkownika Bob. Na rys.~\ref{Powtarzajace_ataki} przedstawiono schematycznie atak wykorzystujący technikę powtarzania sesji.
+Długość klucza określana jest w bitach. Dla klucza o mniejszej długości proces szyfrowania i odszyfrowywania przebiega szybciej. Wadą jest mniejsze bezpieczeństwo przesyłanych danych. Powszechnie w przypadku szyfrowania asymetrycznego nie stosuje się kluczy krótszych niż 4096 bitów. Wirtualna sieć prywatna zwana jako VPN(ang. Virtual Private Network) umożliwia uwierzytelnienie urządzenia, sprawdzenie integralności pakietów i szyfrowanie, dzięki czemu ataki są bardziej czasochłonne i trudniejsze dla atakującego. Aby odpowiednio chronić się przed atakami, warto poznać najpowszechniejsze typy ataków. Wyróżniono trzy główne metody atakowania prywatnych sieci wirtualnych :
+
+\begin{description}
+\item [1. ] \textbf{podsłuch} 
+
+\quad Najpowszechniejszą metodą ataku jest podsłuchiwanie przesyłanych wiadomości przez osobę trzecią podczas wysyłania wiadomości między dwoma osobami. Niektóre protokoły i aplikacje takie jak POP, FTP, TFTP, HTTP czy TELNET są narażone na ataki metodą podsłuchu. Prywatne dane takie jak nazwa użytkownika i hasło są przesyłane w postaci tekstu między dwoma urządzeniami przy użyciu wymienionych powyżej protokołów, narażając prywatne dane na łatwe ich przechwycenie poprzez niepożądaną osobę. Głównym założeniem stworzenia protokołów POP, SMTP czy Telnet było umożliwienie komunikacji poprzez Internet z minimalnym uwierzytelnieniem użytkownika w celu zweryfikowania jego tożsamości. Głównym narzędziem do analizowania wysyłanych danych jest analizator protokołów. Pakiety wysyłane między urządzaniem źródłowym, a docelowym atakujący może przechwycić, gdy będzie miał dostęp do połączenia, które się odbywa między nimi. W celu lepszego zabezpieczenia pakietów przesyłanych przy użyciu protokołów z minimalnym uwierzytelnieniem dodano drugie uwierzytelnienie, które minimalizuje możliwości ataków przy użyciu analizatora protokołów. Przykładem z podwójnym uwierzytelnieniem będą operacje bankowe, które po podaniu loginu i hasła przy wykonywaniu danej operacji wymagają podania jednorazowego hasła, które zostało wysłane do nas elektronicznie lub drogą pocztową. Innym stosowanym rozwiązaniem jest połączenie protokołu  HTTP i SSL czy VPN i szyfrowania. Najrzetelniejszym rozwiązaniem chroniącym przed podsłuchiwaniem będzie VPN połączone z szyfrowaniem, które uniemożliwi odczytanie wysyłanej wiadomości poprzez wirtualną prywatną sieć przez osoby atakujące w przypadku przechwycenia wiadomości.
+\item [2. ]  \textbf{maskarada}
+
+\quad Ataki maskarady powszechnie znane jako podszywanie się osoby atakującej pod konkretną osobę bądź ukrywanie tożsamości. Podszywanie się pod określoną osobę wykonano poprzez zamianę informacji adresowych IP osoby atakującej na adres IP osoby, za którą chciano być postrzeganą przy pomocy specjalnych narzędzi. Atakujący nie otrzyma wiadomości, którą wysłano w ruchu powrotnym. W celu przechwycenia pakietów z ruchu powrotnego, należało by połączyć maskowanie adresu IP z routingiem w wyniku czego otrzymano by atak DoS, który przesyca sieć danymi. Pakiety danych wysyłane od nadawcy do odbiorcy mogą zostać zmodyfikowane przez osobę atakującą podczas drogi sieciowej, którą wiadomość jest transportowana. W celu wyeliminowania łatwej możliwości zmodyfikowania wysyłanych danych wprowadzono sprawdzenie autentyczności wysyłanych pakietów między dwoma urządzeniami. Sprawdzenie autentyczności pakietów umożliwia funkcja haszująca. Pakiet wysyłany do nadawcy posiada swój hasz, który jest utworzymy z użyciem klucza, który posiada odbiorca i nadawca. W celu sprawdzenia autentyczności wiadomości porównujemy hasz na dwóch urządzeniach danego pakietu. Gdy pakiet został zmodyfikowany przez atakującego hasze nie będą się zgadzały. Najczęściej spotykanymi funkcjami haszowania jest SHA i MD5 ~\cite{maskaraka}.
+
+\item [3. ]  \textbf{człowiek w środku (ang. "man in the middle")}
+
+\quad Dwie najczęściej występujące metody wykorzystane do ataku to: "powtórka ataku" oraz ataki typu "porwanie sesji". W przypadku sesji powtarzającej ataki osoba atakująca znajduję się między dwoma urządzeniami w celu przechwycenia pakietów informacji. Celem przechwycenia pakietów danych jest ich późniejsze wysłanie do odbiorcy w zmienionym przez atakującego stanie np. z wirusem. Na rysunku poniżej przedstawiono schemat ataku dla sesji powtarzających ataki. W pierwszej kolejności użytkownik Alice wysyła pakiet do użytkownika Bob. Następnie atakujący przy użyciu dobranej przez niego techniki przechwytuje pakiety danych, modyfikuje ich zawartość i jako złośliwe pakiety zostają przesłane do użytkownika Bob. Na rys.~\ref{Powtarzajace_ataki} przedstawiono schematycznie atak wykorzystujący technikę powtarzania sesji.
 \begin{figure}[H]
 \centering
 \includegraphics[width=7cm]{Powtarzajace_ataki.jpg}
@@ -78,30 +101,18 @@ Długość klucza określana jest w bitach. Dla klucza o mniejszej długości pr
 \end{figure}
 
 \quad Prywatna wirtualna sieć zapewnia trzy etapy chroniące nas przed niepożądanymi atakami w wystarczający sposób. Pierwszym z nich jest uwierzytelnienie urządzenia, które chroni przed przechwytywaniem pakietów przez zamaskowane urządzenia atakujące. Następnym krokiem jest sprawdzenie integralności pakietów np. przy użyciu funkcji haszujących. Trzecim etapem jest zaszyfrowanie pakietów, co znacznie utrudnia przechwycenie rzeczywistych informacji ~\cite{man_in_the_middle}.
-\end{itemize}
+\end{description}
 
 
 %\subsection{Maszyna Enigma}
 
 \subsection{Szyfry blokowe i strumieniowe}
 \subsubsection{Szyfry blokowe} 
-\quad Szyfry blokowe wykorzystywane są do szyfrowania i deszyfrowania. Danymi wejściowymi do szyfrowania jest blok danych, który przy użyciu klucza szyfrującego jest przekształcany w zaszyfrowany blok danych. Odszyfrowywanie przebiega w odwrotny sposób, zaszyfrowana blokowa wiadomość przy użyciu klucza jest transformowana do odszyfrowanej blokowej wiadomości. Szyfr blokowy jest bezpieczny do momentu kiedy klucz szyfrujący pozostaje tajny. Bez znajomości klucza niemożliwe staje się rozszyfrowanie wiadomości w satysfakcjonującym nas czasie. Im bardziej klucz jest przypadkowy tym ciężej złamać algorytm. Ważnymi parametrami szyfru blokowego jest rozmiar bloku i klucza od których to zależy bezpieczeństwo algorytmu. Powszechnie stosowanymi rozmiarami bloków są 64 i 128 bitowe bloki, zazwyczaj algorytm DES ma 64 bitowy blok danych, zaś AES 128 bitowy blok. W tabeli~\ref{bajt} ukazano, że rozmiar 1 bajta odpowiada rozmiarowi 8 bitów.
-\begin{table}[H]
-\centering
-\begin{tabular}{|r|r|r|c|c|l|l|l|}
-\hline
-1 bit & 1 bit & 1 bit & 1 bit & 1 bit & 1 bit & 1 bit & 1 bit\\
-\hline
-\multicolumn{8}{|c|}{1 bajt = 8 bitów}\\
-\hline
-\end{tabular}
-\caption{Rozmiar jednego bajta.}\label{bajt}
-\end{table}
-
-\quad Długość zaszyfrowanego bloku musi być optymalna, im większe bloki danych tym dłuższy zaszyfrowany tekst oraz użycie pamięci. Przy szyfrowaniu wiadomości która na długość 8 bitową, zaś blok szyfru ma długość 64 bity najpierw 8 bitowa wiadomość zostanie prze konwertowana na 64 bitowy blok. Następnie 64 bitowa wiadomość zostanie zaszyfrowana przy użyciu algorytmu tworząc zaszyfrowany tekst. Do przetworzenia szyfru blokowego o rozmiarze 64 bitów potrzebujemy 64 bitów pamięci w rejestrach procesora. W dzisiejszych czasach procesory z pamięcią 64 bitową nie są kosztowne, lecz im większy chcemy utworzyć blok szyfrowy tym lepszy procesor potrzebujemy, co może mieć znaczny wpływ na wysokie koszty ~\cite{blok_cipher}.
+\quad Szyfry blokowe wykorzystywane są do szyfrowania i deszyfrowania. Danymi wejściowymi do szyfrowania jest blok danych, który przy użyciu klucza szyfrującego jest przekształcany w zaszyfrowany blok danych. Odszyfrowywanie przebiega w odwrotny sposób, zaszyfrowana blokowa wiadomość przy użyciu klucza jest transformowana do odszyfrowanej blokowej wiadomości. Szyfr blokowy jest bezpieczny do momentu, kiedy klucz szyfrujący pozostaje tajny. Bez znajomości klucza niemożliwe staje się rozszyfrowanie wiadomości w satysfakcjonującym nas czasie. Im bardziej klucz jest przypadkowy tym ciężej złamać algorytm. Ważnymi parametrami szyfru blokowego jest rozmiar bloku i klucza, od których to zależy bezpieczeństwo algorytmu. Powszechnie stosowanymi rozmiarami bloków są 64 i 128 bitowe bloki, zazwyczaj algorytm DES ma 64 bitowy blok danych, zaś AES 128 bitowy blok. Długość zaszyfrowanego bloku musi być optymalna. Im większe bloki danych tym dłuższy zaszyfrowany tekst oraz większe użycie pamięci. Przy szyfrowaniu wiadomości, która ma długość 8 bitową, zaś blok szyfru ma długość 64 bity, najpierw 8 bitowa wiadomość zostanie przekonwertowana na 64 bitowy blok. Następnie 64 bitowa wiadomość zostanie zaszyfrowana przy użyciu algorytmu tworząc zaszyfrowany tekst. Do przetworzenia szyfru blokowego o rozmiarze 64 bitów potrzebujemy 64 bitów pamięci w rejestrach procesora. W dzisiejszych czasach procesory z pamięcią 64 bitową nie są kosztowne, lecz im większy chcemy utworzyć blok szyfrowy tym lepszy procesor potrzebujemy, co może mieć znaczny wpływ na wysokie koszty ~\cite{blok_cipher}.
 
 \subsubsection{Szyfry strumieniowe}
-\quad Szyfrowanie strumieniowe jest deterministyczne, co oznacza, że przy jednakowych danych wejściowych otrzymujemy taki sam wynik wyjściowy. Dzięki determinizmowi możliwe jest odszyfrowanie zaszyfrowanych strumieni bitów.  Szyfrowanie strumieniowe jest podobne w działaniu do deterministycznego generatora liczb pseudolosowych, z tą różnicą że szyfrowanie strumieniowe oprócz wartości wejściowej pobiera dodatkowo klucz, który zazwyczaj ma 128 lub 256 bitów długości. Strumieniem klucza jest pseudolosowym strumieniem bitów. Szyfrowanie strumieniowe polega na przekształceniu tekstu jawnego bit po bicie na szyfrogram. Elementy tworzące szyfrowanie strumieniowe to generator strumienia bitowy oraz element dodający np. operacja XOR. Operację XOR-owania przedstawiono w tabeli~\ref{xor}.
+\quad Szyfrowanie strumieniowe jest deterministyczne, co oznacza, że przy jednakowych danych wejściowych otrzymujemy taki sam wynik wyjściowy. Dzięki determinizmowi możliwe jest odszyfrowanie zaszyfrowanych strumieni bitów. Szyfrowanie strumieniowe jest podobne w działaniu do deterministycznego generatora liczb pseudolosowych, z tą różnicą że szyfrowanie strumieniowe oprócz wartości wejściowej pobiera dodatkowo klucz, który zazwyczaj ma 128 lub 256 bitów długości. Szyfrowanie strumieniowe polega na przekształceniu tekstu jawnego bit po bicie na szyfrogram. Elementy tworzące szyfrowanie strumieniowe to generator strumienia bitowy oraz element dodający np. operacja XOR. 
+Operację XOR-owania przedstawiono w tabeli~\ref{xor}.
 
 \begin{table}[H]
 \centering
@@ -148,39 +159,13 @@ P = C $\oplus$ KS
 \subsection{Szyfry symetryczne i asymetryczne}
 
 \subsubsection{Szyfry symetryczne}
-\quad Do szyfrów symetrycznych zaliczamy zarówno szyfry blokowe jak i strumieniowe. Szyfrowanie symetryczne używa jednego tajnego klucza do szyfrowania i odszyfrowywania wiadomości. W celu zaszyfrowania tekstu jawnego przy użyciu tajnego klucza szyfrujemy wiadomość do postaci tekstu zaszyfrowanego, co przedstawia rys.~\ref{szyfrowanie}.
-\newline
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}
-\node (start) [prostokat] {szyfrowanie};
-\draw [arrow] (start) -- node[anchor=south] {tekst zaszyfrowany(C)} (6,0);
-\draw [arrow] (-6,0) -- node[anchor=south] {tekst jawny(P)} (start);
-\draw [arrow] (0,2) -- node[anchor=east] {klucz(K)} (start);
-\end{tikzpicture}
-\end{center}
-\caption{Schematyczny proces szyfrowania symetrycznego.}\label{szyfrowanie}
-\end{figure}
+\quad Do szyfrów symetrycznych zaliczamy zarówno szyfry blokowe jak i strumieniowe. Szyfrowanie symetryczne używa jednego tajnego klucza do szyfrowania i odszyfrowywania wiadomości. W celu zaszyfrowania tekstu jawnego przy użyciu tajnego klucza szyfrujemy wiadomość do postaci tekstu zaszyfrowanego. Proces odszyfrowywania polega na przekształceniu tekstu zaszyfrowanego przy użyciu klucza w tekst jawny. Klucz jest taki sam dla procesu szyfrowania i odszyfrowywania. Do szyfrów symetrycznych zaliczamy algorytm DES, więc w jego przypadku w bloku szyfrującym będą m.in. bramki XOR. Zaś w przypadku szyfru Cezara, który też jest szyfrem symetrycznym, bramki XOR nie występują w bloku szyfrującym. Algorytm Cezara wykorzystuje metodykę przesunięcia. W szyfrach symetrycznych korzystamy z jednego klucza do szyfrowania i odszyfrowywania, w związku z czym szyfrowanie symetryczne jest prostsze niż asymetryczne, gdzie wykorzystujemy klucz publiczny i klucz prywatny. Do szyfrów symetrycznych zaliczamy:
 
-Proces odszyfrowywania polega na przekształceniu tekstu zaszyfrowanego przy użyciu klucza w tekst jawny. Klucz jest taki sam dla procesu szyfrowania i odszyfrowywania. Na rys.~\ref{odszyfrowanie} ukazano schematycznie proces odszyfrowywania symetrycznego.
-\newline
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}
-\node (start) [prostokat] {odszyfrowanie};
-\draw [arrow] (start) -- node[anchor=south] {tekst jawny(P)} (6,0);
-\draw [arrow] (-6,0) -- node[anchor=south] {tekst zaszyfrowany(C)} (start);
-\draw [arrow] (0,2) -- node[anchor=east] {klucz(K)} (start);
-\end{tikzpicture}
-\end{center}
-\caption{Schematyczny proces odszyfrowania symetrycznego.}\label{odszyfrowanie}
-\end{figure}
 
-Przed erą urządzeń obliczających używano szyfry klasyczne, które działały na literach, a nie na bitach. Do szyfrów klasycznych zaliczamy słynny szyfr Cezara.
-\paragraph{szyfr Cezara}
+\paragraph{1. szyfr Cezara}
 \quad 
 
-Szyfr Cezara zawdzięcza swoją nazwę Juliuszowi Cezarowi, który to już w czasach starożytnych był wykorzystywany przez Juliusza. Szyfr służył do szyfrowania wiadomości poprzez zastąpienie litery literą o 3 miejsca przesuniętą względem wartości początkowej np. literę A zastąpiono literą C. W tabeli~\ref{cezar} ukazano obrazowo podstawienie z przesunięciem o trzy litery.
+Przed erą urządzeń obliczających używano szyfry klasyczne, które działały na literach, a nie na bitach. Do szyfrów klasycznych zaliczamy słynny szyfr Cezara. Szyfr Cezara zawdzięcza swoją nazwę Juliuszowi Cezarowi, który to już w czasach starożytnych był wykorzystywany przez Juliusza. Szyfr służył do szyfrowania wiadomości poprzez zastąpienie litery literą o 3 miejsca przesuniętą względem wartości początkowej np. literę A zastąpiono literą C. W tabeli~\ref{cezar} ukazano obrazowo podstawienie z przesunięciem o trzy litery.
 
 \begin{table}[H]
 \centering
@@ -201,26 +186,26 @@ podstawienie & Ó & P & R & S & Ś & T & U & W & X & Y & Z & Ż & Ź & A & Ą & 
 \caption{Szyfr Cezara z przesunięciem o trzy litery.}~\label{cezar}
 \end{table}
 
-Szyfr ten nie zapewnia bezpieczeństwa, gdyż bez problemu i w krótkim czasie można przetestować wszystkie możliwe 33 opcje w przypadku języka polskiego. Szyfr ten uniemożliwia natychmiastowe zinterpretowanie wysyłanej wiadomości po jej ujrzeniu.
+Szyfr ten nie zapewnia bezpieczeństwa, gdyż bez problemu i w krótkim czasie można przetestować wszystkie możliwe 33 opcje w przypadku języka polskiego. Szyfr ten uniemożliwia natychmiastowe zinterpretowanie wysyłanej wiadomości po jej ujrzeniu. 
 
-\paragraph{DES}\mbox{} \\
+\paragraph{2. standard szyfrowania danych DES}\mbox{} \\
 
-Algorytm zwany standardem szyfrowania danych (ang. Data Encryption Standard DES) został opatentowany przez firmę IBM i rozpowszechniony w latach siedemdziesiątych do ogólnego użytku, początkowo miał nazwę Lucyfer. We wczesnych latach siedemdziesiątych nie znane były nikomu algorytmy szyfrowania do momentu opatentowania przez firmę IBM algorytmu DES i jego rozpowszechnienia. Standard szyfrowania danych jest szyfrem blokowych, co znaczy że dane są dzielone na bloki o długości 64 bitów i następnie szyfrowane. Danymi wejściowymi algorytmu jest blok tekstu jawnego o długości 64 bitów, który po przetworzeniu przez algorytm przedstawiono jako szyfrogram. Długość klucza w 64 bitowym bloku wynosi 56 bitów, gdzie co ósmy bit jest bitem parzystości. Algorytm DES składa się z 16 cykli, które są wykonywane jeden po drugim. Na schemacie XXX poglądowo pokazano schemat działania algorytmu DES. Algorytm można podzielić na poszczególne kroki:
+Algorytm zwany standardem szyfrowania danych (ang. Data Encryption Standard DES) został opatentowany przez firmę IBM i rozpowszechniony w latach siedemdziesiątych do ogólnego użytku, początkowo miał nazwę Lucyfer. We wczesnych latach siedemdziesiątych nie znane były nikomu algorytmy szyfrowania do momentu opatentowania przez firmę IBM algorytmu DES i jego rozpowszechnienia. Standard szyfrowania danych jest szyfrem blokowym, co znaczy, że dane są dzielone na bloki o długości 64 bitów i następnie szyfrowane. Danymi wejściowymi algorytmu jest blok tekstu jawnego o długości 64 bitów, który po przetworzeniu przez algorytm przedstawiono jako szyfrogram. Długość klucza w 64 bitowym bloku wynosi 56 bitów, gdzie co ósmy bit jest bitem parzystości. Algorytm DES składa się z 16 cykli, które są wykonywane jeden po drugim. Algorytm można podzielić na poszczególne kroki:
 
 \begin{itemize}
-\item zamiana 64 bitowego klucza decymalnego na postać binarną i usunięcie co ósmego bitu zwanego bitem parzystości w wyniku czego otrzymano 56 bitowy binarny klucz
-\item permutacja 56 bitowego klucza binarnego zgodnie z tabelą~\ref{per_klucza} dla każdego z 16 cykli
-\item podział 56 bitowego klucza na prawą o lewą część o długości 28 bitów i przesunięcie bitowe, które jest zależne od cyklu co ukazuje tabela~\ref{przesuniecie_klucza}
-\item permutacja kompresji klucza DES zgodnie z tabelą~\ref{per_kompresji} kompresująca klucz 56 bitowy do klucza 48 bitowego dla każdego z 16 cykli ukazanego na rysunku~\ref{des} jako  K{i}
-\item zamiana wiadomości tekstowej na wiadomość w postaci heksadecymalnej i binarną
-\item transpozycja wiadomości binarnej z tabelą permutacji początkowej
-\item podział wiadomości 64 bitowej na dwie części 32 bitowe: strona prawa oznaczona literą P na rysunku~\ref{des} i strona lewa oznaczona literą L na rysunku~\ref{des}
-\item prawa cześć wiadomości ulega rozszerzeniu zgodnie z tabelą~\ref{per_rozszerzenia} permutacji rozszerzenia w wyniku czego otrzymano 48 bitową wiadomość
-\item operacja XOR obliczonego klucza dla danej rundy z 48 bitową wiadomością otrzymaną w wyniku permutacji rozszerzenia
-\item transpozycją wyniku operacji XOR z tablicą S bloków na rysunku~\ref{des} oznaczono S-boxes
-\item wyjście S bloku ulega transpozycji z tabelą permutacji bloku P na rysunku~\ref{des} oznaczono jako P box
-\item wiadomość po permutacji bloku P poddano operacji XOR z lewą częścią wiadomości w wyniku czego otrzymano 32 bitową część prawą wiadomości
-\item lewą częścią 32 bitowej wiadomości jest prawa część 32 bitowej wiadomości bez żadnych zmian
+\item zamiana 64 bitowego klucza decymalnego na postać binarną i usunięcie co ósmego bitu zwanego bitem parzystości, w wyniku czego otrzymano 56 bitowy binarny klucz,
+\item permutacja 56 bitowego klucza binarnego zgodnie z tabelą~\ref{per_klucza} dla każdego z 16 cykli,
+\item podział 56 bitowego klucza na prawą o lewą część o długości 28 bitów i przesunięcie bitowe, które jest zależne od cyklu co ukazuje tabela~\ref{przesuniecie_klucza},
+\item permutacja kompresji klucza DES zgodnie z tabelą~\ref{per_kompresji} kompresująca klucz 56 bitowy do klucza 48 bitowego dla każdego z 16 cykli ukazanego na rysunku~\ref{des} jako $K_{i}$,
+\item zamiana wiadomości tekstowej na wiadomość w postaci heksadecymalnej i binarnej,
+\item transpozycja wiadomości binarnej z tabelą permutacji początkowej,
+\item podział wiadomości 64 bitowej na dwie części 32 bitowe: strona prawa oznaczona literą P na rysunku~\ref{des} i strona lewa oznaczona literą L na rysunku~\ref{des},
+\item prawa cześć wiadomości ulega rozszerzeniu zgodnie z tabelą~\ref{per_rozszerzenia} permutacji rozszerzenia, w wyniku czego otrzymano 48 bitową wiadomość,
+\item operacja XOR obliczonego klucza dla danej rundy z 48 bitową wiadomością otrzymaną w wyniku permutacji rozszerzenia,
+\item transpozycja wyniku operacji XOR z tablicą S bloków na rysunku~\ref{des} oznaczono S-boxes,
+\item wyjście S bloku ulega transpozycji z tabelą permutacji bloku P na rysunku~\ref{des} oznaczono jako P box,
+\item wiadomość po permutacji bloku P poddano operacji XOR z lewą częścią wiadomości, w wyniku czego otrzymano 32 bitową część prawą wiadomości,
+\item lewą częścią 32 bitowej wiadomości jest prawa część 32 bitowej wiadomości bez żadnych zmian.
 \end{itemize}
 Dane wyjściowe wiadomości z rundy pierwszej są danymi wejściowymi dla rundy drugiej algorytmu. Kroki przedstawione powyżej należy wykonać 16 razy w calu zaszyfrowania wiadomości, która jest podzielona na bloki 64 bitowe. Na obrazku~\ref{des} zobrazowano pojedynczą rundę algorytmu DES.
 
@@ -248,7 +233,7 @@ W tabeli~\ref{hex_to_bin} ukazano reprezentację binarną liczą heksadecymalnyc
 \end{tabular}
 \caption{Reprezentacja binarna liczb heksadecymalnych.}~\label{hex_to_bin}
 \end{table}
-
+\newpage
 W tabeli~\ref{per_poczatkowa} przedstawiono tablicę dla permutacji początkowej wiadomości dla algorytmu DES. Permutacji dokonuje się poprzez zamianę miejscami bitów zgodnie z tabelą permutacji otrzymując w wyniku przekształcone dane wejściowe.
 
 \begin{table}[H]
@@ -294,7 +279,7 @@ cykl&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16\\
 \hline
 liczba przesunięć&1&1&2&2&2&2&2&2&1&2&2&2&2&2&2&1\\ \hline
 \end{tabular}
-\caption{Liczba przesunięć klucza w zależności od cyklu.}\label{przesuniecie_klucza}
+\caption{Liczba przesunięć klucza w zależności od cyklu dla algorytmu DES.}\label{przesuniecie_klucza}
 \end{table} 
  
 Po operacji przesunięcia bitowego klucza 56 bitowego wykonano kompresję klucza do rozmiaru 48 bitów zgodnie z tabelą~\ref{per_kompresji}.
@@ -314,8 +299,8 @@ Po operacji przesunięcia bitowego klucza 56 bitowego wykonano kompresję klucza
 \end{tabular}
 \caption{Permutacja kompresji DES.}~\label{per_kompresji}
 \end{table}
-
-Tabela~\ref{per_rozszerzenia} jest stosowana do operacji rozszerzenia wiadomości. Wiadomość 64 bitowa zostaje podzielona na dwa 32 bitowe bloki, które następnie ulegają rozszerzeniu do dwóch 48 bitowych bloków zgodnie z tabelą~\ref{per_rozszerzenia} permutacji rozszerzenia. Rozszerzone 48 bitowe bloki zawierają powtórzenia bitów, rozszerzenie 32 do 48 bitów powoduję wystąpienie 16 bitów które nie są unikatowe. Oznacza to, że 8 bitów występuje podwójnie w szyfrowanej wiadomości.
+\newpage
+Tabela~\ref{per_rozszerzenia} jest stosowana do operacji rozszerzenia wiadomości. Wiadomość 64 bitowa zostaje podzielona na dwa 32 bitowe bloki, które następnie ulegają rozszerzeniu do dwóch 48 bitowych bloków zgodnie z tabelą~\ref{per_rozszerzenia} permutacji rozszerzenia. Rozszerzone 48 bitowe bloki zawierają powtórzenia bitów, rozszerzenie 32 do 48 bitów powoduje wystąpienie 16 bitów, które nie są unikatowe. Oznacza to, że 8 bitów występuje podwójnie w szyfrowanej wiadomości.
 
 \begin{table}[H]
 \centering
@@ -383,7 +368,7 @@ Po dokonaniu permutacji rozszerzenia wiadomości dokonano operacji xor otrzymane
 2& 	1& 	14& 	7& 	4& 	10& 	8& 	13& 	15& 	12& 	9& 	0& 	3& 	5& 	6& 	11 \\ \hline
 \end{tabular}
 \end{adjustbox}
-\caption{Struktury S bloków.}\label{s_bloki}
+\caption{Struktury S bloków algorytmu DES.}\label{s_bloki}
 \end{table}
 
 
@@ -397,28 +382,28 @@ Po dokonaniu permutacji rozszerzenia wiadomości dokonano operacji xor otrzymane
 2 &	8 &	24 &	14& 	32& 	27& 	3 &	9\\ \hline
 19 	&13 &	30& 	6& 	22& 	11& 	4& 	25\\ \hline
 \end{tabular}
-\caption{Permutacja bloku P.}~\label{blok_P}
+\caption{Permutacja bloku P algorytmu DES.}~\label{blok_P}
 \end{table}
 
-Algorytm DES nie jest obecnie uznawany za bezpieczny przez Amerykańskie Standardy Federalne. W roku 2015 przy użyciu wysokiej wydajności FPGA możliwe było złamanie szyfru w stosunkowo krótkim czasie(4-5 dni). Dla atakujących przestała być odstraszająca cena platformy FPGA w porównaniu do zysków jakie może dać im atak. W celu przesłania klucza do drugiej osoby, z którą tworzymy bezpieczne połączenie wymaga znalezienie bezpiecznej metody przesyłu klucza. Zaletami algorytmu DES jest jego odporność na błędy, dzięki jego prostocie aplikacji. W obecnych czasach jest on nadal popularny w użytku, dzięki swojej szybkości ~\cite{DES}.
+Algorytm DES nie jest obecnie uznawany za bezpieczny przez Amerykańskie Standardy Federalne. W roku 2015 przy użyciu wysokiej wydajności FPGA możliwe było złamanie szyfru w stosunkowo krótkim czasie(4-5 dni). Dla atakujących przestała być odstraszająca cena platformy FPGA w porównaniu do zysków jakie może dać im atak. W celu przesłania klucza do drugiej osoby, z którą tworzymy bezpieczne połączenie wymagane jest znalezienie bezpiecznej metody przesyłania klucza. Zaletami algorytmu DES jest jego odporność na błędy, dzięki jego prostocie. W obecnych czasach jest on nadal popularny w użytku, dzięki swojej szybkości ~\cite{DES}.
 
 %%% cos o deszyfracji dodac
 
 %\paragraph{AES} \mbox{} \\
 
 
-\paragraph{IDEA} \mbox{} \\ 
+\paragraph{3. międzynarodowy algorytm szyfrowania danych IDEA} \mbox{} \\ 
 
-IDEA to Międzynarodowy Algorytm Szyfrowania Danych(z ang. International Data Encryption Algorithm). Początkowo nosił nazwę PES(z ang. Proposed Encryption Standard) opatentowany przez Xuejia Lai i Jamesa Massey w 1990 roku. Następnie został on ulepszony przed atakiem zmieniając nazwę na IPES(z ang.Improved Proposed Encryption Standard). Ostatecznie jego nazwę zmieniono na obecnie używaną IDEA w 1992 roku. Jest to algorytm blokowy, który wykorzystuje bloki 64 bitowe i klucz o długości 128 bitów. Do szyfrowania i odszyfrowywania wykorzystuje się ten sam algorytm. Algorytm ten początkowo dzieli blok 64 bitowy na 4 pod bloki 16 bitowe, na których dokonywane są operację: XOR, dodawanie modulo i mnożenie modulo. Algorytm składa się z ośmiu rund. Na rysunku~\ref{idea} przedstawiono pojedyncza rundę algorytmu IDEA, gdzie pierwsza 16 bitowa część wiadomości podlega operacji mnożenia modulo z 16 bitowym kluczem rundy. Operacja modulo oznaczona przy pomocy kółka z kropką w środku $\odot$. Druga 16 bitowa część wiadomości poddano operacji dodawania modulo z 16 bitowym kluczem rundy. Operacje dodawania modulo oznaczono kwadratem z plusem w środku $\boxplus$. Operację XOR oznaczono okręgiem z plusem w środku $\oplus$. Operacje mnożenia, dodawania i xorowania są wykonywane na częściach wiadomości zgodnie z rysunkiem~\ref{idea}. Po operacjach xorowania, dodawania i mnożenia dokonujemy przestawienia bloku drugiego z trzecim, które są danymi wejściowymi do następnej rundy. W każdej rundzie używany jest 16 bitowy klucz dla danego pod bloku. Po zakończeniu ośmiu rund, cztery bloki są złożone do jednego bloku 64 bitowego, który jest wynikiem końcowym.
+IDEA to Międzynarodowy Algorytm Szyfrowania Danych(z ang. International Data Encryption Algorithm). Początkowo nosił nazwę PES(z ang. Proposed Encryption Standard) został opatentowany przez Xuejia Lai i Jamesa Massey w 1990 roku. Następnie został on ulepszony przed atakiem zmieniając nazwę na IPES(z ang.Improved Proposed Encryption Standard). Ostatecznie jego nazwę zmieniono na obecnie używaną IDEA w 1992 roku. Jest to algorytm blokowy, który wykorzystuje bloki 64 bitowe i klucz o długości 128 bitów. Do szyfrowania i odszyfrowywania wykorzystuje się ten sam algorytm. Algorytm ten początkowo dzieli blok 64 bitowy na 4 pod bloki 16 bitowe, na których dokonywane są operację: XOR, dodawanie modulo i mnożenie modulo. Algorytm składa się z ośmiu rund. Na rysunku~\ref{idea} przedstawiono pojedyncza rundę algorytmu IDEA, gdzie pierwsza 16 bitowa część wiadomości podlega operacji mnożenia modulo z 16 bitowym kluczem rundy. Operacja modulo oznaczona przy pomocy kółka z kropką w środku $\odot$. Druga 16 bitowa część wiadomości poddano operacji dodawania modulo z 16 bitowym kluczem rundy. Operacje dodawania modulo oznaczono kwadratem z plusem w środku $\boxplus$. Operację XOR oznaczono okręgiem z plusem w środku $\oplus$. Operacje mnożenia, dodawania i xorowania są wykonywane na częściach wiadomości zgodnie z rysunkiem~\ref{idea}. Po operacjach xorowania, dodawania i mnożenia dokonujemy przestawienia bloku drugiego z trzecim, które są danymi wejściowymi do następnej rundy. W każdej rundzie używany jest 16 bitowy klucz dla danego podbloku. Po zakończeniu ośmiu rund, cztery bloki są złożone do jednego bloku 64 bitowego, który jest wynikiem końcowym.
 
 \begin{figure}[H]
 \centering
-\includegraphics{IDEA.jpg}
+\includegraphics[width=7cm]{idea.png}
 \caption{Pojedyncza runda algorytmu IDEA ~\cite{IDEA}.}\label{idea}
 \end{figure}
 
 
-Dla operacji dodawania modulo potrzebne są dwie liczby, na których zostanie wykonane działanie oraz tzn. licza modulo. Operacja dodawania modulo przebiega w następujących krokach: dodanie do siebie dwóch liczb, a następnie podzielenie wyniku dodawania przez liczbę modulo. Reszta z wyniku dzielenia sumy dwóch licz przez liczbę module daje nam wynik operacji dodawania modulo. Operacje dodawania modulo oznaczono symbolem $\boxplus$. Przykładem operacji dodawania modulo jest: 2 $\boxplus$ 5 $\equiv$ 1 (mod 3). Dla operacji mnożenia modulo potrzebne są dwie liczby, na których zostanie wykonane działanie oraz tzn. liczba modulo. Operacja mnożenia modulo polega na iloczynie dwóch czynników oraz ilorazie wyniku operacji z liczbą modulo. Wynikiem jest reszta z operaji dzielenia przez liczbę modulo.  Operacje mnożenia modulo oznaczono symbolem $\odot$. Przykładem operacji mnożenia modulo jest 2  $\odot$ 7 = 2 (mod 3), bo 2*7 = 14, gdzie 14/3 daje resztę z dzielenia 2.
+Dla operacji dodawania modulo potrzebne są dwie liczby, na których zostanie wykonane działanie oraz tzn. licza modulo. Operacja dodawania modulo przebiega w następujących krokach: dodanie do siebie dwóch liczb, a następnie podzielenie wyniku dodawania przez liczbę modulo. Reszta z wyniku dzielenia sumy dwóch liczb przez liczbę module daje nam wynik operacji dodawania modulo. Operacje dodawania modulo oznaczono symbolem $\boxplus$. Przykładem operacji dodawania modulo jest: 2 $\boxplus$ 5 $\equiv$ 1 (mod 3). Dla operacji mnożenia modulo potrzebne są dwie liczby, na których zostanie wykonane działanie oraz tzn. liczba modulo. Operacja mnożenia modulo polega na iloczynie dwóch czynników oraz ilorazie wyniku operacji z liczbą modulo. Wynikiem jest reszta z operaji dzielenia przez liczbę modulo. Operacje mnożenia modulo oznaczono symbolem $\odot$. Przykładem operacji mnożenia modulo jest 2  $\odot$ 7 = 2 (mod 3), bo 2*7 = 14, gdzie 14/3 daje resztę z dzielenia 2.
 Klucz o długości 128 bitów jest dzielony na osiem 16 bitowych podkluczy. Dla każdej rundy zostaje wykorzystane 6 podkluczy, które oznaczono na rysunku~\ref{idea} literą Z. Do wszystkich rund, których jest 8 użyto 52 podkluczy oraz 4 podklucze użyte do końcowych przekształceń. Dla algorytmu IDEA użyto łącznie 52 podkluczy, które stworzono z 128 bitowego klucza. Generację klucza 128 bitowego do 52 podkluczy można podzielić na:
 \begin{itemize}
 \item podział 128 bitowego klucza na 8 podkluczy 16 bitowych, gdzie pierwsze 6 podkluczy wykorzystano do rundy 1, a następne 2 podklucze użyto do rundy 2 algorytmu
@@ -489,12 +474,12 @@ Jedną z podstawowych zalet algorytmu są proste operacje na bitach tj. mnożeni
 \includegraphics[width=15cm]{rsa.png}
 \caption{Schematyczne szyfrowanie asymetryczne.}\label{rsa}
 \end{figure}
+\newpage
+Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Na rysunku~\ref{rsa} zobrazowano szyfrowanie i deszyfrowanie z użyciem klucza publicznego i prywatnego. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować ~\cite{asymetric}. Do szyfrów asymetrycznych zaliczamy:
 
-Do szyfrowania używany jest klucz publiczny, natomiast do odszyfrowania wiadomości użyto klucza prywatnego. Bob generuje publiczny klucz, który może być znany dla każdego, gdyż tylko Bob mający klucz prywatny może odszyfrować wiadomość zaszyfrowaną przy pomocy jego publicznego klucza. Szyfrowanie asymetryczne jest bezpieczne nawet w przypadku wystąpienia osoby trzeciej Ewy, która chciałaby podsłuchać konwersację między Bobem, a Alicją. Bob po wygenerowaniu klucza publicznego wysyła go do Alicji, aby ta mogą zaszyfrować wiadomość, którą chce do niego przesłać. W przypadku gdy Ewa przechwyci klucz publiczny Boba, nie jest w stanie odszyfrować wiadomości, gdyż nie posiada klucza prywatnego Boba, w którego posiadaniu jest tylko on. W celu przesłania wiadomości od Boba do Alicji proces wygląda tak samo. Na rysunku~\ref{rsa} zobrazowano szyfrowanie i deszyfrowanie z użyciem klucza publicznego i prywatnego. Alicja generuje klucz publiczny, który wysyła do Boba. Bob szyfruje wiadomość publicznym kluczem Alicji i przesyła jej zaszyfrowaną wiadomość, która Alicja odszyfruje przy użyciu jej klucza prywatnego. Obecność dwóch kluczy w algorytmie rozwiązuje problem wymiany klucza, co pozwala osobom będącym daleko od siebie w bezpieczny sposób się komunikować ~\cite{asymetric}.  
 
 
-
-\paragraph{RSA} \mbox{} \\
+\paragraph{1. algorytm Rivesta-Shamira-Adlemana RSA} \mbox{} \\
 
 Algorytm RSA jest jednym z powszechniejszym algorytmów. Algorytm RSA zawdzięcza swoją nazwę trzem osobom, przez które został on opatentowany przez Rona Rivest, Adi Shamir i Leonard Adleman w 1977 roku. Nazwa algorytmu RSA pochodzi od pierwszych liter nazwisk wynalazców. Algorytm RSA bazuje na liczbach pierwszych oraz faktoryzacji dużych liczb. Proces tworzenia pary kluczy: prywatnego i publicznego przebiega w następujących krokach:
 \begin{itemize}
@@ -502,7 +487,7 @@ Algorytm RSA jest jednym z powszechniejszym algorytmów. Algorytm RSA zawdzięcz
 \begin{center}
 n = p * q 
 \end{center}
-,gdzie n = wynik mnożenia liczb pierwszych, p i q liczby pierwsze.
+gdzie n to wynik mnożenia liczb pierwszych, p i q liczby pierwsze.
 \item obliczenie funkcji Eulera według zależności
 \begin{center}
 m = (p-1)(q-1)
@@ -525,29 +510,29 @@ p = $c^{d}$mod(n)
  
  
  
-\paragraph{Diffie-Hellman} \mbox{} \\
+\paragraph{2. algorytm Diffie-Hellman} \mbox{} \\
 
 Algorytm Diffie-Hellman został opatentowany w 1976 roku przez Whitfield Diffie i Martin Hellman. Dzięki temu algorytmowi możliwe jest przesyłanie klucza przez niezabezpieczone łącze w bezpieczny sposób. Obecnie jest on stosowany do wymiany klucza symetrycznego. Algorytm można opisać w następujących krokach: 
 \begin{itemize}
-\item Alicja generuje prywatną liczbę całkowitą a
-\item Bob generuje prywatną liczbę całkowitą b
-\item wybór liczby pierwszej p
+\item Alicja generuje prywatną liczbę całkowitą a,
+\item Bob generuje prywatną liczbę całkowitą b,
+\item wybór liczby pierwszej p,
 \item obliczenie publicznej wartości z wykorzystaniem liczby piwerszej p, wartości g oraz prywatnej liczby a (dla Alicji) i b (dla Boba) według zależności
 \begin{center}
-$g^{a}$mod(p) i $g^{b}$mod(p)
+$g^{a}$mod(p) i $g^{b}$mod(p),
 \end{center}
-\item wymiana publicznej wartości między Alicją i Bobem
+\item wymiana publicznej wartości między Alicją i Bobem,
 \item Alicja oblicza
 \begin{center}
-$g^{ab}$ = $(g^{b})^{a}$mod(p)
+$g^{ab}$ = $(g^{b})^{a}$mod(p),
 \end{center}
 \item Bob oblicza
 \begin{center}
-$g^{ba}$ = $(g^{a})^{b}$mod(p)
+$g^{ba}$ = $(g^{a})^{b}$mod(p),
 \end{center}
 \item Alicja i Bob posiadają wspólny tajny klucz k, gdyż
 \begin{center}
-$g^{ab}$ = $g^{ba}$
+$g^{ab}$ = $g^{ba}$.
 \end{center}
 \end{itemize}
 
@@ -558,10 +543,10 @@ $g^{a}$ $\equiv$ a mod(p) oraz $g^{b}$ $\equiv$ b mod(p)
 Obecnie nie istnieje żaden algorytm umożliwiający rozwiązanie problemu logarytmu dyskretnego ~\cite{DH}.
 
 %\paragraph{Funkcje haszujące} \mbox{} \\
-
+\newpage
 \subsection{Protokoły}
 \subsubsection{VPN with Point-to-Point Tunneling Protocol (PPTP)}
-\quad Protokół punkt - punt często wykorzystywany na urządzeniach z systemem operacyjnym Windows w celu utworzenia wirtualnej sieci prywatnej. Protokół PPTP został utworzony w czasach sieci wdzwanianej tzn. dial up, jednak bez problemu można z niego korzystać również dla sieci Ethernet, Internet czy cyfrowa sieć usług zintegrowanych(ISDN). Utworzenie sicei VPN w sieci TCP/IP umożliwia bezpieczny transfer danych między zdalnym komputerem, a serwerem. Do implementacji protokołu głównie jest wykorzystywany: klient PPTP, serwer NAS i serwer PPTP. Serwer NAS bezpiecznie przechowuje dane i udostępnia je tylko wybranym użytkownikom. Na rys.~\ref{PPTP} poniżej poglądowo przedstawiono komunikację z użyciem protokołu PPTP. 
+\quad Protokół punkt - punkt często wykorzystywany na urządzeniach z systemem operacyjnym Windows w celu utworzenia wirtualnej sieci prywatnej. Protokół PPTP został utworzony w czasach sieci wdzwanianej tzn. dial up, jednak bez problemu można z niego korzystać również dla sieci Ethernet, Internet czy cyfrowej sieci usług zintegrowanych(ISDN). Utworzenie sieci VPN w sieci TCP/IP umożliwia bezpieczny transfer danych między zdalnym komputerem, a serwerem. Do implementacji protokołu głównie jest wykorzystywany: klient PPTP, serwer NAS(ang. Network Attached Storage) i serwer PPTP. Serwer NAS bezpiecznie przechowuje dane i udostępnia je tylko wybranym użytkownikom. Na rys.~\ref{PPTP} poniżej poglądowo przedstawiono komunikację z użyciem protokołu PPTP. 
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{komunikacja_PPTP.jpg}
@@ -570,13 +555,13 @@ Obecnie nie istnieje żaden algorytm umożliwiający rozwiązanie problemu logar
 
 Połączenie między zdalnym klientem, a siecią przebiega w określonych etapach:
 \begin{itemize}
-\item nawiązanie połączenia z użyciem protokołu komunikacyjnego point-to-point (PPP) między dwoma węzłami sieci w sposób telefoniczny bądź przewodowy z Internetem
-\item połączenie PPP z serwerem PPTP, co tworzy połączenie VPN między zdalnym klientem, a serwerem
+\item nawiązanie połączenia z użyciem protokołu komunikacyjnego punkt-punkt między dwoma węzłami sieci w sposób telefoniczny bądź przewodowy z Internetem,
+\item połączenie punkt-punkt z serwerem PPTP, co tworzy połączenie VPN między zdalnym klientem, a serwerem.
 \end{itemize}
 Po ustanowieniu połączenia wysyłane są dwa pakiety danych: pakiet kontrolny, który zarządza tunelem i pakiet danych. Protokół PPTP jest zaaplikowany na drugim poziomie modelu odniesienia łączenia systemów otwartych (OSI), który jest warstwą łącza danych. Jego działanie jest oparte na protokole punkt-punkt (PPP), który umożliwia korzystanie z usług internetowych. Protokół PPTP umożliwia firmom tworzenie prywatnych tuneli w publicznym internecie. Organizacje nie muszą już instalować kosztownych linii do komunikacji, dzięki protokołowi PPTP mogą w bezpieczny sposób korzystać z sieci publicznej w celu przesyłania poufnych danych. Protokół PPTP wspiera szyfrowanie i kompresję danych. Protokół PPTP nie jest wykorzystywany powszechnie ze względu na podatność na ataki ~\cite{PPTP}.
 \subsubsection{Secure Shell (SSH)}
 \quad SSH z angielskiego to Secure Shell, co znaczy bezpieczna powłoka. Protokół SSH został wprowadzony w celu ulepszenia istniejących już wcześniej protokołów takich jak telnet, ftp czy BSD r-commands(rlogin, rexec, rsh,rcp). Protokoły telnet, ftp czy rsh były wykorzystywane do transferu plików między hostem lokalnym i zdalnym. Wymienione protokoły nadal są w powszechnym użytku, tylko tam gdzie bezpieczeństwo nie jest istotnym czynnikiem. Istotną wadą usług telnet i ftp jest brak szyfrowania i uwierzytelniania podczas przesyłania pakietów. Dane wysyłane są w sposób jawny, które mogą być w łatwiejszy sposób przechwycone przez atakującego. Atakujący może uzyskać niezaszyfrowane hasło, które następnie może wykorzystać w łatwy sposób. Wszędzie tam gdzie bezpieczeństwo danych jest ważne stosujemy protokół SSH. 
-\quad SSH jest protokołem warstwy transportowej, która używa TCP do przenoszenia swoich pakietów. TCP jest protokołem sterowanie transmisją między dwoma urządzeniami. SSH umożliwia bezpieczne tunelowanie między lokalnym z zdalnym urządzeniem. Na poniższym rysunku przedstawiono komunikacje lokalnego klienta z powłoką serwera przy pomocy przekierowaniu portów. Na rys.~\ref{SSH} ukazano schemat lokalnego przekierowania portu dla protokołu SSH.
+\quad SSH jest protokołem warstwy transportowej, która używa TCP do przenoszenia swoich pakietów. TCP jest protokołem sterowanie transmisją między dwoma urządzeniami. SSH umożliwia bezpieczne tunelowanie między lokalnym z zdalnym urządzeniem. Na poniższym rysunku przedstawiono komunikacje lokalnego klienta z powłoką serwera przy pomocy przekierowania portów. Na rys.~\ref{SSH} ukazano schemat lokalnego przekierowania portu dla protokołu SSH.
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{przekierowywanie_lokalne_SSH.jpg}
@@ -585,145 +570,153 @@ Po ustanowieniu połączenia wysyłane są dwa pakiety danych: pakiet kontrolny,
 
 Host A wykonuje bezpiecznie połączenie do hostu B poprzez port R. Połączenie hostu A z hostem B przebiega w następujący sposób:
 \begin{itemize}
-\item host A łączy się do porty L na kliencie SSH
-\item SSH przekierowuje połączenie poprzez bezpieczny tunel do serwera SSH
-\item serwer SSH łączy się z hostem B poprzez port R
+\item host A łączy się do porty L na kliencie SSH,
+\item SSH przekierowuje połączenie poprzez bezpieczny tunel do serwera SSH,
+\item serwer SSH łączy się z hostem B poprzez port R.
 \end{itemize}
-\newpage Port L na hoście A i port R na hoście B ustawione są w trybie ciągłego nasłuchiwania dla lokalnego połączenia. Na rys.~\ref{SSH_1} przedstawiono zdalne przekierowywanie portu z hosta B do hosta.
+\newpage
+Port L na hoście A i port R na hoście B ustawione są w trybie ciągłego nasłuchiwania dla lokalnego połączenia. Na rys.~\ref{SSH_1} przedstawiono zdalne przekierowywanie portu z hosta B do hosta.
  
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{przekierowywanie_zdalne_SSH.jpg}
+\includegraphics[width=12cm]{przekierowywanie_zdalne_SSH.jpg}
 \caption{SSH zdalne przekierowywanie portu}\label{SSH_1}
 \end{figure}
 
 Zdalne przekierowanie portu przebiega w następujących krokach:
 \begin{itemize}
-\item klient SSH wysyła żądanie zdalnego przekazywania portów, co powoduje nasłuchiwanie połączeń na porcie R po stronie serwera
-\item przekiwrowanie połączenie przez bezpieczny tunel do klienta SSH
-\item klient SSH łączy się do hosta A poprzez nasłuchujący port L po jego stronie
+\item klient SSH wysyła żądanie zdalnego przekazywania portów, co powoduje nasłuchiwanie połączeń na porcie R po stronie serwera,
+\item przekierowanie połączenie przez bezpieczny tunel do klienta SSH,
+\item klient SSH łączy się do hosta A poprzez nasłuchujący port L po jego stronie.
 \end{itemize}
 \quad 
 Wykorzystując zjawisko tunelowania do prywatnej sieci wirtualnej tworzymy bezpieczne połączenie poprzez tunel między dwoma sieciami ~\cite{SSH}.
 
 \subsubsection{IPsec}
-\quad Protokół IPsec zawiera trzy główne protokoły:
+\quad Protokół IPsec zawiera trzy główne pod protokoły:
 \begin{itemize}
-\item protokół uwierzytelnienie nagłówków (AH) - zapewnia uwierzytelnienie i integralność pakietów protokołu internetowego (IP)
-\item  protokół bezpieczeństwa danych ESP - zapewnia te same usługi co protokół AH i dodatkowo zapewnia bezpieczeństwo danych
-\item protokół wymiany klucza internetowego IKE - zapewnia zarządzanie kluczem, umożliwiając bezpiecznie skojarzenie dwóch hostów 
+\item protokół uwierzytelnienie nagłówków (AH) - zapewnia uwierzytelnienie i integralność pakietów protokołu internetowego (IP),
+\item  protokół bezpieczeństwa danych ESP - zapewnia te same usługi co protokół AH i dodatkowo zapewnia bezpieczeństwo danych,
+\item protokół wymiany klucza internetowego IKE - zapewnia zarządzanie kluczem, umożliwiając bezpiecznie skojarzenie dwóch hostów.
 \end{itemize}
 \quad Protokoły AH i ESP mogą działać w dwóch trybach: transportowym i tunelowym. Tryb transportowy zapewnia bezpieczeństwo dla warstw powyżej datagramu IP. Jest on inicjowany głównie między dwoma stałymi hostami, połączenie nie może być nawiązana między dwoma sieciami lub między siecią i hostem. Zaś tryb tunelowy zapewnia bezpieczeństwo całego datagramu IP. Jest on stosowany do połączenia tunelowego między dwoma sieciami lub między hostem, a siecią. Na rys.~\ref{IPsec} poniżej przedstawiono schematyczny tryb tunelowy dla protokołu IPsec.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{tryb_tunelowy_IPsec.jpg}
+\includegraphics[width=15cm]{tryb_tunelowy_IPsec.jpg}
 \caption{Tryb tunelowy IPsec}\label{IPsec}
 \end{figure}
  
-\quad Sieć zdalna jest połączona z siecią domową za pośrednictwem sieci tunelowej, bramki bezpieczeństwa 1 i bramki bezpieczeństwa 2. Funkcją bramek jest szyfrowanie, deszyfrowanie, zapobieganie ponownego odtwarzania wysyłanych pakietów i uwierzytelnianie. Z poziomu hostów bramki bezpieczeństwa i tunelowanie jest niewidoczne. Występują trzy metody uwierzytelnienie danych z udziałem protokołu bezpieczeństwa IPsec: wstępnie uzgodnione klucze, klucze prywatne i publiczne RSA oraz certyfikaty. Nagłówki uwierzytelniające dla trybu transportowego i tunelowego różnią się od siebie. Powszechny pakiet IP wchodzący w wyższą warstwę TCP składa się z: nagłówka IP, nagłówka TCP i danych użytkownika. Dla trybu transportowego nagłówek uwierzytelnienia dla IPsec składa się z: nagłówka IP, nagłówka uwierzytelniającego, nagłówka TCP i danych użytkownika. W tunelowym trybie nagłówek uwierzytelniający kopiuje część wewnętrzną nagłówka IP, która jest używana do utworzenia nowego zewnętrznego nagłówka IP. Nagłówek składa się z: zewnętrznego nagłówka IP, nagłówka uwierzytelniającego, wewnętrznego nagłówka IP, nagłówka TCP i danych użytkownika.
+\quad Sieć zdalna jest połączona z siecią domową za pośrednictwem sieci tunelowej, bramki bezpieczeństwa 1 i bramki bezpieczeństwa 2. Funkcją bramek jest szyfrowanie, deszyfrowanie, zapobieganie ponownego odtwarzania wysyłanych pakietów i uwierzytelnianie. Z poziomu hostów bramki bezpieczeństwa i tunelowanie jest niewidoczne. Występują trzy metody uwierzytelnienia danych z udziałem protokołu bezpieczeństwa IPsec: wstępnie uzgodnione klucze, klucze prywatne i publiczne RSA oraz certyfikaty. Nagłówki uwierzytelniające dla trybu transportowego i tunelowego różnią się od siebie. Powszechny pakiet IP wchodzący w wyższą warstwę TCP składa się z: nagłówka IP, nagłówka TCP i danych użytkownika. Dla trybu transportowego nagłówek uwierzytelnienia dla IPsec składa się z: nagłówka IP, nagłówka uwierzytelniającego, nagłówka TCP i danych użytkownika. W tunelowym trybie nagłówek uwierzytelniający kopiuje część wewnętrzną nagłówka IP, która jest używana do utworzenia nowego zewnętrznego nagłówka IP. Nagłówek składa się z: zewnętrznego nagłówka IP, nagłówka uwierzytelniającego, wewnętrznego nagłówka IP, nagłówka TCP i danych użytkownika.
 
-IPsec korzysta z protokołu Internet Key Exchange (IKE) w celu nawiązania i ustanowienie bezpiecznego połączenia między dwoma hostami lub zdalnego dostępu tunelowania VPN. Protokół IKE występuje w dwóch wersjach IKEv1 i IKEv2. Protokół IKEv1 można podzielić na dwie fazy, pierwsza w nich odpowiada za następujące funkcjonalności: algorytmy szyfrowania, algorytmy haszowania, protokół Diffiego-Hellmana oraz metodę uwierzytelniania.  Faza druga IKEv1 jest głównie używana do szyfrowania w protokole IPsec. Do szyfrowania wykorzystujemy algorytmy Data Encryption Standard (DES),  Triple DESo długości 168 bitów czy Advanced Encryption Standard (AES) o długości 128-256 bitów. Spośród wymienionych powyżej algorytmów DES zapewnia najniższe bezpieczeństwo danych, zaś AES o długości klucza 256 bitów największe bezpieczeństwo. Algorytmy haszujące zastosowane w protokole IPsec to: Secure Hash Algorithm (SHA) oraz Message Digest 5 (MD5). Protokół MD5 jest mniej bezpieczny niż algorytm SHA.
-Kiedy używamy IPsec wraz z VPN przesyłane dane będą zabezpieczone podczas przesyłania, w celu uniemożliwienia atakującemu zdobycie jawnych danych.  Proces szyfrowania, który zapewnia poufność przesyłanych danych nie daje możliwości łatwej modyfikacji wrażliwych danych atakującemu.
+IPsec korzysta z protokołu Internet Key Exchange (IKE) w celu nawiązania i ustanowienie bezpiecznego połączenia między dwoma hostami lub zdalnego dostępu tunelowania VPN. Protokół IKE występuje w dwóch wersjach IKEv1 i IKEv2. Protokół IKEv1 można podzielić na dwie fazy, pierwsza w nich odpowiada za następujące funkcjonalności: algorytmy szyfrowania, algorytmy haszowania, algorytm Diffiego-Hellmana oraz metodę uwierzytelniania. Faza druga IKEv1 jest głównie używana do szyfrowania w protokole IPsec. Do szyfrowania wykorzystujemy algorytmy Data Encryption Standard (DES),  Triple DES o długości 168 bitów czy Advanced Encryption Standard (AES) o długości 128-256 bitów. Spośród wymienionych powyżej algorytmów DES zapewnia najniższe bezpieczeństwo danych, zaś AES o długości klucza 256 bitów największe bezpieczeństwo. Algorytmy haszujące zastosowane w protokole IPsec to: Secure Hash Algorithm (SHA) oraz Message Digest 5 (MD5). Protokół MD5 jest mniej bezpieczny niż algorytm SHA.
+Kiedy używamy IPsec wraz z VPN przesyłane dane będą zabezpieczone podczas przesyłania, w celu uniemożliwienia atakującemu zdobycie jawnych danych. Proces szyfrowania, który zapewnia poufność przesyłanych danych nie daje możliwości łatwej modyfikacji wrażliwych danych atakującemu.
 
-Do stworzenia protokołu IPsec zrzeszenia bezpieczeństwa(Security Association AS) używanych jest kilka komponentów, które służą do przetwarzania ruchu tekstu jawnego, który jest chroniony i następnie przekształcany w tekst zaszyfrowany. Te same komponenty są używane do odszyfrowania danych. Protokół IPsec korzysta z trzech baz danych: 
+Do stworzenia protokołu zrzeszenia bezpieczeństwa(Security Association AS) dla IPsec używanych jest kilka komponentów, które służą do przetwarzania ruchu tekstu jawnego,który jest chroniony i następnie przekształcany w tekst zaszyfrowany. Te same komponenty są używane do odszyfrowania danych. Protokół IPsec korzysta z trzech baz danych: 
 \begin{itemize}
-\item Baza danych zasad zabezpieczeń - Security Policy Database (SPD) określa jaki ruch ma być chroniony
-\item Baza danych stowarzyszenia zabezpieczeń - Security Association Database (SAD) określa w jaki sposób ruch jest chroniony
-\item Baza danych autoryzacji - Peer Authorization Database (PAD) zapewnia mechanizm wymuszający  politykę z oparciu o protokół IKE
+\item baza danych zasad zabezpieczeń - Security Policy Database (SPD) określa jaki ruch ma być chroniony,
+\item baza danych stowarzyszenia zabezpieczeń - Security Association Database (SAD) określa w jaki sposób ruch jest chroniony,
+\item baza danych autoryzacji - Peer Authorization Database (PAD) zapewnia mechanizm wymuszający  politykę z oparciu o protokół IKE.
 \end{itemize}
 
 \subsubsection{Secure Socket Tunneling protocol Based on VPN}
-\quad Protokół SSTP umożliwia administratorom na ustanowienie tunelów poprzez główną sieć korporacyjną na Windows Serwer. Dzięki zredukowanie wymaganych kroków technicznych do utworzenia tunelów między organizacjami zyskujemy niższy koszt administracyjny. Brak dodatkowych zmian w infrastrukturze dla protokołu SSTP, gdyż podobnie jak w protokóle HTTPS jest obsługiwana zapora sieciowa i serwery proxy. Protokół SSTP wykorzystuje protokołu SSL do transportu ruchu sieciowego. SSL jest certyfikatem odpowiedzialnym za poświadczenie wiarygodności domeny bądź jej właściciela, co zapewnia bezpieczeństw szyfrowania danych. PPP to protokół połączenie punkt-punkt. Protokołem odpowiedzialnym za sterowanie transmisją jest TCP. 
+\quad Protokół SSTP umożliwia administratorom na ustanowienie tunelów poprzez główną sieć korporacyjną na Windows Serwer. Dzięki zredukowanie wymaganych kroków technicznych do utworzenia tunelów między organizacjami zyskujemy niższy koszt administracyjny. Brak dodatkowych zmian w infrastrukturze dla protokołu SSTP, gdyż podobnie jak w protokóle HTTPS jest obsługiwana zapora sieciowa i serwery proxy. Protokół SSTP wykorzystuje protokołu SSL do transportu ruchu sieciowego. SSL jest certyfikatem odpowiedzialnym za poświadczenie wiarygodności domeny bądź jej właściciela, co zapewnia bezpieczeństw szyfrowania danych. PPP to protokół połączenia punkt-punkt. Protokołem odpowiedzialnym za sterowanie transmisją jest TCP. 
 Proces utworzenia połączenia wykorzystującego VPN między klientem, a serwerem przebiega w następujący sposób:
 \begin{itemize}
-\item klient ustanawia połączenie TCP z serwerem SSTP pomiędzy dynamicznie zaalokowanym portem TCP po stronie klienta SSTP, a portem TCP 443 na serwerze SSTP
-\item klient SSTP wysyła wiadomość Witaj SSL świadczącą o chęci nawiązania połączenia SSL z serwerem SSTP
-\item serwer SSTP wysyła do klienta cyfrowy certyfikat
-\item klient SSTP sprawdza poprawność certyfikatu, wybiera metodę szyfrowania dla sesji SSL, generuje klucze i następnie szyfruje certyfikat serwera przy użyciu klucza publicznego
-\item klient SSTP wysyła zaszyfrowany klucz sesji SSL do serwera SSTP
-\item serwer SSTP odszyfrowuje zaszyfrowany klucz sesji SSL z wykorzystaniem klucza prywatnego; dalsza komunikacja klienta z serwerem jest zaszyfrowana wybraną metodą szyfrowania i odszyfrowywana kluczem sesji SSL
-\item klient wysyła komunikat HTTP poprzez sesję SSL do serwera
-\item klient ustala połączenie tunelowe z serwerem
-\item klient SSTP ustala połączenie PPP z serwerem SSTP, które obejmuje uwierzytelnienie danych logowanie użytkownika wraz z uwierzytelnieniem PPP i ustawieniem konfiguracji ruchu IP
-\item klient SSTP rozpoczyna proces ruchu sieciowego IP poprzez łącze PPP~\cite{SSTP}
+\item klient ustanawia połączenie TCP z serwerem SSTP pomiędzy dynamicznie zaalokowanym portem TCP po stronie klienta SSTP, a portem TCP 443 na serwerze SSTP,
+\item klient SSTP wysyła wiadomość Witaj SSL świadczącą o chęci nawiązania połączenia SSL z serwerem SSTP,
+\item serwer SSTP wysyła do klienta cyfrowy certyfikat,
+\item klient SSTP sprawdza poprawność certyfikatu, wybiera metodę szyfrowania dla sesji SSL, generuje klucze i następnie szyfruje certyfikat serwera przy użyciu klucza publicznego,
+\item klient SSTP wysyła zaszyfrowany klucz sesji SSL do serwera SSTP,
+\item serwer SSTP odszyfrowuje zaszyfrowany klucz sesji SSL z wykorzystaniem klucza prywatnego; dalsza komunikacja klienta z serwerem jest zaszyfrowana wybraną metodą szyfrowania i odszyfrowywana kluczem sesji SSL,
+\item klient wysyła komunikat HTTP poprzez sesję SSL do serwera,
+\item klient ustala połączenie tunelowe z serwerem,
+\item klient SSTP ustala połączenie PPP z serwerem SSTP, które obejmuje uwierzytelnienie danych logowanie użytkownika wraz z uwierzytelnieniem PPP i ustawieniem konfiguracji ruchu IP,
+\item klient SSTP rozpoczyna proces ruchu sieciowego IP poprzez łącze PPP~\cite{SSTP}.
 \end{itemize}
 
 \subsubsection{L2TP}
-\quad Protokół tunelujący warstwy 2 (Layer 2 Tunneling Protocol L2TP) działa na warstwie łączy danych, która jest drugą w siedmio warstwowym modelu odniesienia łączenia systemów otwartych (OSI). Protokół ten nie zapewnia szyfrowania ani poufności danych, z tego powodu jest często używany z protokołem IPsec który zapewnia szyfrowanie i poufność danych. Protokół służy do komunikacji między klientem zwanym jako koncentrator dostępu L2TP(LAC) oraz serwerem nazywanym sieciowym serwerem L2TP (LNS). 
+\quad Protokół tunelujący warstwy 2 (Layer 2 Tunneling Protocol L2TP) działa na warstwie łączy danych, która jest drugą w siedmio warstwowym modelu odniesienia łączenia systemów otwartych (OSI). Protokół ten nie zapewnia szyfrowania ani poufności danych, z tego powodu jest często używany z protokołem IPsec, który zapewnia szyfrowanie i poufność danych. Protokół służy do komunikacji między klientem zwanym jako koncentrator dostępu L2TP(LAC) oraz serwerem nazywanym sieciowym serwerem L2TP (LNS). 
 Protokół L2TP, który jest wykorzystywany do włączenie sieci VPN w Internecie jest rozszerzeniem protokołu PPTP. Powstał on w połączeniu protokołu firmy PPTP opracowanej przez Microsoft i L2F (przekierowywanie warstwy drugiej modelu OSI) firmy Cisco. Połączenie użytkownika domowego do sieci firmowej wykorzystujące protokół L2TP i połączenie internetowe przedstawiono w następujących krokach:
 \begin{itemize}
-\item zdalny użytkownik korzysta z analogowego połączenia telefonicznego lub łącza szerokopasmowego w celu zainicjowania połączenie PPP do dostawcy usług internetowych
-\item sieć LAC akceptuje połączenie co prowadzi do ustanowienia połączenia PPP
-\item w czasie gdy użytkownik końcowy i serwer nawiązują połączenie, koncentrator dostępu LAC rozpoczyna uwierzytelniania użytkownika metodą CHAP lub PAP
-\item po pomyślnie ukończonym procesie uwierzytelnienia, połączenie użytkownika z serwerem LNS zostaje pomyślnie nawiązane; w przypadku niepomyślnego procesu uwierzytelnienie klient uzyskuje dostęp do Internetu jako normalny użytkownik
-\item punkty końcowe tunelu (LAC i LNS) przed wysłaniem danych poprzez tunel uwierzytelniają się wzajemnie
-\item po utworzeniu tunelu VPN korzystającego z protokołu L2TP połączenie między użytkownikiem, a siecią korporacyjną zostaje nawiązane 
+\item zdalny użytkownik korzysta z analogowego połączenia telefonicznego lub łącza szerokopasmowego w celu zainicjowania połączenie PPP do dostawcy usług internetowych,
+\item sieć LAC akceptuje połączenie co prowadzi do ustanowienia połączenia PPP,
+\item w czasie gdy użytkownik końcowy i serwer nawiązują połączenie, koncentrator dostępu LAC rozpoczyna uwierzytelniania użytkownika metodą CHAP lub PAP,
+\item po pomyślnie ukończonym procesie uwierzytelnienia, połączenie użytkownika z serwerem LNS zostaje pomyślnie nawiązane; w przypadku niepomyślnego procesu uwierzytelnienie klient uzyskuje dostęp do Internetu jako normalny użytkownik,
+\item punkty końcowe tunelu (LAC i LNS) przed wysłaniem danych poprzez tunel uwierzytelniają się wzajemnie,
+\item po utworzeniu tunelu VPN korzystającego z protokołu L2TP połączenie między użytkownikiem, a siecią korporacyjną zostaje nawiązane. 
 \end{itemize}
 Protokół L2TP jest protokołem sieci komputerowej wykorzystywanym przez dostawców internetowych do utworzenia wirtualnej sieci prywatnej między dwoma urządzeniami ~\cite{L2TP}.
 
 \newpage
 \section{Systemy wbudowane}
 \subsection{Budowa }
-\quad W obecnych czasach wbudowane systemy zyskają coraz większą popularność poprzez stosowanie ich w przedmiotach codziennego użytku między innymi: odkurzacz automatyczny, elektryczna hulajnoga, maszyny sprzedające, systemy alarmowe, telefony komórkowe czy drukarki. W przypadku niektórych zastosowań systemów wbudowanych np.telefony komórkowe czy systemy alarmowe niezbędne jest szyfrowanie wiadomości na nich występujących. W przypadku braku bloku kryptograficznego na systemie wbudowanym jest on podatny na atak np. w przypadku włamania do mieszkania z alarmem może on być wyłączony przez hakera w zdecydowanie krótszym czasie niż w przypadku takiego systemu alarmowego, na którym dane są całkowicie szyfrowane. Systemy wbudowane nie posiadają ściśle określonych architektur, projektowane są w zależności od zapotrzebowania bądź uniwersalne. Głównym argumentem przemawiającym za systemami wbudowanymi jest ich niski koszt produkcji oraz niski pobór mocy. Na rysunku~\ref{es} przedstawiono ogólny schemat blokowy komponentów zawartych wewnątrz mikrokontrolera.
+\quad W obecnych czasach wbudowane systemy zyskają coraz większą popularność poprzez stosowanie ich w przedmiotach codziennego użytku między innymi: odkurzacz automatyczny, elektryczna hulajnoga, maszyny sprzedające, systemy alarmowe, telefony komórkowe czy drukarki. W przypadku niektórych zastosowań systemów wbudowanych np.telefony komórkowe czy systemy alarmowe niezbędne jest szyfrowanie występujących na nich wiadomości. W przypadku braku bloku kryptograficznego w systemie wbudowanym jest on podatny na atak. Przykładowo, w przypadku włamania do mieszkania z alarmem może on być wyłączony przez hakera w zdecydowanie krótszym czasie niż w przypadku takiego systemu alarmowego, na którym dane są całkowicie szyfrowane. Systemy wbudowane nie posiadają ściśle określonych architektur, projektowane są w zależności od zapotrzebowania bądź uniwersalne. Głównym argumentem przemawiającym za systemami wbudowanymi jest ich niski koszt produkcji oraz niski pobór mocy. Na rysunku~\ref{es} przedstawiono ogólny schemat blokowy komponentów zawartych wewnątrz mikrokontrolera.
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{es.png}
+\includegraphics[width=11cm]{es.png}
 \caption{Schemat blokowy komponentów wewnątrz ogólnego mikrokontrolera ~\cite{es}}.\label{es}
 \end{figure}
+W skład systemu wbudowanego wchodzą komponenty takie jak:
 
-\paragraph{Modulator szerokości impulsu PWM} \mbox{} \\
+\paragraph{1. modulator szerokości impulsu PWM} \mbox{} \\
 
-Modulator szerokości impulsów jest wykorzystywany do regulowania sygnału napięciowego lub prądowego przy stałej amplitudzie i częstotliwości. PWM jest wykorzystywany do kontrolowanie mocy dostarczonej do urządzeń elektronicznych sterowanych przy pomocy mikrokontrolera. Wejściowy pulsujący sygnał jest generowany na sekwencyjne sygnały impulsowe w postaci fali o kształcie prostokątnym. Fala o charakterze prostokątnym posiada dwa stany: wysoki i niski, które są osiągalne poprzez przełączanie tranzystorów bądź tyrystorów w stan przewodzenia bądź zaporowy. Stan wysoki sygnały wyjściowego oznacza stan przewodzenia tranzystora, zaś stan niski oznacza stan zaporowy. Amplituda w sygnale prostokątnym jest to różnica między stanem wysoki, a stanem niskim napięcia w przypadku PWM sterowanego sygnałem napięciowym. Okres fali wyjściowej to czas trwania jego jednego cyklu, zaś częstotliwością fali jest odwrotność trwania okresu. Istotnym parametrem określającym wyjściową falę prostokątną jest również cykl roboczy, który jest stosunkiem procentowym czasu wysokiego stanu do okresu oznaczanego literą T.
+Modulator szerokości impulsów jest wykorzystywany do regulowania sygnału napięciowego lub prądowego przy stałej amplitudzie i częstotliwości. PWM jest wykorzystywany do kontrolowania mocy dostarczonej do urządzeń elektronicznych sterowanych przy pomocy mikrokontrolera. Wejściowy pulsujący sygnał jest generowany na sekwencyjne sygnały impulsowe w postaci fali o kształcie prostokątnym. Fala o charakterze prostokątnym posiada dwa stany: wysoki i niski, które są osiągalne poprzez przełączanie tranzystorów bądź tyrystorów w stan przewodzenia bądź zaporowy. Stan wysoki sygnały wyjściowego oznacza stan przewodzenia tranzystora, zaś stan niski oznacza stan zaporowy. Amplituda w sygnale prostokątnym jest to różnica między stanem wysoki, a stanem niskim napięcia w przypadku PWM sterowanego sygnałem napięciowym. Okres fali wyjściowej to czas trwania jego jednego cyklu, zaś częstotliwością fali jest odwrotność trwania okresu. Istotnym parametrem określającym wyjściową falę prostokątną jest również cykl roboczy, który jest stosunkiem procentowym czasu wysokiego stanu do okresu oznaczanego literą T.
 
-\paragraph{Wejścia/wyjścia}
-\subparagraph{Wejście analogowe ADC} \mbox{} \\
+\paragraph{2. przetwornik analogowo-cyfrowy A/C} \mbox{} \\
 
-Wejście analogowe zwane również jako przewrotnik sygnału analogowo-cyfrowego ADC. Przetwornik jest układem elektronicznym, który analogowy sygnał wejściowy konwertuje proporcjonalnie do cyfrowego sygnału wyjściowego. Proces ten polega na pomiarze wejściowego napięcia i jego zamiany na binarny numer wyjściowy. Jego zastosowanie można ujrzeć np. podczas mierzenia temperatury czy ważenia przedmiotów lub ludzi, gdzie sygnał analogowy jest zamieniany na cyfrowy i jego wartość jest interpretowana odpowiednio przez system wbudowany. 
+Przetwornik jest układem elektronicznym, który analogowy sygnał wejściowy konwertuje proporcjonalnie na cyfrowy sygnał wyjściowy. Proces ten polega na pomiarze wejściowego napięcia i jego zamiany na binarną wartość wyjściową. Jego zastosowanie można ujrzeć np. podczas mierzenia temperatury czy ważenia przedmiotów lub ludzi, gdzie sygnał analogowy jest zamieniany na cyfrowy i jego wartość jest interpretowana odpowiednio przez system wbudowany. 
+Jednym z istotnych parametrów przetwornika jest jego rozdzielczość, która jest wyrażana w bitach. Przetwornik o rozdzielczości 8 bitów dla skali pomiarowej od 0 do 5 woltów ma rozdzielczość $2^{8}$ = 256, co można wyrazić w woltach jako $\frac{5-0}{256}$ = 19,53 mV. Innym przykładem rozdzielczości przetwornika jest 10 bitów, który dla skali 0 - 5 V ma rozdzielczość $2^{10}$ = 1024, co można wyrazić w woltach jako \mbox{$\frac{5-0}{1024}$ = 4,88 mV}. Jeśli zależy nam na lepszej jakości przetworzonego sygnały należy wybrać przetwornik o większej rozdzielczości. Jednym z etapów przetwornika jest próbkowanie, czyli przedstawienie sygnału ciągłego w postaci ciągu wartości, które są próbkami sygnału ciągłego. Po procesie próbkowania następuje proces kwantyzacji, który polega na przypisaniu wartości analogowej do najbliższego poziomu kwantyzacji. Dla przykładu w przypadku przetwornika o 3 bitowej rozdzielczości $2^{3} = 8$, występuje 8 poziomów kwantyzacji przedstawionych binarne na osi rzędnych jako wartości 000, 001, 010, 011, 100, 101, 110 i 111. W wielu przypadkach przetwornik z rozdzielczością 8, 10 czy 12 bitową jest wystarczający. W przypadku gdy sytuacja wymaga lepszego odwzorowania sygnału ciągłego należy wykorzystać przetwornik o większej rozdzielczości.
+%rodzielczosc cos dodac o tym
+%Przetwarzanie sygnału polega na jego próbkowaniu i kwantyzacji. Pró
 
-\subparagraph{Wyjście analogowe DAC} \mbox{} \\
+%Nie wiem czy potocznie tak się to nazywa, ale nie jest to do końca precyzyjne stwierdzenie. Wejście to wejście, natomiast ADC to blok, który może być użyty, ale tylko gdy zależy nam na sygnale cyfrowym. W praktyce przed blokiem ADC powinno stosować się filtr antyaliasingowy, aby usunąć z sygnału analogowego składowe o  częstotliwościach większych niż połowa szybkości próbowania sygnału.    
+\paragraph{3. przetwornik cyfrowo-analogowy C/A} \mbox{} \\
 
-Wyjście analogowe zwane jako przetwornik sygnały cyfrowo-analogowego. Przetwornik DAC jest układem elektronicznym, który konwertuje wejściowe dane binarne na analogowe dane wyjściowe. Jego zastosowanie można wykorzystać np. do sterowania silnika krokowego wyjściowym sygnałem napięciowym bądź wyświetlania godziny na zegarku analogowym.
+Przetwornik A/D jest układem elektronicznym, który konwertuje wejściowe dane binarne na analogowe dane wyjściowe. Jego zastosowanie można wykorzystać np. do sterowania silnika krokowego wyjściowym sygnałem napięciowym bądź wyświetlania godziny na zegarku analogowym.
 
-\subparagraph{Wejścia/Wyjścia ogólnego przeznaczenia GPIO} \mbox{} \\
+\paragraph{4. wejścia/wyjścia ogólnego przeznaczenia GPIO (ang. general-purpose input/output)} \mbox{} \\
 
-Wejścia- wyjścia ogólnego przeznaczenia są prostym protokołem służącym do sterowania urządzeniami korzystając z sygnałów cyfrowych. GIPO wykorzystywane jest do komunikacji między urządzeniami systemu wbudowanego. W celu skorzystania GIPO musi zostać odpowiednio skonfigurowane dla danego urządzenia.
 
-\paragraph{Uniwersalny odbiornik i nadajnik asynchroniczny UART} \mbox{} \\
+Wejścia-wyjścia ogólnego przeznaczenia są wykorzystywane do komunikacji użytkownika z systemem wbudowanym. W celu wykorzystania pinu wejścia/wyjścia ogólnego przeznaczenia należy odpowiednio go skonfigurować dla danego urządzenia.
 
-Uniwersalny odbiornik i nadajnik asynchroniczny zwany jako UART służy do komunikowania się z systemem wbudowanym. Jest on jednym z powszechnie stosowanych protokołów komunikacyjnych. UART konwersuje równoległe dane na szeregowy strumień bitów danych. Komponent ten nie posiada zegara. Ramka wiadomości wykorzystywana do komunikacji z wykorzystaniem UART składa się z:
+\paragraph{5. uniwersalny odbiornik i nadajnik asynchroniczny UART} \mbox{} \\
+
+Uniwersalny odbiornik i nadajnik asynchroniczny zwany jako UART(ang. universal asynchronous receiver-transmitter) służy do komunikowania się z systemem wbudowanym. Jest on jednym z powszechnie stosowanych protokołów komunikacyjnych. UART konwertuje równoległe dane na szeregowy strumień bitów danych. Komponent ten nie posiada zegara. Ramka wiadomości wykorzystywana do komunikacji z wykorzystaniem UART składa się z:
 \begin{itemize}
-\item bit początkowy sygnalizujący początek komunikacji
-\item bity danych
-\item bit parzystości, który jest wykorzystywany do wykrywania błędów występujących podczas komunikacji
-\item bit stopu, który informuje nas o końcu komunikacji
+\item bit początkowy sygnalizujący początek komunikacji,
+\item bity danych,
+\item bit parzystości, który jest wykorzystywany do wykrywania błędów występujących podczas komunikacji,
+\item bit stopu, który informuje nas o końcu komunikacji.
 \end{itemize} 
 
 Na rysunku~\ref{es} symbolem TX(z ang. transmitted data) oznaczone są dane wyjściowe, natomiast symbolem RX(z ang. received data) oznaczono dane wejściowe. Komponent ten jest wykorzystywany np. do czytnika linii papilarnych, gdzie po zeskanowaniu odcisku dane są przesyłane poprzez komponent UART w celu dalszego ich przetworzenia.
 
-\paragraph{Magistrala} \mbox{} \\
+\paragraph{6. magistrala} \mbox{} \\
 
-Magistrale są wykorzystywane do przesyłania danych między urządzeniami występującymi w danym systemie wbudowanym. W zależności od sposobu przesyłania danych magistrale można podzielić na jednokierunkowe, gdzie przesył danych jest odbywa się tylko w jednym kierunku i dwukierunkowe, gdzie przesył danych odbywa się w dwóch kierunkach. Magistrale dwukierunkowe(ang.duplex) można podzielić na full duplex, gdzie przesyłanie danych odbywa się jednocześnie między urządzeniami oraz na half duplex, gdzie przesył danych między urządzeniami może odbywać się tylko w jednym kierunku w określonym czasie.
+Magistrale są wykorzystywane do przesyłania danych między urządzeniami występującymi w danym systemie wbudowanym. W zależności od sposobu przesyłania danych magistrale można podzielić na jednokierunkowe, gdzie przesył danych jest odbywa się tylko w jednym kierunku i dwukierunkowe, gdzie przesył danych odbywa się w dwóch kierunkach. Magistrale dwukierunkowe(ang.duplex) można podzielić na full duplex, gdzie przesyłanie danych odbywa się jednocześnie między urządzeniami oraz na half duplex, gdzie przesył danych między urządzeniami może odbywać się tylko w jednym kierunku w określonym czasie. Spośród magistrali wyróżniamy: 
 
-\subparagraph{Szeregowy interfejs urządzeń peryferyjnych SPI} \mbox{} \\
+\begin{description}
+\item [6.1. ]szeregowy interfejs urządzeń peryferyjnych SPI
 
-SPI służy do komunikowania się urządzeń peryferyjnych tj. klawiatura, mysz, monitor, skaner, drukarka, mikrofon, głośnik czy kamera internetowa z centralną jednostką obliczeniową. Dzięki protokołowi pełnego dupleksu umożliwia on jednoczesne wysyłanie i odbieranie danych. SPI jest szybszy od protokołu I2C, lecz wynaga większej ilości połączeń w porównaniu z I2C. Urządzenia komunikujące się między sobą określono jako master i slave. W SPI występuje jedno urządzenie, które ma charakter master i do kilkunastu urządzeń określanych jako slave. Urządzenie master jest w hierarchii wyżej od urządzenia slave, które jest jemu podporządkowane. Do przesyłania danych między urządzeniem  podlegającym(slavem), a głównym(master) wykorzystana jest linia MOSI(z ang. master out, slave in). Dane przesyłane między urządzeniem głównym, a podlegającym odbywają się na linii MISO(z ang. master in, slave out). Przesyłanie danych z urządzenia głównego do podlegającego i z urządzenia podlegającego do urządzenia głównego odbywa się w tym samym czasie, zgodnie z taktem zegara systemowego(SCK). Większość urządzeń SPI obsługuje przesył tylko 8 bitowych danych.
+\quad SPI(ang. Serial Peripheral Interface) służy do komunikowania się urządzeń peryferyjnych tj. klawiatura, mysz, monitor, skaner, drukarka, mikrofon, głośnik czy kamera internetowa z centralną jednostką obliczeniową. Dzięki protokołowi pełnego dupleksu umożliwia on jednoczesne wysyłanie i odbieranie danych. SPI jest szybszy od protokołu I2C, lecz wynaga większej ilości połączeń w porównaniu z $I^{2}$C. Urządzenia komunikujące się między sobą określono jako master i slave. W SPI występuje jedno urządzenie, które ma charakter master i do kilkunastu urządzeń określanych jako slave. Urządzenie master jest w hierarchii wyżej od urządzenia slave, które jest jemu podporządkowane. Do przesyłania danych między urządzeniem  podlegającym(slavem), a głównym(master) wykorzystana jest linia MOSI(z ang. master out, slave in). Dane przesyłane między urządzeniem głównym, a podlegającym odbywają się na linii MISO(z ang. master in, slave out). Przesyłanie danych z urządzenia głównego do podlegającego i z urządzenia podlegającego do urządzenia głównego odbywa się w tym samym czasie, zgodnie z taktem zegara systemowego(SCK). Większość urządzeń SPI obsługuje przesył tylko 8 bitowych danych.
 
-\subparagraph{$I^{2}$C} \mbox{} \\
+\item [6.2. ]$I^{2}$C
 
-Magistrala $I^{2}$ komunikuje się między urządzeniami w sposób szeregowy i dwukierunkowy. $I^{2}$C oprócz pinów służących do uziemienia i zasilania korzysta tylko z dwóch dodatkowych pinów. Dwie dodatkowe linie oznaczono jako SDA i SCL. Linie do przesyłania danych oznaczono SDA, zaś linie zegara oznaczono SCL.
+\quad Magistrala $I^{2}$C(ang. Inter-Integrated Circuit), komunikuje się między urządzeniami w sposób szeregowy i dwukierunkowy. $I^{2}$C oprócz pinów służących do uziemienia i zasilania korzysta tylko z dwóch dodatkowych pinów. Dwie dodatkowe linie oznaczono jako SDA i SCL. Linie do przesyłania danych oznaczono SDA, zaś linie zegara oznaczono SCL.
 
-\subparagraph{USB,PHY} \mbox{} \\
+\item [6.3. ]USB, PHY
 
-USB jest magistralą komunikującą się w sposób szeregowy. Służy ona do przesyłania danych między urządzeniami bądź zasilania podłączonego urządzenia. Została ona zaprojektowania w celu standaryzacji magistrali przesyłających lub zasilających urządzenia peryferyjnych tj. klawiatura, urządzenia wskazujące czy monitor. USB posiada cztery piny: zasilający, dwa piny danych(D- i D+) oraz uziemiający. PHY jest to warstwa fizyczna modelu odniesienia łączenia systemów otwartych(OSI). PHY jest odpowiedzialne za połączenie warstwy łącza do kabla miedzianego lub światłowodu.
+\quad USB jest magistralą komunikującą się w sposób szeregowy. Służy ona do przesyłania danych między urządzeniami bądź zasilania podłączonego urządzenia. Została ona zaprojektowania w celu standaryzacji magistrali przesyłających lub zasilających urządzenia peryferyjnych tj. klawiatura, urządzenia wskazujące czy monitor. USB posiada cztery piny: zasilający, dwa piny danych(D- i D+) oraz uziemiający. PHY jest to warstwa fizyczna modelu odniesienia łączenia systemów otwartych(OSI). PHY jest odpowiedzialne za połączenie warstwy łącza do kabla miedzianego lub światłowodu.
 
-
-\paragraph{Zegar czasu rzeczywistego RTC} \mbox{} \\
+\end{description}
+\newpage
+\paragraph{7. zegar czasu rzeczywistego RTC} \mbox{} \\
 
 Zegar czasu rzeczywistego służy do śledzenia aktualnego czasu i daty, które są wykorzystywane jako znacznik przypisujący danym plikom ich czas utworzenia czy ostatniej modyfikacji. Zegar jest zasilany własną niezależną baterią, co znaczy że działa on również gdy zasilanie nie jest doprowadzone go układu. Bateria zasilająca zegar posiada żywotność ponad 10 lat. Ważnym parametrem zegara jest jego częstotliwość. Częstotliwość zegara jest to ilość instrukcji wykonana w czasie jednej sekundy, więc im większa częstotliwość zegara, tym więcej instrukcji jest wykonanych w tej samej jednostce czasu.
 
 
-\paragraph{Centralna jednostka obliczeniowa - procesor} \mbox{} \\
+\paragraph{8. centralna jednostka obliczeniowa(procesor)} \mbox{} \\
 
 Głównym komponentem składowym centralnej jednostki obliczeniowej zwanej procesorem są tranzystory, które działają w oparciu o sygnały prądowe lub napięciowe. Tranzystory są ze sobą połączone w celu utworzenia bramek logicznych tj. AND, OR, NOT, NAND, NOR, EX-OR i EX-NOR. Bramka logiczna NOT posiada jedno wejście i jedno wyjście, gdy bitem wejściowym jest 0 to na wyjściu otrzymujemy 1, natomiast gdy bitem wyjściowym jest 1 na wyjściu otrzymano wartość 0. Natomiast pozostałe bramki logiczne posiadają dwa bity wejściowe oznaczone jako A i B oraz jeden bit wyjściowy oznaczony C. Ich zależności logiczne zostały przedstawione w poniższej tabeli~\ref{bramki_logiczne}.
 
@@ -745,31 +738,33 @@ Procesor jest stworzony w biliona takich bramek logicznych, więc im więcej tra
 
 
 
-\paragraph{JTAG} \mbox{} \\
+\paragraph{9. interfejs debugowania JTAG} \mbox{} \\
 %DBG interface
 
 JTAG jest standardem IEEE 1149.1 do testowania połączeń oraz debugowania płytek drukowanych. Interfejs JTAG korzysta z pięciu linii sygnałowych: wejścia danych(TDI), wyjścia danych(TDO), wejścia sygnału zegarowego(TCK), wyboru trybu pracy(TMS) i zerowania(TRST). JTAG jest powszechnym interfejsem, który umożliwia komunikację zewnętrznego komputera z komponentami znajdującymi się na systemie wbudowanym.
 
-\paragraph{Pamięć} \mbox{} \\
+\paragraph{10. pamięć} \mbox{} \\
 
-Głównym zadaniem pamięci jest przechowywanie danych w postaci binarnej. Systemy wbudowane działają na dwóch stanach, gdzie stan wysoki odpowiada dodatniemu napięciowi, zaś stan niski jest reprezentowany przez napięcie zerowe. Stan wysoki oznaczamy jako 1 w notacji binarnej, zaś stan niski jako 0 w notacji binarnej. Rozmiar pamięci wyrażamy w bitach [b], bajtach [B], kilobajt [KB], megabajt [MB], gigabajt [GB] i tarabajtach [TB]. Jednostka kilobajt jest równa 1024 bajt, 1 megabajt równa się 1024 kilobajtów, 1 gigabajt równy jest 1024 megabajtów, zaś 1 terabajt równy jest 1024 gigabajtów. 
+Głównym zadaniem pamięci jest przechowywanie danych w postaci binarnej. Systemy wbudowane działają na dwóch stanach, gdzie stan wysoki odpowiada dodatniemu napięciowi, zaś stan niski jest reprezentowany przez napięcie zerowe. Stan wysoki oznaczamy jako 1 w notacji binarnej, zaś stan niski jako 0 w notacji binarnej. Rozmiar pamięci wyrażamy w bitach [b], bajtach [B], kilobajt [KB], megabajt [MB], gigabajt [GB] i terabajtach [TB]. Jednostka kilobajt jest równa 1024 bajt, 1 megabajt równa się 1024 kilobajtów, 1 gigabajt równy jest 1024 megabajtów, zaś 1 terabajt równy jest 1024 gigabajtów. Do pamięci zaliczamy:
+\begin{description}
 
-\subparagraph{SRAM} \mbox{} \\
+\item[10.1. ]statyczna pamięć o dostępie swobodnym SRAM(ang. Static Random Access Memory)
 
-SRAM jest to pamięć statyczna o swobodnym dostępie. Jest to pamięć statyczne, gdyż dane zawarte na niej są tak długo jak długo jest zasilany układ. Pamięć SRAM jest pamięcią ulotną. Magistrale danych i adresów łączą bezpośrednio procesor z pamięcią SRAM. Pamięć SRAM jest szybsza od pamięci DRAM w operacjach odczytu i zapisu danych, co jest następstwem jej większej ceny. Pamięć SRAM często jest wykorzystywana jako pamięć podręczna lub pamięć wewnętrzna procesora ze względu na swoją szybkość. Jedną z wad pamięci SRAM jest to, że wymaga ona więcej mocy do działania przez co wytwarza więcej ciepła i wymaga lepszego chłodzenia w porównaniu w pamięcią DRAM. %Kontroler SRAM umożliwia wykonywanie kilku operacji między procesorem, a SRAM za jego pośrednictwem. Operacje wykonywane przez kontroler SRAM to: strobowanie adresu procesora, operacja odczytu i zapisu,    Jest to zezwolenie na wyjściu (OE) i zezwolenie na zapis (WE) do pamięci SRAM oraz potwierdzenie (ACK) do procesora, które musi pochodzić z wyjść strobowania adresu procesora (AS) i odczytu / zapisu (R / W). To jest zadanie kontrolera SRAM.
+SRAM jest to pamięć statyczna o swobodnym dostępie. Jest to pamięć statyczna, gdyż dane zawarte na niej są tak długo jak długo jest zasilany układ. Pamięć SRAM jest pamięcią ulotną. Magistrale danych i adresów łączą bezpośrednio procesor z pamięcią SRAM. Pamięć SRAM jest szybsza od pamięci DRAM w operacjach odczytu i zapisu danych, co jest następstwem jej większej ceny. Pamięć SRAM często jest wykorzystywana jako pamięć podręczna lub pamięć wewnętrzna procesora ze względu na swoją szybkość. Jedną z wad pamięci SRAM jest to, że wymaga ona więcej mocy do działania przez co wytwarza więcej ciepła i wymaga lepszego chłodzenia w porównaniu w pamięcią DRAM. %Kontroler SRAM umożliwia wykonywanie kilku operacji między procesorem, a SRAM za jego pośrednictwem. Operacje wykonywane przez kontroler SRAM to: strobowanie adresu procesora, operacja odczytu i zapisu,    Jest to zezwolenie na wyjściu (OE) i zezwolenie na zapis (WE) do pamięci SRAM oraz potwierdzenie (ACK) do procesora, które musi pochodzić z wyjść strobowania adresu procesora (AS) i odczytu / zapisu (R / W). To jest zadanie kontrolera SRAM.
 
-\subparagraph{Pamięć podręczna procesora Cache} \mbox{} \\
+\item[10.2. ]pamięć podręczna procesora Cache
 
 Procesor systemu wbudowanego nieustanie czyta i zapisuje informacje z jego pamięci podręcznej. Głównymi cechami pamięci podręcznej jest mały rozmiar, tymczasowość i ich szybkość. Pamięć podręczną dzielimy na dwa poziomy. Pamięć podręczna pierwszego poziomu oznaczona L1 znajduje się na procesorze i jest mniejsza od pamięci poziomu drugiego. Pamięć podręczna poziomu drugiego oznaczona L2 znajduję się między procesorem, a pamięcią główną i jest większa od pamięci L1. W niektórych przypadkach pamięć pierwszego L1 i drugiego poziomu L2 jest umieszczona razem w pamięci procesora oraz jest dodawany poziom trzeci L3 pamięci podręcznej. Poziomy pamięci podręcznej opisuje zależność L1$<$L2$<$L3. 
 
-\subparagraph{Pamięć flash} \mbox{} \\
+\item[10.3. ]pamięć flash
 
 Pamięć flash jest pamięcią nieulotną, co znaczy, że po odłączeniu zasilania znajdujące się na niej dane nie zostaną utracone. Pamięci flash są powszechnie stosowane w kartach pamięci, pamięciach USB czy dyskach SSD.
+\end{description}
 
 %\paragraph{Rejestr} \mbox{} \\ % rejestr i rejsster specjalny
 %\paragraph{Dekoder instrukcji} \mbox{} \\
 %\paragraph{Rejestr SREG} \mbox{} \\
-\paragraph{Szyny danych, adresowe i sterowania} \mbox{} \\
+\paragraph{11. szyny danych, adresowe i sterowania} \mbox{} \\
 
 Wszystkie wewnętrzne komponenty znajdujące się na systemie wbudowanym  do komunikacji używają trzech szyn. Szyna danych jest odpowiedzialna za przesyłanie danych między nimi, szyna adresowa odpowiedzialna jest za wysyłanie adresów, natomiast szyna sterowania jest odpowiedzialna za wysyłanie instrukcji między komponentami ~\cite{es}.
 
@@ -783,26 +778,29 @@ Wszystkie wewnętrzne komponenty znajdujące się na systemie wbudowanym  do kom
 %\subsubsection{CISC - Complex Instruction Set Computer}
 
 \newpage
-\part{Część praktyczna}
-\section{Aplikacja algorytmów kryptograficznych na systemie wbudowanym}
+%\part{Część praktyczna}
+\section{Projekt aplikacji konsolowej algorytmu DES na systemie wbudowanym}
+%Później na samym początku pred punktem 4.1. bym napisał jeszcze że w części tej zawarto to czy tamto i że w kolejnych podrozdziałach kolejno omówiono np. częśc hardwarerową projektu itd.
+\quad W części projektowej na wstępie w podrozdziale 4.1 omówiono część sprzętową wykorzystaną do implementacji algorytmu. W podrozdziale 4.2 opisano sposób połączenia NodeMCU v2 ESP8266 z środowiskiem programistycznym Arduino. Kolejnym krokiem było przedstawienie w podrozdziale 4.3 manualnych obliczeń, które wykorzystano następnie do potwierdzenia poprawnej implementacji algorytmu DES na ESP8266. Następnie w podrozdziale 4.4 części praktycznej porównano otrzymane wyniki pomiarów czasu szyfrowania i deszyfrowania wiadomości. W ostatniej części w podrozdziale 4.5 przedstawiono implementację algorytmy DES z wykorzystaniem łącza bezprzewodowego Wi-Fi oraz jej analizę.
+
 \subsection{Charakterystyka ESP8266}
 
 \quad Mikrokontroler składa się z płytki NodeMCU v2 oraz układ ESP8266. Układ ESP8266 z wbudowanym 32 bitowym układem RISC(zredukowany zestaw instrukcji) z takowanym zegarem 80MHz połączono 22 pinami do płytki. Głównymi komponentami moduł WiFi ESP8266 NodeMCU v2 są :
 \begin{itemize}
-\item moduł Wi-Fi ESP8266MOD, 2,4GHz, 802.11b/g/n
-\item stabilizator napięcia AMS1117 3.3 DN711
-\item konwerter USB-UART umożliwiający programowanie poprzez USB przy wykorzystaniu środowiska Arduino
-\item pamięć Flash 4MB
-\item 10 portów GIPO, które mogą obsługiwać magistrale PWN, I2C i l-wire
-\item wbudowane 10-bitowe ADC 
-\item 10-bitowy przetwornik analogowo-cyfrowy
-\item antena PCB
-\item dwa przełączniki stanowe 
-\item wejście mikro USB
-\item kondensator tantalu, dioda niebieska~\cite{esp8266}
+\item moduł Wi-Fi ESP8266MOD, 2,4GHz, 802.11b/g/n,
+\item stabilizator napięcia AMS1117 3.3 DN711,
+\item konwerter USB-UART umożliwiający programowanie poprzez USB przy wykorzystaniu środowiska Arduino,
+\item pamięć Flash 4MB,
+\item 10 portów GIPO, które mogą obsługiwać magistrale PWN, I2C i l-wire,
+\item wbudowane 10-bitowe ADC,
+\item 10-bitowy przetwornik analogowo-cyfrowy,
+\item antena PCB,
+\item dwa przełączniki stanowe,
+\item wejście mikro USB,
+\item kondensator tantalu, dioda niebieska~\cite{esp8266}.
 \end{itemize} 
 
-
+\newpage
 Do projektu wykorzystano płytkę NodeMCU v2 ESP8266, której przód przedstawiono na rysunku~\ref{esp}, zaś tył na rysunku~\ref{esp_1}. Numery na rysunku~\ref{esp} oznaczają:\\ 
 1. moduł Wi-Fi ESP8266MOD 2,4GHz, 802.11b/g/n\\
 2. stabilizator napięcia AMS1117 3.3 DN711\\
@@ -815,53 +813,66 @@ Do projektu wykorzystano płytkę NodeMCU v2 ESP8266, której przód przedstawio
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{esp.png}
+\includegraphics[width=10cm]{esp.png}
 \caption{Przód mikrokontrolera NodeMCU v2 ESP8266.}\label{esp}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{esp8266_1.jpg}
+\includegraphics[width=10cm]{esp8266_1.jpg}
 \caption{Przód mikrokontrolera NodeMCU v2 ESP8266.}\label{esp_1}
 \end{figure}
-
+\newpage
 \subsection{Połączenie ESP8266 z Arduino}
 Założenia projektowe:
 \begin{itemize}
-\item wykorzystanie mikrokontrolera ESP8266 NodeMCU v2
-\item wybrano język programowania C
-\item środowisko programistyczne Arduino uruchomione na systemie operacyjnym windows 10
-\item implementacja algorytmu DES na mikrokontrolerze
-\item pomiar czasu potrzebnego na szyfrowanie algorytmem DES
-\item pomiar czasu potrzebnego na deszyfrowanie algorytmem DES
+\item wykorzystanie mikrokontrolera ESP8266 NodeMCU v2,
+\item wybrano język programowania C,
+\item środowisko programistyczne Arduino uruchomione na systemie operacyjnym windows 10,
+\item implementacja algorytmu DES na mikrokontrolerze,
+\item pomiar czasu potrzebnego na szyfrowanie algorytmem DES,
+\item pomiar czasu potrzebnego na deszyfrowanie algorytmem DES.
 \end{itemize}
 
 
 Podłączenie mikrokontrolera do środowiska programistycznego Arduino przebiegło w następujących krokach:
 \begin{itemize}
-\item pobranie i instalacja środowiska Arduino 1.8.7 IDE
-\item konfiguracja środowiska Arduino do obsługi ESP 8266 przez otwarcie okna dialogowego plik $\rightarrow$ preferencje i w miejscu "Dodatkowe adresy URL do menedżera płytek" umieszczenie adresu $http://arduino.esp8266.com/stable/package_esp8266com_index.json$ jak ukazano na rysunku~\ref{konf_arduino} znajdującym się poniżej
-\item instalacja paczki dla płytki ESP8266 poprzez otwarcie okna dialogowego narzędzia $\rightarrow$ Płytka $\rightarrow$ Menadżer płytek ... $\rightarrow$ wpisanie esp8266 w polu wyszukiwania i instalacja paczki
+\item pobranie i instalacja środowiska Arduino 1.8.7 IDE,
+\item konfiguracja środowiska Arduino do obsługi ESP 8266 przez otwarcie okna dialogowego plik $\rightarrow$ preferencje i w miejscu "Dodatkowe adresy URL do menedżera płytek" umieszczenie adresu $http://arduino.esp8266.com/stable/package\char`_esp8266com\char`_index.json$ jak ukazano na rysunku~\ref{konf_arduino} znajdującym się poniżej,
+\item instalacja paczki dla płytki ESP8266 poprzez otwarcie okna dialogowego narzędzia $\rightarrow$ Płytka $\rightarrow$ Menadżer płytek ... $\rightarrow$ wpisanie esp8266 w polu wyszukiwania i instalacja paczki,
 \item konfiguracja płytki ESP826
 \begin{itemize}
 \item Narzędzia $\rightarrow$ Płytka $\rightarrow$ NodeMCU 1.0 (ESP-12E Module)
 \item Narzędzia $\rightarrow$ Flash Size $\rightarrow$ 4M (3M SPIFFS)
 \item Narzędzia $\rightarrow$ CPU Frequency $\rightarrow$ 80 Mhz
 \item Narzędzia $\rightarrow$ Upload Speed $\rightarrow$ 921600
-\item Narzędzia $\rightarrow$ Port $\rightarrow$ COM3
+\item Narzędzia $\rightarrow$ Port $\rightarrow$ COM3.
 \end{itemize} 
 \end{itemize}
 
-
-
-
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{ustawienie_esp8266.jpg}
+\includegraphics[width=12cm]{ustawienie_esp8266.png}
 \caption{Konfiguracja środowiska Arduino dla płytki ESP8266.}\label{konf_arduino}
 \end{figure}
 
+W przypadku braku pewności, który port należy wybrać do komunikacji między środowiskiem Arduino, a płytką należy sprawdzić w menedżerze urządzeń. Na rysunku~\ref{mene} ukazano podgląd na menedżer urządzeń, w którego odczytujemy, że masz płytka podłączyła się z wykorzystaniem portu COM3.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{menedzer.png}
+\caption{Konfiguracja środowiska Arduino dla płytki ESP8266.}\label{mene}
+\end{figure}
+
+Po zakończonej konfiguracji i zainstalowaniu paczki dla płytki ESP8266 niezbędna jest weryfikacja czy występuje poprawna komunikacja między płytką a środowiskiem Arduino. Na rysunku~\ref{wer_konf} przedstawiono pusty projekt w środowisku Arduino, który wykorzystano do weryfikacji komunikacji.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{wer_instalacji.png}
+\caption{Weryfikacja komunikacji środowiska Arduino z płytką ESP8266.}\label{wer_konf}
+\end{figure}
+
+W każdym programie niezbędne jest występowanie dwóch funkcji typu void, które nie zwracają żadnego argumentu. W funkcji setup umieszczamy kod, który ma być tylko uruchomiony jednorazowo. Funkcją główną programu jest void loop(), gdzie umieszczamy kod główny programu. Strzałka na białym tle służy do wgrania programu na płytkę. Weryfikacja komunikacji między płytką, a środowiskiem Arduino przebiegła pomyślnie o czym świadczy komunikat `Ładowanie zakończone`.
 
 \subsection{Manualna implementacja algorytmu DES}
 
@@ -1004,7 +1015,7 @@ heksadecymalny klucz 56bitowy po permutacji & A & A & 2 & 0 & A & 3\\
 \caption{Permutacja klucza 56 bitowego.}\label{56}
 \end{table}
 
-Kluczem obliczonym dla pierwszej rundy to 21A5C7AA20A3.\\
+Kluczem obliczonym dla pierwszej rundy jest 21A5C7AA20A3.\\
 
 
 Następnym krokiem algorytmu jest przetworzenie w odpowiedni sposób jawnej wiadomości, którą przedstawiono w postaci heksadecymalnej i decymalnej w tabeli~\ref{wiadomosc}.
@@ -1092,7 +1103,7 @@ Jednym w ostatnich kroków szyfrowania wiadomości jest dokonanie transpozycji w
 1001 0011 1011 1001 1111 1100 0000 1111) = 
 1000 1100 1111 1100 1111 1001 1000 0100, co w postaci heksadecymalnej daje wartość 8CFCF984. Wartość prawej strony wiadomości dla rundy pierwszej wynosi 8CFCF984. Lewą częścią wynikową wiadomości jest niezmodyfikowana prawa część 32 bitowa wiadomości czyli 00FFD251.
 
-\subsection{Implementacja algorytmu DES na ESP8266}
+\subsection{Implementacja algorytmu DES na ESP8266 z wykorzystaniem \mbox{połączenia} USB - mikroUSB}
 
 \quad Algorytm DES zaimplementowano zgodnie z krokami przedstawionymi w manualnym obliczaniu szyfrowania algorytmem DES, którą szczegółowo przedstawionego na rysunku~\ref{des}. W celu poprawienia czytelności wyniku wypisywanego na monitor portu szeregowego poszczególne etapy pojedynczej rundy DES oznaczono jako krok 1, krok 2 itd. Na rysunku~\ref{runda_1} ukazano poszczególne kroki wyliczane z wykorzystaniem algorytmu DES. Tekst jawny oraz klucz wykorzystano taki sam jak w przykładzie manualnej implementacji DES. Poszczególne kroki oznaczają:
 \begin{itemize}
@@ -1114,6 +1125,16 @@ Jednym w ostatnich kroków szyfrowania wiadomości jest dokonanie transpozycji w
 \includegraphics[width=12cm]{runda_1.jpg}
 \caption{Wynik szyfrowania algorytmem DES dla rundy 1.}\label{runda_1}
 \end{figure}
+\newpage
+Do zdefiniowania klucza oraz tekstu jawnego wykorzystano tablice, co ukazana na rysunku~\ref{klucz_tekst}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{klucz_tekst.png}
+\caption{Weryfikacja komunikacji środowiska Arduino z płytką ESP8266.}\label{klucz_tekst}
+\end{figure}
+
+
 
 Porównując wynik implementacji programu w środowisku Arduino na płytce NodeMCU v2 ESP8266 wraz z manualnym obliczeniem stwierdzono zgodność wyników dla rundy pierwszej algorytmu DES, co oznacza poprawną implementację algorytmu na mikrokontrolerze. Następnie dokonano pomiaru czasu szyfrowania i deszyfrowania wiadomości dla trzech prędkości szybkości transmisji danych, która jest określana w bitach na sekundę. Pomiarów dokonano dla szybkości transmisji: 9600, 19200 i 115200 bitów na sekundę. Szybkość transmisji danych mikrokontrolera określono poleceniem "Serial.begin(9600);", zaś w celu odczytania wyników na monitorze portu szeregowego ustawiono 9600. Pomiaru czasu szyfrowania i deszyfrowania wykonano z wykorzystaniem funkcji micros(), która zwraca czas wyrażony w mikrosekundach wykonywania programu. W celu obliczenia czasu szyfrowania i deszyfrowania obliczono różnicę czasu jako:\\
 \begin{center}
@@ -1127,7 +1148,7 @@ Pierwszym etapem było zmierzenie czasu szyfrowania i deszyfrowania dla przypadk
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{szy_desz_9600_print.jpg}
+\includegraphics[width=12cm]{szy_desz_9600_print.png}
 \caption{Czas szyfrowania i deszyfrowania dla prędkości transmisji danych 9600.}\label{9600_print}
 \end{figure}
 
@@ -1135,7 +1156,7 @@ Na rysunku~\ref{19200_print} przedstawiono obliczony czas potrzebny do szyfrowan
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{szy_desz_19200_print.jpg}
+\includegraphics[width=12cm]{szy_desz_19200_print.png}
 \caption{Czas szyfrowania i deszyfrowania dla prędkości transmisji danych 19200.}\label{19200_print}
 \end{figure}
 
@@ -1143,7 +1164,7 @@ Na rysunku~\ref{115200_print} przedstawiono obliczony czas potrzebny do szyfrowa
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{szy_desz_115200_print.jpg}
+\includegraphics[width=12cm]{szy_desz_115200_print.png}
 \caption{Czas szyfrowania i deszyfrowania dla prędkości transmisji danych 115200.}\label{115200_print}
 \end{figure}
 
@@ -1151,7 +1172,7 @@ Drugim etapem było wyeliminowanie wypisywania na monitor portu szeregowego obli
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{szy_desz_9600.jpg}
+\includegraphics[width=12cm]{szy_desz_9600.png}
 \caption{Czas szyfrowania i deszyfrowania dla prędkości transmisji danych 9600.}\label{9600}
 \end{figure}
 
@@ -1159,7 +1180,7 @@ Na rysunku~\ref{19200} przedstawiono obliczone czas potrzebny do szyfrowania i d
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{szy_desz_19200.jpg}
+\includegraphics[width=12cm]{szy_desz_19200.png}
 \caption{Czas szyfrowania i deszyfrowania dla prędkości transmisji danych 19200.}\label{19200}
 \end{figure}
 
@@ -1167,7 +1188,7 @@ Na rysunku~\ref{115200} przedstawiono obliczone czas potrzebny do szyfrowania i 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=12cm]{szy_desz_115200.jpg}
+\includegraphics[width=12cm]{szy_desz_115200.png}
 \caption{Czas szyfrowania i deszyfrowania dla prędkości transmisji danych 115200.}\label{115200}
 \end{figure}
 
@@ -1178,10 +1199,10 @@ W tabeli~\ref{czas_przesylu} zobrazowano czas szyfrowania i deszyfrowania wiadom
 \begin{tabular}{|c|c|c|c|}
 \hline
 prędkość transmisji [bit/s] &9600 &19200 &115200\\ \hline
-szyfrowanie z wypisywaniem na konsole [$\mu$s]&11337054 &5667847 &944187\\ \hline
-deszyfrowanie z wypisywaniem na konsole [$\mu$s]&31995607&15995886 &2664708\\ \hline
-szyfrowanie [$\mu$s]&4&4&4\\ \hline
-deszyfrowanie [$\mu$s]&1&1&0\\ \hline
+szyfrowanie z wypisywaniem na konsole [$\mu$s]&11337055 &5667847 &944187\\ \hline
+deszyfrowanie z wypisywaniem na konsole [$\mu$s]&31995611&15995894 &2664708\\ \hline
+szyfrowanie [$\mu$s]&5&5&5\\ \hline
+deszyfrowanie [$\mu$s]&4&4&4\\ \hline
 \end{tabular}
 \caption{Czas przesyłu danych przy wykorzystaniu algorytmu DES.}\label{czas_przesylu}
 \end{table}
@@ -1200,7 +1221,7 @@ Na rysunku~\ref{czas_przesylu_procent} przedstawiono procentowy czas potrzebny d
     xtick=data,
     ]
 \addplot coordinates {(9600,100) (19200,100) (115200,100)};
-\addplot coordinates {(9600,25) (19200,25) (115200,25)};
+\addplot coordinates {(9600,80) (19200,80) (115200,80)};
 \legend{szyfrowanie,deszyfrowanie}
 \end{axis}
 \end{tikzpicture}
@@ -1244,8 +1265,8 @@ Na rysunku~\ref{czas_9600} przedstawiono czas szyfrowania i deszyfrowania wiadom
 \end{tikzpicture}
 \caption{Czas szyfrowania i deszyfrowania w zależności od rozmiaru danych dla prędkości transmisji 9600.}\label{czas_9600}
 \end{figure}
-
-Na rysunku~\ref{czas_19200} przedstawiono czas szyfrowania i deszyfrowania wiadomości o rozmiarze 1Kb, 8Kb i 16Kb dla prędkości transmisji danych 9600bitów/s.
+\newpage
+Na rysunku~\ref{czas_19200} przedstawiono czas szyfrowania i deszyfrowania wiadomości o rozmiarze 1Kb, 8Kb i 16Kb dla prędkości transmisji danych 19200bitów/s.
 
 \begin{figure}[H]
 \centering
@@ -1288,12 +1309,182 @@ Na rysunku~\ref{czas_115200} przedstawiono czas szyfrowania i deszyfrowania wiad
 \caption{Czas szyfrowania i deszyfrowania w zależności od rozmiaru danych dla prędkości transmisji 115200.}\label{czas_115200}
 \end{figure}
 
-Analizując rysunek~\ref{czas_9600},~\ref{czas_19200} i ~\ref{czas_115200} spostrzeżono, że im większe prędkość transmisji danych tym bardziej czas szyfrowania jest zbliżony do czasu deszyfrowania danych. Dla najmniejszej prędkości przesyłu danych dostępnej w oprogramowaniu Arduino czas deszyfrowania wiadomości dla 1Kb i 8Kb jest większy niż czas potrzebny do zaszyfrowania tej wiadomości. Szyfrowanie DES wykorzystuje taki sam algorytm do deszyfrowania, w związku z czym czas szyfrowania i deszyfrowania  powinien być zbliżony. Jak widać na rysunku~\ref{czas_19200} i ~\ref{czas_115200} czas dla szyfrowania i deszyfrowania jest zbliżony, co świadczy o poprawnej implementacji algorytmu DES. Wydajność algorytmu można polepszyć poprzez wyeliminowanie z kodu zbędnych operacji. 
+Analizując rysunek~\ref{czas_9600},~\ref{czas_19200} i~\ref{czas_115200} spostrzeżono, że im większe prędkość transmisji danych tym bardziej czas szyfrowania jest zbliżony do czasu deszyfrowania danych. Dla najmniejszej prędkości przesyłu danych dostępnej w oprogramowaniu Arduino czas deszyfrowania wiadomości dla 1Kb i 8Kb jest większy niż czas potrzebny do zaszyfrowania tej wiadomości. Szyfrowanie DES wykorzystuje taki sam algorytm do deszyfrowania, w związku z czym czas szyfrowania i deszyfrowania  powinien być zbliżony. Jak widać na rysunku~\ref{czas_19200} i ~\ref{czas_115200} czas dla szyfrowania i deszyfrowania jest zbliżony, co świadczy o poprawnej implementacji algorytmu DES. Wydajność algorytmu można polepszyć poprzez wyeliminowanie z kodu zbędnych operacji. 
 
+\subsection{Implementacja algorytmu DES na ESP8266 z wykorzystaniem modułu Wi-Fi}
+
+\quad Płytka NodeMCU v2 posiada moduł Wi-Fi ESP8266MOD, który  wykorzystano do przesyłania danych. W celu wykonania połączenia Wi-Fi między ESP8266, a środowiskiem Arduino załączono bibliotekę ESP8266WiFi.h. Na rysunku~\ref{laczenie_wifi} pokazano niezbędne instrukcję do nawiązania połączenia bezprzewodowego. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{laczenie_wifi.png}
+\caption{Nawiązanie połączenia bezprzewodowego z ESP8266.}\label{laczenie_wifi}
+\end{figure}
+\newpage
+Instrukcja służąca do nawiązania połączenia z Internetem to WiFi.begin(nazwa sieci wifi, hasło). Na rysunku~\ref{polaczenie_wifi} przedstawiono wyjście z monitora portu szeregowego. Proces łączenia przebiegł pomyślnie.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{polaczenie_wifi.png}
+\caption{Wynik nawiązanie połączenia bezprzewodowego z ESP8266.}\label{polaczenie_wifi}
+\end{figure}
+
+Dokonano pomiarów czasu szyfrowania i deszyfrowania w przypadku transmisji bezprzewodowej danych dla prędkości 9600, 19200 i 115200 z ich wypisywaniem na monitor portu szeregowego. Na rysunku~\ref{9600_wifi_print} przedstawiono czas szyfrowania i deszyfrowania dla bezprzewodowej transmisji o prędkości przesyłu 9600 bitów/s.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{9600_wifi_print.png}
+\caption{Czas szyfrowania i deszyfrowania dla bezprzewodowej transmisji danych 9600.}\label{9600_wifi_print}
+\end{figure}
+
+Na rysunku~\ref{19200_wifi_print} przedstawiono czas szyfrowania i deszyfrowania dla bezprzewodowej transmisji danych o prędkości przesyłu 19200 bitów/s.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{19200_wifi_print.png}
+\caption{Czas szyfrowania i deszyfrowania dla bezprzewodowej transmisji danych 19200.}\label{19200_wifi_print}
+\end{figure}
+
+\newpage
+Na rysunku~\ref{115200_wifi_print} przedstawiono czas szyfrowania i deszyfrowania dla bezprzewodowej transmisji danych o prędkości przesyłu 115200 bitów/s.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{115200_wifi_print.png}
+\caption{Czas szyfrowania i deszyfrowania dla bezprzewodowej transmisji danych 115200.}\label{115200_wifi_print}
+\end{figure}
+
+
+Dokonano pomiarów czasu szyfrowania i deszyfrowania w przypadku transmisji bezprzewodowej danych dla prędkości 9600, 19200 i 115200. Na rysunku~\ref{9600_wifi} przedstawiono czas szyfrowania i deszyfrowania dla bezprzewodowej transmisji o prędkości przesyłu 9600 bitów/s.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{9600_wifi.png}
+\caption{Czas szyfrowania i deszyfrowania dla prędkości bezprzewodowej transmisji danych 9600.}\label{9600_wifi}
+\end{figure}
+
+Na rysunku~\ref{19200_wifi} przedstawiono czas szyfrowania i deszyfrowania dla bezprzewodowej transmisji danych o prędkości przesyłu 19200 bitów/s.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{19200_wifi.png}
+\caption{Czas szyfrowania i deszyfrowania dla prędkości bezprzewodowej transmisji danych 19200.}\label{19200_wifi}
+\end{figure}
+
+\newpage
+Na rysunku~\ref{115200_wifi} przedstawiono czas szyfrowania i deszyfrowania dla bezprzewodowej transmisji danych o prędkości przesyłu 115200 bitów/s.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{115200_wifi.png}
+\caption{Czas szyfrowania i deszyfrowania dla prędkości bezprzewodowej transmisji danych 115200.}\label{115200_wifi}
+\end{figure}
+
+W tabeli~\ref{czas_przesylu_wifi} ukazano zmierzone czasy szyfrowania i deszyfrowania z wykorzystaniem transmisji bezprzewodowej Wi-Fi.
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+prędkość transmisji [bit/s] &9600 &19200 &115200\\ \hline
+%usb
+% 100% , 49,99, 8,33
+%szyfrowanie z wypisywaniem na konsole [$\mu$s]&11337055 &5667847 &944187\\ \hline
+% 100, 49,99, 8,33
+%deszyfrowanie z wypisywaniem na konsole [$\mu$s]&31995611&15995894 &2664708\\ \hline
+
+% 99,89, 49,93, 8,32
+szyfrowanie z wypisywaniem na konsole [$\mu$s]&1132499 &5661346 &942899\\ \hline
+% 99,99, 49,99, 8,33
+deszyfrowanie z wypisywaniem na konsole [$\mu$s]&31994562&15995361 &2664617\\ \hline
+%usb 5 -100%
+%usb 4 - 80%
+szyfrowanie [$\mu$s]&1&1&1\\ \hline% 1 -20%
+deszyfrowanie [$\mu$s]&1&1&1\\ \hline
+\end{tabular}
+\caption{Czas przesyłu danych dla transmisji bezprzewodowej przy wykorzystaniu algorytmu DES.}\label{czas_przesylu_wifi}
+\end{table}
+
+Na rysunku~\ref{czas_przesylu_porownanie} ukazano zależność procentową czasu szyfrowania i deszyfrowania od prędkości transmisji z wykorzystaniem różnych łączy transmisji danych. Szyfrowanie i deszyfrowanie danych z wykorzystaniem transmisji przewodowej USB jest mniej wydajne niż w przypadku transmisji bezprzewodowej Wi-Fi.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    enlargelimits=0.15,
+    legend style={at={(0.03,0.4)},anchor=west},
+    ylabel={udział \% czasu [$\mu$s]},
+    xlabel={prędkość transmisji[bit/s]},
+    symbolic x coords={9600,19200,115200},
+    xtick=data,
+    ]
+\addplot coordinates {(9600,100) (19200,100) (115200,100)};
+\addplot coordinates {(9600,20) (19200,20) (115200,20)};
+\addplot coordinates {(9600,80) (19200,80) (115200,80)};
+\addplot coordinates {(9600,20) (19200,20) (115200,20)};
+
+\legend{szyfrowanie USB,szyfrowanie Wi-Fi,deszyfrowanie USB, deszyfrowanie Wi-Fi}
+\end{axis}
+\end{tikzpicture}
+\caption{Procentowa prędkość przesyłu danych w zależności od prędkości transmisji dla transmisji przewodowej i bezprzewodowej.}\label{czas_przesylu_porownanie}
+\end{figure}
+
+Na rysunku~\ref{szyf_wifi_usb} przedstawiono zależność czasu szyfrowania 64 bitowej wiadomości w przypadku wypisywania poszczególnych kroków algorytmu na monitor portu szeregowego od prędkości transmisji łącza przewodowego oraz bezprzewodowego.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    enlargelimits=0.15,
+    legend style={at={(0.03,0.15)},anchor=west},
+    ylabel={udział \% czasu [$\mu$s]},
+    xlabel={prędkość transmisji[bit/s]},
+    symbolic x coords={9600,19200,115200},
+    xtick=data,
+    ]
+% 100% , 49,99, 8,33
+% 99,89, 49,93, 8,32
+\addplot coordinates {(9600,100) (19200,49.99) (115200,8.33)};
+\addplot coordinates {(9600,99.89) (19200,49.93) (115200,8.32)};
+\legend{szyfrowanie USB,szyfrowanie Wi-Fi}
+\end{axis}
+\end{tikzpicture}
+\caption{Procentowa prędkość szyfrowania danych w zależności od prędkości transmisji dla transmisji przewodowej i bezprzewodowej.}\label{szyf_wifi_usb}
+\end{figure}
+\newpage
+Na rysunku~\ref{deszyf_wifi_usb} przedstawiono zależność czasu deszyfrowania danych w przypadku wypisywania poszczególnych kroków algorytmu na monitor portu szeregowego od prędkości transmisji łącza przewodowego oraz bezprzewodowego. 
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    enlargelimits=0.15,
+    legend style={at={(0.03,0.15)},anchor=west},
+    ylabel={udział \% czasu [$\mu$s]},
+    xlabel={prędkość transmisji[bit/s]},
+    symbolic x coords={9600,19200,115200},
+    xtick=data,
+    ]
+% 100, 49,99, 8,33
+\addplot coordinates {(9600,100) (19200,49.99) (115200,8.33)};
+% 99,99, 49,99, 8,33
+\addplot coordinates {(9600,99.99) (19200,49.99) (115200,8.33)};
+
+\legend{deszyfrowanie USB, deszyfrowanie Wi-Fi}
+\end{axis}
+\end{tikzpicture}
+\caption{Procentowa prędkość deszyfrowania danych w zależności od prędkości transmisji dla transmisji przewodowej i bezprzewodowej.}\label{deszyf_wifi_usb}
+\end{figure}
+
+
+Wyniki uzyskane na rysunku~\ref{szyf_wifi_usb} oraz ~\ref{deszyf_wifi_usb} ukazują, że czas szyfrowania i deszyfrowania 64 bitowej wiadomości dla łącza przewodowego i bezprzewodowego jest bardzo zbliżony do siebie. Natomiast wraz ze zwiększeniem prędkości transmisji czas szyfrowania i deszyfrowania skraca się, dzięki czemu osiągamy lepszą wydajność. Szyfrowanie z wykorzystaniem łącza bezprzewodowego Wi-Fi prezentuje lepszą wydajność w porównaniu do łącza przewodowego odbywającego się z wykorzystaniem kabla USB, co ukazuje rysunek~\ref{czas_przesylu_porownanie}. 
 
 \newpage
 \section{Wnioski}
-\quad Celem pracy był opis algorytmów kryptograficznych, budowy systemów wbudowanych, implementacja algorytmu DES na module ESP8266 oraz pomiar czasu szyfrowania i deszyfrowania w zależności od rozmiary danych. W prezentowanej przeze mnie pracy magisterskiej jako element wprowadzający do kryptografii opisano działanie szyfrów strumieniowych, blokowych, symetrycznych i asymetrycznych. W części praktycznej niniejszej pracy dokonano implementacji algorytmu DES, który jest szyfrem symetrycznym, co oznacza, że istnieje jeden klucz do szyfrowania i odszyfrowywania przesyłanej wiadomości. Mikrokontrolerem wykorzystany do implementacji algorytmu była płytka ESP8266 NodeMCU v2, na którą wgrano oprogramowanie za pośrednictwem kabla mikro USB i środowiska programistycznego Arduino. Pierwszym etapem było przedstawienie manualnej implementacji algorytmu DES dla pierwszej rundy w celu weryfikacji otrzymanych danych dla implementacji algorytmu na mikrokontrolerze. Stwierdzono poprawność implementacji algorytmu DES na ESP8266 po analizie wyników dla poszczególnych kroków rundy pierwszej wypisanych na monitorze portu szeregowego wraz z manualnymi obliczeniami. Otrzymane wyniki obliczeń manualnych są takie same jak obliczenia wykonane przy wykorzystaniu algorytmu na mikrokontrolerze ESP8266, co potwierdza poprawność implementacji.
+\quad Celem pracy był opis algorytmów kryptograficznych, budowy systemów wbudowanych, implementacja algorytmu DES na module ESP8266 oraz pomiar czasu szyfrowania i deszyfrowania w zależności od rozmiary danych. W prezentowanej pracy magisterskiej jako element wprowadzający do kryptografii opisano działanie szyfrów strumieniowych, blokowych, symetrycznych i asymetrycznych. W części praktycznej niniejszej pracy dokonano implementacji algorytmu DES, który jest szyfrem symetrycznym, co oznacza, że istnieje jeden klucz do szyfrowania i odszyfrowywania przesyłanej wiadomości. Mikrokontrolerem wykorzystany do implementacji algorytmu była płytka ESP8266 NodeMCU v2, na którą wgrano oprogramowanie za pośrednictwem kabla mikro USB bądź wykorzystano łącze bezprzewodowe Wi-Fi i środowiska programistycznego Arduino. Pierwszym etapem było przedstawienie manualnej implementacji algorytmu DES dla pierwszej rundy w celu weryfikacji otrzymanych danych dla implementacji algorytmu na mikrokontrolerze. Stwierdzono poprawność implementacji algorytmu DES na ESP8266 po analizie wyników dla poszczególnych kroków rundy pierwszej wypisanych na monitorze portu szeregowego wraz z manualnymi obliczeniami. Otrzymane wyniki obliczeń manualnych są takie same jak obliczenia wykonane przy wykorzystaniu algorytmu na mikrokontrolerze ESP8266, co potwierdza poprawność implementacji.
  
 \quad Drugim etapem części praktycznej pracy był pomiar i porównanie czasów szyfrowania i deszyfrowania wiadomości w zależności od rozmiaru przesyłanych danych oraz prędkości transmisji programu. Pomiarów czas szyfrowania i deszyfrowania wiadomości dokonano dla danych o rozmiarze 1 kilobit, 8 kilobitów i 16 kilobitów oraz dla trzech prędkości transmisji: 9600, 19200 i 115200 bitów/s. Otrzymane dane pozwalają stwierdzić, że dla większej prędkości transmisji danych czas szyfrowania i deszyfrowania danych jest niższy, co prowadzi do lepszej wydajności algorytmu. Dla wyższej prędkości transmisji czas szyfrowania i deszyfrowania jest zbliżony, co jest pożądanym zjawiskiem gdyż proces deszyfrowania przebiega przy wykorzystaniu takich samych operacji jak proces szyfrowania, lecz w odwrotnej kolejności. Proces szyfrowania i deszyfrowania również zwiększa się wprost proporcjonalnie do rozmiaru szyfrowanych danych. Obliczając ilość potrzebnego czasu do zaszyfrowania danych o rozmiarze 1Gb według 1000000000*116/1000=160000000[$\mu$s],otrzymujemy 1min. 56sek. W celu zaszyfrowania pliku o rozmiarze 1Gb potrzebujemy ok 2min., co jest czasem zadowalającym dla użytkowników domowych. Implementację algorytmu DES na ESP8266 oraz pomiar wydajności szyfrowania danych zrealizowano zgodnie z celem przedstawionym na początku pracy. 
 %3. Później w podsumowaniu warto nawiązać do Celu i zakresu podkreślając co zostało zrobione, a co np. nie z podaniem powodów.
@@ -1301,83 +1492,78 @@ Analizując rysunek~\ref{czas_9600},~\ref{czas_19200} i ~\ref{czas_115200} spost
 
 \newpage
 \begin{thebibliography}{99}
+%4
+\bibitem{stream_cipher}  S. Bose, A. Kumar,
+\emph{Cryptography and Network Security}
+Pearson Education India, 03.2016, chapter 5
+%10
+\bibitem{DH} C. Chebbi
+\emph{Advanced Infrastructure Penetration Testing},
+Packt Publishing, 02.2018
+%2
+\bibitem{man_in_the_middle} E. Cole,
+\emph{Hackers Beware},
+08.2001, chapter Man-in-the-Middle Attack Against Key Exchange
+%6
+\bibitem{IDEA} T. Cui, H. Chen, L. Wen, M. Wang,
+\emph{Cryptography and Communications: \mbox{Statistical} integral attack on CAST-256 and IDEA}, January 2018, Volume 10
+%16
+\bibitem{esp8266}Espressif Systems,
+\emph{ESP8266-DevKitC Getting Started Guide}
+Espressif Systems, 2018
 %1
 \bibitem{maskaraka} J. Forshaw,
 \emph{
 Attacking Network Protocols},
 08.2017, chapter 4
-%2
-\bibitem{man_in_the_middle}, E. Cole,
-\emph{Hackers Beware},
-08.2001, chapter Man-in-the-Middle Attack Against Key Exchange
-%3
-\bibitem{blok_cipher}, Y. Li, Yu Sasaki, K. Sakiyama,
-\emph{Security of Block Ciphers},
-Wiley-IEEE Press, 04.2016, \mbox{chapter 1}
-%4
-\bibitem{stream_cipher},  S. Bose, A. Kumar,
-\emph{Cryptography and Network Security}
-Pearson Education India, 03.2016, chapter 5
-%5
-\bibitem{DES} J. Wiley,
-\emph{Information Security: Principles and Practice,2nd Edition},
-M. Stamp, 05.2011, \mbox{chapter 3}
-%6
-\bibitem{IDEA} Tingting CuiHuaifeng ChenLong WenMeiqin Wang,
-\emph{Cryptography and Communications: \mbox{Statistical} integral attack on CAST-256 and IDEA}, January 2018, Volume 10
-%7
-\bibitem{asymetric}W. Mao,
-\emph{Modern Cryptography: Theory and Practice}
-Prentice Hall, 07.2003, chapter 8. Encryption — Asymmetric Techniques
-%8 
-
-\bibitem{IDEAA} N. Hoffman,
-\emph{Article in Cryptologia: A simplified IDEA algorithm},
-Department of Mathematics, Northern Kentucky University, March 2007, str 143-151
 %9
-
 \bibitem{RSA} F.M. Groom, K. Groom and S.S. Jones
 \emph{Network and Data Security for Non-Engineers},
 \mbox{Auerbach} Publications, 08.2016, chapter 8
-%10
+%8 
+\bibitem{IDEAA} N. Hoffman,
+\emph{Article in Cryptologia: A simplified IDEA algorithm},
+Department of Mathematics, Northern Kentucky University, March 2007, str 143-151
+%3
+\bibitem{blok_cipher} Y. Li, Yu Sasaki, K. Sakiyama,
+\emph{Security of Block Ciphers},
+Wiley-IEEE Press, 04.2016, \mbox{chapter 1}
+%15
+\bibitem{es}D. Lacamera
+\emph{Embedded Systems Architecture},
+Packt Publishing, 05.2018
+%12
+\bibitem{SSH} A. Lockhart,
+\emph{Network Security Hacks},
+O'Reilly Media Inc., 04.2004, chapter 6
 
-\bibitem{DH} C. Chebbi
-\emph{Advanced Infrastructure Penetration Testing},
-Packt Publishing, 02.2018
+%14
+\bibitem{L2TP} S. Malik,
+\emph{Cover image for Network Security Principles and Practices
+Network Security \mbox{Principles} and Practices},
+Cisco Press, 10.2002
+%7
+\bibitem{asymetric}W. Mao,
+\emph{Modern Cryptography: Theory and Practice}
+Prentice Hall, 07.2003, chapter 8
+%13
+\bibitem{SSTP} J. Savill,
+\emph{The Complete Guide to Windows Server 2008},
+Addison-Wesley Professional, 10.2008, chapter 8
 %11
 \bibitem{PPTP} D. Stoddard i T.M. Thomas,
 \emph{
 Cover image for Network Security First-Step, Second Edition
 Network Security First-Step, Second Edition},
 Cisco Press, 12.2011, chapter 6
-%12
-\bibitem{SSH} A. Lockhart,
-\emph{Network Security Hacks},
-O'Reilly Media Inc., 04.2004, chapter 6
-%13
-\bibitem{SSTP} J. Savill,
-\emph{The Complete Guide to Windows Server 2008},
-Addison-Wesley Professional, 10.2008, chapter 8
-%14
-\bibitem{L2TP} S. Malik,
-\emph{Cover image for Network Security Principles and Practices
-Network Security \mbox{Principles} and Practices},
-Cisco Press, 10.2002
+%5
+\bibitem{DES} J. Wiley,
+\emph{Information Security: Principles and Practice,2nd Edition},
+M. Stamp, 05.2011, \mbox{chapter 3}
 
-%15
-\bibitem{es}D. Lacamera
-\emph{Embedded Systems Architecture},
-Packt Publishing, 05.2018
-%16
-\bibitem{esp8266}Espressif Systems,
-\emph{ESP8266-DevKitC Getting Started Guide}
-Espressif Systems, 2018
 
-% NIE PODAWAC TEJ LITERATURY ----
-%\bibitem{stream_cipher}O. Santos and J. Stuppi,
-%\emph{
-%Applied Cryptography: Protocols, Algorithms and Source Code in C, 20th Anniversary Edition},
-%John Wiley and Sons, 03.2015, chapter 16
+
+
 
 \end{thebibliography}
 \newpage

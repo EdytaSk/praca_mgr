@@ -6,6 +6,8 @@
 #include <stdint.h>
 #include <string.h>
 #include <time.h>
+#include <ESP8266WiFi.h>
+
 
 //permutacja poczatkowa des
 //dwie pierwsze wartości określaja ilość bajtów wejściowych i ilość bajtów wyjściowych
@@ -165,7 +167,8 @@ const uint8_t tabela_przesuniecia_bitowego_klucza_permtab[] = {
 #define ROTTABLE      0x7EFC 
 byte crypt [8];
 byte tekst_jawny [] = { 0x77,0x69,0x74,0x61,0x6A,0x20,0x3A,0x29};
-byte klucz [] = { 0x43,0x23,0x66,0xA3,0x6B,0xBB,0x53,0xC1};
+//byte klucz [] = { 0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
+byte klucz [] = { 0x23,0x66,0xA3,0x6B,0xBB,0x53,0xC1};
 byte test[8];
 boolean DEBUG = true;
 int i,m;
@@ -176,12 +179,25 @@ uint8_t data[8];
 /******************************************************************************/
 void setup(){
 
-Serial.begin(115200);
+Serial.begin(9600);
 Serial.println("");
 Serial.println("Start");
 Serial.println("Tekst jawny = 77 69 74 61 6A 20 3A 29");
 Serial.println("Klucz = 00 00 00 00 00 00 00 00 ");
 
+WiFi.begin("VNET-A9DD90", "927631C75AD795E9");
+
+ // Serial.print("Łączenie");
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println();
+
+  Serial.print("Połączono, adres IP: ");
+  Serial.println(WiFi.localIP());
+  
 //for (int j=0;j<8;j++){
 //if (klucz[j]<0x10) Serial.print("0"); 
 //Serial.print(klucz[j],HEX);Serial.print(" ");
@@ -192,27 +208,25 @@ Serial.println("Klucz = 00 00 00 00 00 00 00 00 ");
 //if (tekst_jawny[j]<0x10) Serial.print("0"); 
 //Serial.print(tekst_jawny[j],HEX);Serial.print(" ");
 //}
-Serial.println();
 Serial.println("");
 Serial.println("Rozpoczęcie procesu szyfrowania");
 Serial.println("");
 Serial.println("Tekst jawny = 77 69 74 61 6A 20 3A 29");
-Serial.println("Klucz = 43 23 66 A3 6B BB 53 C1 ");
 
 
 //Serial.println("");
 
 unsigned long start = micros();
-for (int j=0;j<256;j++){
-void szyfrowanie(void* out, const void* in, const void* key);
-yield();
-}
+//for (int j=0;j<256;j++){
+//void szyfrowanie(void* out, const void* in, const void* key);
+//yield();
+//}
 
-//szyfrowanie(crypt, tekst_jawny, klucz);
+szyfrowanie(crypt, tekst_jawny, klucz);
 unsigned long end = micros();
 unsigned long delta = end - start;
 //Serial.println("");
-//Serial.print("Czas szyfrowania[milisekundy]:");Serial.println(delta);
+//Serial.print("  Czas szyfrowania[milisekundy]:");Serial.println(delta);
 
 //Serial.println("Encrypted key  = ");
 //for (int j=0;j<8;j++){
@@ -225,11 +239,11 @@ Serial.println("");
 Serial.println("Rozpoczęcie procesu deszyfrowania");
 //Serial.println("");
 unsigned long start1 = micros();
-for (int j=0;j<256;j++){
-void des_dec(void* out, const void* in, const void* key);
-yield();
-}
-//des_dec( tekst_jawny, crypt, klucz);
+//for (int j=0;j<256;j++){
+//void des_dec(void* out, const void* in, const void* key);
+//yield();
+//}
+des_dec( tekst_jawny, crypt, klucz);
 unsigned long end1 = micros();
 unsigned long delta1 = end1 - start1;
 Serial.println("");
